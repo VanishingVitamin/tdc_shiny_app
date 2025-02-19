@@ -37,10 +37,10 @@ If you can use R and want to run the app locally, then complete the following st
 ## I'm a reviewer (providing feedback)
 
 Wonderful, thank you for your feedback!
-Complete steps 1. through 4. in the "I can use R" section above to ensure you can the app locally.
+Complete steps 1. through 4. in the "I can use R" section above to ensure you can run the app locally.
 
 Major changes to the application undergo a peer review process using GitHub [pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) (PRs).
-A pull request is a proposal to merge a set of changes from git [*branch*](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) into another.
+A pull request is a proposal to merge a set of changes from one git [*branch*](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) into another.
 As a reviewer, your job is to look at recent changes made to the application and provide feedback within the Pull Request.
 
 See [Reviewing proposed changes in a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request) for an overview of the Pull Request review process.
@@ -54,17 +54,20 @@ Before we dive into the app structure, complete steps 1. through 4. in the "I ca
 
 ### I want to make changes to the app
 
+#### Updating renv
+
 If you add/remove packages during development, run `renv::install("[pkg-name]")` to add it to the `renv.lock` file then run `renv::snapshot()` to update the `renv` package list.
 This will ensure future users/developers will have the same R packages installed when they run the app.
 
-Major changes to the application undergo a peer review process using GitHub [pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) (PRs).
-A pull request is a proposal to merge a set of changes from git [*branch*](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) into another.
-The `main` branch on this repository represents the canonical version of the application and serves as the "root" for the repository's branches.
-
 #### Creating Pull Requests
+
+Major changes to the application undergo a peer review process using GitHub [pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) (PRs).
+A pull request is a proposal to merge a set of changes from one git [*branch*](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) into another.
+The `main` branch on this repository represents the canonical version of the application and serves as the "root" for the repository's branches.
 
 As the developer, you are responsible for creating a pull request for any changes you make to the app.
 If you don't have a ton of experience using git or GitHub, I recommend reading through [Happy Git with R](https://happygitwithr.com/) for a friendly, R-centric introduction.
+GitHub pull requests support text formatting using Markdown syntax -- see [Basic Syntax](https://www.markdownguide.org/basic-syntax/) for an introduction.
 
 The typical workflow for making changes goes:
 
