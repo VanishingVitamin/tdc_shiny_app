@@ -67,6 +67,7 @@ The `main` branch on this repository represents the canonical version of the app
 
 As the developer, you are responsible for creating a pull request for any changes you make to the app.
 If you don't have a ton of experience using git or GitHub, I recommend reading through [Happy Git with R](https://happygitwithr.com/) for a friendly, R-centric introduction.
+GitHub pull requests support text formatting using Markdown syntax -- see [Basic Syntax](https://www.markdownguide.org/basic-syntax/) for an introduction.
 
 The typical workflow for making changes goes:
 
