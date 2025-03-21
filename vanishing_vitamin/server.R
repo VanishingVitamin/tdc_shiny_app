@@ -14,6 +14,26 @@ tdc_data <- read_csv("data/tdc_data.csv") |>
 
 function(input, output, session) {
 
+  observeEvent(input$sidebarId,
+               {
+
+                 # browser()
+
+                 if(input$sidebarId){
+                   removeCssClass(id = "header_toggle",
+                                  class = "far fa-square-caret-right")
+                   addCssClass(id = "header_toggle",
+                               class = "far fa-square-caret-left")
+                 } else{
+                   removeCssClass(id = "header_toggle",
+                                  class = "far fa-square-caret-left")
+                   addCssClass(id = "header_toggle",
+                               class = "far fa-square-caret-right")
+                 }
+
+
+               })
+
   filtered_data <- reactiveValues(
     tdc_data = tdc_data,
     citations = citations
@@ -179,7 +199,7 @@ function(input, output, session) {
     plt_data <-
       filtered_data$tdc_data |>
       # isolate() |>
-      distinct(DOI, Location, Latitude_DD, Longitude_DD, marker_label) |>
+      distinct(DOI, Latitude_DD, Longitude_DD, .keep_all = TRUE) |>
       filter(!is.na(Latitude_DD))
 
     tdc_map <-
@@ -188,13 +208,16 @@ function(input, output, session) {
       # addAwesomeMarkers(
       addMarkers(
         layerId = 1:nrow(plt_data),
-        lng = ~jitter(Longitude_DD, factor = 0.001),
-        lat = ~jitter(Latitude_DD, factor = 0.001),
+        lng = ~Longitude_DD,
+        lat = ~Latitude_DD,
+        # lng = ~jitter(Longitude_DD, factor = 0.001),
+        # lat = ~jitter(Latitude_DD, factor = 0.001),
         # icon = awesomeIcons(icon = "map-pin", markerColor = "blue"),
         # label = ~purrr::map(marker_label, HTML),
         popup = ~purrr::map(marker_label, HTML)
-        # ,clusterOptions = markerClusterOptions(removeOutsideVisibleBounds = TRUE,
-        #                                       spiderfyOnMaxZoom = TRUE)
+        ,clusterOptions = markerClusterOptions(removeOutsideVisibleBounds = TRUE,
+                                               spiderfyOnMaxZoom = TRUE,
+                                               maxClusterRadius = 0)
         )
 
     return(tdc_map)
@@ -206,7 +229,7 @@ function(input, output, session) {
 
     plt_data <-
       filtered_data$tdc_data |>
-      distinct(DOI, Location, Latitude_DD, Longitude_DD, marker_label) |>
+      distinct(DOI, Latitude_DD, Longitude_DD, .keep_all = TRUE) |>
       filter(!is.na(Latitude_DD))
 
     # selected <- getReactableState("tdc_data_table", "selected")
@@ -228,14 +251,37 @@ function(input, output, session) {
       # addAwesomeMarkers(
       addMarkers(
         layerId = 1:nrow(plt_data),
-        lng = ~jitter(Longitude_DD, factor = 0.001),
-        lat = ~jitter(Latitude_DD , factor = 0.001),
+        lng = ~Longitude_DD,
+        lat = ~Latitude_DD,
+        # lng = ~jitter(Longitude_DD, factor = 0.001),
+        # lat = ~jitter(Latitude_DD, factor = 0.001),
         # icon = icons,
         # label = ~purrr::map(marker_label, HTML),
         popup = ~purrr::map(marker_label, HTML)
-        # ,clusterOptions = markerClusterOptions(removeOutsideVisibleBounds = TRUE,
-        #                                       spiderfyOnMaxZoom = TRUE)
+        ,clusterOptions = markerClusterOptions(removeOutsideVisibleBounds = TRUE,
+                                               spiderfyOnMaxZoom = TRUE,
+                                               maxClusterRadius = 0)
         )
+
+  })
+
+  ### Visualize tab code
+
+  output$ec50_curve <- renderPlotly({
+
+    plt <-
+      tdc_data |>
+      filter(Thiamine_conc < 30) |>
+      mutate(plot_label = paste0("Thiamin Conc: ", round(Thiamine_conc,2),"\n",
+                                 "% Survived: ", round(Percent_survive,2))) |>
+      ggplot(aes(x = Thiamine_conc,
+                 y = Percent_survive)) +
+      geom_point() +
+      theme_minimal() +
+      labs(x = "Thiamin Concentration (nmol/g)",
+           y = "% Survived")
+
+    plotly::ggplotly(plt)
 
   })
 
