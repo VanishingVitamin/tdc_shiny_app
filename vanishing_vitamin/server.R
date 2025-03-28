@@ -17,8 +17,6 @@ function(input, output, session) {
   observeEvent(input$sidebarId,
                {
 
-                 # browser()
-
                  if(input$sidebarId){
                    removeCssClass(id = "header_toggle",
                                   class = "far fa-square-caret-right")
@@ -36,7 +34,9 @@ function(input, output, session) {
 
   filtered_data <- reactiveValues(
     tdc_data = tdc_data,
-    citations = citations
+    citations = citations,
+    user_data = tibble::tibble("Thiamin Conc. (nmol/g)" = "Double-click to edit",
+                               "% Survived" = "(Optional) Double-click to edit")
   )
 
   observe({
@@ -94,12 +94,12 @@ function(input, output, session) {
                            details = function(index){
 
                              htmltools::div(#style = "padding: 1rem",
-                                            reactable(tdc_data |>
-                                                        filter(DOI == filtered_data$citations[index,]$DOI) |>
-                                                        select(-c(ends_with("label"),
-                                                                  Title, DOI,
-                                                                  location_type)),
-                                                      outlined = TRUE)
+                               reactable(tdc_data |>
+                                           filter(DOI == filtered_data$citations[index,]$DOI) |>
+                                           select(-c(ends_with("label"),
+                                                     Title, DOI,
+                                                     location_type)),
+                                         outlined = TRUE)
                              )
 
                            })
@@ -218,7 +218,7 @@ function(input, output, session) {
         ,clusterOptions = markerClusterOptions(removeOutsideVisibleBounds = TRUE,
                                                spiderfyOnMaxZoom = TRUE,
                                                maxClusterRadius = 0)
-        )
+      )
 
     return(tdc_map)
 
@@ -261,7 +261,7 @@ function(input, output, session) {
         ,clusterOptions = markerClusterOptions(removeOutsideVisibleBounds = TRUE,
                                                spiderfyOnMaxZoom = TRUE,
                                                maxClusterRadius = 0)
-        )
+      )
 
   })
 
@@ -270,19 +270,155 @@ function(input, output, session) {
   output$ec50_curve <- renderPlotly({
 
     plt <-
-      tdc_data |>
-      filter(Thiamine_conc < 30) |>
-      mutate(plot_label = paste0("Thiamin Conc: ", round(Thiamine_conc,2),"\n",
-                                 "% Survived: ", round(Percent_survive,2))) |>
-      ggplot(aes(x = Thiamine_conc,
+      filtered_data$tdc_data |>
+      filter(Thiamin_conc < 30) |>
+      mutate(plot_label = paste0("Thiamin Conc: ", round(Thiamin_conc,2)," nmol/g\n",
+                                 "% Survived: ", round(Percent_survive,2),"%")) |>
+      ggplot(aes(x = Thiamin_conc,
                  y = Percent_survive)) +
-      geom_point() +
+      geom_point(aes(text = plot_label)) +
       theme_minimal() +
       labs(x = "Thiamin Concentration (nmol/g)",
            y = "% Survived")
 
-    plotly::ggplotly(plt)
+    plotly::ggplotly(plt,tooltip = "text")
 
   })
+
+
+
+  output$visualize_add_data_manual <-
+    DT::renderDT({
+
+      DT::datatable(filtered_data$user_data,
+                    options = list(pageLength = Inf, dom = "t", ordering = FALSE),
+                    editable = "cell",
+                    rownames = FALSE,
+                    filter = "none",
+                    autoHideNavigation = TRUE,
+                    selection = "none",
+                    caption = NULL,
+                    style = "bootstrap4",
+                    class = "table-bordered table-condensed")
+
+    })
+
+  observe({
+
+    filtered_data$user_data <- readr::read_csv(input$visualize_add_data_file$datapath)
+
+    updateSelectInput(inputId = "visualize_add_data_file_thiamin_col",
+                      choices = c("", names(filtered_data$user_data)))
+    updateSelectInput(inputId = "visualize_add_data_file_survive_col",
+                      choices = c("", names(filtered_data$user_data)))
+
+  }) |>
+    bindEvent(input$visualize_add_data_file, ignoreInit = TRUE)
+
+  observe({
+
+    req(input$visualize_add_data_manual_cell_edit)
+
+    info <- isolate(input$visualize_add_data_manual_cell_edit)
+    i <- info$row
+    j <- info$col + 1
+    v <- as.numeric(info$value)
+
+    # browser()
+
+    if(j == 1){
+      if(is.na(v)){
+        shiny::showNotification(ui = "Thiamin concentration must be a number greater than 0.", type = "error")
+        DT::reloadData(proxy = DT::dataTableProxy(outputId = "visualize_add_data_manual"))
+        req(FALSE)
+      } else if(v <= 0){
+        shiny::showNotification(ui = "Thiamin concentration must be a number greater than 0.", type = "error")
+        DT::reloadData(proxy = DT::dataTableProxy(outputId = "visualize_add_data_manual"))
+        req(FALSE)
+      }
+    } else if(j == 2){
+      if(is.na(v)){
+        shiny::showNotification(ui = "% Survived must be a number between 0 and 100.", type = "error")
+        DT::reloadData(proxy = DT::dataTableProxy(outputId = "visualize_add_data_manual"))
+        req(FALSE)
+      } else if(v < 0 | v > 100){
+        shiny::showNotification(ui = "% Survived must be a number between 0 and 100.", type = "error")
+        DT::reloadData(proxy = DT::dataTableProxy(outputId = "visualize_add_data_manual"))
+        req(FALSE)
+      }
+    }
+
+    filtered_data$user_data[i, j] <- as.character(v)
+
+  })
+
+  observeEvent(input$visualize_add_data_new_row,{
+
+    filtered_data$user_data <- bind_rows(isolate(filtered_data$user_data),
+                                         tibble::tibble("Thiamin Conc. (nmol/g)" = "Double-click to edit",
+                                                        "% Survived" = "(Optional) Double-click to edit"))
+
+  })
+
+  observe({
+
+    req(filtered_data$user_data)
+    req(nrow(filtered_data$user_data) > 0)
+    req(!all(filtered_data$user_data[,1] == "Double-click to edit"))
+
+    browser()
+
+    if(input$visualize_add_data_choice == "Upload .csv"){
+
+      plot_data <-
+        filtered_data$user_data |>
+        select(all_of(c(input$visualize_add_data_file_thiamin_col, input$visualize_add_data_file_survive_col))) |>
+        purrr::set_names(c("Thiamin_conc", "Percent_survive")) |>
+        mutate(Thiamin_conc = as.numeric(Thiamin_conc),
+               Percent_survive = as.numeric(Percent_survive))
+
+      if(any(is.na(plot_data$Thiamin_conc))){
+        showNotification(ui = "Something is wrong with the Thiamin Concentration column. It should only contain numeric values. Check your data and try again.",
+                         type = "error")
+        req(FALSE)
+      }
+      if(any(is.na(plot_data$Percent_survive))){
+        showNotification(ui = "Something is wrong with the % Survived column. It should only contain numeric values. Check your data and try again.",
+                         type = "error")
+        req(FALSE)
+      }
+
+    } else if(input$visualize_add_data_choice == "Manual entry"){
+
+      plot_data <-
+        filtered_data$user_data |>
+        select(all_of(c("Thiamin Conc. (nmol/g)", "% Survived"))) |>
+        purrr::set_names(c("Thiamin_conc", "Percent_survive")) |>
+        mutate(Thiamin_conc = as.numeric(Thiamin_conc),
+               Percent_survive = as.numeric(Percent_survive)) |>
+        filter(!is.na(Thiamin_conc))
+
+      if(nrow(plot_data) == 0){
+        showNotification(ui = "Something is wrong with your manually entered data. Make sure there is at least one numeric Thiamin Concentration value.")
+        req(FALSE)
+      }
+
+    }
+
+    plotly::plotlyProxy("ec50_curve", session, deferUntilFlush = FALSE) |>
+      # plotlyProxyInvoke(method = "deleteTraces", list(1L)) }>
+      plotlyProxyInvoke("addTraces",
+                        # NOTE: addTraces needs at least two points, for some
+                        # reason, so we'll repeat single points twice
+                        list(x = rep(plot_data$Thiamin_conc,
+                                     length.out = max(2,length(plot_data$Thiamin_conc))),
+                             y = rep(plot_data$Percent_survive,
+                                     length.out = max(2,length(plot_data$Percent_survive))),
+                             marker = list(color = "red"),
+                             type = "scatter", mode = "markers"))
+
+
+  }) |>
+    bindEvent(input$visualize_add_data_plot, ignoreInit = TRUE)
 
 }

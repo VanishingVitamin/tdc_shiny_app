@@ -87,7 +87,8 @@ tdc_data_cleaned <-
                 Study_Date == "1998, 1999" ~ "1999-12-31",
                 stringr::str_detect(Study_Date, "^[0-9]{4}$") ~ paste0(Study_Date,"-12-31"),
                 stringr::str_detect(Study_Date, "^[0-9]{2}/[0-9]{2}/[0-9]{4}$") ~ Study_Date)
-  )
+  ) |>
+  rename(Thiamin_conc = Thiamine_conc)
 
 readr::write_csv(tdc_data_cleaned,
                  file = "data/tdc_data.csv")

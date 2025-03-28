@@ -4,6 +4,7 @@ library(readr)
 library(dplyr)
 
 library(bs4Dash)
+library(bslib)
 library(fresh)
 
 library(leaflet)
@@ -110,15 +111,54 @@ bs4Dash::dashboardPage(
               )
       ),
       tabItem(tabName = "visualize",
-              h5("This tab will contain EC50 curves for survival % vs. thiamin concentration."),
-              sidebarLayout(
-                sidebarPanel = div(id = "tdc_table_filter_sidebar",
-                                   class = "col-sm-2",
-                                   sidebarPanel(width = 10,
-                                                "This sidebar will let users filter the scatterplot.")),
-                mainPanel = mainPanel(width = 10,
-                                      plotly::plotlyOutput("ec50_curve",height = "800px"))
-              ))
+              fluidRow(
+                column(width = 3,
+                  bs4Dash::accordion(id = "visualize_accordion",
+                                     accordionItem(collapsed = FALSE, status = "primary",
+                                                   title = "Visualize your own data",
+                                                   icon = bsicons::bs_icon("plus"),
+                                                   shiny::selectInput(inputId = "visualize_add_data_choice",
+                                                                      label = "Choose how to add data:",
+                                                                      choices = c("Upload .csv", "Manual entry")),
+                                                   conditionalPanel(
+                                                     condition = "input.visualize_add_data_choice == 'Manual entry'",
+                                                     DT::DTOutput("visualize_add_data_manual"),
+                                                     actionButton(inputId = "visualize_add_data_new_row",
+                                                                  label = "New row",
+                                                                  icon = shiny::icon("plus"))
+                                                     ),
+                                                   conditionalPanel(
+                                                     condition = "input.visualize_add_data_choice == 'Upload .csv'",
+                                                     shiny::fileInput(inputId = "visualize_add_data_file",
+                                                                      label = "Select a file", accept = ".csv", multiple = FALSE),
+                                                     selectInput(inputId = "visualize_add_data_file_thiamin_col",
+                                                                 label = "Thiamin Concentration column",
+                                                                 choices = ""),
+                                                     selectInput(inputId = "visualize_add_data_file_survive_col",
+                                                                 label = "(Optional) % Survived column",
+                                                                 choices = "")
+                                                   ),
+                                                   br(),
+                                                   actionButton(inputId = "visualize_add_data_plot",
+                                                                label = "Plot data",
+                                                                icon = shiny::icon("chart-line"))
+                                     )
+                                     # ,accordionItem(
+                                     #   title = "Plot style", status = "primary",
+                                     #   icon = bsicons::bs_icon("palette"),
+                                     #   selectInput(inputId = "visualize_point_color",
+                                     #               label = "Point color",
+                                     #               choices = c("","Species", "Tissue")),
+                                     #   selectInput(inputId = "visualize_plot_theme")
+                                     # )
+                  )
+                ),
+                bs4Dash::box(
+                  collapsible = FALSE, maximizable = TRUE, title = "Scatterplot", width = 9,
+                  plotly::plotlyOutput("ec50_curve", height = "550px", width = '100%')
+                )
+              )
+      )
     )
   )
 )
