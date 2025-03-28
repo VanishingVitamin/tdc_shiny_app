@@ -305,7 +305,16 @@ function(input, output, session) {
 
   observe({
 
-    filtered_data$user_data <- readr::read_csv(input$visualize_add_data_file$datapath)
+    ext <- tools::file_ext(input$visualize_add_data_file$datapath)
+
+    if(ext == "csv"){
+      filtered_data$user_data <- readr::read_csv(input$visualize_add_data_file$datapath)
+    } else if(ext == "xlsx"){
+      filtered_data$user_data <- readxl::read_xlsx(input$visualize_add_data_file$datapath)
+    } else{
+      showNotification(ui = "Unable to read the file. Make sure it is either .csv or .xlsx",
+                       type = "error")
+    }
 
     updateSelectInput(inputId = "visualize_add_data_file_thiamin_col",
                       choices = c("", names(filtered_data$user_data)))
@@ -368,7 +377,7 @@ function(input, output, session) {
 
     browser()
 
-    if(input$visualize_add_data_choice == "Upload .csv"){
+    if(input$visualize_add_data_choice == "Upload data file"){
 
       plot_data <-
         filtered_data$user_data |>

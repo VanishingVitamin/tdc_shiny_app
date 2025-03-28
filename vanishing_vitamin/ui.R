@@ -119,7 +119,7 @@ bs4Dash::dashboardPage(
                                                    icon = bsicons::bs_icon("plus"),
                                                    shiny::selectInput(inputId = "visualize_add_data_choice",
                                                                       label = "Choose how to add data:",
-                                                                      choices = c("Upload .csv", "Manual entry")),
+                                                                      choices = c("Upload data file", "Manual entry")),
                                                    conditionalPanel(
                                                      condition = "input.visualize_add_data_choice == 'Manual entry'",
                                                      DT::DTOutput("visualize_add_data_manual"),
@@ -128,9 +128,9 @@ bs4Dash::dashboardPage(
                                                                   icon = shiny::icon("plus"))
                                                      ),
                                                    conditionalPanel(
-                                                     condition = "input.visualize_add_data_choice == 'Upload .csv'",
+                                                     condition = "input.visualize_add_data_choice == 'Upload data file'",
                                                      shiny::fileInput(inputId = "visualize_add_data_file",
-                                                                      label = "Select a file", accept = ".csv", multiple = FALSE),
+                                                                      label = "Select a file", accept = c(".csv",".xlsx"), multiple = FALSE),
                                                      selectInput(inputId = "visualize_add_data_file_thiamin_col",
                                                                  label = "Thiamin Concentration column",
                                                                  choices = ""),
