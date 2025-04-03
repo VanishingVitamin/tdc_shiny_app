@@ -37,7 +37,7 @@ If you can use R and want to run the app locally, then complete the following st
 ## I'm a reviewer (providing feedback)
 
 Wonderful, thank you for your feedback!
-Complete steps 1. through 4. in the "I can use R" section above to ensure you can run the app locally.
+Complete the steps in the "I can use R" section above to ensure you can run the app locally.
 
 Major changes to the application undergo a peer review process using GitHub [pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) (PRs).
 A pull request is a proposal to merge a set of changes from one git [*branch*](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) into another.
