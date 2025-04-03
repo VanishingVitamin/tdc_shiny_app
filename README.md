@@ -22,7 +22,7 @@ If you can use R and want to run the app locally, then complete the following st
 
 2. Ensure you have [git](https://git-scm.com/) installed.
 
-3. Clone the repository: 
+3. Clone the repository one of the following ways:
     * `git clone https://github.com/VanishingVitamin/tdc_shiny_app.git` over HTTPS, 
     * `git clone git@github.com:VanishingVitamin/tdc_shiny_app.git` over SSH (requires SSH key), 
     * or whatever your favorite way is from the URL <https://github.com/VanishingVitamin/tdc_shiny_app>.
