@@ -50,7 +50,7 @@ See [A practical guide for better, faster code reviews](https://github.com/mawrk
 ## I'm a developer (making changes)
 
 Awesome, we appreciate your help!
-Before we dive into the app structure, complete steps 1. through 4. in the "I can use R" section above to ensure you can run the app locally.
+Before we dive into the app structure, complete the steps in the "I can use R" section above to ensure you can run the app locally.
 
 ### I want to make changes to the app
 
