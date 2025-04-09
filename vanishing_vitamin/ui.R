@@ -36,34 +36,43 @@ bs4Dash::dashboardPage(
                            )),
   sidebar = dashboardSidebar(disable = FALSE,
                              elevation = 2,
-                             collapsed = FALSE,
+                             collapsed = TRUE,
                              minified = FALSE,
                              expandOnHover = TRUE,
                              fixed = TRUE,
                              # text = "Dashboard filters",
                              # icon = shiny::icon("filter"),
                              h6("Filter by:"),
+                             id = "filter_sidebar",
                              selectizeInput(inputId = "tdc_table_filter_location",
                                             label = "Collection Location",
                                             multiple = TRUE,
+                                            options = list('plugins' = list('remove_button'), 'create' = TRUE, 'persist'
+                                                           = FALSE),
                                             choices = c("",
                                                         rev(unique(tdc_data$Location_label)))
                              ),
-                             selectInput(inputId = "tdc_table_filter_species",
+                             selectizeInput(inputId = "tdc_table_filter_species",
                                          label = "Species",
                                          multiple = TRUE,
+                                         options = list('plugins' = list('remove_button'), 'create' = TRUE, 'persist'
+                                                        = FALSE),
                                          choices = c("",
                                                      rev(unique(tdc_data$Species_label)))
                              ),
-                             selectInput(inputId = "tdc_table_filter_run",
+                             selectizeInput(inputId = "tdc_table_filter_run",
                                          label = "Run",
                                          multiple = TRUE,
+                                         options = list('plugins' = list('remove_button'), 'create' = TRUE, 'persist'
+                                                        = FALSE),
                                          choices = c("",
                                                      rev(unique(tdc_data$Run_label)))
                              ),
-                             selectInput(inputId = "tdc_table_filter_tissue",
+                             selectizeInput(inputId = "tdc_table_filter_tissue",
                                          label = "Tissue",
                                          multiple = TRUE,
+                                         options = list('plugins' = list('remove_button'), 'create' = TRUE, 'persist'
+                                                        = FALSE),
                                          choices = c("",
                                                      rev(unique(tdc_data$Tissue_label)))
                              )
@@ -82,10 +91,20 @@ bs4Dash::dashboardPage(
   # ),
   body = dashboardBody(
     tags$style(type = "text/css",
-               "#tdc_data_map {height: calc(100vh - 57px) !important;
-                    width: calc(80vh) !important;
+               "#tdc_data_map {height: calc(80vh) !important;
+                    /* width: calc(80vh) !important; */
                     overflow-x: hidden;
                     overflow-y: hidden;}"),
+    tags$head(
+      tags$script(
+        "$(function() {
+          $('[data-card-widget=\"maximize\"]').on('click', function() {
+            $('#tdc_data_map').trigger('resize');
+          });
+        });
+        "
+      )
+    ),
     tabItems(
       tabItem(tabName = "welcome",
               h3("Welcome to Vanishing Vitamin!"),
@@ -100,62 +119,100 @@ bs4Dash::dashboardPage(
               h5(strong("Click on one of the buttons at the top to get started!"))),
       tabItem(tabName = "data",
               fluidRow(column(width = 6,
-                              bs4Dash::box(width = 12,title = "Datasets",
-                                           reactable::reactableOutput(outputId = "tdc_data_table"),
-                                           collapsible = FALSE,closable = FALSE,maximizable = TRUE,
-                                           headerBorder = FALSE,solidHeader = FALSE,
-                                           style = 'height: calc(100vh - 80px); overflow-y:scroll'
+                              bs4Dash::box(
+                                reactable::reactableOutput(outputId = "tdc_data_table"),
+                                width = 12,title = "Datasets",
+                                collapsible = FALSE,closable = FALSE,maximizable = TRUE,
+                                headerBorder = FALSE,solidHeader = FALSE,
+                                style = 'height: calc(84.5vh); overflow-y:scroll'
                               )),
                        column(width = 6,
-                              leaflet::leafletOutput("tdc_data_map",width = "100%"))
+                              bs4Dash::box(id = "tdc_data_map_box",
+                                           leaflet::leafletOutput("tdc_data_map",width = "100%"),
+                                           width = 12,title = "Data Collection Locations",
+                                           collapsible = FALSE,closable = FALSE,maximizable = TRUE,
+                                           headerBorder = FALSE,solidHeader = FALSE
+                              ))
               )
       ),
       tabItem(tabName = "visualize",
               fluidRow(
                 column(width = 3,
-                  bs4Dash::accordion(id = "visualize_accordion",
-                                     accordionItem(collapsed = FALSE, status = "primary",
-                                                   title = "Visualize your own data",
-                                                   icon = bsicons::bs_icon("plus"),
-                                                   shiny::selectInput(inputId = "visualize_add_data_choice",
-                                                                      label = "Choose how to add data:",
-                                                                      choices = c("Upload data file", "Manual entry")),
-                                                   conditionalPanel(
-                                                     condition = "input.visualize_add_data_choice == 'Manual entry'",
-                                                     DT::DTOutput("visualize_add_data_manual"),
-                                                     actionButton(inputId = "visualize_add_data_new_row",
-                                                                  label = "New row",
-                                                                  icon = shiny::icon("plus"))
-                                                     ),
-                                                   conditionalPanel(
-                                                     condition = "input.visualize_add_data_choice == 'Upload data file'",
-                                                     shiny::fileInput(inputId = "visualize_add_data_file",
-                                                                      label = "Select a file", accept = c(".csv",".xlsx"), multiple = FALSE),
-                                                     selectInput(inputId = "visualize_add_data_file_thiamin_col",
-                                                                 label = "Thiamin Concentration column",
-                                                                 choices = ""),
-                                                     selectInput(inputId = "visualize_add_data_file_survive_col",
-                                                                 label = "(Optional) % Survived column",
-                                                                 choices = "")
-                                                   ),
-                                                   br(),
-                                                   actionButton(inputId = "visualize_add_data_plot",
-                                                                label = "Plot data",
-                                                                icon = shiny::icon("chart-line"))
-                                     )
-                                     # ,accordionItem(
-                                     #   title = "Plot style", status = "primary",
-                                     #   icon = bsicons::bs_icon("palette"),
-                                     #   selectInput(inputId = "visualize_point_color",
-                                     #               label = "Point color",
-                                     #               choices = c("","Species", "Tissue")),
-                                     #   selectInput(inputId = "visualize_plot_theme")
-                                     # )
-                  )
+                       bs4Dash::accordion(id = "visualize_accordion",
+                                          accordionItem(collapsed = FALSE, status = "primary",
+                                                        title = "Visualize your own data",
+                                                        style = "height: calc(80vh); overflow-y:scroll",
+                                                        icon = bsicons::bs_icon("plus"),
+                                                        shiny::selectInput(inputId = "visualize_add_data_choice",
+                                                                           label = "Choose how to add data:",
+                                                                           choices = c("Manual entry",
+                                                                                       "Copy + paste",
+                                                                                       "Upload data file")),
+                                                        conditionalPanel(
+                                                          condition = "input.visualize_add_data_choice == 'Manual entry'",
+                                                          numericInput(inputId = "visualize_add_data_manual_thiamin",
+                                                                       label = "Thiamin Concentration (nmol/g):",min = 0,
+                                                                       value = NULL),
+                                                          numericInput(inputId = "visualize_add_data_manual_survival",
+                                                                       label = "(Optional) % Survived:",
+                                                                       min = 0, max = 100,
+                                                                       value = NULL),
+                                                          actionButton(inputId = "visualize_add_data_new_row",
+                                                                       label = "Add data",
+                                                                       icon = shiny::icon("plus"))
+                                                        ),
+                                                        conditionalPanel(
+                                                          condition = "input.visualize_add_data_choice == 'Copy + paste'",
+                                                          textAreaInput(inputId = "visualize_add_data_clipboard",
+                                                                        label = "Copy + paste data below",
+                                                                        placeholder = "Copy + paste data with a header row",
+                                                                        resize = "vertical"),
+                                                          shinyjs::hidden(
+                                                            wellPanel(id = "visualize_add_data_clipboard_panel",
+                                                                      width = 12,
+                                                                      selectInput(inputId = "visualize_add_data_clipboard_thiamin_col",
+                                                                                  label = "Thiamin Concentration column",
+                                                                                  choices = ""),
+                                                                      selectInput(inputId = "visualize_add_data_clipboard_survive_col",
+                                                                                  label = "(Optional) % Survived column",
+                                                                                  choices = ""),
+                                                                      br(),
+                                                                      actionButton(inputId = "visualize_add_data_clipboard_button",
+                                                                                   label = "Add data",
+                                                                                   icon = shiny::icon("plus"))
+                                                            )
+                                                          )
+                                                        ),
+                                                        conditionalPanel(
+                                                          condition = "input.visualize_add_data_choice == 'Upload data file'",
+                                                          shiny::fileInput(inputId = "visualize_add_data_file",
+                                                                           label = "Select a file",
+                                                                           accept = c(".csv",".xlsx"),
+                                                                           placeholder = "Select a csv or xlsx file",
+                                                                           multiple = FALSE),
+                                                          shinyjs::hidden(
+                                                            wellPanel(id = "visualize_add_data_file_panel",
+                                                                      width = 12,
+                                                                      selectInput(inputId = "visualize_add_data_file_thiamin_col",
+                                                                                  label = "Thiamin Concentration column",
+                                                                                  choices = ""),
+                                                                      selectInput(inputId = "visualize_add_data_file_survive_col",
+                                                                                  label = "(Optional) % Survived column",
+                                                                                  choices = ""),
+                                                                      br(),
+                                                                      actionButton(inputId = "visualize_add_data_upload",
+                                                                                   label = "Add data",
+                                                                                   icon = shiny::icon("plus"))
+                                                            )
+                                                          )
+                                                        )
+                                          )
+                       )
                 ),
                 bs4Dash::box(
-                  collapsible = FALSE, maximizable = TRUE, title = "Scatterplot", width = 9,
-                  plotly::plotlyOutput("ec50_curve", height = "550px", width = '100%')
+                  collapsible = FALSE, maximizable = TRUE, title = "Thiamin Concentration vs. % Survived", width = 9,
+                  plotly::plotlyOutput("ec50_curve", height = "550px", width = '100%'),
+                  reactableOutput("visualize_add_data")
                 )
               )
       )
