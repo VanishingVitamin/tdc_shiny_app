@@ -36,8 +36,6 @@ citations <-
 
 format_metadata <- function(article_meta){
 
-  # browser()
-
   if(!is.null(article_meta$authors)){
     author_string <- article_meta$authors |>
       purrr::map_chr(function(author){
