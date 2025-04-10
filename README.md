@@ -33,7 +33,7 @@ If you can use R and want to run the app locally, then complete the following st
 
 6. Run `devtools::install(".")` in your R Console to install the `vanishingVitamin` R package locally.
 
-7. One the install is complete, run `vanishingVitamin::launch_app()`, which should trigger the app to launch.
+7. One the install is complete, run `vanishingVitamin::launch_app()` which should trigger the app to launch.
 
 ## I'm a reviewer (providing feedback)
 
