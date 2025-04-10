@@ -1,10 +1,20 @@
 #' Launch Vanishing Vitamin app
 #'
-#' @param options list; last directly to options argument of shiny::shinyApp()
+#' @param options list; app launch options passed to \code{options} argument of
+#'   shiny::shinyApp()
 #'
 #' @seealso [shiny::shinyApp()]
+#'
+#' @examples
+#' launch_app()
+#'
+#'
+#' @export
 
-vanishingVitamin <- function(options = list()){
+launch_app <- function(options = list()){
+
+  tdc_data <- vanishingVitamin::tdc_data
+  citations <- vanishingVitamin::citations
 
   color_theme <-
     fresh::create_theme(
@@ -18,7 +28,7 @@ vanishingVitamin <- function(options = list()){
         text_dark = "#000000",
         text_light = "#FFFFFF"
       ),
-      bs4dash_layout(
+      fresh::bs4dash_layout(
         main_bg = NULL
       ),
       fresh::bs4dash_sidebar_light(
@@ -53,9 +63,9 @@ vanishingVitamin <- function(options = list()){
                                         bs4Dash::navbarMenu(
                                           id = "navmenu",
                                           shinyjs::useShinyjs(),
-                                          bs4Dash::navbarTab(tabName = "welcome", text = tags$span(icon("fish-fins"), "Welcome!")),
-                                          bs4Dash::navbarTab(tabName = "data", text = tags$span(icon("table"), "Data")),
-                                          bs4Dash::navbarTab(tabName = "visualize", text = tags$span(icon("chart-line"), "Visualize"))
+                                          bs4Dash::navbarTab(tabName = "welcome", text = shiny::tags$span(shiny::icon("fish-fins"), "Welcome!")),
+                                          bs4Dash::navbarTab(tabName = "data", text = shiny::tags$span(shiny::icon("table"), "Data")),
+                                          bs4Dash::navbarTab(tabName = "visualize", text = shiny::tags$span(shiny::icon("chart-line"), "Visualize"))
                                         )),
       sidebar = bs4Dash::dashboardSidebar(disable = FALSE,
                                           elevation = 2,
@@ -103,46 +113,46 @@ vanishingVitamin <- function(options = list()){
       #     menuItem(text = "Visualize", tabName = "visualize", icon = icon("chart-line"))
       #   )
       # ),
-      body = shiny::dashboardBody(
-        tags$style(type = "text/css",
-                   "#tdc_data_map {height: calc(100vh - 57px) !important;
+      body = bs4Dash::dashboardBody(
+        shiny::tags$style(type = "text/css",
+                          "#tdc_data_map {height: calc(100vh - 57px) !important;
                     width: calc(80vh) !important;
                     overflow-x: hidden;
                     overflow-y: hidden;}"),
-        shiny::tabItems(
-          shiny::tabItem(tabName = "welcome",
-                         shiny::h3("Welcome to Vanishing Vitamin!"),
-                         shiny::h5("This tab helps users get started.
+        bs4Dash::tabItems(
+          bs4Dash::tabItem(tabName = "welcome",
+                           shiny::h3("Welcome to Vanishing Vitamin!"),
+                           shiny::h5("This tab helps users get started.
                  It summarizes the app's primary functionality and directs users to where they can find more information."),
-                         shiny::h5("Note to future self: link to ",
-                                   shiny::a(href = "https://sites.google.com/ucdavis.edu/salmonintheclassroomresources/home",
-                                            target = '_blank',
-                                            "https://sites.google.com/ucdavis.edu/salmonintheclassroomresources/home"),
-                                   " for resources, data, and other documentation."),
-                         shiny::br(),
-                         shiny::h5(shiny::strong("Click on one of the buttons at the top to get started!"))),
-          shiny::tabItem(tabName = "data",
-                         shiny::fluidRow(column(width = 6,
-                                                bs4Dash::box(width = 12,title = "Datasets",
-                                                             reactable::reactableOutput(outputId = "tdc_data_table"),
-                                                             collapsible = FALSE,closable = FALSE,maximizable = TRUE,
-                                                             headerBorder = FALSE,solidHeader = FALSE,
-                                                             style = 'height: calc(100vh - 80px); overflow-y:scroll'
-                                                )),
-                                         shiny::column(width = 6,
-                                                       leaflet::leafletOutput("tdc_data_map",width = "100%"))
-                         )
+                           shiny::h5("Note to future self: link to ",
+                                     shiny::a(href = "https://sites.google.com/ucdavis.edu/salmonintheclassroomresources/home",
+                                              target = '_blank',
+                                              "https://sites.google.com/ucdavis.edu/salmonintheclassroomresources/home"),
+                                     " for resources, data, and other documentation."),
+                           shiny::br(),
+                           shiny::h5(shiny::strong("Click on one of the buttons at the top to get started!"))),
+          bs4Dash::tabItem(tabName = "data",
+                           shiny::fluidRow(shiny::column(width = 6,
+                                                         bs4Dash::box(width = 12,title = "Datasets",
+                                                                      reactable::reactableOutput(outputId = "tdc_data_table"),
+                                                                      collapsible = FALSE,closable = FALSE,maximizable = TRUE,
+                                                                      headerBorder = FALSE,solidHeader = FALSE,
+                                                                      style = 'height: calc(100vh - 80px); overflow-y:scroll'
+                                                         )),
+                                           shiny::column(width = 6,
+                                                         leaflet::leafletOutput("tdc_data_map",width = "100%"))
+                           )
           ),
-          shiny::tabItem(tabName = "visualize",
-                         shiny::h5("This tab will contain EC50 curves for survival % vs. thiamin concentration."),
-                         shiny::sidebarLayout(
-                           sidebarPanel = shiny::div(id = "tdc_table_filter_sidebar",
-                                                            class = "col-sm-2",
-                                                            shiny::sidebarPanel(width = 10,
-                                                                                "This sidebar will let users filter the scatterplot.")),
-                           mainPanel = shiny::mainPanel(width = 10,
-                                                        plotly::plotlyOutput("ec50_curve",height = "800px"))
-                         ))
+          bs4Dash::tabItem(tabName = "visualize",
+                           shiny::h5("This tab will contain EC50 curves for survival % vs. thiamin concentration."),
+                           shiny::sidebarLayout(
+                             sidebarPanel = shiny::div(id = "tdc_table_filter_sidebar",
+                                                       class = "col-sm-2",
+                                                       shiny::sidebarPanel(width = 10,
+                                                                           "This sidebar will let users filter the scatterplot.")),
+                             mainPanel = shiny::mainPanel(width = 10,
+                                                          plotly::plotlyOutput("ec50_curve",height = "800px"))
+                           ))
         )
       )
     )
@@ -230,7 +240,7 @@ vanishingVitamin <- function(options = list()){
                                htmltools::div(#style = "padding: 1rem",
                                  reactable::reactable(tdc_data |>
                                                         dplyr::filter(DOI == filtered_data$citations[index,]$DOI) |>
-                                                        dplyr::select(-c(ends_with("label"),
+                                                        dplyr::select(-c(dplyr::ends_with("label"),
                                                                          Title, DOI,
                                                                          location_type)),
                                                       outlined = TRUE)
@@ -308,7 +318,7 @@ vanishingVitamin <- function(options = list()){
                                  htmltools::div(#style = "padding: 1rem",
                                    reactable::reactable(tdc_data |>
                                                           dplyr::filter(DOI == filtered_citations_zoomed[index,]$DOI) |>
-                                                          dplyr::select(-c(ends_with("label"),
+                                                          dplyr::select(-c(dplyr::ends_with("label"),
                                                                            Title, DOI,
                                                                            location_type)),
                                                         outlined = TRUE)
@@ -356,7 +366,7 @@ vanishingVitamin <- function(options = list()){
     })
 
     # Update map markers based on selected filters
-    observe({
+    shiny::observe({
 
       plt_data <-
         filtered_data$tdc_data |>
@@ -377,7 +387,7 @@ vanishingVitamin <- function(options = list()){
 
       leaflet::leafletProxy("tdc_data_map",
                             session = session,
-                            data = plt_data) %>%
+                            data = plt_data) |>
         leaflet::clearMarkers() |>
         # addAwesomeMarkers(
         leaflet::addMarkers(
@@ -405,8 +415,8 @@ vanishingVitamin <- function(options = list()){
         dplyr::filter(Thiamine_conc < 30) |>
         dplyr::mutate(plot_label = paste0("Thiamin Conc: ", round(Thiamine_conc,2),"\n",
                                           "% Survived: ", round(Percent_survive,2))) |>
-        ggplot2::ggplot(aes(x = Thiamine_conc,
-                            y = Percent_survive)) +
+        ggplot2::ggplot(ggplot2::aes(x = Thiamine_conc,
+                                     y = Percent_survive)) +
         ggplot2::geom_point() +
         ggplot2::theme_minimal() +
         ggplot2::labs(x = "Thiamin Concentration (nmol/g)",

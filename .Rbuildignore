@@ -1,2 +1,8 @@
-^vanishingVitamin\.Rproj$
+^tdc_shiny_app\.Rproj$
 ^\.Rproj\.user$
+shiny-overview-slides/*$
+misc_data/*
+\.rscignore
+\.github
+rsconnect
+^LICENSE\.md$

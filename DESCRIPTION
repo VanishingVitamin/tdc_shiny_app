@@ -4,28 +4,30 @@ Version: 0.0.0.9000
 Authors@R: 
     person("Joseph", "Zemmels", , "jzemmels@usgs.gov", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: CC0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports: 
-    boa,
     bs4Dash,
-    coda,
     dplyr,
     fresh,
     ggplot2,
-    googledrive,
-    gt,
     leaflet,
     plotly,
     reactable,
-    readr,
-    rjags,
     shiny,
     shinyjs,
-    tidygeocoder
+    htmltools,
+    purrr
 Depends: 
     R (>= 3.5)
 LazyData: true
+Suggests: 
+    coda,
+    googledrive,
+    boa,
+    rjags,
+    usethis,
+    tidygeocoder,
+    readr

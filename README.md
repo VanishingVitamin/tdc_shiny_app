@@ -29,10 +29,11 @@ If you can use R and want to run the app locally, then complete the following st
 
 4. Open the `tdc_shiny_app.Rproj` file to open the Shiny R project in RStudio.
 
-5. Set up your R environment. This project uses the [`renv`](https://rstudio.github.io/renv/articles/renv.html) R package for package versioning. The `renv` package works by installing project-specific versions of R and R packages specified in the `renv.lock` file into the `renv/` folder. These installations do not impact other R installations you have on your computer. The goal of `renv` is to ensure everyone who runs this shiny app uses the exact same versions of R and R packages to make the app experience more consistent.
-    * When you first open the project in RStudio, you should see a Console prompt about initializing `renv`. If not, run `renv::init()` then `renv::restore()`.
-    * The package installation process may take some time to complete.
-6. Once package installation completes, run `shiny::shinyAppDir("vanishing_vitamin")` in your Console to run the app.
+5. If you haven't done so already, install the `devtools` R package with `install.packages("devtools")`.
+
+6. Run `devtools::install(".")` in your R Console to install the `vanishingVitamin` R package locally.
+
+7. One the install is complete, run `vanishingVitamin::launch_app()`, which should trigger the app to launch.
 
 ## I'm a reviewer (providing feedback)
 
