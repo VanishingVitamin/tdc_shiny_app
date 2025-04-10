@@ -55,7 +55,7 @@ Before we dive into the app structure, complete steps 1. through 4. in the "I ca
 
 ### I want to make changes to the app
 
-#### Updating the app
+#### How to update the application
 
 The Shiny application is housed within an R package called `vanishingVitamin`.
 The user-facing function for launching the application is `vanishingVitamin::launch_app()`.
