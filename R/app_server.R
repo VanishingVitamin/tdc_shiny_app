@@ -3,9 +3,16 @@
 #' This is an internal function that is used within the exported launch_app()
 #' function.
 #'
+#' @param tdc_data data set containing Thiamin by Survivability data. Should be
+#'   the data set exported by the vanishingVitamin package,
+#'   vanishingVitamin::tdc_data
+#' @param citations data set containing citations for data in the tdc_data data
+#'   set. Should be the data set exported by the vanishingVitamin package,
+#'   vanishingVitamin::citations
+#'
 #' @value a function object containing app server logic
 
-app_server <- function(){
+app_server <- function(tdc_data, citations){
   function(input, output, session) {
 
     shiny::observeEvent(input$sidebarId,

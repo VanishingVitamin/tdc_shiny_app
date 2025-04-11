@@ -3,9 +3,13 @@
 #' This is an internal function that is used within the exported launch_app()
 #' function.
 #'
+#' @param tdc_data data set containing Thiamin by Survivability data. Should be
+#'   the data set exported by the vanishingVitamin package,
+#'   vanishingVitamin::tdc_data
+#'
 #' @value \code{bs4Dash::dashboardPage} object containing UI elements
 
-app_ui <- function(){
+app_ui <- function(tdc_data){
   bs4Dash::dashboardPage(
     scrollToTop = TRUE,
     freshTheme = app_theme(),
