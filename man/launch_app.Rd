@@ -7,8 +7,8 @@
 launch_app(options = list())
 }
 \arguments{
-\item{options}{list; app launch options passed to \code{options} argument of
-shiny::shinyApp()}
+\item{options}{list; app launch options passed to the \code{options} argument
+of shiny::shinyApp()}
 }
 \description{
 Launch Vanishing Vitamin app
@@ -17,7 +17,6 @@ Launch Vanishing Vitamin app
 \dontrun{
   launch_app()
 }
-
 
 }
 \seealso{

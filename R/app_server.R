@@ -3,21 +3,22 @@
 #' This is an internal function that is used within the exported launch_app()
 #' function.
 #'
+#' @param tdc_data data set containing Thiamin by Survivability data. Should be
+#'   the data set exported by the vanishingVitamin package,
+#'   vanishingVitamin::tdc_data
+#' @param citations data set containing citations for data in the tdc_data data
+#'   set. Should be the data set exported by the vanishingVitamin package,
+#'   vanishingVitamin::citations
+#'
 #' @return a function object containing app server logic
 
-app_server <- function(){
-
-  dose_response <-
-    function(Thiamin_conc, ec50_mu, slope_p, upper_p, lower_p = 0){
-      upper_p + (lower_p - upper_p)/(1 + (Thiamin_conc/ec50_mu)**slope_p)
-    }
-
+app_server <- function(tdc_data, citations){
   function(input, output, session) {
 
-    shiny::observeEvent(input$filter_sidebar,
+    shiny::observeEvent(input$sidebarId,
                         {
 
-                          if(input$filter_sidebar){
+                          if(input$sidebarId){
                             shinyjs::removeCssClass(id = "header_toggle",
                                                     class = "far fa-square-caret-right")
                             shinyjs::addCssClass(id = "header_toggle",
@@ -28,7 +29,6 @@ app_server <- function(){
                             shinyjs::addCssClass(id = "header_toggle",
                                                  class = "far fa-square-caret-right")
                           }
-
 
                         })
 
@@ -84,7 +84,8 @@ app_server <- function(){
 
     })
 
-    # Create a table summarizes data sets by their associated reference (assuming it exists)
+    # Create a table summarizes data sets by their associated reference (assuming
+    # the reference exists)
     output$tdc_data_table <-
       reactable::renderReactable({
 
@@ -116,8 +117,6 @@ app_server <- function(){
     shiny::observe({
 
       shiny::req(input$tdc_data_map_bounds)
-
-      #
 
       map_zoom_dois <-
         filtered_data$tdc_data |>

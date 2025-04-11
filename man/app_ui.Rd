@@ -4,7 +4,12 @@
 \alias{app_ui}
 \title{Defines the User Interface elements for the Vanishing Vitamin Shiny app}
 \usage{
-app_ui()
+app_ui(tdc_data)
+}
+\arguments{
+\item{tdc_data}{data set containing Thiamin by Survivability data. Should be
+the data set exported by the vanishingVitamin package,
+vanishingVitamin::tdc_data}
 }
 \value{
 \code{bs4Dash::dashboardPage} object containing UI elements
