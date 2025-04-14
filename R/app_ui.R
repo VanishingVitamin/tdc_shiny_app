@@ -118,10 +118,20 @@ app_ui <- function(tdc_data){
     # ),
     body = bs4Dash::dashboardBody(
       shiny::tags$style(type = "text/css",
-                        "#tdc_data_map {height: calc(100vh - 57px) !important;
-                    width: calc(80vh) !important;
+                        "#tdc_data_map {height: calc(80vh) !important;
+                    /* width: calc(80vh) !important; */
                     overflow-x: hidden;
                     overflow-y: hidden;}"),
+      shiny::tags$head(
+        shiny::tags$script(
+          "$(function() {
+          $('[data-card-widget=\"maximize\"]').on('click', function() {
+            $('#tdc_data_map').trigger('resize');
+          });
+        });
+        "
+        )
+      ),
       bs4Dash::tabItems(
         bs4Dash::tabItem(tabName = "welcome",
                          shiny::h3("Welcome to Vanishing Vitamin!"),
@@ -136,14 +146,20 @@ app_ui <- function(tdc_data){
                          shiny::h5(shiny::strong("Click on one of the buttons at the top to get started!"))),
         bs4Dash::tabItem(tabName = "data",
                          shiny::fluidRow(shiny::column(width = 6,
-                                                       bs4Dash::box(width = 12,title = "Datasets",
-                                                                    reactable::reactableOutput(outputId = "tdc_data_table"),
-                                                                    collapsible = FALSE,closable = FALSE,maximizable = TRUE,
-                                                                    headerBorder = FALSE,solidHeader = FALSE,
-                                                                    style = 'height: calc(100vh - 80px); overflow-y:scroll'
+                                                       bs4Dash::box(
+                                                         reactable::reactableOutput(outputId = "tdc_data_table"),
+                                                         width = 12,title = "Datasets",
+                                                         collapsible = FALSE,closable = FALSE,maximizable = TRUE,
+                                                         headerBorder = FALSE,solidHeader = FALSE,
+                                                         style = 'height: calc(84.5vh); overflow-y:scroll'
                                                        )),
                                          shiny::column(width = 6,
-                                                       leaflet::leafletOutput("tdc_data_map",width = "100%"))
+                                                       bs4Dash::box(id = "tdc_data_map_box",
+                                                                    leaflet::leafletOutput("tdc_data_map",width = "100%"),
+                                                                    width = 12,title = "Data Collection Locations",
+                                                                    collapsible = FALSE,closable = FALSE,maximizable = TRUE,
+                                                                    headerBorder = FALSE,solidHeader = FALSE
+                                                       ))
                          )
         ),
         bs4Dash::tabItem(tabName = "visualize",
