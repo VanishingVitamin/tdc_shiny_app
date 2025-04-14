@@ -40,25 +40,25 @@ app_ui <- function(tdc_data){
                                                               label = "Collection Location",
                                                               multiple = TRUE,
                                                               choices = c("",
-                                                                          rev(unique(tdc_data$Location_label)))
+                                                                          sort(unique(tdc_data$Location_label)))
                                         ),
                                         shiny::selectInput(inputId = "tdc_table_filter_species",
                                                            label = "Species",
                                                            multiple = TRUE,
                                                            choices = c("",
-                                                                       rev(unique(tdc_data$Species_label)))
+                                                                       sort(unique(tdc_data$Species_label)))
                                         ),
                                         shiny::selectInput(inputId = "tdc_table_filter_run",
                                                            label = "Run",
                                                            multiple = TRUE,
                                                            choices = c("",
-                                                                       rev(unique(tdc_data$Run_label)))
+                                                                       sort(unique(tdc_data$Run_label)))
                                         ),
                                         shiny::selectInput(inputId = "tdc_table_filter_tissue",
                                                            label = "Tissue",
                                                            multiple = TRUE,
                                                            choices = c("",
-                                                                       rev(unique(tdc_data$Tissue_label)))
+                                                                       sort(unique(tdc_data$Tissue_label)))
                                         )
                                         # ,sliderInput(inputId = "tdc_table_filter_date_range",
                                         #             label = "Date Collected",
