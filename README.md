@@ -68,7 +68,7 @@ Refer to the matching filenames in the `R/` folder for the source code of these 
 
 Despite the R package infrastructure, you can make changes to the application as you would any Shiny app.
 Treat the `app_ui.R` and `app_server.R` scripts as you would `ui.R` and `server.R` scripts in regular Shiny app development.
-The extra wrinkle is that you must load the package (press `CTRL/CMD + SHIFT + L` in RStudio or run `devtools::load_all()`) then run `launch_app()` each time you want to see the effect of your changes.
+To view the app during development, you must load the package, by pressing `CTRL/CMD + SHIFT + L` in RStudio or running `devtools::load_all()` in the R Console, then run `launch_app()`.
 
 See [Mastering Shiny - Packages](https://mastering-shiny.org/scaling-packaging.html) for an overview of developing Shiny app R packages.
 See [R Packages](https://r-pkgs.org/), particularly [The Whole Game](https://r-pkgs.org/whole-game.html) and [Fundamental development workflows](https://r-pkgs.org/workflow101.html), for more information on developing R packages in-general.
