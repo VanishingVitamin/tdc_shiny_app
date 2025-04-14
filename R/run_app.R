@@ -11,7 +11,7 @@
 #'
 #' @export
 
-launch_app <- function(options = list()){
+launch_app <- function(options = list(launch.browser = TRUE)){
 
   tdc_data <- vanishingVitamin::tdc_data
   citations <- vanishingVitamin::citations
