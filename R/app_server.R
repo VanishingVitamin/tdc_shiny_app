@@ -15,10 +15,10 @@
 app_server <- function(tdc_data, citations){
   function(input, output, session) {
 
-    shiny::observeEvent(input$sidebarId,
+    shiny::observeEvent(input$filter_sidebar,
                         {
 
-                          if(input$sidebarId){
+                          if(input$filter_sidebar){
                             shinyjs::removeCssClass(id = "header_toggle",
                                                     class = "far fa-square-caret-right")
                             shinyjs::addCssClass(id = "header_toggle",
@@ -31,6 +31,14 @@ app_server <- function(tdc_data, citations){
                           }
 
                         })
+
+    shiny::observe({
+
+      if(!shiny::isolate(input$filter_sidebar) & input$navmenu %in% c("data", "visualize")){
+        bs4Dash::updateSidebar(id = "filter_sidebar")
+      }
+
+    })
 
     filtered_data <- shiny::reactiveValues(
       tdc_data = tdc_data,

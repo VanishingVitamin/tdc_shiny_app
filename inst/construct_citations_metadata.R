@@ -69,31 +69,31 @@ format_metadata <- function(article_meta){
 
 citations <- citations |>
   dplyr::mutate(formatted_metadata = purrr::map2_chr(metadata,DOI,
-                                                                ~ ifelse(stringr::str_detect(.y, "doi"),
-                                                                         format_metadata(.x),
-                                                                         .y)),
-                           data_collection_region = dplyr::case_when(
-                             DOI %in% c(
-                               "http://dx.doi.org/10.23849/npafcb6/21.31",
-                               "https://doi.org/10.1002/aah.10024",
-                               "https://github.com/milesedaniels/thiamine-dependent-fry-mortality"
-                             ) ~ "PACIFIC",
-                             DOI %in% c(
-                               "https://doi.org/10.1016/j.jglr.2019.05.010",
-                               "https://doi.org/10.1016/s0380-1330(08)71603-4",
-                               "https://doi.org/10.1111/j.1749-7345.2000.tb00348.x",
-                               "https://doi.org/10.1111/mec.15334",
-                               "https://doi.org/10.1577/1548-8659(1996)125<0167:notdcr>2.3.co;2",
-                               "https://doi.org/10.1577/h03-072.1",
-                               "https://doi.org/10.3394/0380-1330(2006)32[293:esaooe]2.0.co;2",
-                               "https://doi.org/10.3394/0380-1330(2007)33[93:etsolo]2.0.co;2",
-                               "https://doi.org/10.1577/1548-8659(2000)129<0607:eotoro>2.0.co;2"
-                             ) ~ "GREAT LAKES",
-                             DOI %in% c(
-                               "https://doi.org/10.1080/10236244.2021.1941942"
-                             ) ~ "BALTIC",
-                             .default = "UNCATEGORIZED"
-                           ))
+                                                     ~ ifelse(stringr::str_detect(.y, "doi"),
+                                                              format_metadata(.x),
+                                                              .y)),
+                data_collection_region = dplyr::case_when(
+                  DOI %in% c(
+                    "http://dx.doi.org/10.23849/npafcb6/21.31",
+                    "https://doi.org/10.1002/aah.10024",
+                    "https://github.com/milesedaniels/thiamine-dependent-fry-mortality"
+                  ) ~ "PACIFIC",
+                  DOI %in% c(
+                    "https://doi.org/10.1016/j.jglr.2019.05.010",
+                    "https://doi.org/10.1016/s0380-1330(08)71603-4",
+                    "https://doi.org/10.1111/j.1749-7345.2000.tb00348.x",
+                    "https://doi.org/10.1111/mec.15334",
+                    "https://doi.org/10.1577/1548-8659(1996)125<0167:notdcr>2.3.co;2",
+                    "https://doi.org/10.1577/h03-072.1",
+                    "https://doi.org/10.3394/0380-1330(2006)32[293:esaooe]2.0.co;2",
+                    "https://doi.org/10.3394/0380-1330(2007)33[93:etsolo]2.0.co;2",
+                    "https://doi.org/10.1577/1548-8659(2000)129<0607:eotoro>2.0.co;2"
+                  ) ~ "GREAT LAKES",
+                  DOI %in% c(
+                    "https://doi.org/10.1080/10236244.2021.1941942"
+                  ) ~ "BALTIC",
+                  .default = "UNCATEGORIZED"
+                ))
 
 
 saveRDS(citations, file = "inst/misc_data/citations.rds")

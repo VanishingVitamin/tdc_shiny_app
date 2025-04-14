@@ -34,7 +34,7 @@ app_ui <- function(tdc_data){
     dark = NULL,
     # controlbar = dashboardControlbar(disable = TRUE,width = 0, overlay = TRUE),
     header = bs4Dash::dashboardHeader(title = shiny::h5("Vanishing Vitamin", style = "padding-left:10px;"),
-                                      sidebarIcon = shiny::icon("caret-square-left",
+                                      sidebarIcon = shiny::icon("caret-square-right",
                                                                 style = "font-size:24px;",
                                                                 id = "header_toggle"),
                                       bs4Dash::navbarMenu(
@@ -44,15 +44,17 @@ app_ui <- function(tdc_data){
                                         bs4Dash::navbarTab(tabName = "data", text = shiny::tags$span(shiny::icon("table"), "Data")),
                                         bs4Dash::navbarTab(tabName = "visualize", text = shiny::tags$span(shiny::icon("chart-line"), "Visualize"))
                                       )),
+
     sidebar = bs4Dash::dashboardSidebar(disable = FALSE,
                                         elevation = 2,
-                                        collapsed = FALSE,
+                                        collapsed = TRUE,
                                         minified = FALSE,
                                         expandOnHover = TRUE,
                                         fixed = TRUE,
                                         # text = "Dashboard filters",
                                         # icon = shiny::icon("filter"),
                                         shiny::h6("Filter by:"),
+                                        id = "filter_sidebar",
                                         shinyWidgets::virtualSelectInput(inputId = "tdc_table_filter_location",
                                                                          label = "Collection Location",
                                                                          multiple = TRUE,
