@@ -29,10 +29,11 @@ If you can use R and want to run the app locally, then complete the following st
 
 4. Open the `tdc_shiny_app.Rproj` file to open the Shiny R project in RStudio.
 
-5. Set up your R environment. This project uses the [`renv`](https://rstudio.github.io/renv/articles/renv.html) R package for package versioning. The `renv` package works by installing project-specific versions of R and R packages specified in the `renv.lock` file into the `renv/` folder. These installations do not impact other R installations you have on your computer. The goal of `renv` is to ensure everyone who runs this shiny app uses the exact same versions of R and R packages to make the app experience more consistent.
-    * When you first open the project in RStudio, you should see a Console prompt about initializing `renv`. If not, run `renv::init()` then `renv::restore()`.
-    * The package installation process may take some time to complete.
-6. Once package installation completes, run `shiny::shinyAppDir("vanishing_vitamin")` in your Console to run the app.
+5. If you haven't done so already, install the `devtools` R package with `install.packages("devtools")`.
+
+6. Run `devtools::install(".")` in your R Console to install the `vanishingVitamin` R package locally.
+
+7. One the install is complete, run `vanishingVitamin::launch_app()` which should trigger the app to launch.
 
 ## I'm a reviewer (providing feedback)
 
@@ -54,10 +55,23 @@ Before we dive into the app structure, complete steps 1. through 4. in the "I ca
 
 ### I want to make changes to the app
 
-#### Updating renv
+#### How to update the application
 
-If you add/remove packages during development, run `renv::install("[pkg-name]")` to add it to the `renv.lock` file then run `renv::snapshot()` to update the `renv` package list.
-This will ensure future users/developers will have the same R packages installed when they run the app.
+The Shiny application is housed within an R package called `vanishingVitamin`.
+The user-facing function for launching the application is `vanishingVitamin::launch_app()`.
+There are a few internal-only helper functions called within `launch_app()` that define the necessary components of a Shiny app.
+Refer to the matching filenames in the `R/` folder for the source code of these helper functions.
+
+- `app_ui()` defines the User Interface (`ui`) elements of the app. The function is a thin wrapper around a `bs4Dash::dashboardPage()` definition.
+- `app_server()` defines the `server` function used in the app. The value returned by this function is another function, which defines the app's server logic.
+- `app_theme()` defines the app's dashboard theme. It is a thin wrapper around a `fresh::create_theme()` call.
+
+Despite the R package infrastructure, you can make changes to the application as you would any Shiny app.
+Treat the `app_ui.R` and `app_server.R` scripts as you would `ui.R` and `server.R` scripts in regular Shiny app development.
+To view the app during development, you must load the package, by pressing `CTRL/CMD + SHIFT + L` in RStudio or running `devtools::load_all()` in the R Console, then run `launch_app()`.
+
+See [Mastering Shiny - Packages](https://mastering-shiny.org/scaling-packaging.html) for an overview of developing Shiny app R packages.
+See [R Packages](https://r-pkgs.org/), particularly [The Whole Game](https://r-pkgs.org/whole-game.html) and [Fundamental development workflows](https://r-pkgs.org/workflow101.html), for more information on developing R packages in-general.
 
 #### Creating Pull Requests
 

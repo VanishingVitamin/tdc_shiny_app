@@ -1,0 +1,33 @@
+Package: vanishingVitamin
+Title: An R Shiny app for exploring thiamin deficiency data in salmonidae
+Version: 0.0.0.9000
+Authors@R: 
+    person("Joseph", "Zemmels", , "jzemmels@usgs.gov", role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+License: CC0
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports: 
+    bs4Dash,
+    dplyr,
+    fresh,
+    ggplot2,
+    leaflet,
+    plotly,
+    reactable,
+    shiny,
+    shinyjs,
+    htmltools,
+    purrr
+Depends: 
+    R (>= 3.5)
+LazyData: true
+Suggests: 
+    coda,
+    googledrive,
+    boa,
+    rjags,
+    usethis,
+    tidygeocoder,
+    readr

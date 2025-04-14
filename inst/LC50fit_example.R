@@ -3,15 +3,6 @@
 # Do not distribute without author consent
 # Date last updated: 12/27/2024
 
-# clear workspace
-# rm(list=ls())
-
-# load libraries
-library(rjags)
-library(coda)
-library(boa)
-
-
 # load data using R project format
 Data <- read.csv('vanishing_vitamin/data/Total_surv_data_Nov_28_2022.csv')
 
