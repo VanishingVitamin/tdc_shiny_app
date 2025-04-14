@@ -19,7 +19,8 @@ Imports:
     shiny,
     shinyjs,
     htmltools,
-    purrr
+    purrr,
+    shinyWidgets
 Depends: 
     R (>= 3.5)
 LazyData: true

@@ -10,6 +10,23 @@
 #' @value \code{bs4Dash::dashboardPage} object containing UI elements
 
 app_ui <- function(tdc_data){
+
+  location_info <- tdc_data |>
+    dplyr::distinct(data_collection_region,
+                    Location_label) |>
+    dplyr::arrange(data_collection_region, Location_label)
+
+  location_select_list <-
+    location_info |>
+    dplyr::group_by(data_collection_region) |>
+    dplyr::group_split() |>
+    purrr::map(~ {
+
+      .x$Location_label
+
+    }) |>
+    purrr::set_names(unique(location_info$data_collection_region))
+
   bs4Dash::dashboardPage(
     scrollToTop = TRUE,
     freshTheme = app_theme(),
@@ -36,37 +53,55 @@ app_ui <- function(tdc_data){
                                         # text = "Dashboard filters",
                                         # icon = shiny::icon("filter"),
                                         shiny::h6("Filter by:"),
-                                        shiny::selectizeInput(inputId = "tdc_table_filter_location",
-                                                              label = "Collection Location",
+                                        shinyWidgets::virtualSelectInput(inputId = "tdc_table_filter_location",
+                                                                         label = "Collection Location",
+                                                                         multiple = TRUE,
+                                                                         showValueAsTags = TRUE,
+                                                                         search = TRUE,
+                                                                         showSelectedOptionsFirst = TRUE,
+                                                                         allowNewOption = FALSE,
+                                                                         hideClearButton = FALSE,
+                                                                         autoSelectFirstOption = FALSE,
+                                                                         disableSelectAll = TRUE,
+                                                                         # dropboxWidth = "500px",
+                                                                         zIndex = 10000
+                                                                         , choices = location_select_list
+                                                                         # ,choices = sort(unique(tdc_data$Location_label))
+                                                                         ),
+                                        # shinyWidgets::virtualSelectInput(inputId = "tdc_table_filter_location"),
+                                        # shinyWidgets::virtualSelectInput(inputId = "tdc_table_filter_location"),
+                                        # shinyWidgets::virtualSelectInput(inputId = "tdc_table_filter_location")
+                                        # shiny::selectizeInput(inputId = "tdc_table_filter_location",
+                                        #                       label = "Collection Location",
+                                        #                       multiple = TRUE,
+                                        #                       options = list('plugins' = list('remove_button'), 'create' = TRUE, 'persist'
+                                        #                                      = FALSE),
+                                        #                       choices = c("",
+                                        #                                   sort(unique(tdc_data$Location_label)))
+                                        # ),
+                                        shiny::selectizeInput(inputId = "tdc_table_filter_species",
+                                                              label = "Species",
                                                               multiple = TRUE,
                                                               options = list('plugins' = list('remove_button'), 'create' = TRUE, 'persist'
                                                                              = FALSE),
                                                               choices = c("",
-                                                                          sort(unique(tdc_data$Location_label)))
-                                        ),
-                                        shiny::selectizeInput(inputId = "tdc_table_filter_species",
-                                                           label = "Species",
-                                                           multiple = TRUE,
-                                                           options = list('plugins' = list('remove_button'), 'create' = TRUE, 'persist'
-                                                                          = FALSE),
-                                                           choices = c("",
-                                                                       sort(unique(tdc_data$Species_label)))
+                                                                          sort(unique(tdc_data$Species_label)))
                                         ),
                                         shiny::selectizeInput(inputId = "tdc_table_filter_run",
-                                                           label = "Run",
-                                                           multiple = TRUE,
-                                                           options = list('plugins' = list('remove_button'), 'create' = TRUE, 'persist'
-                                                                          = FALSE),
-                                                           choices = c("",
-                                                                       sort(unique(tdc_data$Run_label)))
+                                                              label = "Run",
+                                                              multiple = TRUE,
+                                                              options = list('plugins' = list('remove_button'), 'create' = TRUE, 'persist'
+                                                                             = FALSE),
+                                                              choices = c("",
+                                                                          sort(unique(tdc_data$Run_label)))
                                         ),
                                         shiny::selectizeInput(inputId = "tdc_table_filter_tissue",
-                                                           label = "Tissue",
-                                                           multiple = TRUE,
-                                                           options = list('plugins' = list('remove_button'), 'create' = TRUE, 'persist'
-                                                                          = FALSE),
-                                                           choices = c("",
-                                                                       sort(unique(tdc_data$Tissue_label)))
+                                                              label = "Tissue",
+                                                              multiple = TRUE,
+                                                              options = list('plugins' = list('remove_button'), 'create' = TRUE, 'persist'
+                                                                             = FALSE),
+                                                              choices = c("",
+                                                                          sort(unique(tdc_data$Tissue_label)))
                                         )
                                         # ,sliderInput(inputId = "tdc_table_filter_date_range",
                                         #             label = "Date Collected",

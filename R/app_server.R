@@ -123,6 +123,8 @@ app_server <- function(tdc_data, citations){
         dplyr::filter(DOI %in% map_zoom_dois)
 
       # if the user has selected a marker, highlight in the table.
+
+      selected_marker_doi <- ""
       if(!is.null(input$tdc_data_map_marker_click$id)){
 
         selected_marker_doi <-
@@ -130,10 +132,14 @@ app_server <- function(tdc_data, citations){
           shiny::isolate() |>
           dplyr::distinct(DOI, Location, Latitude_DD, Longitude_DD, marker_label)  |>
           dplyr::filter(!is.na(Latitude_DD)) |>
-          dplyr::slice(input$tdc_data_map_marker_click$id) |>
+          dplyr::mutate(dist_to_click = purrr::map2_dbl(Latitude_DD, Longitude_DD,
+                                                 ~ sqrt((.x - input$tdc_data_map_marker_click$lat)^2 + (.y - input$tdc_data_map_marker_click$lng)^2))) |>
+          dplyr::filter(dist_to_click == min(dist_to_click)) |>
+          dplyr::slice(1) |>
           dplyr::pull(DOI)
 
-        selected_citation_index <- as.integer(which(filtered_citations_zoomed$DOI == selected_marker_doi))
+        # selected_citation_index <- as.integer(which(filtered_citations_zoomed$DOI == selected_marker_doi))
+        selected_citation_index <- 1
 
       } else{
         selected_citation_index <- -1L
@@ -141,18 +147,14 @@ app_server <- function(tdc_data, citations){
 
       if(length(selected_citation_index) == 0) selected_citation_index <- -1L
 
-      # reactable::updateReactable(
-      #   outputId = "tdc_data_table",
-      #   data = data.frame("x" = filtered_data$citations |>
-      #                       filter(DOI %in% map_zoom_dois) |>
-      #                       pull(formatted_metadata)),
-      #   session = session
-      # )
-
       output$tdc_data_table <-
         reactable::renderReactable({
 
-          reactable::reactable(data.frame("x" =  filtered_citations_zoomed$formatted_metadata),
+          reactable::reactable(data.frame("x" =
+                                            filtered_citations_zoomed |>
+                                            dplyr::arrange(forcats::fct_relevel(factor(DOI), selected_marker_doi)) |>
+                                            dplyr::pull(formatted_metadata)
+                                          ),
                                columns = list(
                                  x = reactable::colDef(html = TRUE,
                                                        name = "")
@@ -163,8 +165,8 @@ app_server <- function(tdc_data, citations){
                                defaultPageSize = 30,
                                rowStyle = function(index){
 
-                                 if(index == selected_citation_index){
-                                   return(list(background = "#D3D3D3"))
+                                 if(index == selected_citation_index & selected_marker_doi %in% filtered_citations_zoomed$DOI){
+                                   return(list(background = "#EFEFEF"))
                                  }
 
                                },
