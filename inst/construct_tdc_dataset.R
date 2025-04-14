@@ -3,13 +3,13 @@ library(dplyr)
 googledrive::drive_deauth()
 
 googledrive::drive_download(file = "https://docs.google.com/spreadsheets/d/1TX5lkpAsdurQlWQoNAmKWHv4WBoPwjmq/edit?usp=sharing&ouid=106506252335393186387&rtpof=true&sd=true",
-                            path = "data/LC50_EC50_salmon.xlsx",
+                            path = "inst/misc_data/LC50_EC50_salmon.xlsx",
                             # type = "xlsx",
                             overwrite = TRUE)
 
 tdc_data <-
   purrr::map_dfr(c(5:9),
-                 ~ readxl::read_xlsx("data/LC50_EC50_salmon.xlsx",
+                 ~ readxl::read_xlsx("inst/misc_data/LC50_EC50_salmon.xlsx",
                                      sheet = .x,
                                      col_types = c("text", "text", "numeric", "numeric",
                                                    "text", "text", "text",
@@ -17,7 +17,8 @@ tdc_data <-
                                                    "numeric", "numeric", "numeric",
                                                    "numeric", "numeric",
                                                    "text", "text", "text",
-                                                   "numeric", "numeric", "text", "text", "text")))
+                                                   "numeric", "numeric", "text", "text", "text"))) |>
+  dplyr::mutate(DOI = tolower(DOI))
 
 locations_by_doi <-
   tdc_data |>
@@ -86,9 +87,18 @@ tdc_data_cleaned <-
                 Study_Date == "2000, 2002" ~ "2002-12-31",
                 Study_Date == "1998, 1999" ~ "1999-12-31",
                 stringr::str_detect(Study_Date, "^[0-9]{4}$") ~ paste0(Study_Date,"-12-31"),
-                stringr::str_detect(Study_Date, "^[0-9]{2}/[0-9]{2}/[0-9]{4}$") ~ Study_Date)
+                stringr::str_detect(Study_Date, "^[0-9]{2}/[0-9]{2}/[0-9]{4}$") ~ Study_Date),
+    marker_label = purrr::pmap_chr(list(Location_label, Species_label, Run_label, Tissue_label, DOI, location_type),
+                                   ~
+                                     paste0("<strong>Location:</strong> ",..1,
+                                            ifelse(..6 == "approximated", " (Approximate)", ""),"</br>",
+                                            "<strong>Species:</strong> ",..2,"</br>",
+                                            "<strong>Run:</strong> ",..3,"</br>",
+                                            "<strong>Tissue:</strong> ",..4,"</br>",
+                                            "<strong>DOI:</strong> <a href='",..5,"' target='_blank'>",..5,"</a>")
+    )
   )
 
 readr::write_csv(tdc_data_cleaned,
-                 file = "data/tdc_data.csv")
+                 file = "inst/misc_data/tdc_data.csv")
 
