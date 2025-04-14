@@ -39,24 +39,32 @@ app_ui <- function(tdc_data){
                                         shiny::selectizeInput(inputId = "tdc_table_filter_location",
                                                               label = "Collection Location",
                                                               multiple = TRUE,
+                                                              options = list('plugins' = list('remove_button'), 'create' = TRUE, 'persist'
+                                                                             = FALSE),
                                                               choices = c("",
                                                                           sort(unique(tdc_data$Location_label)))
                                         ),
-                                        shiny::selectInput(inputId = "tdc_table_filter_species",
+                                        shiny::selectizeInput(inputId = "tdc_table_filter_species",
                                                            label = "Species",
                                                            multiple = TRUE,
+                                                           options = list('plugins' = list('remove_button'), 'create' = TRUE, 'persist'
+                                                                          = FALSE),
                                                            choices = c("",
                                                                        sort(unique(tdc_data$Species_label)))
                                         ),
-                                        shiny::selectInput(inputId = "tdc_table_filter_run",
+                                        shiny::selectizeInput(inputId = "tdc_table_filter_run",
                                                            label = "Run",
                                                            multiple = TRUE,
+                                                           options = list('plugins' = list('remove_button'), 'create' = TRUE, 'persist'
+                                                                          = FALSE),
                                                            choices = c("",
                                                                        sort(unique(tdc_data$Run_label)))
                                         ),
-                                        shiny::selectInput(inputId = "tdc_table_filter_tissue",
+                                        shiny::selectizeInput(inputId = "tdc_table_filter_tissue",
                                                            label = "Tissue",
                                                            multiple = TRUE,
+                                                           options = list('plugins' = list('remove_button'), 'create' = TRUE, 'persist'
+                                                                          = FALSE),
                                                            choices = c("",
                                                                        sort(unique(tdc_data$Tissue_label)))
                                         )
