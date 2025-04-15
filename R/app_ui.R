@@ -14,6 +14,7 @@ app_ui <- function(tdc_data){
   location_info <- tdc_data |>
     dplyr::distinct(data_collection_region,
                     Location_label) |>
+    dplyr::filter(data_collection_region != "UNCATEGORIZED") |>
     dplyr::arrange(data_collection_region, Location_label)
 
   location_select_list <-

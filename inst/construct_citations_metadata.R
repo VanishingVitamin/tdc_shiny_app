@@ -88,8 +88,9 @@ citations <- citations |>
                     "https://doi.org/10.1577/h03-072.1",
                     "https://doi.org/10.3394/0380-1330(2006)32[293:esaooe]2.0.co;2",
                     "https://doi.org/10.3394/0380-1330(2007)33[93:etsolo]2.0.co;2",
-                    "https://doi.org/10.1577/1548-8659(2000)129<0607:eotoro>2.0.co;2"
-                  ) ~ "GREAT LAKES",
+                    "https://doi.org/10.1577/1548-8659(2000)129<0607:eotoro>2.0.co;2",
+                    "unpublished"
+                  ) ~ "GREAT LAKES BASIN",
                   DOI %in% c(
                     "https://doi.org/10.1080/10236244.2021.1941942"
                   ) ~ "BALTIC",
