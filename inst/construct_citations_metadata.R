@@ -55,7 +55,8 @@ format_metadata <- function(article_meta){
 
   year_string <- paste0("(", lubridate::year(article_meta$date_time),")")
 
-  title_string <- paste0("<strong>",article_meta$title,"</strong>")
+  title_string <- paste0("<strong>",article_meta$title,"</strong>") |>
+    stringr::str_replace("Oncorhynchus tshawytscha", "<em>Oncorhynchus tshawytscha</em>")
 
   link_string <- paste0("https://doi.org/", article_meta$DOI)
   link_string <- paste0("<a href='",link_string,"' target='_blank'>",link_string,"</a>")
