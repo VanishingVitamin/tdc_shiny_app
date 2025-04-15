@@ -18,7 +18,8 @@ app_theme <- function(){
       text_light = "#FFFFFF"
     ),
     fresh::bs4dash_layout(
-      main_bg = NULL
+      main_bg = NULL,
+      sidebar_width = "380px"
     ),
     fresh::bs4dash_sidebar_light(
       bg = NULL,

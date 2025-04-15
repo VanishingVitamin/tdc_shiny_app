@@ -20,14 +20,14 @@ app_server <- function(tdc_data, citations){
 
                           if(input$filter_sidebar){
                             shinyjs::removeCssClass(id = "header_toggle",
-                                                    class = "far fa-square-caret-right")
+                                                    class = "far fa-square-plus")
                             shinyjs::addCssClass(id = "header_toggle",
-                                                 class = "far fa-square-caret-left")
+                                                 class = "far fa-square-minus")
                           } else{
                             shinyjs::removeCssClass(id = "header_toggle",
-                                                    class = "far fa-square-caret-left")
+                                                    class = "far fa-square-minus")
                             shinyjs::addCssClass(id = "header_toggle",
-                                                 class = "far fa-square-caret-right")
+                                                 class = "far fa-square-plus")
                           }
 
                         })
@@ -141,7 +141,7 @@ app_server <- function(tdc_data, citations){
           dplyr::distinct(DOI, Location, Latitude_DD, Longitude_DD, marker_label)  |>
           dplyr::filter(!is.na(Latitude_DD)) |>
           dplyr::mutate(dist_to_click = purrr::map2_dbl(Latitude_DD, Longitude_DD,
-                                                 ~ sqrt((.x - input$tdc_data_map_marker_click$lat)^2 + (.y - input$tdc_data_map_marker_click$lng)^2))) |>
+                                                        ~ sqrt((.x - input$tdc_data_map_marker_click$lat)^2 + (.y - input$tdc_data_map_marker_click$lng)^2))) |>
           dplyr::filter(dist_to_click == min(dist_to_click)) |>
           dplyr::slice(1) |>
           dplyr::pull(DOI)
@@ -162,20 +162,20 @@ app_server <- function(tdc_data, citations){
                                             filtered_citations_zoomed |>
                                             dplyr::arrange(forcats::fct_relevel(factor(DOI), selected_marker_doi)) |>
                                             dplyr::pull(formatted_metadata)
-                                          ),
-                               columns = list(
-                                 x = reactable::colDef(html = TRUE,
-                                                       name = "")
-                               ),
-                               sortable = FALSE,
-                               # selection = "single",
-                               showSortable = FALSE,
-                               defaultPageSize = 30,
-                               rowStyle = function(index){
+          ),
+          columns = list(
+            x = reactable::colDef(html = TRUE,
+                                  name = "")
+          ),
+          sortable = FALSE,
+          # selection = "single",
+          showSortable = FALSE,
+          defaultPageSize = 30,
+          rowStyle = function(index){
 
-                                 if(index == selected_citation_index & selected_marker_doi %in% filtered_citations_zoomed$DOI){
-                                   return(list(background = "#EFEFEF"))
-                                 }
+            if(index == selected_citation_index & selected_marker_doi %in% filtered_citations_zoomed$DOI){
+              return(list(background = "#EFEFEF"))
+            }
 
                                },
                                details = function(index){
