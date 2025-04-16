@@ -86,6 +86,7 @@ citations <- citations |>
                     "https://doi.org/10.1111/mec.15334",
                     "https://doi.org/10.1577/1548-8659(1996)125<0167:notdcr>2.3.co;2",
                     "https://doi.org/10.1577/h03-072.1",
+                    "https://doi.org/10.1577/h03-078.1",
                     "https://doi.org/10.3394/0380-1330(2006)32[293:esaooe]2.0.co;2",
                     "https://doi.org/10.3394/0380-1330(2007)33[93:etsolo]2.0.co;2",
                     "https://doi.org/10.1577/1548-8659(2000)129<0607:eotoro>2.0.co;2",

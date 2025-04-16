@@ -2,11 +2,13 @@ library(googledrive)
 library(dplyr)
 googledrive::drive_deauth()
 
+# Download xlsx file from Google Drive
 googledrive::drive_download(file = "https://docs.google.com/spreadsheets/d/1TX5lkpAsdurQlWQoNAmKWHv4WBoPwjmq/edit?usp=sharing&ouid=106506252335393186387&rtpof=true&sd=true",
                             path = "inst/misc_data/LC50_EC50_salmon.xlsx",
                             # type = "xlsx",
                             overwrite = TRUE)
 
+# Loop over pages in Excel file that contain data
 tdc_data <-
   purrr::map_dfr(c(5:9),
                  ~ readxl::read_xlsx("inst/misc_data/LC50_EC50_salmon.xlsx",
@@ -18,12 +20,21 @@ tdc_data <-
                                                    "numeric", "numeric",
                                                    "text", "text", "text",
                                                    "numeric", "numeric", "text", "text", "text"))) |>
-  dplyr::mutate(DOI = tolower(DOI))
+  dplyr::mutate(DOI = tolower(DOI),
+                # Some observations are missing lat/long coordinates. Some of
+                # these do provide a location name
+                location_type =
+                  case_when(!is.na(Latitude_DD) ~ "provided",
+                            is.na(Location) & is.na(Latitude_DD) ~ "missing",
+                            !is.na(Location) & is.na(Latitude_DD) ~ "approximated"))
 
+# Extract all locations/coordinates per DOI
 locations_by_doi <-
   tdc_data |>
   distinct(DOI, Location, Latitude_DD, Longitude_DD)
 
+# Filter to cases where exact coordinates are not provided, attempt to fill in
+# coordinates using geocoding services
 only_location_given <-
   locations_by_doi |>
   filter(!is.na(Location) & is.na(Latitude_DD)) |>
@@ -34,27 +45,25 @@ only_location_given <-
                                                             list(method = "arcgis")))) |>
   tidyr::unnest(latlong) |>
   mutate(Latitude_DD = lat,
-         Longitude_DD = long) |>
+         Longitude_DD = long,
+         # Add Wellsboro lab (176 Straight Run Rd) coordinates manually
+         Latitude_DD = ifelse(is.na(Latitude_DD) & Location == "Wellsboro lab", 41.77745120634784, Latitude_DD),
+         Longitude_DD = ifelse(is.na(Longitude_DD) & Location == "Wellsboro lab", -77.39841596441796, Longitude_DD)) |>
   select(DOI,Location, Latitude_DD, Longitude_DD)
 
-locations_by_doi_combined <-
-  bind_rows(
-    locations_by_doi |>
-      filter(!(!is.na(Location) & is.na(Latitude_DD))) |>
-      mutate(location_type = ifelse(is.na(Latitude_DD), "missing", "provided")),
-    only_location_given |>
-      mutate(location_type = "approximated")
-  )
+tdc_data_approx_location <-
+  tdc_data |>
+  filter(location_type == "approximated") |>
+  select(-c(Latitude_DD, Longitude_DD)) |>
+  left_join(only_location_given, by = c("DOI", "Location"))
 
 tdc_data_cleaned <-
-  tdc_data |>
-  mutate(location_type =
-           case_when(!is.na(Latitude_DD) ~ "provided",
-                     is.na(Location) & is.na(Latitude_DD) ~ "missing",
-                     !is.na(Location) & is.na(Latitude_DD) ~ "approximated")) |>
-  select(-c(Latitude_DD, Longitude_DD)) |>
-  left_join(locations_by_doi_combined,
-            by = c("DOI", "Location","location_type")) |>
+  # combine data for which coordinates are given and data with approximate
+  # coordinates
+  bind_rows(
+    tdc_data |> filter(location_type != "approximated"),
+    tdc_data_approx_location
+  ) |>
   mutate(
     Location_label = ifelse(is.na(Location),
                             "MISSING", toupper(Location)) |>
