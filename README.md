@@ -22,7 +22,7 @@ If you can use R and want to run the app locally, then complete the following st
 
 2. Ensure you have [git](https://git-scm.com/) installed.
 
-3. Clone the repository: 
+3. Clone the repository one of the following ways:
     * `git clone https://github.com/VanishingVitamin/tdc_shiny_app.git` over HTTPS, 
     * `git clone git@github.com:VanishingVitamin/tdc_shiny_app.git` over SSH (requires SSH key), 
     * or whatever your favorite way is from the URL <https://github.com/VanishingVitamin/tdc_shiny_app>.
@@ -38,7 +38,7 @@ If you can use R and want to run the app locally, then complete the following st
 ## I'm a reviewer (providing feedback)
 
 Wonderful, thank you for your feedback!
-Complete steps 1. through 4. in the "I can use R" section above to ensure you can run the app locally.
+Complete the steps in the "I can use R" section above to ensure you can run the app locally.
 
 Major changes to the application undergo a peer review process using GitHub [pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) (PRs).
 A pull request is a proposal to merge a set of changes from one git [*branch*](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) into another.
@@ -51,7 +51,7 @@ See [A practical guide for better, faster code reviews](https://github.com/mawrk
 ## I'm a developer (making changes)
 
 Awesome, we appreciate your help!
-Before we dive into the app structure, complete steps 1. through 4. in the "I can use R" section above to ensure you can run the app locally.
+Before we dive into the app structure, complete the steps in the "I can use R" section above to ensure you can run the app locally.
 
 ### I want to make changes to the app
 
@@ -68,7 +68,6 @@ Refer to the matching filenames in the `R/` folder for the source code of these 
 
 Despite the R package infrastructure, you can make changes to the application as you would any Shiny app.
 Treat the `app_ui.R` and `app_server.R` scripts as you would `ui.R` and `server.R` scripts in regular Shiny app development.
-
 To view the app during development, you must load the package, by pressing `CTRL/CMD + SHIFT + L` in RStudio or running `devtools::load_all()` in the R Console, then run `launch_app()`.
 
 See [Mastering Shiny - Packages](https://mastering-shiny.org/scaling-packaging.html) for an overview of developing Shiny app R packages.

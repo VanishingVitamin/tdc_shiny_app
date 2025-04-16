@@ -23,7 +23,8 @@ Imports:
     bsicons,
     readxl,
     readr,
-    utils
+    utils,
+    shinyWidgets
 Depends: 
     R (>= 3.5)
 LazyData: true
