@@ -1,0 +1,13 @@
+shiny-overview-slides
+*product_name_template-win32-x64*
+data/LC50_EC50_salmon.xlsx
+data/Total_surv_data_Nov_28_2022.csv
+helper-code/construct_citations_metadata.R
+helper-code/construct_tdc_dataset.R
+helper-code/LC50fit_example.R
+renv
+.git
+.Rproj.user
+.github
+*LC50_EC50_salmong.xlsx
+product_name_template*
