@@ -7,4 +7,4 @@ data/*xlsx
 .Renviron
 shiny-overview-slides
 rsconnect
-inst/misc_data/jags_*.RData
+inst/misc_data/jags_*RData

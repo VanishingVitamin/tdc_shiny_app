@@ -33,4 +33,5 @@ Suggests:
     boa,
     rjags,
     usethis,
-    tidygeocoder
+    tidygeocoder,
+    readr

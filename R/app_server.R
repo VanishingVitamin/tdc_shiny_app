@@ -12,22 +12,22 @@
 #'
 #' @return a function object containing app server logic
 
-app_server <- function(tdc_data, citations){
+app_server <- function(tdc_data, citations, lc50_curve){
   function(input, output, session) {
 
-    shiny::observeEvent(input$sidebarId,
+    shiny::observeEvent(input$filter_sidebar,
                         {
 
-                          if(input$sidebarId){
+                          if(input$filter_sidebar){
                             shinyjs::removeCssClass(id = "header_toggle",
-                                                    class = "far fa-square-caret-right")
+                                                    class = "far fa-square-plus")
                             shinyjs::addCssClass(id = "header_toggle",
-                                                 class = "far fa-square-caret-left")
+                                                 class = "far fa-square-minus")
                           } else{
                             shinyjs::removeCssClass(id = "header_toggle",
-                                                    class = "far fa-square-caret-left")
+                                                    class = "far fa-square-minus")
                             shinyjs::addCssClass(id = "header_toggle",
-                                                 class = "far fa-square-caret-right")
+                                                 class = "far fa-square-plus")
                           }
 
                         })
@@ -131,6 +131,8 @@ app_server <- function(tdc_data, citations){
         dplyr::filter(DOI %in% map_zoom_dois)
 
       # if the user has selected a marker, highlight in the table.
+
+      selected_marker_doi <- ""
       if(!is.null(input$tdc_data_map_marker_click$id)){
 
         selected_marker_doi <-
@@ -138,10 +140,14 @@ app_server <- function(tdc_data, citations){
           shiny::isolate() |>
           dplyr::distinct(DOI, Location, Latitude_DD, Longitude_DD, marker_label)  |>
           dplyr::filter(!is.na(Latitude_DD)) |>
-          dplyr::slice(input$tdc_data_map_marker_click$id) |>
+          dplyr::mutate(dist_to_click = purrr::map2_dbl(Latitude_DD, Longitude_DD,
+                                                        ~ sqrt((.x - input$tdc_data_map_marker_click$lat)^2 + (.y - input$tdc_data_map_marker_click$lng)^2))) |>
+          dplyr::filter(dist_to_click == min(dist_to_click)) |>
+          dplyr::slice(1) |>
           dplyr::pull(DOI)
 
-        selected_citation_index <- as.integer(which(filtered_citations_zoomed$DOI == selected_marker_doi))
+        # selected_citation_index <- as.integer(which(filtered_citations_zoomed$DOI == selected_marker_doi))
+        selected_citation_index <- 1
 
       } else{
         selected_citation_index <- -1L
@@ -149,31 +155,27 @@ app_server <- function(tdc_data, citations){
 
       if(length(selected_citation_index) == 0) selected_citation_index <- -1L
 
-      # reactable::updateReactable(
-      #   outputId = "tdc_data_table",
-      #   data = data.frame("x" = filtered_data$citations |>
-      #                       filter(DOI %in% map_zoom_dois) |>
-      #                       pull(formatted_metadata)),
-      #   session = session
-      # )
-
       output$tdc_data_table <-
         reactable::renderReactable({
 
-          reactable::reactable(data.frame("x" =  filtered_citations_zoomed$formatted_metadata),
-                               columns = list(
-                                 x = reactable::colDef(html = TRUE,
-                                                       name = "")
-                               ),
-                               sortable = FALSE,
-                               # selection = "single",
-                               showSortable = FALSE,
-                               defaultPageSize = 30,
-                               rowStyle = function(index){
+          reactable::reactable(data.frame("x" =
+                                            filtered_citations_zoomed |>
+                                            dplyr::arrange(forcats::fct_relevel(factor(DOI), selected_marker_doi)) |>
+                                            dplyr::pull(formatted_metadata)
+          ),
+          columns = list(
+            x = reactable::colDef(html = TRUE,
+                                  name = "")
+          ),
+          sortable = FALSE,
+          # selection = "single",
+          showSortable = FALSE,
+          defaultPageSize = 30,
+          rowStyle = function(index){
 
-                                 if(index == selected_citation_index){
-                                   return(list(background = "#D3D3D3"))
-                                 }
+            if(index == selected_citation_index & selected_marker_doi %in% filtered_citations_zoomed$DOI){
+              return(list(background = "#EFEFEF"))
+            }
 
                                },
                                details = function(index){
@@ -206,41 +208,23 @@ app_server <- function(tdc_data, citations){
         dplyr::distinct(DOI, Latitude_DD, Longitude_DD, .keep_all = TRUE) |>
         dplyr::filter(!is.na(Latitude_DD))
 
-      fish_icons <- leaflet::iconList(
-        "CHINOOK" = leaflet::makeIcon("./www/fish-outline-black.svg", iconWidth = 40, iconHeight = 30),
-        "LAKE TROUT" = leaflet::makeIcon("./www/fish-outline-blue.svg", iconWidth = 40, iconHeight = 30),
-        "COHO" = leaflet::makeIcon("./www/fish-outline-orange.svg", iconWidth = 40, iconHeight = 30),
-        "STEELHEAD TROUT" = leaflet::makeIcon("./www/fish-outline-purple.svg", iconWidth = 40, iconHeight = 30),
-        "ATLANTIC SALMON" = leaflet::makeIcon("./www/fish-outline-red.svg", iconWidth = 40, iconHeight = 30)
-      )
-
-      # see: https://stackoverflow.com/a/70165724
-      addResourcePath("www", "./www")
-
-      html_legend <-
-        paste0(
-          "<img src='www/fish-outline-black.svg' style='width: 40px; height: 30px'>CHINOOK<br/>
-    <img src='www/fish-outline-blue.svg' style='width: 40px; height: 30px'>LAKE TROUT<br/>
-    <img src='www/fish-outline-orange.svg' style='width: 40px; height: 30px'>COHO<br/>
-    <img src='www/fish-outline-purple.svg' style='width: 40px; height: 30px'>STEELHEAD TROUT<br/>
-    <img src='www/fish-outline-red.svg' style='width: 40px; height: 30px'>ATLANTIC SALMON"
-        )
-
       tdc_map <-
         leaflet::leaflet(data = plt_data) |>
         leaflet::addTiles() |>
+        # addAwesomeMarkers(
         leaflet::addMarkers(
           layerId = 1:nrow(plt_data),
           lng = ~Longitude_DD,
           lat = ~Latitude_DD,
-          popup = ~purrr::map(marker_label, HTML),
-          # icon = fish_icon,
-          icon = ~fish_icons[Species_label],
+          # lng = ~jitter(Longitude_DD, factor = 0.001),
+          # lat = ~jitter(Latitude_DD, factor = 0.001),
+          # icon = awesomeIcons(icon = "map-pin", markerColor = "blue"),
+          # label = ~purrr::map(marker_label, HTML),
+          popup = ~purrr::map(marker_label, HTML)
           ,clusterOptions = leaflet::markerClusterOptions(removeOutsideVisibleBounds = TRUE,
                                                           spiderfyOnMaxZoom = TRUE,
                                                           maxClusterRadius = 0)
-        ) |>
-        leaflet::addControl(html = html_legend, position = "bottomright")
+        )
 
       return(tdc_map)
 
@@ -254,24 +238,32 @@ app_server <- function(tdc_data, citations){
         dplyr::distinct(DOI, Latitude_DD, Longitude_DD, .keep_all = TRUE) |>
         dplyr::filter(!is.na(Latitude_DD))
 
-      fish_icons <- leaflet::iconList(
-        "CHINOOK" = leaflet::makeIcon("./www/fish-outline-black.svg", iconWidth = 40, iconHeight = 30),
-        "LAKE TROUT" = leaflet::makeIcon("./www/fish-outline-blue.svg", iconWidth = 40, iconHeight = 30),
-        "COHO" = leaflet::makeIcon("./www/fish-outline-orange.svg", iconWidth = 40, iconHeight = 30),
-        "STEELHEAD TROUT" = leaflet::makeIcon("./www/fish-outline-purple.svg", iconWidth = 40, iconHeight = 30),
-        "ATLANTIC SALMON" = leaflet::makeIcon("./www/fish-outline-red.svg", iconWidth = 40, iconHeight = 30)
-      )
+      # selected <- getReactableState("tdc_data_table", "selected")
+      #
+      # if(is.null(selected)){
+      #   icons <-
+      #     awesomeIcons(icon = "map-pin",
+      #                  markerColor = "blue")
+      # } else{
+      #   icons <-
+      #     awesomeIcons(icon = "map-pin",
+      #                  markerColor = c("blue", "red")[(plt_data$DOI == {filtered_data$citations |> slice(selected) |> pull(DOI)}) + 1])
+      # }
 
       leaflet::leafletProxy("tdc_data_map",
                             session = session,
                             data = plt_data) |>
         leaflet::clearMarkers() |>
+        # addAwesomeMarkers(
         leaflet::addMarkers(
           layerId = 1:nrow(plt_data),
           lng = ~Longitude_DD,
           lat = ~Latitude_DD,
+          # lng = ~jitter(Longitude_DD, factor = 0.001),
+          # lat = ~jitter(Latitude_DD, factor = 0.001),
+          # icon = icons,
+          # label = ~purrr::map(marker_label, HTML),
           popup = ~purrr::map(marker_label, HTML)
-          , icon = ~fish_icons[Species_label]
           ,clusterOptions = leaflet::markerClusterOptions(removeOutsideVisibleBounds = TRUE,
                                                           spiderfyOnMaxZoom = TRUE,
                                                           maxClusterRadius = 0)

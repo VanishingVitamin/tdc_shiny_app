@@ -68,10 +68,32 @@ Refer to the matching filenames in the `R/` folder for the source code of these 
 
 Despite the R package infrastructure, you can make changes to the application as you would any Shiny app.
 Treat the `app_ui.R` and `app_server.R` scripts as you would `ui.R` and `server.R` scripts in regular Shiny app development.
-The extra wrinkle is that you must load the package (press `CTRL/CMD + SHIFT + L` in RStudio or run `devtools::load_all()`) then run `launch_app()` each time you want to see the effect of your changes.
+
+To view the app during development, you must load the package, by pressing `CTRL/CMD + SHIFT + L` in RStudio or running `devtools::load_all()` in the R Console, then run `launch_app()`.
 
 See [Mastering Shiny - Packages](https://mastering-shiny.org/scaling-packaging.html) for an overview of developing Shiny app R packages.
 See [R Packages](https://r-pkgs.org/), particularly [The Whole Game](https://r-pkgs.org/whole-game.html) and [Fundamental development workflows](https://r-pkgs.org/workflow101.html), for more information on developing R packages in-general.
+
+##### How to update data
+
+The `vanishingVitamin` R package has two exported data sets.
+
+1. The `tdc_data` data set contains data from [this Excel document](https://docs.google.com/spreadsheets/d/1TX5lkpAsdurQlWQoNAmKWHv4WBoPwjmq/edit?usp=sharing&ouid=106506252335393186387&rtpof=true&sd=true) that have been cleaned and standardized. 
+   See the `inst/construct_tdc_dataset.R` for the code used to create this data set. 
+2. The `citations` data set contains metadata for the citations associated with the data available in `tdc_data`. 
+   See `inst/construct_citations_metadata.R` for the code used to create this data set.
+
+You can learn more about the contents of the data sets by their doc pages -- run `?vanishingVitamin::tdc_data` and `?vanishingVitamin::citations`.
+If you'd like to change either of these data sets, for example new data have been added to the source Excel document, complete the following steps:
+
+1. Change the `inst/construct_tdc_dataset.R` or `inst/construct_citations_metadata.R` script to reflect the changes you want to make.
+2. Re-run the scripts to create `tdc_data` and `citations` objects in your R environment. 
+   If the scripts run fully, these objects should be saved to `inst/misc_data/tdc_data.csv` and `inst/misc_data/citations.rds` files, respectively.
+3. Inspect the `tdc_data` and `citations` objects to verify the desired changes.
+4. Run `usethis::use_data(tdc_data, overwrite = TRUE)` and `usethis::use_data(citations, overwrite = TRUE)`. 
+   This will overwrite the two data sets exported by the application.
+5. Run `devtools::load_all()`, then `vanishingVitamin::launch_app()`, then interact with the app to ensure it runs successfully.
+6. Update the data set documentation in the `R/data.R`, if significant changes were made that render that documentation outdated.
 
 #### Creating Pull Requests
 
@@ -87,9 +109,11 @@ The typical workflow for making changes goes:
 
 1. [Create](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) a new branch upon which changes will be made.
 2. Implement desired changes.
-3. [Stage](https://git-scm.com/docs/git-add) and [commit](https://git-scm.com/docs/git-commit) changes to the remote GitHub repository. Note that you can (and should!) stage and commit multiple while making changes. Think of this as `CTRL/CMD + S` to save your progress while developing. 
+3. [Stage](https://git-scm.com/docs/git-add) and [commit](https://git-scm.com/docs/git-commit) changes to the remote GitHub repository. 
+   Note that you can (and should!) stage and commit frequently while making changes. 
+   Think of this as `CTRL/CMD + S` to save your progress while developing. 
 4. (Recommended if collaborating on a branch) [Pull](https://git-scm.com/docs/git-pull) any commits pushed to the remote branch by someone else since you last pulled.
-5. [Push](https://git-scm.com/docs/git-push) your commits to the remote branch. 
+5. [Push](https://git-scm.com/docs/git-push) your commits to the remote branch.
     * If you're pushing a branch for the first time, run `git push -u origin <branch>` (`-u` is short for `--set-upstream`).
 6. [Open](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) a Pull Request (PR) on GitHub, setting the branch upon which changes have been made as the "compare" branch and the desired target branch (likely the `main` branch) as the "base" branch.
 7. Fill out the PR template provided in this repository.

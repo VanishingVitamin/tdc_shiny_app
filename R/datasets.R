@@ -8,8 +8,8 @@
 #'  \item{Species}{species of fish from which observations originated.}
 #'  \item{Run}{run/season of data collection.}
 #'  \item{Tissue}{tissue that was used to estimate concentration.}
-#'  \item{Thiamine_conc}{concentration of the tissue used to estimate mortality or survival.}
-#'  \item{Thiamine_units}{units of the concentration.}
+#'  \item{Thiamin_conc}{concentration of the tissue used to estimate mortality or survival.}
+#'  \item{Thiamin_units}{units of the concentration.}
 #'  \item{N}{sample size of collected data.}
 #'  \item{N_survive}{number of survivors.}
 #'  \item{N_mortality}{number of mortalities.}

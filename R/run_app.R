@@ -12,13 +12,19 @@
 #'
 #' @export
 
-launch_app <- function(options = list()){
+launch_app <- function(options = list(launch.browser = TRUE)){
 
-  tdc_data <- vanishingVitamin::tdc_data
   citations <- vanishingVitamin::citations
+  tdc_data <- vanishingVitamin::tdc_data |>
+    dplyr::mutate(DOI_join = tolower(DOI)) |>
+    dplyr::left_join(citations |>
+                       dplyr::select(DOI, data_collection_region),
+                     by = c("DOI_join" = "DOI")) |>
+    dplyr::select(-DOI_join)
+  lc50_curve <- vanishingVitamin::lc50_curve
 
   shiny::shinyApp(ui = app_ui(tdc_data),
-                  server = app_server(tdc_data, citations),
+                  server = app_server(tdc_data, citations, lc50_curve),
                   options = options)
 
 }

@@ -4,7 +4,7 @@
 \alias{app_server}
 \title{Defines the Server function for the Vanishing Vitamin Shiny app}
 \usage{
-app_server(tdc_data, citations)
+app_server(tdc_data, citations, lc50_curve)
 }
 \arguments{
 \item{tdc_data}{data set containing Thiamin by Survivability data. Should be
