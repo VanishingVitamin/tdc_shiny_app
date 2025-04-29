@@ -6,3 +6,5 @@ misc_data/*
 \.github
 rsconnect
 ^LICENSE\.md$
+_\.new\.png$
+inst

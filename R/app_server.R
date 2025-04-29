@@ -1,16 +1,19 @@
-#' Defines the Server function for the Vanishing Vitamin Shiny app
+#'Defines the Server function for the Vanishing Vitamin Shiny app
 #'
-#' This is an internal function that is used within the exported launch_app()
-#' function.
+#'This is an internal function that is used within the exported launch_app()
+#'function.
 #'
-#' @param tdc_data data set containing Thiamin by Survivability data. Should be
-#'   the data set exported by the vanishingVitamin package,
-#'   vanishingVitamin::tdc_data
-#' @param citations data set containing citations for data in the tdc_data data
-#'   set. Should be the data set exported by the vanishingVitamin package,
-#'   vanishingVitamin::citations
+#'@param tdc_data data set containing Thiamin by Survivability data. Should be
+#'  the data set exported by the vanishingVitamin package,
+#'  vanishingVitamin::tdc_data
+#'@param citations data set containing citations for data in the tdc_data data
+#'  set. Should be the data set exported by the vanishingVitamin package,
+#'  vanishingVitamin::citations
+#'@param lc50_curve data set containing model-estimated survival % by thiamin
+#'  concentration.Should be the data set exported by the vanishingVitamin
+#'  package, vanishingVitamin::lc50_curve
 #'
-#' @return a function object containing app server logic
+#'@return a function object containing app server logic
 
 app_server <- function(tdc_data, citations, lc50_curve){
   function(input, output, session) {
@@ -32,10 +35,13 @@ app_server <- function(tdc_data, citations, lc50_curve){
 
                         })
 
+    tab_automatically_opened <- reactiveVal(value = FALSE)
+
     shiny::observe({
 
-      if(!shiny::isolate(input$filter_sidebar) & input$navmenu %in% c("data", "visualize")){
+      if(!shiny::isolate(input$filter_sidebar) & input$navmenu %in% c("data", "visualize") & !tab_automatically_opened()){
         bs4Dash::updateSidebar(id = "filter_sidebar")
+        tab_automatically_opened(TRUE)
       }
 
     })
@@ -177,19 +183,19 @@ app_server <- function(tdc_data, citations, lc50_curve){
               return(list(background = "#EFEFEF"))
             }
 
-                               },
-                               details = function(index){
+          },
+          details = function(index){
 
-                                 htmltools::div(#style = "padding: 1rem",
-                                   reactable::reactable(tdc_data |>
-                                                          dplyr::filter(DOI == filtered_citations_zoomed[index,]$DOI) |>
-                                                          dplyr::select(-c(dplyr::ends_with("label"),
-                                                                           Title, DOI,
-                                                                           location_type)),
-                                                        outlined = TRUE)
-                                 )
+            htmltools::div(#style = "padding: 1rem",
+              reactable::reactable(tdc_data |>
+                                     dplyr::filter(DOI == filtered_citations_zoomed[index,]$DOI) |>
+                                     dplyr::select(-c(dplyr::ends_with("label"),
+                                                      Title, DOI,
+                                                      location_type)),
+                                   outlined = TRUE)
+            )
 
-                               })
+          })
 
         })
 
@@ -213,7 +219,7 @@ app_server <- function(tdc_data, citations, lc50_curve){
         leaflet::addTiles() |>
         # addAwesomeMarkers(
         leaflet::addMarkers(
-          layerId = 1:nrow(plt_data),
+          layerId = seq_len(length.out = nrow(plt_data)),
           lng = ~Longitude_DD,
           lat = ~Latitude_DD,
           # lng = ~jitter(Longitude_DD, factor = 0.001),
@@ -256,7 +262,7 @@ app_server <- function(tdc_data, citations, lc50_curve){
         leaflet::clearMarkers() |>
         # addAwesomeMarkers(
         leaflet::addMarkers(
-          layerId = 1:nrow(plt_data),
+          layerId = seq_len(length.out = nrow(plt_data)),
           lng = ~Longitude_DD,
           lat = ~Latitude_DD,
           # lng = ~jitter(Longitude_DD, factor = 0.001),
@@ -277,8 +283,8 @@ app_server <- function(tdc_data, citations, lc50_curve){
     output$ec50_curve <-
       plotly::renderPlotly({
 
-        # Prepare the TDC data for plotting. This includes creating a label for each
-        # point that will appear when hovering over the point.
+        # Prepare the TDC data for plotting. This includes creating a label for
+        # each point that will appear when hovering over the point.
         plt_data <-
           filtered_data$tdc_data |>
           dplyr::group_by(Thiamin_conc) |>
@@ -311,8 +317,8 @@ app_server <- function(tdc_data, citations, lc50_curve){
                             showlegend = FALSE)
 
         # Next add the points ("markers"). We want the user to hover over a
-        # particular Thiamin Concentration "x" value and see (1) all observed % Survived
-        # "y" values for each x.
+        # particular Thiamin Concentration "x" value and see (1) all observed %
+        # Survived "y" values for each x.
 
         # Note that there are some observations that share a common Thiamin
         # Concentration value but have different Survival % values. These would
@@ -455,7 +461,7 @@ app_server <- function(tdc_data, citations, lc50_curve){
                          plot_data) |>
         dplyr::mutate(index = dplyr::row_number(),
                       Estimated_survive = dose_response(Thiamin_conc = Thiamin_conc,
-                                                        ec50_mu = unique(lc50_curve$ech50_50),
+                                                        ec50_mu = unique(lc50_curve$ec50_50),
                                                         slope_p = unique(lc50_curve$slope_50),
                                                         upper_p = 1,lower_p = 0)*100) |>
         dplyr::select(index, Thiamin_conc, Percent_survive, Estimated_survive)
@@ -472,8 +478,6 @@ app_server <- function(tdc_data, citations, lc50_curve){
       filtered_data$user_clipboard_data <-
         utils::read.csv(text = input$visualize_add_data_clipboard,
                         header = TRUE)
-
-      #
 
       shinyjs::show(id = "visualize_add_data_clipboard_panel")
 
@@ -507,7 +511,7 @@ app_server <- function(tdc_data, citations, lc50_curve){
                          plot_data) |>
         dplyr::mutate(index = dplyr::row_number(),
                       Estimated_survive = dose_response(Thiamin_conc = Thiamin_conc,
-                                                        ec50_mu = unique(lc50_curve$ech50_50),
+                                                        ec50_mu = unique(lc50_curve$ec50_50),
                                                         slope_p = unique(lc50_curve$slope_50),
                                                         upper_p = 1,lower_p = 0)*100) |>
         dplyr::select(index, Thiamin_conc, Percent_survive, Estimated_survive)
@@ -534,7 +538,7 @@ app_server <- function(tdc_data, citations, lc50_curve){
                                     Percent_survive = input$visualize_add_data_manual_survival)) |>
         dplyr::mutate(index = dplyr::row_number(),
                       Estimated_survive = dose_response(Thiamin_conc = Thiamin_conc,
-                                                        ec50_mu = unique(lc50_curve$ech50_50),
+                                                        ec50_mu = unique(lc50_curve$ec50_50),
                                                         slope_p = unique(lc50_curve$slope_50),
                                                         upper_p = 1,lower_p = 0)*100) |>
         dplyr::select(index, Thiamin_conc, Percent_survive, Estimated_survive)
@@ -547,8 +551,6 @@ app_server <- function(tdc_data, citations, lc50_curve){
     shiny::observe({
 
       shiny::req(filtered_data$user_data)
-
-      #
 
       plotly::plotlyProxy("ec50_curve", session, deferUntilFlush = FALSE) |>
         # Delete all layers above the top-most base layer
@@ -585,9 +587,20 @@ app_server <- function(tdc_data, citations, lc50_curve){
                         `Estimated % Survived` = Estimated_survive) |>
           dplyr::select(-`Observation Number`) |>
           dplyr::distinct() |>
-          reactable::reactable()
+          reactable::reactable(bordered = TRUE,
+                               highlight = TRUE)
 
       })
+
+    # Download handler for data template
+    output$visualize_add_data_template <- shiny::downloadHandler(
+      filename = function(){
+        "vanishingVitamin_data_upload_template.csv"
+      },
+      content = function(file){
+        file.copy("www/template.csv", file)
+      }
+    )
 
     # NOTE: the commented-out code below is not used in the current version of the
     # app. It's kept here for posterity.
@@ -638,3 +651,15 @@ app_server <- function(tdc_data, citations, lc50_curve){
   }
 
 }
+
+#' Non-exported helper function for computing dose response
+#'
+#' @param Thiamin_conc
+#' @param ec50_mu
+#' @param slope_p
+#' @param upper_p
+#' @param lower_p
+dose_response <-
+  function(Thiamin_conc, ec50_mu, slope_p, upper_p, lower_p = 0){
+    upper_p + (lower_p - upper_p)/(1 + (Thiamin_conc/ec50_mu)**slope_p)
+  }

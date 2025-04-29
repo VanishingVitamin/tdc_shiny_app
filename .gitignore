@@ -8,3 +8,5 @@ data/*xlsx
 shiny-overview-slides
 rsconnect
 inst/misc_data/jags_*RData
+# {shinytest2}: Ignore new debug snapshots for `$expect_values()`
+*_.new.png

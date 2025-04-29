@@ -223,10 +223,15 @@ app_ui <- function(tdc_data){
                                                                                    ),
                                                                                    shiny::conditionalPanel(
                                                                                      condition = "input.visualize_add_data_choice == 'Upload data file'",
+                                                                                     shiny::tags$style(type = "text/css", "#visualize_add_data_template {color: black; text-decoration: underline;}"),
+                                                                                     shiny::tags$style(type = "text/css", "#visualize_add_data_template:hover {font-weight: bold;}"),
+                                                                                     shiny::downloadLink(outputId = "visualize_add_data_template",
+                                                                                                         label = "Download template data file"),
+                                                                                     shiny::br(),shiny::br(),
                                                                                      shiny::fileInput(inputId = "visualize_add_data_file",
                                                                                                       label = "Select a file",
                                                                                                       accept = c(".csv",".xlsx"),
-                                                                                                      placeholder = "Select a csv or xlsx file",
+                                                                                                      placeholder = "Upload a csv or xlsx file",
                                                                                                       multiple = FALSE),
                                                                                      shinyjs::hidden(
                                                                                        shiny::wellPanel(id = "visualize_add_data_file_panel",

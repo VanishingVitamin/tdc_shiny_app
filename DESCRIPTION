@@ -12,7 +12,6 @@ Imports:
     bs4Dash,
     dplyr,
     fresh,
-    ggplot2,
     leaflet,
     plotly,
     reactable,
@@ -32,7 +31,8 @@ Suggests:
     coda,
     googledrive,
     boa,
+    ggplot2,
     rjags,
     usethis,
     tidygeocoder,
-    readr
+    shinytest2
