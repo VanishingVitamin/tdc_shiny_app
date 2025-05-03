@@ -1,4 +1,22 @@
+![](USGS_ID_black.png)
+
 # VanishingVitamin Thiamin Deficiency Complex app
+
+**Authors**: Joseph Zemmels, Matthew Futia, Freya Rowland, Miles Davis
+
+**Point of contact**: Joseph Zemmels (<jzemmels@usgs.gov>)
+
+**Repository Type**: *R* script
+
+**Year of Origin**: 2025
+
+**Year of Version**: 2025
+
+**Digital Object Identifier (DOI)**: in-progress
+
+**USGS Information Porudct Data System (IPDS) no.**: in-progress
+
+------------------------------------------------------------------------
 
 The code in this repository was mostly written in the [R](https://cloud.r-project.org/) programming language within the [RStudio](https://posit.co/download/rstudio-desktop/) integrated development environment (IDE).
 It uses [git](https://git-scm.com/) for version control.
