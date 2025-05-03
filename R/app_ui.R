@@ -202,8 +202,8 @@ app_ui <- function(tdc_data){
                                                                                    shiny::conditionalPanel(
                                                                                      condition = "input.visualize_add_data_choice == 'Copy + paste'",
                                                                                      shiny::textAreaInput(inputId = "visualize_add_data_clipboard",
-                                                                                                          label = "Copy + paste data below",
-                                                                                                          placeholder = "Copy + paste data with a header row",
+                                                                                                          label = "Copy + paste data below (separted by space)",
+                                                                                                          placeholder = "Thiamin_conc\tPercent_survive\n1.234\t56.78",
                                                                                                           resize = "vertical"),
                                                                                      shinyjs::hidden(
                                                                                        shiny::wellPanel(id = "visualize_add_data_clipboard_panel",
@@ -255,6 +255,7 @@ app_ui <- function(tdc_data){
                            bs4Dash::box(
                              collapsible = FALSE, maximizable = TRUE, title = "Thiamin Concentration vs. % Survived", width = 9,
                              plotly::plotlyOutput("ec50_curve", height = "550px", width = '100%'),
+                             br(),
                              reactable::reactableOutput("visualize_add_data")
                            )
                          )

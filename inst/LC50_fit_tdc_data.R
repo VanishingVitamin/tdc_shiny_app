@@ -13,11 +13,14 @@ library(tidyr)
 library(ggplot2)
 library(dplyr)
 
+# NOTE: change this to TRUE to make model/data creation code re-run
+force_rerun <- TRUE
+
 set.seed(20250311)
 
 # load data using R project format
 tdc_data <-
-  readr::read_csv('vanishing_vitamin/data/tdc_data.csv') |>
+  readr::read_csv('inst/misc_data/tdc_data.csv') |>
   # remove missing values/obvious outliers that had zero survival/mortality
   filter(!is.na(Percent_survive)) |>
   filter(0 < Percent_survive & Percent_survive < 100) |>
@@ -65,8 +68,8 @@ initial_condition = function() {
     "ec50_sigma" = runif(1, 0.01, 3))
 }
 
-
-if(!file.exists("vanishing_vitamin/data/jags_lc50_model_tdc_data.RData")){
+# fit jags model, if it doesn't exist already
+if(!file.exists("inst/misc_data/jags_lc50_model_tdc_data.RData")| force_rerun){
   jags_model <-
     jags.model(textConnection(TDFM_mod),
                data = jags_data,
@@ -75,9 +78,9 @@ if(!file.exists("vanishing_vitamin/data/jags_lc50_model_tdc_data.RData")){
                ,inits = initial_condition
     )
 
-  save(jags_model, file = "vanishing_vitamin/data/jags_lc50_model_tdc_data.RData")
+  save(jags_model, file = "inst/misc_data/jags_lc50_model_tdc_data.RData")
 } else{
-  load("vanishing_vitamin/data/jags_lc50_model_tdc_data.RData")
+  load("inst/misc_data/jags_lc50_model_tdc_data.RData")
 }
 
 jags_model$recompile()
@@ -85,15 +88,15 @@ jags_model$recompile()
 # sample posteriors
 params = c('slope_p', 'upper_p', 'ec50_mu','ec50_sigma' )
 
-if(!file.exists("vanishing_vitamin/data/jags_lc50_samples_tdc_data.RData")){
+if(!file.exists("inst/misc_data/jags_lc50_samples_tdc_data.RData") | force_rerun){
   samples <- coda.samples(jags_model ,
                           params,
                           n.iter = 100000,
                           thin = 2,
                           n.burnin = 10000)
-  save(samples, file = "vanishing_vitamin/data/jags_lc50_samples_tdc_data.RData")
+  save(samples, file = "inst/misc_data/jags_lc50_samples_tdc_data.RData")
 } else{
-  load(file = "vanishing_vitamin/data/jags_lc50_samples_tdc_data.RData")
+  load(file = "inst/misc_data/jags_lc50_samples_tdc_data.RData")
 }
 
 summary(samples)
@@ -126,28 +129,8 @@ dose_response <-
     upper_p + (lower_p - upper_p)/(1 + (Thiamin_conc/ec50_mu)**slope_p)
   }
 
-samples[[1]] |>
-  as_tibble() |>
-  slice(1:100) |>
-  mutate(curve = purrr::pmap(
-    .l = list(ec50_mu, slope_p, upper_p),
-    function(ec50, slope, upper){
-      data.frame(
-        Thiamin_conc = seq(0,10, by = .1),
-        surv = dose_response(Thiamin_conc = seq(0,10, by = .1),
-                             ec50_mu = ec50,
-                             slope_p = slope,
-                             upper_p = upper,
-                             lower_p = 0)
-      )
-    }
-  ),
-  curve_no = row_number()) |>
-  unnest(curve) |>
-  ggplot() +
-  geom_line(aes(x = Thiamin_conc, y = surv, group = curve_no))
-
-tdc_data <- readr::read_csv("vanishing_vitamin/data/tdc_data.csv")
+# create quantile dataset
+tdc_data <- readr::read_csv("inst/misc_data/tdc_data.csv")
 
 thiamin_conc_range <-
   c(seq(from = 0,
@@ -156,13 +139,13 @@ thiamin_conc_range <-
     tdc_data$Thiamin_conc) |>
   sort()
 
-ci_data <-
+lc50_curve <-
   samples[[1]] |>
   as_tibble() |>
   summarize(
-    ech50_2.5 = quantile(ec50_mu, 0.025),
-    ech50_50 = quantile(ec50_mu, 0.5),
-    ech50_97.5 = quantile(ec50_mu, 0.975),
+    ec50_2.5 = quantile(ec50_mu, 0.025),
+    ec50_50 = quantile(ec50_mu, 0.5),
+    ec50_97.5 = quantile(ec50_mu, 0.975),
     slope_2.5 = quantile(slope_p, 0.025),
     slope_50 = quantile(slope_p, 0.5),
     slope_97.5 = quantile(slope_p, 0.975),
@@ -172,12 +155,15 @@ ci_data <-
   )  |>
   bind_cols(data.frame(Thiamin_conc = thiamin_conc_range)) |>
   mutate(
-    survival_ci_2.5 = 100*dose_response(Thiamin_conc, ech50_2.5, slope_2.5, 1, 0),
-    survival_median = 100*dose_response(Thiamin_conc, ech50_50, slope_50, 1, 0),
-    survival_ci_97.5 = 100*dose_response(Thiamin_conc, ech50_97.5, slope_97.5, 1, 0)
+    survival_ci_2.5 = 100*dose_response(Thiamin_conc, ec50_2.5, slope_2.5, 1, 0),
+    survival_median = 100*dose_response(Thiamin_conc, ec50_50, slope_50, 1, 0),
+    survival_ci_97.5 = 100*dose_response(Thiamin_conc, ec50_97.5, slope_97.5, 1, 0),
+    plot_label = paste0("Thiamin Conc: ", Thiamin_conc," nmol/g\n",
+                        "Estimated % Survived: ", round(survival_median,2),"%",
+                        " (",round(survival_ci_2.5,2),"%, ",round(survival_ci_97.5,2),"%)")
   )
 
-write_csv(x = ci_data, "vanishing_vitamin/data/lc50_curve_tdc_data.csv")
+readr::write_csv(x = lc50_curve, "inst/misc_data/lc50_curve_tdc_data.csv")
 
 {ggplot() +
     geom_point(data = tdc_data,
@@ -186,12 +172,12 @@ write_csv(x = ci_data, "vanishing_vitamin/data/lc50_curve_tdc_data.csv")
     geom_ribbon(
       data = ci_data,
       aes(x = Thiamin_conc,
-          ymin = ci_2.5*100,
-          ymax = ci_97.5*100)
+          ymin = survival_ci_2.5*100,
+          ymax = survival_ci_97.5*100)
     ) +
     geom_line(data = ci_data,
               aes(x = Thiamin_conc,
-                  y = ci_50*100),
+                  y = survival_median*100),
               linewidth = 1, colour = "red") +
     scale_x_continuous(limits = c(0,10))} |>
   plotly::ggplotly()

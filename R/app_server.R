@@ -303,6 +303,7 @@ app_server <- function(tdc_data, citations, lc50_curve){
             x = ~Thiamin_conc,
             ymin = ~survival_ci_2.5,
             ymax = ~survival_ci_97.5,
+            name = "survival_ci",
             fillcolor = "black",
             opacity = .15,
             line = list(color = "black", opacity = .1),
@@ -310,8 +311,11 @@ app_server <- function(tdc_data, citations, lc50_curve){
           ) |>
           # The second layer of the plot is a fitted median survival curve.
           plotly::add_lines(data = lc50_curve,
-                            x = ~Thiamin_conc, y = ~survival_median,
-                            text = ~plot_label, hoverinfo = "text",
+                            x = ~Thiamin_conc,
+                            y = ~survival_median,
+                            text = ~plot_label,
+                            name = "survival_med",
+                            hoverinfo = "text",
                             hoverlabel = list(bgcolor = "#e5e5e5"),
                             color = I("black"), opacity = .5,
                             showlegend = FALSE)
@@ -331,8 +335,11 @@ app_server <- function(tdc_data, citations, lc50_curve){
 
           plt <- plt |>
             plotly::add_markers(data = {plt_data |> dplyr::filter(ind == trace_ind)},
-                                x = ~Thiamin_conc, y = ~Percent_survive,
-                                text = ~plot_label, hoverinfo = "text",
+                                x = ~Thiamin_conc,
+                                y = ~Percent_survive,
+                                name = paste0("obs_survive_layer",trace_ind),
+                                text = ~plot_label,
+                                hoverinfo = "text",
                                 color = I("black"),
                                 sizes = 2, opacity = .8,
                                 showlegend = FALSE)
@@ -366,14 +373,6 @@ app_server <- function(tdc_data, citations, lc50_curve){
                                                          "Estimated % Survived: ",round(Estimated_survive,2),"%"))
 
             plt <- plt |>
-              # add_markers(data = user_dat_plt,
-              #             x = ~Thiamin_conc,
-              #             y = ~Estimated_survive,
-              #             text = ~plt_label_estimated,
-              #             hoverinfo = "text",
-              #             hoverlabel = list(bgcolor = "red"),
-              #             marker = list(color = "red", size = 10, symbol = "x"),
-              #             name = "Estimated user data") |>
               plotly::add_markers(data = user_dat_plt,
                                   x = ~Thiamin_conc,
                                   y = ~Percent_survive,
@@ -381,12 +380,35 @@ app_server <- function(tdc_data, citations, lc50_curve){
                                   hoverinfo = "text",
                                   hoverlabel = list(bgcolor = "red"),
                                   marker = list(color = "red", size = 8),
-                                  name = "Observed user data")
+                                  name = "Observed user data") |>
+              plotly::add_markers(data = user_dat_plt,
+                                  x = ~Thiamin_conc,
+                                  y = ~Estimated_survive,
+                                  text = ~plt_label_estimated,
+                                  hoverinfo = "skip",
+                                  # hoverlabel = list(bgcolor = "red"),
+                                  marker = list(color = "red", size = 8, symbol = "circle-open-dot"),
+                                  name = "Estimated user data")
 
           }
         }
 
         # Finally, change the layout and styling of the output plot.
+
+        # This is a bit of custom JavaScript code for controlling how points are
+        # removed from the plot. See <https://stackoverflow.com/a/53831080>
+        remove_trace_js <- "function(el, x, data){
+         var id = el.getAttribute('id');
+         Shiny.addCustomMessageHandler('remove-trace', function(tracename) {
+         function getTraceIndices(trace, traceindex) {
+           if (trace.name === tracename) {
+             Plotly.deleteTraces(id, traceindex);
+           }
+         }
+         x.data.forEach(getTraceIndices);
+         });
+       }"
+
         plt |>
           plotly::layout(
             xaxis = list(title = "Thiamin Concentration (nmol/g)",
@@ -405,7 +427,28 @@ app_server <- function(tdc_data, citations, lc50_curve){
           ) |>
           plotly::style(
             hoverinfo = "skip", traces = 1
-          )
+          ) |>
+          ## The following commented-out code would add the ability to switch
+          ## between a linear vs. log scale x-axis. This looks a bit awkward
+          ## since there are a non-trivial number of thiamin concentrations
+          ## between 0 and 1. I'll leave this here in case we think of another
+          ## solution.
+          # plotly::layout(
+          #   updatemenus = list(
+          #     list(y = .5,x = .5,
+          #          buttons = list(
+          #            list(method = "relayout",
+          #                 label = "Linear x-axis",
+          #                 args = list(list(xaxis = list(type =  "linear")))
+          #            ),
+          #            list(method = "relayout",
+          #                 label = "Log x-axis",
+          #                 args = list(list(xaxis = list(type =  "log")))
+          #            )
+          #          ))
+          #   )
+          #   ) |>
+          htmlwidgets::onRender(remove_trace_js)
 
       })
 
@@ -475,8 +518,11 @@ app_server <- function(tdc_data, citations, lc50_curve){
 
       shiny::req(input$visualize_add_data_clipboard)
 
+      browser()
+
       filtered_data$user_clipboard_data <-
         utils::read.csv(text = input$visualize_add_data_clipboard,
+                        sep = "",
                         header = TRUE)
 
       shinyjs::show(id = "visualize_add_data_clipboard_panel")
@@ -552,9 +598,14 @@ app_server <- function(tdc_data, citations, lc50_curve){
 
       shiny::req(filtered_data$user_data)
 
+      # See the renderPlotly call above for the definition of this custom
+      # JavaScript method:
+      session$sendCustomMessage("remove-trace", "Observed user data")
+      session$sendCustomMessage("remove-trace", "Estimated user data")
+
       plotly::plotlyProxy("ec50_curve", session, deferUntilFlush = FALSE) |>
         # Delete all layers above the top-most base layer
-        plotly::plotlyProxyInvoke(method = "deleteTraces", list(as.integer(filtered_data$max_base_layer + 1))) |>
+        # plotly::plotlyProxyInvoke(method = "deleteTraces", list(as.integer(filtered_data$max_base_layer + 1))) |>
         # Replace deleted layer(s) with new layer
         plotly::plotlyProxyInvoke("addTraces",
                                   # NOTE: addTraces needs at least two points, for some
@@ -569,8 +620,25 @@ app_server <- function(tdc_data, citations, lc50_curve){
                                        hoverlabel = list(bgcolor = "red"),
                                        marker = list(color = "red", size = 8),
                                        name = "Observed user data",
+                                       type = "scatter", mode = "markers")) |>
+        plotly::plotlyProxyInvoke("addTraces",
+                                  # NOTE: addTraces needs at least two points, for some
+                                  # reason, so we'll repeat single points twice
+                                  list(x = rep(filtered_data$user_data$Thiamin_conc,
+                                               length.out = max(2,length(filtered_data$user_data$Thiamin_conc))),
+                                       y = rep(filtered_data$user_data$Estimated_survive,
+                                               length.out = max(2,length(filtered_data$user_data$Estimated_survive))),
+                                       # text = paste0("Thiamin Conc.: ",filtered_data$user_data$Thiamin_conc," nmol/g<br>",
+                                       #               "Estimated % Survived: ",filtered_data$user_data$Estimated_survive,"%"),
+                                       # hoverinfo = "text",
+                                       # hoverlabel = list(bgcolor = "red"),
+                                       hoverinfo = "none",
+                                       marker = list(color = "red", size = 8, symbol = "circle-open-dot"),
+                                       name = "Estimated user data",
                                        type = "scatter", mode = "markers"))
     })
+
+
 
     output$visualize_add_data <-
       reactable::renderReactable({
