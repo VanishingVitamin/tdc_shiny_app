@@ -13,6 +13,6 @@ into the project you can [fork this repository][2] and
 
 
 
-[1]: https://code.usgs.gov/usgs-data-education/streamflow-lesson-app/-/issues
-[2]: https://docs.gitlab.com/ee/user/project/working_with_projects.html#fork-a-project
-[3]: https://docs.gitlab.com/ee/user/project/merge_requests/
+[1]: https://github.com/VanishingVitamin/tdc_shiny_app/issues
+[2]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo
+[3]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
