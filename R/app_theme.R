@@ -4,6 +4,8 @@
 #' function.
 #'
 #' @return the result of \code{fresh::create_theme}
+#' @keywords internal
+#' @noRd
 
 app_theme <- function(){
   fresh::create_theme(

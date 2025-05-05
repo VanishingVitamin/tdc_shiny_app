@@ -8,6 +8,8 @@
 #'   vanishingVitamin::tdc_data
 #'
 #' @return \code{bs4Dash::dashboardPage} object containing UI elements
+#' @keywords internal
+#' @noRd
 
 app_ui <- function(tdc_data){
 

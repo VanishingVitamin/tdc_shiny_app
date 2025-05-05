@@ -3,7 +3,7 @@
     "name": "VanishingVitamin Thiamin Deficiency Complex app",
     "organization": "U.S. Geological Survey",
     "description": "Shiny app for exploring data on Thiamin Deficiency Complex in salmonids",
-    "version": "main",
+    "version": "0.1.0",
     "status": "Development",
 
     "permissions": {
@@ -17,7 +17,7 @@
     },
 
     "homepageURL": "https://github.com/VanishingVitamin/tdc_shiny_app",
-    "downloadURL": "https://code.usgs.gov/usgs-data-education/streamflow-lesson-app/-/archive/main/streamflow-lesson-app-main.zip",
+    "downloadURL": "https://github.com/VanishingVitamin/tdc_shiny_app/archive/refs/heads/main.zip",
     "disclaimerURL": "https://github.com/VanishingVitamin/tdc_shiny_app/blob/main/DISCLAIMER_PROVISIONAL.md",
     "repositoryURL": "https://github.com/VanishingVitamin/tdc_shiny_app",
     "vcs": "git",
@@ -27,7 +27,8 @@
     "tags": [
       "R",
       "USGS",
-      "education"
+      "education",
+      "thiamin deficiency complex"
     ],
 
     "languages": [
@@ -40,7 +41,7 @@
     },
 
     "date": {
-      "metadataLastUpdated": "2025-05-02"
+      "metadataLastUpdated": "2025-05-05"
     }
   }
 ]

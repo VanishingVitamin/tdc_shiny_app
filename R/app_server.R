@@ -14,6 +14,8 @@
 #'  package, vanishingVitamin::lc50_curve
 #'
 #'@return a function object containing app server logic
+#' @keywords internal
+#' @noRd
 
 app_server <- function(tdc_data, citations, lc50_curve){
   function(input, output, session) {
@@ -722,11 +724,14 @@ app_server <- function(tdc_data, citations, lc50_curve){
 
 #' Non-exported helper function for computing dose response
 #'
-#' @param Thiamin_conc
-#' @param ec50_mu
-#' @param slope_p
-#' @param upper_p
-#' @param lower_p
+#' @param Thiamin_conc thiamin concentration value (nmol/g)
+#' @param ec50_mu EC50 mean value
+#' @param slope_p Slope parameter in dose response model
+#' @param upper_p Upper limit parameter in dose response model
+#' @param lower_p Lower limit parameter in dose response model
+#'
+#' @keywords internal
+#' @noRd
 dose_response <-
   function(Thiamin_conc, ec50_mu, slope_p, upper_p, lower_p = 0){
     upper_p + (lower_p - upper_p)/(1 + (Thiamin_conc/ec50_mu)**slope_p)

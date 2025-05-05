@@ -6,8 +6,6 @@
 
 **Point of contact**: Joseph Zemmels (<jzemmels@usgs.gov>)
 
-**Repository Type**: *R* script
-
 **Year of Origin**: 2025
 
 **Year of Version**: 2025
@@ -16,11 +14,16 @@
 
 **USGS Information Porudct Data System (IPDS) no.**: in-progress
 
+**Statement of Need**: Thiamin Deficiency Complex (TDC) is a global threat to the stability and persistence of wildlife populations. 
+The purpose of this application is to assemble a publicly accessible and interactive database on Thiamin Deficiency Complex in salmonids.
+
 ------------------------------------------------------------------------
 
 The code in this repository was mostly written in the [R](https://cloud.r-project.org/) programming language within the [RStudio](https://posit.co/download/rstudio-desktop/) integrated development environment (IDE).
 It uses [git](https://git-scm.com/) for version control.
 See [Happy Git with R](https://happygitwithr.com/) for an R-centric introduction to git.
+
+The following sections cover instructions for accessing the app and interacting with the repository as a [User](https://github.com/VanishingVitamin/tdc_shiny_app?tab=readme-ov-file#im-a-user-accessing-the-app), [Reviewer](https://github.com/VanishingVitamin/tdc_shiny_app?tab=readme-ov-file#im-a-reviewer-providing-feedback), and [Developer](https://github.com/VanishingVitamin/tdc_shiny_app?tab=readme-ov-file#im-a-developer-making-changes).
 
 ## I'm a user (accessing the app)
 
@@ -149,6 +152,8 @@ We will not be using this method, instead incorporating changes via branches.
 
 [UNDER CONSTRUCTION] These instructions are intended for advanced developers who want to create a new `.exe` (executable) file for the app, which should only really be necessary for larger, public releases of the application.
 
-## Disclaimer
+------------------------------------------------------------------------
+
+## 
 
 
