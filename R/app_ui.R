@@ -50,7 +50,8 @@ app_ui <- function(tdc_data){
                                         shinyjs::useShinyjs(),
                                         bs4Dash::navbarTab(tabName = "welcome", text = shiny::tags$span(shiny::icon("fish-fins"), "Welcome!")),
                                         bs4Dash::navbarTab(tabName = "data", text = shiny::tags$span(shiny::icon("table"), "Data")),
-                                        bs4Dash::navbarTab(tabName = "visualize", text = shiny::tags$span(shiny::icon("chart-line"), "Visualize"))
+                                        bs4Dash::navbarTab(tabName = "visualize", text = shiny::tags$span(shiny::icon("chart-line"), "Visualize")),
+                                        bs4Dash::navbarTab(tabName = "disclaimer", text = shiny::tags$span(shiny::icon("triangle-exclamation"), "Disclaimer"))
                                       )),
     sidebar = bs4Dash::dashboardSidebar(disable = FALSE,
                                         elevation = 2,
@@ -261,7 +262,21 @@ app_ui <- function(tdc_data){
                              reactable::reactableOutput("visualize_add_data")
                            )
                          )
-        )
+        ),
+        bs4Dash::tabItem(tabName = "disclaimer",
+                         wellPanel(
+                           h2("Disclaimer"),
+                           tags$strong("This software is preliminary or provisional and is subject to revision. It is
+being provided to meet the need for timely best science. The software has not
+received final approval by the U.S. Geological Survey (USGS). No warranty,
+expressed or implied, is made by the USGS or the U.S. Government as to the
+functionality of the software and related material nor shall the fact of release
+constitute any such warranty. The software is provided on the condition that
+neither the USGS nor the U.S. Government shall be held liable for any damages
+resulting from the authorized or unauthorized use of the software.
+")
+                         )
+                         )
       )
     )
   )
