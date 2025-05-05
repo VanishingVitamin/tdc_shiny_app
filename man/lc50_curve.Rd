@@ -5,7 +5,25 @@
 \alias{lc50_curve}
 \title{Model-based LC50 data}
 \format{
-\subsection{\code{lc50_curve} A tibble object with 6,548 rows and 14 columns}{
+\subsection{\code{lc50_curve}}{
+
+A tibble object with 6,548 rows and 14 columns
+\describe{
+\item{ec50_2.5}{ the 0.025 quantile of the EC50 parameter}
+\item{ec50_50}{ the 0.5 quantile (i.e., median) of the EC50 parameter}
+\item{ec50_97.5}{ the 0.975 quantile of the EC50 parameter}
+\item{slope_2.5}{ the 0.025 quantile of the slope (S) parameter}
+\item{slope_50}{ the 0.5 quantile (i.e., median) of the slope (S) parameter}
+\item{slope_97.5}{ the 0.975 quantile of the slope (S) parameter}
+\item{upper_2.5}{ the 0.025 quantile of the upper (U) parameter}
+\item{upper_50}{ the 0.5 quantile (i.e., median) of the upper (U) parameter}
+\item{upper_97.5}{ the 0.975 quantile of the upper (U) parameter}
+\item{Thiamin_conc}{ thiamin concentration values. This is the independent variable in the model.}
+\item{survival_ci_2.5}{ 0.025 quantile of the estimated survival, given the 0.025 parameter quantiles and a thiamin concentration}
+\item{survival_median}{ 0.5 quantile (i.e., median) of the estimated survival, given the 0.5 parameter quantiles and thiamin concentration}
+\item{survival_ci_97.5}{ 0.975 quantile of the estimated survival, given the 0.975 parameter quantiles and thiamin concentration}
+\item{plot_label}{ a character string of formatted text summarizing the estimated survival rate values for a given thiamin concentration. Meant to be used for a tooltip in an interactive scatterplot.}
+}
 }
 }
 \usage{
@@ -35,22 +53,5 @@ respectively.
 }
 \seealso{
 \url{https://github.com/MilesEDaniels/Thiamine-Dependent-Fry-Mortality?tab=readme-ov-file#methods}
-
-\describe{
-\item{ec50_2.5}{ the 0.025 quantile of the EC50 parameter}
-\item{ec50_50}{ the 0.5 quantile (i.e., median) of the EC50 parameter}
-\item{ec50_97.5}{ the 0.975 quantile of the EC50 parameter}
-\item{slope_2.5}{ the 0.025 quantile of the slope (S) parameter}
-\item{slope_50}{ the 0.5 quantile (i.e., median) of the slope (S) parameter}
-\item{slope_97.5}{ the 0.975 quantile of the slope (S) parameter}
-\item{upper_2.5}{ the 0.025 quantile of the upper (U) parameter}
-\item{upper_50}{ the 0.5 quantile (i.e., median) of the upper (U) parameter}
-\item{upper_97.5}{ the 0.975 quantile of the upper (U) parameter}
-\item{Thiamin_conc}{ thiamin concentration values. This is the independent variable in the model.}
-\item{survival_ci_2.5}{ 0.025 quantile of the estimated survival, given the 0.025 parameter quantiles and a thiamin concentration}
-\item{survival_median}{ 0.5 quantile (i.e., median) of the estimated survival, given the 0.5 parameter quantiles and thiamin concentration}
-\item{survival_ci_97.5}{ 0.975 quantile of the estimated survival, given the 0.975 parameter quantiles and thiamin concentration}
-\item{plot_label}{ a character string of formatted text summarizing the estimated survival rate values for a given thiamin concentration. Meant to be used for a tooltip in an interactive scatterplot.}
-}
 }
 \keyword{datasets}
