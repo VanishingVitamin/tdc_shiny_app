@@ -1,0 +1,16 @@
+---
+output: html_fragment
+---
+
+* **Alevin:** a salmon larva that gets almost all of its nutrients from the yolk, also called *yolk-sac fry* (include picture?)
+* **Deficiency:** Not having enough. An animal that is deficient in thiamine will have health impacts.
+* **EC50:** At this concentration, 50% of the population will experience adverse effects
+* **EMS:** Early mortality syndrome. Described in the Laurentian Great Lakes when hatcheries noticed alevin dying at yolk sac reabsorption from thiamine deficiency
+* **LC50:** At this concentration, 50% of the population is predicted to die
+* **M74:** A syndrome described in Atlantic salmon (Salmo salar) in the Baltic Sea with yolk-sac fry dying due to thiamine deficiency
+* **Replete:** Having enough of something, in this case, enough thiamine for normal functioning
+* **Salmonine:** The taxonomic sub-family that includes salmon, trout, and char
+* **TDC:** thiamine deficiency complex. The overall effects associated with thiamine deficiency including early mortality syndrome (EMS) and sublethal effects at juvenile and adult life stages.
+* **Thiaminase:** An enzyme that splits thiamine into a thiazole and pyrimidine moieties that are  unavailable to most consumers
+* **Thiamine:** vitamin B1, also spelled as thiamin, a vitamin necessary for all living organisms
+

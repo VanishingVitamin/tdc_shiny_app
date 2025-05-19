@@ -158,7 +158,9 @@ app_ui <- function(tdc_data){
                                               shiny::tabPanel(title = "What causes TDC?",
                                                               shiny::uiOutput("splash_page_what_causes_tdc")),
                                               shiny::tabPanel(title = "Vitamers",
-                                                              shiny::uiOutput("splash_page_vitamers"))
+                                                              shiny::uiOutput("splash_page_vitamers")),
+                                              shiny::tabPanel(title = "Glossary",
+                                                              shiny::uiOutput("splash_page_glossary"))
                          )
         ),
         bs4Dash::tabItem(tabName = "data",

@@ -55,6 +55,17 @@ app_server <- function(tdc_data, citations, lc50_curve){
 
     })
 
+    output$splash_page_glossary <- shiny::renderUI({
+
+      # shiny::tags$iframe(src = "extdata/splash_page_background.html",
+      #                    width = "100%",
+      #                    height = 1000,
+      #                    seamless = "seamless")
+
+      shiny::includeHTML("inst/extdata/splash_page_glossary.html")
+
+    })
+
     shiny::observeEvent(input$filter_sidebar,
                         {
 
