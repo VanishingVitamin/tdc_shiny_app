@@ -34,7 +34,7 @@ app_ui <- function(tdc_data){
 
     }) |>
     purrr::set_names(unique(location_info$data_collection_region))
-    # purrr::set_names(stringr::str_wrap(unique(location_info$data_collection_region), width = 10))
+  # purrr::set_names(stringr::str_wrap(unique(location_info$data_collection_region), width = 10))
   bs4Dash::dashboardPage(
     scrollToTop = TRUE,
     freshTheme = app_theme(),
@@ -83,7 +83,7 @@ app_ui <- function(tdc_data){
                                                                          zIndex = 10000
                                                                          , choices = location_select_list
                                                                          # ,choices = sort(unique(tdc_data$Location_label))
-                                                                         ),
+                                        ),
                                         shinyWidgets::virtualSelectInput(inputId = "tdc_table_filter_species",
                                                                          label = "Species",
                                                                          multiple = TRUE,
@@ -146,18 +146,21 @@ app_ui <- function(tdc_data){
         "
         )
       ),
+      shiny::tags$style(HTML(tabset_styling())),
       bs4Dash::tabItems(
         bs4Dash::tabItem(tabName = "welcome",
                          shiny::h3("Welcome to Vanishing Vitamin!"),
                          shiny::h5("This tab helps users get started.
                  It summarizes the app's primary functionality and directs users to where they can find more information."),
-                         shiny::h5("Note to future self: link to ",
-                                   shiny::a(href = "https://sites.google.com/ucdavis.edu/salmonintheclassroomresources/home",
-                                            target = '_blank',
-                                            "https://sites.google.com/ucdavis.edu/salmonintheclassroomresources/home"),
-                                   " for resources, data, and other documentation."),
-                         shiny::br(),
-                         shiny::h5(shiny::strong("Click on one of the buttons at the top to get started!"))),
+                         bs4Dash::tabsetPanel(id = "splash_tabset", type = "tabs",
+                                              shiny::tabPanel(title = "Background",
+                                                              shiny::uiOutput("splash_page_background")),
+                                              shiny::tabPanel(title = "What causes TDC?",
+                                                              shiny::uiOutput("splash_page_what_causes_tdc")),
+                                              shiny::tabPanel(title = "Vitamers",
+                                                              shiny::uiOutput("splash_page_vitamers"))
+                         )
+        ),
         bs4Dash::tabItem(tabName = "data",
                          shiny::fluidRow(shiny::column(width = 6,
                                                        bs4Dash::box(
@@ -258,15 +261,15 @@ app_ui <- function(tdc_data){
                            bs4Dash::box(
                              collapsible = FALSE, maximizable = TRUE, title = "Thiamin Concentration vs. % Survived", width = 9,
                              plotly::plotlyOutput("ec50_curve", height = "550px", width = '100%'),
-                             br(),
+                             shiny::br(),
                              reactable::reactableOutput("visualize_add_data")
                            )
                          )
         ),
         bs4Dash::tabItem(tabName = "disclaimer",
-                         wellPanel(
-                           h2("Disclaimer"),
-                           tags$strong("This software is preliminary or provisional and is subject to revision. It is
+                         shiny::wellPanel(
+                           shiny::h2("Disclaimer"),
+                           shiny::tags$strong("This software is preliminary or provisional and is subject to revision. It is
 being provided to meet the need for timely best science. The software has not
 received final approval by the U.S. Geological Survey (USGS). No warranty,
 expressed or implied, is made by the USGS or the U.S. Government as to the
@@ -276,9 +279,64 @@ neither the USGS nor the U.S. Government shall be held liable for any damages
 resulting from the authorized or unauthorized use of the software.
 ")
                          )
-                         )
+        )
       )
     )
   )
+
+}
+
+tabset_styling <- function(){
+
+  ".inside-tabs {
+    margin-left: -32px;
+    margin-top: -16px;
+}
+
+.inside-tabs > .nav {
+    margin-left: -30px;
+    margin-right: -30px;
+}
+
+.tab-content {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.nav-tabs > li > a {
+    color:#00000050;
+    border: 1px solid #ddd;
+    padding-left: 75px;
+    padding-right: 75px;
+    background-color: #fcfcfc;
+}
+
+.nav-tabs > li.active > a {
+    color:#000000;
+    border: 1px solid #ddd;
+    padding-left: 75px;
+    padding-right: 75px;
+    background-color: #ffffff;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: none;
+    border-top: none;
+    box-shadow: none;
+    color: #30256c;
+    font-weight: 300;
+}
+
+.nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus:hover {
+    border: none;
+    color: #ddd;
+    color: #30256c;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus {
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #30256c;
+}"
 
 }

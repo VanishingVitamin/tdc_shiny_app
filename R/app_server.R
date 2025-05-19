@@ -20,6 +20,41 @@
 app_server <- function(tdc_data, citations, lc50_curve){
   function(input, output, session) {
 
+    #addResourcePath("extdata", system.file("extdata", package = "vanishingVitamin"))
+
+    output$splash_page_background <- shiny::renderUI({
+
+      # shiny::tags$iframe(src = "extdata/splash_page_background.html",
+      #                    width = "100%",
+      #                    height = 1000,
+      #                    seamless = "seamless")
+
+      shiny::includeHTML("inst/extdata/splash_page_background.html")
+
+    })
+
+    output$splash_page_what_causes_tdc <- shiny::renderUI({
+
+      # shiny::tags$iframe(src = "extdata/splash_page_background.html",
+      #                    width = "100%",
+      #                    height = 1000,
+      #                    seamless = "seamless")
+
+      shiny::includeHTML("inst/extdata/splash_page_what_causes_tdc.html")
+
+    })
+
+    output$splash_page_vitamers <- shiny::renderUI({
+
+      # shiny::tags$iframe(src = "extdata/splash_page_background.html",
+      #                    width = "100%",
+      #                    height = 1000,
+      #                    seamless = "seamless")
+
+      shiny::includeHTML("inst/extdata/splash_page_vitamers.html")
+
+    })
+
     shiny::observeEvent(input$filter_sidebar,
                         {
 
@@ -736,3 +771,9 @@ dose_response <-
   function(Thiamin_conc, ec50_mu, slope_p, upper_p, lower_p = 0){
     upper_p + (lower_p - upper_p)/(1 + (Thiamin_conc/ec50_mu)**slope_p)
   }
+
+#' @noRd
+#' @keywords internal
+setupWidgets <- function() {
+  addResourcePath('extdata', system.file('extdata', package='vanishingVitamin'))
+}
