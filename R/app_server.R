@@ -305,22 +305,22 @@ app_server <- function(tdc_data, citations, lc50_curve){
             x = ~Thiamin_conc,
             ymin = ~survival_ci_2.5,
             ymax = ~survival_ci_97.5,
-            name = "survival_ci",
+            name = "Survival 95% C.I.",
             fillcolor = "black",
             opacity = .15,
             line = list(color = "black", opacity = .1),
-            showlegend = FALSE
+            showlegend = TRUE
           ) |>
           # The second layer of the plot is a fitted median survival curve.
           plotly::add_lines(data = lc50_curve,
                             x = ~Thiamin_conc,
                             y = ~survival_median,
                             text = ~plot_label,
-                            name = "survival_med",
+                            name = "Survival Curve",
                             hoverinfo = "text",
                             hoverlabel = list(bgcolor = "#e5e5e5"),
                             color = I("black"), opacity = .5,
-                            showlegend = FALSE)
+                            showlegend = TRUE)
 
         # Next add the points ("markers"). We want the user to hover over a
         # particular Thiamin Concentration "x" value and see (1) all observed %
