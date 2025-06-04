@@ -490,16 +490,33 @@ app_server <- function(tdc_data, citations, lc50_curve){
     # Thiamin Concentration and (optionally) % Survived,
     observe({
 
+      req(input$visualize_add_data_file_thiamin_col)
+
       plot_data <-
         filtered_data$user_uploaded_data |>
         dplyr::select(dplyr::any_of(c(input$visualize_add_data_file_thiamin_col,
-                                      input$visualize_add_data_file_survive_col))) |>
-        purrr::set_names(c("Thiamin_conc", "Percent_survive")) |>
+                                      input$visualize_add_data_file_survive_col)))
+
+      if(ncol(plot_data) == 1 | input$visualize_add_data_file_survive_col == ""){
+        plot_data <- plot_data |>
+          dplyr::mutate(Percent_survive = NA)
+      }
+
+      # Check that Thiamin concentration column has no missing values
+      if(any(is.na(plot_data[[input$visualize_add_data_file_thiamin_col]]))){
+        shiny::showNotification(ui = "Something is wrong with the Thiamin Concentration column. It should only contain numeric values. Check your data and try again.",
+                                type = "error")
+        shiny::req(FALSE)
+      }
+
+      plot_data <- plot_data |>
+        stats::setNames(c("Thiamin_conc", "Percent_survive")) |>
         dplyr::mutate(Thiamin_conc = as.numeric(Thiamin_conc),
                       Percent_survive = as.numeric(Percent_survive))
 
-      if(any(is.na(plot_data$Thiamin_conc))){
-        shiny::showNotification(ui = "Something is wrong with the Thiamin Concentration column. It should only contain numeric values. Check your data and try again.",
+      # check that Percent_surive column is either all NA or is a valid percent
+      if(!all(is.na(plot_data$Percent_survive) | (plot_data$Percent_survive > 0 & plot_data$Percent_survive < 100))){
+        shiny::showNotification(ui = "Something is wrong with the Percent Survive column. It can contain either percent values (between 0% and 100%) or 'NA' missingvalues. Check your data and try again.",
                                 type = "error")
         shiny::req(FALSE)
       }
@@ -523,8 +540,6 @@ app_server <- function(tdc_data, citations, lc50_curve){
 
       shiny::req(input$visualize_add_data_clipboard)
 
-      browser()
-
       filtered_data$user_clipboard_data <-
         utils::read.csv(text = input$visualize_add_data_clipboard,
                         sep = "",
@@ -541,18 +556,31 @@ app_server <- function(tdc_data, citations, lc50_curve){
 
     shiny::observe({
 
-
+      req(input$visualize_add_data_clipboard_thiamin_col)
 
       plot_data <-
         filtered_data$user_clipboard_data |>
         dplyr::select(dplyr::any_of(c(input$visualize_add_data_clipboard_thiamin_col,
-                                      input$visualize_add_data_clipboard_survive_col))) |>
-        purrr::set_names(c("Thiamin_conc", "Percent_survive")) |>
+                                      input$visualize_add_data_clipboard_survive_col)))
+
+      if(ncol(plot_data) == 1 | input$visualize_add_data_file_survive_col == ""){
+        plot_data <- plot_data |>
+          dplyr::mutate(Percent_survive = NA)
+      }
+
+      if(any(is.na(plot_data[[input$visualize_add_data_clipboard_thiamin_col]]))){
+        shiny::showNotification(ui = "Something is wrong with the Thiamin Concentration column. It should only contain numeric values. Check your data and try again.",
+                                type = "error")
+        shiny::req(FALSE)
+      }
+
+      plot_data <- plot_data |>
+        stats::setNames(c("Thiamin_conc", "Percent_survive")) |>
         dplyr::mutate(Thiamin_conc = as.numeric(Thiamin_conc),
                       Percent_survive = as.numeric(Percent_survive))
 
-      if(any(is.na(plot_data$Thiamin_conc))){
-        shiny::showNotification(ui = "Something is wrong with the Thiamin Concentration column. It should only contain numeric values. Check your data and try again.",
+      if(!all((plot_data$Percent_survive > 0 & plot_data$Percent_survive < 100))){
+        shiny::showNotification(ui = "Something is wrong with the Percent Survive column. It can contain either percent values (between 0% and 100%) or 'NA' missingvalues. Check your data and try again.",
                                 type = "error")
         shiny::req(FALSE)
       }

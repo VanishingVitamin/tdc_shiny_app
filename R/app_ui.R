@@ -205,7 +205,7 @@ app_ui <- function(tdc_data){
                                                                                    shiny::conditionalPanel(
                                                                                      condition = "input.visualize_add_data_choice == 'Copy + paste'",
                                                                                      shiny::textAreaInput(inputId = "visualize_add_data_clipboard",
-                                                                                                          label = "Copy + paste data below (separted by space)",
+                                                                                                          label = "Copy + paste data below (separated by space)",
                                                                                                           placeholder = "Thiamin_conc\tPercent_survive\n1.234\t56.78",
                                                                                                           resize = "vertical"),
                                                                                      shinyjs::hidden(
