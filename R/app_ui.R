@@ -258,15 +258,15 @@ app_ui <- function(tdc_data){
                            bs4Dash::box(
                              collapsible = FALSE, maximizable = TRUE, title = "Thiamin Concentration vs. % Survived", width = 9,
                              plotly::plotlyOutput("ec50_curve", height = "550px", width = '100%'),
-                             br(),
+                             shiny::br(),
                              reactable::reactableOutput("visualize_add_data")
                            )
                          )
         ),
         bs4Dash::tabItem(tabName = "disclaimer",
-                         wellPanel(
-                           h2("Disclaimer"),
-                           tags$strong("This software is preliminary or provisional and is subject to revision. It is
+                         shiny::wellPanel(
+                           shiny::h2("Disclaimer"),
+                           shiny::tags$strong("This software is preliminary or provisional and is subject to revision. It is
 being provided to meet the need for timely best science. The software has not
 received final approval by the U.S. Geological Survey (USGS). No warranty,
 expressed or implied, is made by the USGS or the U.S. Government as to the
