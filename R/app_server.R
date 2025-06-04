@@ -423,8 +423,9 @@ app_server <- function(tdc_data, citations, lc50_curve){
                          tickmode = "dynamic"),
             yaxis = list(title = "% Survived",
                          range = c(-3,103)),
-            hovermode = "x",
-            hoverdistance = 1,
+            # hovermode = "x",
+            hovermode = "closest",
+            hoverdistance = 10,
             showlegend = TRUE
           ) |>
           plotly::style(
@@ -450,7 +451,9 @@ app_server <- function(tdc_data, citations, lc50_curve){
           #          ))
           #   )
           #   ) |>
-          htmlwidgets::onRender(remove_trace_js)
+          htmlwidgets::onRender(remove_trace_js)  |>
+          plotly::config(displaylogo = FALSE,
+                         modeBarButtonsToRemove = c("lasso2d", "autoscale2d", "select2d"))
 
       })
 
