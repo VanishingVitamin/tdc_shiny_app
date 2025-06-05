@@ -563,7 +563,7 @@ app_server <- function(tdc_data, citations, lc50_curve){
         dplyr::select(dplyr::any_of(c(input$visualize_add_data_clipboard_thiamin_col,
                                       input$visualize_add_data_clipboard_survive_col)))
 
-      if(ncol(plot_data) == 1 | input$visualize_add_data_file_survive_col == ""){
+      if(ncol(plot_data) == 1 | input$visualize_add_data_clipboard_survive_col == ""){
         plot_data <- plot_data |>
           dplyr::mutate(Percent_survive = NA)
       }
