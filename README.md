@@ -17,6 +17,20 @@
 **Statement of Need**: Thiamin Deficiency Complex (TDC) is a global threat to the stability and persistence of wildlife populations. 
 The purpose of this application is to assemble a publicly accessible and interactive database on Thiamin Deficiency Complex in salmonids.
 
+### Functionality 
+
+The app summarizes available published data of thiamin concentration and mortality for various species, locations, and runs.
+
+* The "Welcome" tab provides background and usage information for the application.
+
+* The "Data" tab summarizes published thiamin data in a table and map. The map shows the collection location of data sets. You can use the inputs in the sidebar to filter which data sets are shown in this tab.
+
+![](./data_tab_screenshot.png)
+
+* The "Visualize" tab shows an interactive scatterplot of thiamin concentration and mortality rate. You can use the inputs in the sidebar to filter data displayed in the scatterplot. You can also add your own data to the scatterplot using the "Visualize your own data" tab.
+
+![](./visualize_tab_screenshot.png)
+
 ------------------------------------------------------------------------
 
 The code in this repository was mostly written in the [R](https://cloud.r-project.org/) programming language within the [RStudio](https://posit.co/download/rstudio-desktop/) integrated development environment (IDE).
@@ -54,7 +68,7 @@ If you can use R and want to run the app locally, then complete the following st
 
 6. Run `devtools::install(".")` in your R Console to install the `vanishingVitamin` R package locally.
 
-7. One the install is complete, run `vanishingVitamin::launch_app()` which should trigger the app to launch.
+7. Once the install is complete, run `vanishingVitamin::launch_app()` which should trigger the app to launch.
 
 ## I'm a reviewer (providing feedback)
 
@@ -147,10 +161,6 @@ The typical workflow for making changes goes:
 
 Note that creating PRs from a forked version of a repository is another common way to propose/merge changes into `main`.
 We will not be using this method, instead incorporating changes via branches.
-
-### I want to create a new executable file
-
-[UNDER CONSTRUCTION] These instructions are intended for advanced developers who want to create a new `.exe` (executable) file for the app, which should only really be necessary for larger, public releases of the application.
 
 ------------------------------------------------------------------------
 
