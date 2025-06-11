@@ -7,7 +7,9 @@
 #'   the data set exported by the vanishingVitamin package,
 #'   vanishingVitamin::tdc_data
 #'
-#' @value \code{bs4Dash::dashboardPage} object containing UI elements
+#' @return \code{bs4Dash::dashboardPage} object containing UI elements
+#' @keywords internal
+#' @noRd
 
 app_ui <- function(tdc_data){
 
@@ -33,7 +35,6 @@ app_ui <- function(tdc_data){
     }) |>
     purrr::set_names(unique(location_info$data_collection_region))
     # purrr::set_names(stringr::str_wrap(unique(location_info$data_collection_region), width = 10))
-
   bs4Dash::dashboardPage(
     scrollToTop = TRUE,
     freshTheme = app_theme(),
@@ -49,9 +50,9 @@ app_ui <- function(tdc_data){
                                         shinyjs::useShinyjs(),
                                         bs4Dash::navbarTab(tabName = "welcome", text = shiny::tags$span(shiny::icon("fish-fins"), "Welcome!")),
                                         bs4Dash::navbarTab(tabName = "data", text = shiny::tags$span(shiny::icon("table"), "Data")),
-                                        bs4Dash::navbarTab(tabName = "visualize", text = shiny::tags$span(shiny::icon("chart-line"), "Visualize"))
+                                        bs4Dash::navbarTab(tabName = "visualize", text = shiny::tags$span(shiny::icon("chart-line"), "Visualize")),
+                                        bs4Dash::navbarTab(tabName = "disclaimer", text = shiny::tags$span(shiny::icon("triangle-exclamation"), "Disclaimer"))
                                       )),
-
     sidebar = bs4Dash::dashboardSidebar(disable = FALSE,
                                         elevation = 2,
                                         collapsed = TRUE,
@@ -176,16 +177,108 @@ app_ui <- function(tdc_data){
                          )
         ),
         bs4Dash::tabItem(tabName = "visualize",
-                         shiny::h5("This tab will contain EC50 curves for survival % vs. thiamin concentration."),
-                         shiny::sidebarLayout(
-                           sidebarPanel = shiny::div(id = "tdc_table_filter_sidebar",
-                                                     class = "col-sm-2",
-                                                     shiny::sidebarPanel(width = 10,
-                                                                         "This sidebar will let users filter the scatterplot.")),
-                           mainPanel = shiny::mainPanel(width = 10,
-                                                        plotly::plotlyOutput("ec50_curve",height = "800px"))
-                         ))
+                         shiny::fluidRow(
+                           shiny::column(width = 3,
+                                         bs4Dash::accordion(id = "visualize_accordion",
+                                                            bs4Dash::accordionItem(collapsed = FALSE, status = "primary",
+                                                                                   title = "Visualize your own data",
+                                                                                   style = "height: calc(80vh); overflow-y:scroll",
+                                                                                   icon = bsicons::bs_icon("plus"),
+                                                                                   shiny::selectInput(inputId = "visualize_add_data_choice",
+                                                                                                      label = "Choose how to add data:",
+                                                                                                      choices = c("Manual entry",
+                                                                                                                  "Copy + paste",
+                                                                                                                  "Upload data file")),
+                                                                                   shiny::conditionalPanel(
+                                                                                     condition = "input.visualize_add_data_choice == 'Manual entry'",
+                                                                                     shiny::numericInput(inputId = "visualize_add_data_manual_thiamin",
+                                                                                                         label = "Thiamin Concentration (nmol/g):",min = 0,
+                                                                                                         value = NULL),
+                                                                                     shiny::numericInput(inputId = "visualize_add_data_manual_survival",
+                                                                                                         label = "(Optional) % Survived:",
+                                                                                                         min = 0, max = 100,
+                                                                                                         value = NULL),
+                                                                                     shiny::actionButton(inputId = "visualize_add_data_new_row",
+                                                                                                         label = "Add data",
+                                                                                                         icon = shiny::icon("plus"))
+                                                                                   ),
+                                                                                   shiny::conditionalPanel(
+                                                                                     condition = "input.visualize_add_data_choice == 'Copy + paste'",
+                                                                                     shiny::textAreaInput(inputId = "visualize_add_data_clipboard",
+                                                                                                          label = "Copy + paste data below (separated by space)",
+                                                                                                          placeholder = "Thiamin_conc\tPercent_survive\n1.234\t56.78",
+                                                                                                          resize = "vertical"),
+                                                                                     shinyjs::hidden(
+                                                                                       shiny::wellPanel(id = "visualize_add_data_clipboard_panel",
+                                                                                                        width = 12,
+                                                                                                        shiny::selectInput(inputId = "visualize_add_data_clipboard_thiamin_col",
+                                                                                                                           label = "Thiamin Concentration column",
+                                                                                                                           choices = ""),
+                                                                                                        shiny::selectInput(inputId = "visualize_add_data_clipboard_survive_col",
+                                                                                                                           label = "(Optional) % Survived column",
+                                                                                                                           choices = ""),
+                                                                                                        shiny::br(),
+                                                                                                        shiny::actionButton(inputId = "visualize_add_data_clipboard_button",
+                                                                                                                            label = "Add data",
+                                                                                                                            icon = shiny::icon("plus"))
+                                                                                       )
+                                                                                     )
+                                                                                   ),
+                                                                                   shiny::conditionalPanel(
+                                                                                     condition = "input.visualize_add_data_choice == 'Upload data file'",
+                                                                                     shiny::tags$style(type = "text/css", "#visualize_add_data_template {color: black; text-decoration: underline;}"),
+                                                                                     shiny::tags$style(type = "text/css", "#visualize_add_data_template:hover {font-weight: bold;}"),
+                                                                                     shiny::downloadLink(outputId = "visualize_add_data_template",
+                                                                                                         label = "Download template data file"),
+                                                                                     shiny::br(),shiny::br(),
+                                                                                     shiny::fileInput(inputId = "visualize_add_data_file",
+                                                                                                      label = "Select a file",
+                                                                                                      accept = c(".csv",".xlsx"),
+                                                                                                      placeholder = "Upload a csv or xlsx file",
+                                                                                                      multiple = FALSE),
+                                                                                     shinyjs::hidden(
+                                                                                       shiny::wellPanel(id = "visualize_add_data_file_panel",
+                                                                                                        width = 12,
+                                                                                                        shiny::selectInput(inputId = "visualize_add_data_file_thiamin_col",
+                                                                                                                           label = "Thiamin Concentration column",
+                                                                                                                           choices = ""),
+                                                                                                        shiny::selectInput(inputId = "visualize_add_data_file_survive_col",
+                                                                                                                           label = "(Optional) % Survived column",
+                                                                                                                           choices = ""),
+                                                                                                        shiny::br(),
+                                                                                                        shiny::actionButton(inputId = "visualize_add_data_upload",
+                                                                                                                            label = "Add data",
+                                                                                                                            icon = shiny::icon("plus"))
+                                                                                       )
+                                                                                     )
+                                                                                   )
+                                                            )
+                                         )
+                           ),
+                           bs4Dash::box(
+                             collapsible = FALSE, maximizable = TRUE, title = "Thiamin Concentration vs. % Survived", width = 9,
+                             plotly::plotlyOutput("ec50_curve", height = "550px", width = '100%'),
+                             shiny::br(),
+                             reactable::reactableOutput("visualize_add_data")
+                           )
+                         )
+        ),
+        bs4Dash::tabItem(tabName = "disclaimer",
+                         shiny::wellPanel(
+                           shiny::h2("Disclaimer"),
+                           shiny::tags$strong("This software is preliminary or provisional and is subject to revision. It is
+being provided to meet the need for timely best science. The software has not
+received final approval by the U.S. Geological Survey (USGS). No warranty,
+expressed or implied, is made by the USGS or the U.S. Government as to the
+functionality of the software and related material nor shall the fact of release
+constitute any such warranty. The software is provided on the condition that
+neither the USGS nor the U.S. Government shall be held liable for any damages
+resulting from the authorized or unauthorized use of the software.
+")
+                         )
+                         )
       )
     )
   )
+
 }

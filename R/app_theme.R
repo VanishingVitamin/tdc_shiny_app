@@ -3,7 +3,9 @@
 #' This is an internal function that is used within the exported launch_app()
 #' function.
 #'
-#' @value the result of \code{fresh::create_theme}
+#' @return the result of \code{fresh::create_theme}
+#' @keywords internal
+#' @noRd
 
 app_theme <- function(){
   fresh::create_theme(

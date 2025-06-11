@@ -26,7 +26,11 @@ tdc_data <-
                 location_type =
                   case_when(!is.na(Latitude_DD) ~ "provided",
                             is.na(Location) & is.na(Latitude_DD) ~ "missing",
-                            !is.na(Location) & is.na(Latitude_DD) ~ "approximated"))
+                            !is.na(Location) & is.na(Latitude_DD) ~ "approximated")) |>
+  dplyr::rename(
+    Thiamin_conc = Thiamine_conc,
+    Thiamin_units = Thiamine_units
+  )
 
 # Extract all locations/coordinates per DOI
 locations_by_doi <-

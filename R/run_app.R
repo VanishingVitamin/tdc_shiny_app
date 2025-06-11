@@ -6,8 +6,9 @@
 #' @seealso [shiny::shinyApp()]
 #'
 #' @examples
-#' launch_app()
-#'
+#' \dontrun{
+#'   launch_app()
+#' }
 #'
 #' @export
 
@@ -20,9 +21,10 @@ launch_app <- function(options = list(launch.browser = TRUE)){
                        dplyr::select(DOI, data_collection_region),
                      by = c("DOI_join" = "DOI")) |>
     dplyr::select(-DOI_join)
+  lc50_curve <- vanishingVitamin::lc50_curve
 
   shiny::shinyApp(ui = app_ui(tdc_data),
-                  server = app_server(tdc_data, citations),
+                  server = app_server(tdc_data, citations, lc50_curve),
                   options = options)
 
 }

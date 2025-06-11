@@ -3,7 +3,7 @@ Title: An R Shiny app for exploring thiamin deficiency data in salmonidae
 Version: 0.0.0.9000
 Authors@R: 
     person("Joseph", "Zemmels", , "jzemmels@usgs.gov", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Description: Summarizes data of thiamin concentration vs. survival rate for salmonidae.
 License: CC0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -12,7 +12,6 @@ Imports:
     bs4Dash,
     dplyr,
     fresh,
-    ggplot2,
     leaflet,
     plotly,
     reactable,
@@ -20,6 +19,10 @@ Imports:
     shinyjs,
     htmltools,
     purrr,
+    bsicons,
+    readxl,
+    readr,
+    utils,
     shinyWidgets
 Depends: 
     R (>= 3.5)
@@ -28,7 +31,8 @@ Suggests:
     coda,
     googledrive,
     boa,
+    ggplot2,
     rjags,
     usethis,
     tidygeocoder,
-    readr
+    shinytest2
