@@ -40,14 +40,22 @@ app_ui <- function(tdc_data){
     freshTheme = app_theme(),
     help = NULL,
     dark = NULL,
+    footer = bs4Dash::dashboardFooter(right = shiny::includeHTML("www/footer.html")),
     # controlbar = dashboardControlbar(disable = TRUE,width = 0, overlay = TRUE),
     header = bs4Dash::dashboardHeader(title = shiny::h5("Vanishing Vitamin", style = "padding-left:10px;"),
                                       sidebarIcon = shiny::icon("square-plus",
                                                                 style = "font-size:22px;",
                                                                 id = "header_toggle"),
+                                      shiny::a(
+                                        href = "https://www.usgs.gov",
+                                        target = "_blank",
+                                        shiny::img(src = "https://earthquake.usgs.gov/data/comcat/logos/us.svg",
+                                                   height = "50")
+                                      ),
                                       bs4Dash::navbarMenu(
                                         id = "navmenu",
                                         shinyjs::useShinyjs(),
+                                        shiny::includeCSS("www/stylesheets/common.css"),
                                         bs4Dash::navbarTab(tabName = "welcome", text = shiny::tags$span(shiny::icon("fish-fins"), "Welcome!")),
                                         bs4Dash::navbarTab(tabName = "data", text = shiny::tags$span(shiny::icon("table"), "Data")),
                                         bs4Dash::navbarTab(tabName = "visualize", text = shiny::tags$span(shiny::icon("chart-line"), "Visualize")),
