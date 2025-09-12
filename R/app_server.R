@@ -17,9 +17,23 @@
 #' @keywords internal
 #' @noRd
 
-app_server <- function(tdc_data, citations, lc50_curve){
+app_server <- function(tdc_data, citations, lc50_curve, translator){
   function(input, output, session) {
 
+    shiny::addResourcePath("www", system.file("www", package = "vanishingVitamin"))
+
+    shiny::observe({
+
+      shiny.i18n::update_lang(input$selected_language, session)
+
+    })
+
+    output$welcome_page_content <- shiny::renderUI({
+
+      shiny::HTML(readLines(warn = FALSE, paste0("www/welcome_page_", input$selected_language, ".html")))
+    })
+
+    # Toggle sidebar icon to + or - based on whether it's collapsed
     shiny::observeEvent(input$filter_sidebar,
                         {
 
@@ -37,7 +51,7 @@ app_server <- function(tdc_data, citations, lc50_curve){
 
                         })
 
-    tab_automatically_opened <- reactiveVal(value = FALSE)
+    tab_automatically_opened <- shiny::reactiveVal(value = FALSE)
 
     shiny::observe({
 

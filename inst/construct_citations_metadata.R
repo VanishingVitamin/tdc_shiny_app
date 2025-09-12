@@ -2,16 +2,22 @@ tdc_data <- readr::read_csv("inst/misc_data/tdc_data.csv")
 
 citations <-
   tdc_data |>
+  dplyr::mutate(DOI = dplyr::case_when(DOI == "https://academic.oup.com/jaah/article/17/1/65/7822149" ~ "https://doi.org/10.1577/H03-077.1",
+                                       DOI %in% c("https://doi.org/10.1007/s10641-021-01109-5", "https://doi.org/10.1007/s10641-021-01109-6") ~ "https://doi.org/10.1007/s10641-021-01109-4",
+                                       .default = DOI)) |>
   dplyr::distinct(DOI = tolower(DOI)) |>
-  dplyr::mutate(DOI_num = dplyr::case_when(stringr::str_detect(DOI, "org") ~ stringr::str_remove_all(DOI, "^.*org/"),
-                             startsWith(DOI, "DOI: ") ~ stringr::str_remove(DOI, "DOI: "),
-                             .default = DOI) |>
-           URLdecode())   |>
+  dplyr::mutate(
+    DOI_num = dplyr::case_when(stringr::str_detect(DOI, "org") ~ stringr::str_remove_all(DOI, "^.*org/"),
+                               startsWith(DOI, "DOI: ") ~ stringr::str_remove(DOI, "DOI: "),
+                               .default = DOI) |>
+      URLdecode())   |>
   dplyr::mutate(metadata = purrr::map(DOI_num, ~ {
 
     ret <-
-      httr2::request("http://dx.doi.org") |>
-      httr2::req_url_path_append(.x) |>
+      paste0("http://dx.doi.org/",.x) |>
+      urltools::url_encode() |>
+      httr2::request() |>
+      # httr2::req_url_path_append(URLencode(.x)) |>
       httr2::req_headers(accept = "application/json") |>
       httr2::req_error(is_error = \(resp) FALSE) |>
       httr2::req_perform()
@@ -67,12 +73,10 @@ format_metadata <- function(article_meta){
          link_string,".")
 
 }
-
+# undebug(format_metadata)
 citations <- citations |>
-  dplyr::mutate(formatted_metadata = purrr::map2_chr(metadata,DOI,
-                                                     ~ ifelse(stringr::str_detect(.y, "doi"),
-                                                              format_metadata(.x),
-                                                              .y)),
+  dplyr::mutate(formatted_metadata = purrr::map2_chr(metadata, DOI,
+                                                     ~ ifelse(stringr::str_detect(.y, "doi"),format_metadata(.x), "UNPUBLISHED")),
                 data_collection_region = dplyr::case_when(
                   DOI %in% c(
                     "http://dx.doi.org/10.23849/npafcb6/21.31",
@@ -86,10 +90,13 @@ citations <- citations |>
                     "https://doi.org/10.1111/mec.15334",
                     "https://doi.org/10.1577/1548-8659(1996)125<0167:notdcr>2.3.co;2",
                     "https://doi.org/10.1577/h03-072.1",
+                    "https://doi.org/10.1577/h03-077.1",
                     "https://doi.org/10.1577/h03-078.1",
                     "https://doi.org/10.3394/0380-1330(2006)32[293:esaooe]2.0.co;2",
                     "https://doi.org/10.3394/0380-1330(2007)33[93:etsolo]2.0.co;2",
                     "https://doi.org/10.1577/1548-8659(2000)129<0607:eotoro>2.0.co;2",
+                    "http://dx.doi.org/10.1016/j.jglr.2017.01.001",
+                    "https://doi.org/10.1007/s10641-021-01109-4",
                     "unpublished"
                   ) ~ "GREAT LAKES BASIN",
                   DOI %in% c(
@@ -97,6 +104,5 @@ citations <- citations |>
                   ) ~ "BALTIC",
                   .default = "UNCATEGORIZED"
                 ))
-
 
 saveRDS(citations, file = "inst/misc_data/citations.rds")

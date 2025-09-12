@@ -1,0 +1,479 @@
+---
+title: "¡Bienvenido a Vanishing Vitamin!"
+# subtitle: "𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟"
+format: 
+  html:
+    toc: true
+    embed-resources: true
+    theme: stylesheets/custom.scss
+---
+
+Esta aplicación sintetiza datos sobre el Complejo de Deficiencia de Tiamina (TDC) en salmónidos, proporcionando información valiosa para estudiantes, investigadores, conservacionistas y administradores de pesquerías y cualquier persona interesada en aprender más sobre la tiamina.
+
+- **¡Bienvenido!**: continúa leyendo a continuación para aprender información esencial sobre el Complejo de Deficiencia de Tiamina en salmónidos.
+
+- **Datos**: explora conjuntos de datos detallados y observa cómo los niveles de tiamina afectan la supervivencia de los salmónidos en diferentes regiones.
+
+- **Visualiza**: analiza la relación entre la concentración de tiamina y las tasas de supervivencia, y obtén información personalizada al subirtus propios datos.
+
+**𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟**
+
+## Antecedentes
+
+[**Tiamina**](#glossary-thiamine) ([vitamina](#glossary-vitamin) B1) es esencial para casi toda la vida en la Tierra. 
+Como tal, la tiamina es necesaria para que las células produzcan energía y funcionen con normalidad. 
+La tiamina es muy demandada por los seres vivos, y la mayoría de los animales obtienen la tiamina que necesitan a través de su alimentación. 
+La tiamina es soluble en agua, lo que significa que cualquier exceso consumido será excretado (eliminado en la orina) y no puede almacenarse (excepto una pequeña reserva en el hígado). 
+Por lo tanto, los animales necesitan un aporte constante de tiamina en su dieta. 
+
+De hecho, la mayoría de los productos de grano que compramos en la tienda tienen tiamina añadida junto con otras vitaminas y minerales para mantenernos saludables. 
+Revisa la lista de ingredientes en cualquier producto de grano (por ejemplo, una caja de cereales o pan) que tengas en casa y probablemente verás que la tiamina está incluida como vitamina B1, mononitrato de tiamina o tiamina mononitrato.
+
+
+[**Complejo de Deficiencia de Tiamina**](#glossary-tdc) (TDC) es una deficiencia nutricional de tiamina que causa una serie de problemas de salud, incluyendo trastornos neurológicos (pérdida de equilibrio, confusión) e incluso la muerte. 
+La deficiencia de tiamina es, curiosamente, tanto una dolencia humana antigua como una nueva amenaza global emergente para peces y fauna silvestre. 
+La deficiencia de tiamina, llamada ‘beriberi’ en humanos, tiene una larga historia; fue descrita por primera vez entre los años 300–2700 a.C. en el Clásico de Medicina del Emperador Amarillo. 
+El TDC fue detectado  en el ganado y prácticas  agrícolas a principios del siglo XX, y también se ha encontrado en poblaciones silvestres de caimanes, peces, y pajaros.
+
+![El TDC ha sido documentado en taxones de todo el mundo, incluyendo salmones, aves, caimanes, mejillones y alces. El número de especies únicas que han experimentado TDC dentro de cada taxón se incluye entre paréntesis. Adaptado de Harder et al. 2024.](www/image5.jpg){.lightbox #fig-fig1 width="100%" fig-align="center"}
+
+
+El TDC — también conocido como [síndrome de mortalidad temprana](#glossary-ems) (EMS) y [M74](#glossary-m74) en poblaciones de salmón del Báltico — ha sido ampliamente diagnosticado y estudiado en salmón y trucha. 
+Se considera una amenaza para la persistencia de las poblaciones y la estabilidad de la pesca mundial. 
+El TDC ha afectado a poblaciones de salmónidos en los Grandes Lagos Laurentianos, el lago Champlain, los Lagos Finger de Nueva York, el océano Pacífico (ecosistema de la Corriente de California, costa de Oregón) y el mar Báltico. 
+El TDC ocurre cuando una baja cantidad de tiamina se transfiere a los huevos de una hembra en desove. Sin suficiente tiamina, el pez embrionario o las larvas de pez en desarrollo (llamadas [alevines](#glossary-alevin)) en salmón, no pueden producir la energía necesaria para sobrevivir.
+Esto provoca problemas de salud e incluso  la muerte antes de que puedan comenzar a alimentarse  y obtener tiamina de su dieta.
+
+
+## ¿Por qué es importante?
+
+Las consecuencias del TDC pueden ser permanentes o fatales. Por ejemplo:
+
+* Puede disminuir la productividad y abundancia de las poblaciones afectadas. Por ejemplo, la descendencia de salmón atlántico afectado por TDC en el mar Báltico y la trucha del lago en los Grandes Lagos Laurentianos murió a tasas inusualmente altas. La deficiencia de tiamina probablemente causó la muerte de hasta la mitad de los alevines recién eclosionadosde salmón chinook de invierno, ya en peligro de extinción, en el río Sacramento en 2020 y 2021 (Mantua et al. 2025).
+
+* En animales de granja de piel, el TDC resultó en parálisis seguida de la muerte. No hubo virus ni bacterias responsables. En cambio, se debió a dietas de pescado crudo que contenían [tiaminasa](#glossary-thiaminase), una enzima que degrada la tiamina en los intestinos de los animales (Lee 1948).
+
+* En humanos, el beriberi afecta el sistema cardiovascular, el sistema nervioso o ambos. Aunque los síntomas son reversibles con la suplementación de tiamina, una  deficiencia persistente de tiamina puede resultar en daño cerebral permanente (Whitfield et al. 2018).
+
+## ¿Qué causa el TDC?
+
+¿La respuesta corta? No sabemos con certeza, pero tenemos hipótesis.
+
+El TDC en peces, fauna silvestre y humanos ocurre por no obtener suficiente tiamina. 
+Esto puede ocurrir de dos formas:
+
+1. consumir alimentos que no contengan suficiente tiamina, o 
+2. tener tiamina agotada en el cuerpo debido al estrés oxidativo o a la tiaminasa, una enzima que degrada la tiamina.
+
+Las dietas ricas en grasas pueden aumentar el estrés oxidativo, lo que genera una mayor demanda de antioxidantes como la tiamina para contrarrestar ese estrés. 
+
+Las tiaminasas están presentes en ciertos microbios, plantas, insectos, invertebrados e incluso especies vertebrados, incluyendo algunos peces. 
+Cuando la dieta de un depredador está dominada por presas con alto contenido de tiaminasa, esta puede descomponer la tiamina en el intestino del depredador durante la digestión, lo que lleva a la deficiencia.
+
+Es importante destacar que la actividad de la tiaminasa es alta en algunas presas consumidas por los salmónidos, lo que puede provocar  que la tiamina sea destruida a medida que se digieren estas especies.
+La relación entre una dieta rica en tiaminasa y el TDC ha documentado en humanos, ganado, animales de granja de piel, mamíferos marinos y peces. 
+De manera alternativa , los peces que consumen demasiado grasa pueden experimentar tasas más altas de daño celular a través de un proceso conocido como estrés oxidativo. 
+La tiamina puede funcionar como un antioxidante para contrarrestar el estrés oxidativo, pero este proceso puede agotar la tiamina disponible.
+
+![Las causas del TDC aún se están investigando, pero sabemos que los salmones existen en un mundo lleno de estresores. En general, los científicos han reducido los posibles paradigmas generales del TDC a dos: Paradigma 1 es que algo en las presas de los salmones está causando la deficiencia de tiamina. Paradigma 2 es que algo está cambiando en el ecosistema que afecta la cantidad de tiamina que llega a consumidores superiores como los salmones.](www/image4.png){.lightbox #fig-fig2 fig-align="center" width="100%"}
+
+Ejemplos de TDC en peces tras el consumo de presas con alta actividad de tiaminasa o contenido de grasa incluyen:
+
+1. El TDC generalizado en los salmónidos de los Grandes Lagos asociado con el consumo de alosa invasora (*Alosa pseudoharengus*) rica en tiaminasa y en grasa .
+
+2. El TDC generalizado en salmones de California y truchas arcoíris, vinculado a dietas oceánicas dominadas por anchoas ricas en tiaminasa y grasa (*Engraulis mordax*).
+
+3. TDC en el salmón atlántico del mar Báltico (*Salmo salar*) asociado con dietas dominadas por espadín (*Sprattus sprattus*) bajas en tiamina y altas en grasa insaturada. El alto contenido de grasa de estas dietas puede aumentar el estrés oxidativo, incrementando la demanda de antioxidantes, incluida la tiamina. Además, el espadín también presenta actividad de tiaminasa.
+
+Los salmones enfrentan muchos estresores a lo largo de su ciclo de vida que pueden afectar su capacidad para obtener suficiente tiamina. Estos incluyen enfermedades, cambios en la red trófica, estrés por temperatura, exposición a contaminantes, estrés migratorio y muchos otros factores que pueden combinarse para generar TDC (Figura 2).
+
+## Criaderos y TDC
+
+Teóricamente, restaurar las poblaciones de presas para ayudar a los depredadores a mantener concentraciones saludables de tiamina también podría ser una opción. Por ejemplo, en los Grandes Lagos existen esfuerzos importantes para restaurar presas nativas, y el aumento de la tiamina en los salmónidos es un objetivo asociado a esos esfuerzos de restauración.Sin embargo, ninguna presa nativa ha aumentado en abundancia hasta convertirse en presa principal que conduzca a un incremento de tiamina. Dicho esto, el colapso de la alosa (alewife) en el lago Hurón sí demuestra que un cambio de dieta puede aumentar las concentraciones de tiamina en los salmónidos. En lugar de ello, se utiliza la suplementación con tratamientos de tiamina en peces con deficiencia, para reponer las concentraciones y mitigar el TDC en las poblaciones. Estos tratamientos con tiamina se realizan con frecuencia en los criaderos de peces, donde se pueden tratar millones de ejemplares simultáneamente.
+
+Los criaderos son instalaciones donde los huevos de peces se fertilizan artificialmente y los embriones resultantes eclosionan (de ahí el nombre criadero) y los juveniles son criados en condiciones controladas hasta que se liberan en la naturaleza. 
+En el medio silvestre, los peces presentan tasas de supervivencia naturalmente muy bajas, mientras que los criaderos proporcionan un entorno protegido y controlado para maximizar su supervivencia. 
+ Muchos criaderos de salmón y trucha se han establecido para mitigar los impactos negativos de las represas y la degradación del hábitat. 
+El objetivo principal es compensar la pérdida de producción natural de peces causada por perturbaciones ambientales de origen humano. . 
+En algunos casos, los criaderos se utilizan para criar y liberar especies cercanas a la extinción, con el fin de facilitar su restablecimiento en la naturaleza. 
+Otra aplicación común es la producción de peces criados en criaderos para apoyar pesquerías tribales, recreativas y comerciales.
+
+Los peces han sido entornos artificiales durante milenios, inicialmente como fuente de alimento. Las prácticas modernas de los criaderos se han utilizado en todo el mundo por más de un siglo. 
+Estas prácticas han permitido la persistencia de poblaciones de peces en áreas donde los hábitats naturales se han perdido por completo, como cuando las represas bloquean  las rutas migratorias hacia los terrenos de desove. 
+Sin embargo, revisiones científicas recientes han destacado numerosas preocupaciones asociadas con las operaciones de criaderos (McMillan et al. 2023). 
+En lugar de conservar las poblaciones de peces silvestres, estas prácticas contribuyen principalmente a su declive. 
+Por ejemplo, los programas de criaderos pueden reducir la diversidad genética y disminuir la resiliencia de las poblaciones de peces ante cambios ambientales y enfermedades. 
+La introducción de peces criados en criaderos no nativos también puede alterar los ecosistemas locales y llevar al desplazamiento o a la extinción de especies nativas. 
+
+Cuando se detecta deficiencia de tiamina en los stocks de criaderos, los administradores pueden implementar tratamientos con tiamina para mejorar las tasas de supervivencia en las primeras etapas de vida. 
+Existen dos tipos de tratamientos que se aplican típicamente en los criaderos. 
+Cuando es posible capturar a los peces adultos semanas antes de su fecha de desove, se les aplican inyecciones de refuerzo de tiamina que han demostrado ser eficaces para aumentar drásticamente los niveles de tiamina en sus huevos. En algunas poblaciones de salmónidos, las hembras reciben estas inyecciones durante sus migraciones de desove, lo que les permite desovar de manera natural con concentraciones abastecidas de tiamina.
+Cuando los adultos se manipulan mucho más cerca de la época de desove, los huevos pueden ser fertilizados en agua enriquecida con tiamina.   Estos huevos son capaces de absorber rápidamente la tiamina del agua en el transcurso de una hora de inmersión y retenerla para prevenir la mortalidad asociada con el TDC. 
+Este método ha demostrado ser altamente eficaz y eficiente, y es una práctica común en los criaderos que crían salmón y trucha. 
+ Lamentablemente, la mayoría de los tratamientos masivos de huevos se limita actualmente a peces criados en criaderos y no beneficia a los peces con deficiencia de tiamina que se reproducen de forma natural en el medio silvestre. Recientemente, algunos peces que desovan en estado silvestre han recibido inyecciones de tiamina durante sus migraciones.
+En cualquier caso, el futuro de algunas poblaciones de [salmonidos](#glossary-salmonine) que experimentan TDC podría llegar a depender de la intervención humana.
+
+## ¿Cómo se mide la tiamina?
+
+Medir las concentraciones de tiamina en los peces puede requerir la coordinación entre pescadores deportivos, personal de criaderos, administradores de pesquerías y, finalmente,  investigadores. 
+Debido a que la mayoría de las poblaciones de salmón y trucha tienen amplios programas de criaderos, la mayoría de las muestras provienen de peces que regresan a estos  criaderos. 
+Ocasionalmente, pescadores locales y administradores de pesquerías han aportado  muestras adicionales. 
+La tiamina se almacena en diversos tejidos, incluyendo sangre, músculo, hígado y gónadas (como ovarios y huevos) y puede medirse a partir de cualquiera de ellos. 
+Los huevos son el tejido que se analiza con mayor frecuencia, ya que su recolección puede no es letal y los síntomas del TDC son más comunes en las primeras etapas de vida que dependen de las concentraciones de tiamina en los huevos.
+
+:::: {.columns}
+
+::: {.column width="48%"}
+![Recolectan los paquetes de huevos](www/image1.png){.lightbox #fig-fig5 fig-align="center" width="100%"}
+
+:::
+
+::: {.column width="4%"}
+
+:::
+
+::: {.column width="48%"}
+![Un paquete de muestra](www/image9.png){.lightbox #fig-fig6 fig-align="center" width="100%"}
+:::
+
+::::
+
+Una vez recolectadas, las muestras deben ser congeladas rápidamente para evitar la degradación del tejido y preservar las concentraciones de tiamina. 
+Las muestras se transportan entonces en hielo seco a un centro de investigación, donde la tiamina  puede extraerse y cuantificarse. 
+Algunas muestras han viajado hasta 3,000 millas (5,000 km) desde Alaska a Nueva York para su procesamiento. 
+Existen múltiples métodos para extraer y medir la tiamina en los tejidos, que varían en el tiempo de procesamiento y precisión de las mediciones. 
+Hoy en día, la mayoría de las mediciones de tiamina en peces utilizan una técnica llamada [cromatografía líquida de alta eficiencia](#glossary-hplc) (HPLC) que maximiza la precisión y permite a los investigadores medir con exactitud  concentraciones muy bajas.
+
+
+:::: {.columns}
+
+::: {.column width="45%"}
+La extracción de tiamina de los huevos comienza midiendo el peso de una muestra de huevos y triturándola en un disolvente químico (ácido tricloroacético al 2%, TCA) para extraer la tiamina de las células. 
+
+El tejido triturado se hierve para maximizar la cantidad de tiamina que se extrae de las células. 
+
+Este proceso crea un material espumoso que se centrifuga a alta velocidad para separar el tejido del disolvente TCA que contiene la tiamina.
+
+:::
+
+::: {.column width="3%"}
+
+:::
+
+::: {.column width="47%" style="padding:0px; position:sticky;"}
+![Muelen muestras de huevos en un disolvente químico.](www/image6.png){.lightbox #fig-fig5 fig-align="center" width="100%"}
+:::
+
+::::
+
+Después de que la tiamina ha sido extraída y separada del tejido, el disolvente que contiene la tiamina debe ajustarse  para poder correr adecuadamente a través del instrumental HPLC. 
+Esto implica enjuagar cada muestra con un nuevo disolvente para eliminar el TCA y ajustar el pH de la solución. 
+A cada muestra, se le añade una pequeña cantidad de un compuesto químico fluorescente (ferricianuro de potasio), que se une  a la tiamina, permitiendo que sea detectada y cuantificada por el instrumento HPLC. 
+Finalmente, cada muestra pasa por un filtro fino para eliminar cualquier partícula restante y la solución filtrada que contiene la tiamina se analiza  mediante HPLC.
+
+:::: {.columns}
+
+::: {.column width="49%"}
+El instrumento HPLC toma una pequeña cantidad de la solución de tiamina limpia y la lleva a través de una columna especializada que separa los compuestos en la solución según su estructura química. 
+
+La tiamina se presenta en tres formatos diferentes (vitámeros) que varían en su estructura y tamaño, y por lo tanto se separan entre sí en esta columna. 
+
+A continuación, la solución de tiamina pasa a través de un detector comenzando con el vitámero más pequeño, y el detector mide la concentración de cada vitámero en la muestra. 
+
+Las concentraciones de cada muestra se estandarizans considerando la masa inicial del tejido analizado, lo que proporciona las concentraciones de tiamina como nanomoles (una mil-millonésima de mol) por gramo de muestra de tejido.
+:::
+
+::: {.column width="2%"}
+
+:::
+
+::: {.column width="49%"}
+![El instrumento HPLC.](www/image8.png){.lightbox #fig-fig5 fig-align="center" width="100%"}
+:::
+
+::::
+
+## ¿Cómo sabes si un organismo tiene deficiencia de tiamina?
+
+<b>Síntomas de TDC en embriones libres de salmonidos:</b>
+
+* Letargo (actividad lenta o reducida)
+
+* Comportamiento de natación errático (por ejemplo, natación en espiral o en forma de sacacorchos)
+
+* Ataxia (movimientos descoordinados)
+
+* Coloración oscura o cambios en la pigmentación de la piel (como respuesta al estrés)
+
+* Pérdida de apetito (anorexia) y comportamiento alimentario reducido => Bajo crecimiento
+
+* Alta mortalidad, particularmente después de la absorción del saco vitelino (antes de  la primera alimentación)
+
+Estos síntomas suelen ser muy fáciles de identificar tanto en peces silvestres como en peces de criadero. Consulta este video de alevines de trucha arcoíris deficientes en tiamina y tratados: [Video](https://vimeo.com/1090178610)
+
+## Explicación de LC50
+
+Un [LC50](#glossary-lc50) es <b> la concentración letal de un compuesto para el 50% de la población evaluada </b> (Figura 7). 
+Los LC50 se utilizan a menudo en toxicología para comparar la potencia de un contaminante en diferentes organismos. Estas comparaciones permiten entender qué organismo es más sensible a un contaminante químico. En el caso de la tiamina, los valores de LC50 representan cuánta tiamina requiere  una especie en particular para sobrevivir. Así, los científicos utilizan los valores de LC50 para ayudar a determinar qué tan sensible es una especie a la deficiencia de tiamina y evaluar, mediante la tiamina en los huevos, la probabilidad de que una población en un año determinado muestre TDC. 
+
+![Un ejemplo de una curva clásica de LC50. Podemos ajustar una línea probando muchas concentraciones diferentes y viendo cuántos animales sobreviven. La concentración donde el 50% de ellos sobrevive se llama LC50.](www/image7.png){.lightbox #fig-fig3 fig-align="center" width="80%"}
+
+Otra manera  de explorar los efectos de un compuesto es considerar sus  impactos que tiene más allá de la mortalidad. 
+Para ello, los científicos utilizan un [EC50](#glossary-ec50), <b>o una concentración de efecto para el 50% de la población</b>. 
+El efecto puede ser la muerte (así que un LC50 también puede denominarse EC50), pero también puede ser algo que no cause la muerte pero que dificulte la supervivencia a largo plazo de un organismo. 
+Los efectos pueden incluir cambios en la capacidad de nadar, cambios en el radio de giro, una alteración en la capacidad de detectar cambios con los ojos, una disminución con la función del sistema inmunológico, o muchas otras opciones.
+
+Con la deficiencia de tiamina, los organismos no tienen demasiado de algo dañino para ellos (como en la toxicología clásica), sino muy poco de algo que necesitan. Así que la curva se invierte (Figura 8). Con muy poca tiamina (deficiencia), a veces todos los alevines mueren (es decir, 0% de supervivencia). Si tienen suficiente ([repleto](#glossary-replete)), todos sobreviven (100% de supervivencia). A los científicos les interesa el punto en el medio donde aproximadamente el 50% sobrevive. Si los huevos analizados  están por debajo del umbral de LC50 para la concentración de tiamina, expresada en nanomoles por gramo de huevos (nmol/g), entonces los administradores podrían intervenir y suplementar para asegurar la supervivencia. Esto también puede ser una señal  de que algo anda mal en el ecosistema (ver "¿Qué causa el TDC?").
+
+![Un ejemplo de una curva clásica de LC50. Podemos ajustar una línea probando muchas concentraciones diferentes y viendo cuántos animales sobreviven. La concentración donde el 50% de ellos sobrevive se llama LC50.](www/image2.png){.lightbox #fig-fig4 fig-align="center" width="80%"}
+
+Estos datos son difíciles de recoger. 
+Requiere mantener los huevos de cada hembra en un acuario separado para ver cuántos sobreviven hasta nadar. 
+Salmon en el Aula ha estado ayudando a recopilar estos datos en California desde 2021.
+
+## Glosario
+
+<a name="glossary-alevin" href="#glossary-alevin">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Alevin
+  </span>
+</a>
+
+Un embrión de salmón que obtiene casi todos sus nutrientes del saco vitelino, también llamado alevín de saco vitelino (¿incluir imagen?)
+
+<a name="glossary-deficiency" href="#glossary-deficiency">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Deficiencia
+  </span>
+</a>
+
+No tener suficiente. Un animal que es deficiente en tiamina tendrá impactos en la salud.
+
+<a name="glossary-ec50" href="#glossary-ec50">
+  <span style="font-size: 14pt; font-weight: bold;">
+    EC50
+  </span>
+</a>
+
+A esta concentración, el 50% de la población experimentará efectos adversos.
+
+<a name="glossary-ems" href="#glossary-ems">
+  <span style="font-size: 14pt; font-weight: bold;">
+    EMS
+  </span>
+</a>
+
+Síndrome de mortalidad temprana. Descrito en los Grandes Lagos Laurentianos cuando los criaderos notaron que los alevines morían durante la reabsorción del saco vitelino debido a la deficiencia de tiamina.
+
+<a name="glossary-hab" href="#glossary-hab">
+  <span style="font-size: 14pt; font-weight: bold;">
+    HAB
+  </span>
+</a>
+
+Floraciones algales nocivas; cianobacterias (algas verdeazuladas) o algas eucariotas (microorganismos que no son bacterias ni arqueas) que crecen en exceso y forman floraciones que impactan la red alimentaria y el medio ambiente.
+
+<a name="glossary-hplc" href="#glossary-hplc">
+  <span style="font-size: 14pt; font-weight: bold;">
+    HPLC
+  </span>
+</a>
+
+Instrumento de cromatografía líquida de alta eficiencia.
+
+<a name="glossary-lc50" href="#glossary-lc50">
+  <span style="font-size: 14pt; font-weight: bold;">
+    LC50
+  </span>
+</a>
+
+A esta concentración, se predice que el 50% de la población morirá.
+
+<a name="glossary-microbe" href="#glossary-microbe">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Microbio
+  </span>
+</a>
+
+Organismos microscópicos unicelulares, también conocidos como "microorganismos".
+
+<a name="glossary-m74" href="#glossary-m74">
+  <span style="font-size: 14pt; font-weight: bold;">
+    M74
+  </span>
+</a>
+
+Un síndrome descrito en salmón atlántico (*Salmo salar*) en el Mar Báltico, con alevines de saco vitelino muriendo debido a deficiencia de tiamina. M significa "miljö", que es la palabra sueca que significa medio ambiente, ya que la deficiencia se asoció con factores ambientales, y 74 indica el año en que se detectó por primera vez el problema (1974).
+
+<a name="glossary-oxidative-stress" href="#glossary-oxidative-stress">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Estrés oxidativo
+  </span>
+</a>
+
+Una reacción química que ocurre en las células y los tejidos en la que sustancias reactivas se unen a las moléculas de la célula y las dañan. El cuerpo combate este proceso con sustancias químicas conocidas como antioxidantes.
+
+<a name="glossary-phytoplankton" href="#glossary-phytoplankton">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Fitoplancton
+  </span>
+</a>
+
+Microorganismos fotosintéticos (que obtienen energía de la luz solar) que viven en ambientes acuáticos.
+
+<a name="glossary-replete" href="#glossary-replete">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Repleto
+  </span>
+</a>
+
+Tener suficiente de algo, en este caso, suficiente tiamina para un funcionamiento normal.
+
+<a name="glossary-salmonine" href="#glossary-salmonine">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Salmonido
+  </span>
+</a>
+
+La subfamilia taxonómica que incluye salmón, trucha y char.
+
+<a name="glossary-tdc" href="#glossary-tdc">
+  <span style="font-size: 14pt; font-weight: bold;">
+    TDC
+  </span>
+</a>
+
+Complejo de deficiencia de tiamina. Describe los efectos letales y subletales (por ejemplo, giros al nadar, función inmunitaria deteriorada) de tener concentraciones de tiamina demasiado bajas para mantener las funciones corporales normales. Los efectos generales asociados con la deficiencia de tiamina incluyen el síndrome de mortalidad temprana (EMS). También conocido como M74 en la región del Báltico. Puede presentarse en etapas juveniles y/o adultas.
+
+<a name="glossary-thiaminase" href="#glossary-thiaminase">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Tiaminasa
+  </span>
+</a>
+
+Una enzima que divide la tiamina en moieties de tiazol y pirimidina que son indisponibles para la mayoría de los consumidores.
+
+<a name="glossary-thiamine" href="#glossary-thiamine">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Tiamina
+  </span>
+</a>
+
+Vitamina B1, también escrita como tiamina, una vitamina necesaria para todos los organismos vivos.
+
+<a name="glossary-vitamin" href="#glossary-vitamin">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Vitamina
+  </span>
+</a>
+
+Compuestos orgánicos que son requeridos en pequeñas cantidades por los organismos vivos y son esenciales para el crecimiento normal y la nutrición.
+
+## Referencias
+
+Bengtsson, B. E., Hill, C., Bergman, Å., Brandt, I. Johansson, N., Magnhagen, C., Södergren, A., & Thulin, J. (1999). Reproductive disturbances in Baltic fish: A synopsis of the FiRe Project. Ambio, 28(1), 2-8.
+
+Harder, A. M., Reed, A. N., & Rowland, F. E. (2024). Evolutionary perspectives on thiamine supplementation of managed Pacific salmonine populations. Canadian Journal of Fisheries and Aquatic Sciences, 82, 1-10. <https://doi.org/10.1139/cjfas-2024-0109> 
+
+Fitzsimons, J. D., Brown, S. B., Honeyfield, D. C., & Hnath, J. G. (1999). A Review of Early Mortality Syndrome (EMS) in Great Lakes Salmonids: Relationship with Thiamine Deficiency. Ambio, 28(1), 9-15.
+
+Lee, C. F. (1948). Thiaminase in fishery products: A review. Commercial Fisheries Review, 10(4), 7-17.
+
+Mantua, N. J., Bell, H., Todgham, A. E., Daniels, M. E., Rinchard, J., Ludwig, J. M., ... & Johnson, R. C. (2025). Widespread thiamine deficiency in California salmon linked to an anchovy-dominated marine prey base. Proceedings of the National Academy of Sciences, 122(26), e2426011122. <https://doi.org/10.1073/pnas.242601112>
+
+McMillan, J. R., Morrison, B., Chambers, N., Ruggerone, G., Bernatchez, L., Stanford, J., & Neville, H. 2023. A global synthesis of peer-reviewed research on the effects of hatchery salmonids on wild salmonids. <https://doi.org/10.1111/fme.12643>
+
+Whitfield, K. C., Bourassa, M. W., Adamolekun, B., Bergeron, G., Bettendorff, L., Brown, K. H., ... & Combs Jr, G. F. (2018). Thiamine deficiency disorders: diagnosis, prevalence, and a roadmap for global control programs (Vol. 1430, No. 1, pp. 3-43). <https://doi.org/10.1111/nyas.13919>
+
+## Recursos
+
+### Videos
+
+* [Canal de YouTube Spinning Salmon](https://www.youtube.com/playlist?list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV)
+  * [Un Problema Complejo: Deficiencia de Tiamina en Salmones del Lago Ontario](https://vimeo.com/246128456)
+  * [Estamos dando a la naturaleza una deficiencia de vitaminas.](https://www.youtube.com/watch?v=cfl7mSG13e0) 
+  * [¿Qué es una cuenca hidrográfica?](https://www.youtube.com/watch?v=933SLmx0QS4)
+  * [Tour en video del Criadero del Río Feather](https://www.youtube.com/watch?v=kU5pW9xT74U)
+  * [TDC en Salmones Chinook del Valle Central](https://www.youtube.com/watch?v=JDc12YbxAqc) con Nate Mantua
+  * [El Agua Más Caliente Mata Huevos de Salmón](https://ca.pbslearningmedia.org/resource/nasa09.sci.life.oate.saleggs/warmer-water-kills-salmon-eggs/)
+  * [Las Pesquerías de EE. UU. Enfrentan Desafíos por el Cambio Climático](https://www.youtube.com/watch?v=-ibT7dkqsfg) (con la investigadora colaboradora Rachel Johnson)
+  * CDFW: [Monitoreo de Biodiversidad y Ciencia Comunitaria](https://drive.google.com/file/d/1a3LmvetOlLeIe-jx93zUUGmohafUbF_g/view?usp=drive_link) (destaca el Programa Spinning Salmon)
+  * [No Volver Atrás](https://www.youtube.com/watch?v=Mmo5eHbQ-fk) - CalTrout (video)
+  * Tending Nature: [Recuperando la Agricultura con la Nación Yocha Dehe Wintun](https://www.pbs.org/video/reclaiming-agriculture-with-the-yocha-dehe-wintun-nation-s8tz9l/)
+  * [Conociendo al equipo de investigación - Voces del Campo con Abbie Ward](https://www.youtube.com/watch?v=7Bl7UKjZU9s&list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV&index=5&t=6s) en el río McCloud con la tribu Winnemem-Wintu.
+  * [Video del Departamento de Recursos Hídricos de CA sobre Inyecciones de Tiamina](https://www.youtube.com/watch?v=iN8EXfexmVo) (con el investigador colaborador: Kevin Kwak)
+
+### Enlaces a artículos de noticias y comunicados de prensa
+
+#### Grandes Lagos
+
+* Boletín de la Comisión Internacional Mixta (IJC) sobre la Deficiencia de Tiamina en los Grandes Lagos: <https://ijc.org/en/vitamin-deficiency-limits-salmon-and-trout-offspring-survival>
+
+* Página de Cornell sobre deficiencia de tiamina: <http://thiamine.dnr.cornell.edu/Thiamine_ramifications.html#>
+
+* Artículo de noticias local sobre la muerte de truchas arcoíris en los afluentes del lago Ontario: <https://www.wrvo.org/environment/2014-12-22/fish-die-off-on-salmon-river-could-be-caused-by-vitamin-deficiency>
+
+* Artículo de Great Lakes Echo sobre la alosa amenazando al salmón en los Grandes Lagos: <https://greatlakesecho.org/2009/09/03/alewives-the-trouble-they-cause-and-the-salmon-that-love-them/>
+
+* Publicación en el blog de FishBio que resume la deficiencia de tiamina a nivel global: <https://fishbio.com/a-deeper-dive-into-thiamine-deficiency/>
+* Video comparando alevines de trucha arcoíris deficientes en tiamina y tratados: [Video de Vimeo](https://vimeo.com/1090178610)
+
+* Documental sobre la deficiencia de tiamina centrado en el lago Ontario: [Un Problema Complejo: Deficiencia de Tiamina en Salmones del Lago Ontario](https://vimeo.com/246128456)
+Video que describe la actividad de tiaminasa y su asociación con TDC: [Dra. Catherine Richter | Explorando Enzimas en Peces para Acelerar la Conservación - SciTube](https://scitube.io/dr-catherine-richter-exploring-enzymes-in-fish-to-accelerate-conservation/)
+
+#### Mar Báltico
+
+* Informe de visión general sobre la deficiencia de tiamina en la región del Mar Báltico: <https://www.havsmiljoinstitutet.se/publikationer/havsmiljoinstitutets-rapportserie/tiaminbrist-i-ostersjoomradet>
+
+* WGBAST - El Grupo de Trabajo de Evaluación sobre Salmón y Trucha del Báltico evalúa el estado y las tendencias de las poblaciones de salmón y trucha de mar en el Mar Báltico y proporciona consejos anuales sobre la captura de salmón: <https://www.ices.dk/community/groups/pages/wgbast.aspx>
+
+* Agencia sueca de Gestión Marina y de Agua - Página de información sobre tiamina: <https://www.havochvatten.se/arter-och-livsmiljoer/arter-och-naturtyper/lax/faq-lax/2018-10-29-ar-tiaminbrist-orsaken-till-dodlighet-pa-lax.html>
+
+* Modelo para estimar la mortalidad relacionada con la deficiencia de tiamina de la descendencia de salmón atlántico (*Salmo salar*) y la variación en el síndrome M74 del salmón del Báltico: [Artículo completo: Modelo para estimar la mortalidad relacionada con la deficiencia de tiamina de la descendencia de salmón atlántico (*Salmo salar*) y la variación en el síndrome M74 del salmón del Báltico](https://www.tandfonline.com/doi/full/10.1080/10236244.2021.1941942)
+
+#### California
+
+* [Monitoreo de la Deficiencia de Tiamina en Salmones de California](https://www.fisheries.noaa.gov/west-coast/science-data/monitoring-thiamine-deficiency-california-salmon#piecing-together-the-puzzle) (algunos vinculados como lecturas de fondo para maestros, otros editados para lectura de estudiantes, resumidos)
+
+  * [Monitoreo de TDC en Salmones de CA](https://docs.google.com/document/d/1JbWE4u1iGKBvsEGh3Z2cc5khyE2weBTNhNgsA0V1KIA/edit)
+
+    * Juntando las Piezas
+
+    * Un Misterio Californiano
+
+    * El Costo Oculto
+
+* La Misteriosa Deficiencia de Vitaminas del Océano ([extracto para estudiantes](https://docs.google.com/document/d/1L2z_MbcYu2YLge1Tcq6SHfL1nmvZ3T0dCEtG1DLhaBg/edit?usp=sharing))
+  * Original- [NOAA Fisheries](https://www.fisheries.noaa.gov/feature-story/oceans-mysterious-vitamin-deficiency) por [Alastair Bland](https://hakaimagazine.com/profiles/alastair-bland/) 28 de enero de 2021 publicado por primera vez por Hakai Magazine y NOAA Fisheries
+
+* [Programa Interinstitucional de Ecología de CA: Cuentas de Salmón](https://iep.ca.gov/Science-Synthesis-Service/Directed-Studies-Synthesis/Blog/tag/salmon)
+
+* [Cómo las presas afectan el agua y el hábitat en la Costa Oeste](https://drive.google.com/file/d/1Hx9oTCy28epU1xBuSSYz29GjoS0FOn0g/view?usp=sharing)
+
+* [Investigadores indagan sobre las muertes de chinook del Valle Central, con posibles vínculos a cambios oceánicos](https://drive.google.com/file/d/12LP7XppoNGO80p4GyaYfuMoQXo8Dh_D1/view?usp=drive_link)
+
+* Las Malas Decisiones Dietéticas de los Salmones; La Crisis de Salud del Salmón; Los Salmones Oportunivoros por Abigail Ward y Peggy Harte ((NOTA- se publicará pronto, enlace a Frontiers for Young Minds))
+
+* Webstory de NOAA- Estudiantes de Secundaria Ayudan a Biólogos Federales a Desentrañar el Misterio de los Salmones en Giro por los Estudiantes de Estudios Ambientales de la Escuela Secundaria Fairfield ((NOTA- Se publicará y se enlazará en mayo de 2025))
+
+* [Impactos del Cambio Climático en Salmones y Steelhead](https://www.fisheries.noaa.gov/west-coast/sustainable-fisheries/ecosystem-interactions-and-pacific-salmon#climate-change-impacts-on-salmon-and-steelhead)
+
+  * [Versión para estudiantes](https://docs.google.com/document/d/1CjDxn4hEvOZtrgdS5oYGhau43NDldJ05Gi3juqz8K5I/edit?usp=sharing)
+
+* [Estrategia de Salmones de CA para un Futuro Más Cálido y Seco](https://www.gov.ca.gov/wp-content/uploads/2024/01/Salmon-Strategy-for-a-Hotter-Drier-Future.pdf) (extractos) 
+
+* [Proyecto Nigiri: Cultivando Arroz y Salmón en la Llanura de Inundación](https://watershed.ucdavis.edu/project/nigiri-project-growing-rice-and-salmon-floodway)
+
+  * [Descripción del Proyecto](https://drive.google.com/file/d/1ZzvgRVO2XFlzqMWlkfehHfkkq5d94MSc/view?usp=sharing)
+
+  * [Reimaginando la Llanura de Inundación](https://www.nigiriproject.com/): El Proyecto Nigiri (sitio web)
+
+  * [Transmisión de North State Public Radio](https://www.mynspr.org/agriculture/2016-03-11/nigiri-project-salmon-who-spend-early-life-over-rice-fields-see-an-increase-in-survivability)
+
+* <http://run4salmon.org/articles/>
+
+* <https://savecaliforniasalmonteachersre.godaddysites.com/educator-guides>
+
+* <https://www.ucdavis.edu/climate/blog/anchovy-dominated-diets-west-coast-pose-new-dangers-salmon>
+
+* <https://www.fisheries.noaa.gov/feature-story/anchovy-dominated-diets-west-coast-pose-new-dangers-salmon>

@@ -13,20 +13,36 @@ tdc_data <-
   purrr::map_dfr(c(5:9),
                  ~ readxl::read_xlsx("inst/misc_data/LC50_EC50_salmon.xlsx",
                                      sheet = .x,
-                                     col_types = c("text", "text", "numeric", "numeric",
-                                                   "text", "text", "text",
-                                                   "numeric", "text",
-                                                   "numeric", "numeric", "numeric",
-                                                   "numeric", "numeric",
-                                                   "text", "text", "text",
-                                                   "numeric", "numeric", "text", "text", "text"))) |>
+                                     col_types = c(
+                                       # Study date, year, location, river
+                                       "text", "text", "text", "text",
+                                       # Lat and Long
+                                       "numeric", "numeric",
+                                       # Species, run, tissue
+                                       "text", "text", "text",
+                                       # Thiamin conc, units, treated
+                                       "numeric", "text", "text",
+                                       # N, N_survive, N_mortality
+                                       "numeric", "numeric", "numeric",
+                                       # Percent survived, percent mortality
+                                       "numeric", "numeric",
+                                       # Time of mortality, follow-up period, time units
+                                       "text", "text", "text",
+                                       # Reported LC50, Reported EC50
+                                       "numeric", "numeric",
+                                       # Title, DOI, Notes
+                                       "text", "text", "text"))) |>
   dplyr::mutate(DOI = tolower(DOI),
                 # Some observations are missing lat/long coordinates. Some of
                 # these do provide a location name
                 location_type =
                   case_when(!is.na(Latitude_DD) ~ "provided",
                             is.na(Location) & is.na(Latitude_DD) ~ "missing",
-                            !is.na(Location) & is.na(Latitude_DD) ~ "approximated")) |>
+                            !is.na(Location) & is.na(Latitude_DD) ~ "approximated"),
+                Longitude_DD = round(Longitude_DD, 7),
+                Latitude_DD = round(Latitude_DD, 7),
+                Thiamine_conc = case_when(Thiamine_units == "pmol/g" ~ Thiamine_conc/1000,
+                                          .default = Thiamine_conc)) |>
   dplyr::rename(
     Thiamin_conc = Thiamine_conc,
     Thiamin_units = Thiamine_units
@@ -73,6 +89,10 @@ tdc_data_cleaned <-
                             "MISSING", toupper(Location)) |>
       factor() |>
       forcats::fct_relevel("MISSING", after = Inf),
+    River_label = ifelse(is.na(River),
+                            "MISSING", toupper(River)) |>
+      factor() |>
+      forcats::fct_relevel("MISSING", after = Inf),
     Species_label = ifelse(is.na(Species),
                            "MISSING", toupper(Species)) |>
       factor(),
@@ -101,17 +121,17 @@ tdc_data_cleaned <-
                 Study_Date == "1998, 1999" ~ "1999-12-31",
                 stringr::str_detect(Study_Date, "^[0-9]{4}$") ~ paste0(Study_Date,"-12-31"),
                 stringr::str_detect(Study_Date, "^[0-9]{2}/[0-9]{2}/[0-9]{4}$") ~ Study_Date),
-    marker_label = purrr::pmap_chr(list(Location_label, Species_label, Run_label, Tissue_label, DOI, location_type),
+    marker_label = purrr::pmap_chr(list(Location_label, River_label, Species_label, Run_label, Tissue_label, DOI, location_type),
                                    ~
                                      paste0("<strong>Location:</strong> ",..1,
-                                            ifelse(..6 == "approximated", " (Approximate)", ""),"</br>",
-                                            "<strong>Species:</strong> ",..2,"</br>",
-                                            "<strong>Run:</strong> ",..3,"</br>",
-                                            "<strong>Tissue:</strong> ",..4,"</br>",
-                                            "<strong>DOI:</strong> <a href='",..5,"' target='_blank'>",..5,"</a>")
+                                            ifelse(..7 == "approximated", " (Approximate)", ""),"</br>",
+                                            "<strong>River:</strong> ",..2,"</br>",
+                                            "<strong>Species:</strong> ",..3,"</br>",
+                                            "<strong>Run:</strong> ",..4,"</br>",
+                                            "<strong>Tissue:</strong> ",..5,"</br>",
+                                            "<strong>DOI:</strong> <a href='",..6,"' target='_blank'>",..6,"</a>")
     )
   )
 
 readr::write_csv(tdc_data_cleaned,
                  file = "inst/misc_data/tdc_data.csv")
-

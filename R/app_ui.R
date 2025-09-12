@@ -11,7 +11,7 @@
 #' @keywords internal
 #' @noRd
 
-app_ui <- function(tdc_data){
+app_ui <- function(tdc_data, translator){
 
   location_info <- tdc_data |>
     dplyr::distinct(data_collection_region,
@@ -34,7 +34,7 @@ app_ui <- function(tdc_data){
 
     }) |>
     purrr::set_names(unique(location_info$data_collection_region))
-    # purrr::set_names(stringr::str_wrap(unique(location_info$data_collection_region), width = 10))
+  # purrr::set_names(stringr::str_wrap(unique(location_info$data_collection_region), width = 10))
   bs4Dash::dashboardPage(
     scrollToTop = TRUE,
     freshTheme = app_theme(),
@@ -46,6 +46,20 @@ app_ui <- function(tdc_data){
                                       sidebarIcon = shiny::icon("square-plus",
                                                                 style = "font-size:22px;",
                                                                 id = "header_toggle"),
+                                      rightUi = shiny::tags$li(class = "dropdown",
+                                                               shiny::HTML('<div style="width:90px; padding-right:10px" class="form-group shiny-input-container">
+                                                               <div style="display: flex; align-items: center;">
+                                                               <i aria-label="language icon" role="presentation" class="fas fa-language" style="font-size:20px"></i>
+                                                               <select id="selected_language" class="shiny-input-select" style="margin-left: 5px;">
+                                                               <option selected="" value="en">en</option>
+                                                               <option value="es">es</option>
+                                                               <option value="fi">fi</option>
+                                                               <option value="sv">sv</option>
+                                                               </select>
+                                                               </div>
+                                                               </div>
+')
+                                      ),
                                       shiny::a(
                                         href = "https://www.usgs.gov",
                                         target = "_blank",
@@ -54,6 +68,7 @@ app_ui <- function(tdc_data){
                                       ),
                                       bs4Dash::navbarMenu(
                                         id = "navmenu",
+                                        skin = "light",
                                         shinyjs::useShinyjs(),
                                         shiny::includeCSS("www/stylesheets/common.css"),
                                         bs4Dash::navbarTab(tabName = "welcome", text = shiny::tags$span(shiny::icon("fish-fins"), "Welcome!")),
@@ -91,7 +106,7 @@ app_ui <- function(tdc_data){
                                                                          zIndex = 10000
                                                                          , choices = location_select_list
                                                                          # ,choices = sort(unique(tdc_data$Location_label))
-                                                                         ),
+                                        ),
                                         shinyWidgets::virtualSelectInput(inputId = "tdc_table_filter_species",
                                                                          label = "Species",
                                                                          multiple = TRUE,
@@ -139,6 +154,7 @@ app_ui <- function(tdc_data){
                                         )
     ),
     body = bs4Dash::dashboardBody(
+      shiny.i18n::usei18n(translator),
       shiny::tags$style(type = "text/css",
                         "#tdc_data_map {height: calc(80vh) !important;
                     /* width: calc(80vh) !important; */
@@ -156,16 +172,9 @@ app_ui <- function(tdc_data){
       ),
       bs4Dash::tabItems(
         bs4Dash::tabItem(tabName = "welcome",
-                         shiny::h3("Welcome to Vanishing Vitamin!"),
-                         shiny::h5("This tab helps users get started.
-                 It summarizes the app's primary functionality and directs users to where they can find more information."),
-                         shiny::h5("Note to future self: link to ",
-                                   shiny::a(href = "https://sites.google.com/ucdavis.edu/salmonintheclassroomresources/home",
-                                            target = '_blank',
-                                            "https://sites.google.com/ucdavis.edu/salmonintheclassroomresources/home"),
-                                   " for resources, data, and other documentation."),
-                         shiny::br(),
-                         shiny::h5(shiny::strong("Click on one of the buttons at the top to get started!"))),
+                         # shiny::h3(translator$translate("Welcome to Vanishing Vitamin!")),
+                         shiny::uiOutput(outputId = "welcome_page_content")
+        ),
         bs4Dash::tabItem(tabName = "data",
                          shiny::fluidRow(shiny::column(width = 6,
                                                        bs4Dash::box(
@@ -188,7 +197,7 @@ app_ui <- function(tdc_data){
                          shiny::fluidRow(
                            shiny::column(width = 3,
                                          bs4Dash::accordion(id = "visualize_accordion",
-                                                            bs4Dash::accordionItem(collapsed = FALSE, status = "primary",
+                                                            bs4Dash::accordionItem(collapsed = FALSE, status = "white",
                                                                                    title = "Visualize your own data",
                                                                                    style = "height: calc(80vh); overflow-y:scroll",
                                                                                    icon = bsicons::bs_icon("plus"),
@@ -284,7 +293,7 @@ neither the USGS nor the U.S. Government shall be held liable for any damages
 resulting from the authorized or unauthorized use of the software.
 ")
                          )
-                         )
+        )
       )
     )
   )
