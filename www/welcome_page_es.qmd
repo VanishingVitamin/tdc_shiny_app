@@ -40,7 +40,7 @@ El TDC fue detectado  en el ganado y prácticas  agrícolas a principios del sig
 
 El TDC — también conocido como [síndrome de mortalidad temprana](#glossary-ems) (EMS) y [M74](#glossary-m74) en poblaciones de salmón del Báltico — ha sido ampliamente diagnosticado y estudiado en salmón y trucha. 
 Se considera una amenaza para la persistencia de las poblaciones y la estabilidad de la pesca mundial. 
-El TDC ha afectado a poblaciones de salmónidos en los Grandes Lagos Laurentianos, el lago Champlain, los Lagos Finger de Nueva York, el océano Pacífico (ecosistema de la Corriente de California, costa de Oregón) y el mar Báltico. 
+El TDC ha afectado a poblaciones de salmónidos en los Great Lakes Laurentianos, el lago Champlain, los Lagos Finger de Nueva York, el océano Pacífico (ecosistema de la Corriente de California, costa de Oregón) y el mar Báltico. 
 El TDC ocurre cuando una baja cantidad de tiamina se transfiere a los huevos de una hembra en desove. Sin suficiente tiamina, el pez embrionario o las larvas de pez en desarrollo (llamadas [alevines](#glossary-alevin)) en salmón, no pueden producir la energía necesaria para sobrevivir.
 Esto provoca problemas de salud e incluso  la muerte antes de que puedan comenzar a alimentarse  y obtener tiamina de su dieta.
 
@@ -49,7 +49,7 @@ Esto provoca problemas de salud e incluso  la muerte antes de que puedan comenza
 
 Las consecuencias del TDC pueden ser permanentes o fatales. Por ejemplo:
 
-* Puede disminuir la productividad y abundancia de las poblaciones afectadas. Por ejemplo, la descendencia de salmón atlántico afectado por TDC en el mar Báltico y la trucha del lago en los Grandes Lagos Laurentianos murió a tasas inusualmente altas. La deficiencia de tiamina probablemente causó la muerte de hasta la mitad de los alevines recién eclosionadosde salmón chinook de invierno, ya en peligro de extinción, en el río Sacramento en 2020 y 2021 (Mantua et al. 2025).
+* Puede disminuir la productividad y abundancia de las poblaciones afectadas. Por ejemplo, la descendencia de salmón atlántico afectado por TDC en el mar Báltico y la trucha del lago en los Great Lakes Laurentianos murió a tasas inusualmente altas. La deficiencia de tiamina probablemente causó la muerte de hasta la mitad de los alevines recién eclosionadosde salmón chinook de invierno, ya en peligro de extinción, en el río Sacramento en 2020 y 2021 (Mantua et al. 2025).
 
 * En animales de granja de piel, el TDC resultó en parálisis seguida de la muerte. No hubo virus ni bacterias responsables. En cambio, se debió a dietas de pescado crudo que contenían [tiaminasa](#glossary-thiaminase), una enzima que degrada la tiamina en los intestinos de los animales (Lee 1948).
 
@@ -79,7 +79,7 @@ La tiamina puede funcionar como un antioxidante para contrarrestar el estrés ox
 
 Ejemplos de TDC en peces tras el consumo de presas con alta actividad de tiaminasa o contenido de grasa incluyen:
 
-1. El TDC generalizado en los salmónidos de los Grandes Lagos asociado con el consumo de alosa invasora (*Alosa pseudoharengus*) rica en tiaminasa y en grasa .
+1. El TDC generalizado en los salmónidos de los Great Lakes asociado con el consumo de alosa invasora (*Alosa pseudoharengus*) rica en tiaminasa y en grasa .
 
 2. El TDC generalizado en salmones de California y truchas arcoíris, vinculado a dietas oceánicas dominadas por anchoas ricas en tiaminasa y grasa (*Engraulis mordax*).
 
@@ -89,7 +89,7 @@ Los salmones enfrentan muchos estresores a lo largo de su ciclo de vida que pued
 
 ## Criaderos y TDC
 
-Teóricamente, restaurar las poblaciones de presas para ayudar a los depredadores a mantener concentraciones saludables de tiamina también podría ser una opción. Por ejemplo, en los Grandes Lagos existen esfuerzos importantes para restaurar presas nativas, y el aumento de la tiamina en los salmónidos es un objetivo asociado a esos esfuerzos de restauración.Sin embargo, ninguna presa nativa ha aumentado en abundancia hasta convertirse en presa principal que conduzca a un incremento de tiamina. Dicho esto, el colapso de la alosa (alewife) en el lago Hurón sí demuestra que un cambio de dieta puede aumentar las concentraciones de tiamina en los salmónidos. En lugar de ello, se utiliza la suplementación con tratamientos de tiamina en peces con deficiencia, para reponer las concentraciones y mitigar el TDC en las poblaciones. Estos tratamientos con tiamina se realizan con frecuencia en los criaderos de peces, donde se pueden tratar millones de ejemplares simultáneamente.
+Teóricamente, restaurar las poblaciones de presas para ayudar a los depredadores a mantener concentraciones saludables de tiamina también podría ser una opción. Por ejemplo, en los Great Lakes existen esfuerzos importantes para restaurar presas nativas, y el aumento de la tiamina en los salmónidos es un objetivo asociado a esos esfuerzos de restauración.Sin embargo, ninguna presa nativa ha aumentado en abundancia hasta convertirse en presa principal que conduzca a un incremento de tiamina. Dicho esto, el colapso de la alosa (alewife) en el lago Hurón sí demuestra que un cambio de dieta puede aumentar las concentraciones de tiamina en los salmónidos. En lugar de ello, se utiliza la suplementación con tratamientos de tiamina en peces con deficiencia, para reponer las concentraciones y mitigar el TDC en las poblaciones. Estos tratamientos con tiamina se realizan con frecuencia en los criaderos de peces, donde se pueden tratar millones de ejemplares simultáneamente.
 
 Los criaderos son instalaciones donde los huevos de peces se fertilizan artificialmente y los embriones resultantes eclosionan (de ahí el nombre criadero) y los juveniles son criados en condiciones controladas hasta que se liberan en la naturaleza. 
 En el medio silvestre, los peces presentan tasas de supervivencia naturalmente muy bajas, mientras que los criaderos proporcionan un entorno protegido y controlado para maximizar su supervivencia. 
@@ -263,7 +263,7 @@ A esta concentración, el 50% de la población experimentará efectos adversos.
   </span>
 </a>
 
-Síndrome de mortalidad temprana. Descrito en los Grandes Lagos Laurentianos cuando los criaderos notaron que los alevines morían durante la reabsorción del saco vitelino debido a la deficiencia de tiamina.
+Síndrome de mortalidad temprana. Descrito en los Great Lakes Laurentianos cuando los criaderos notaron que los alevines morían durante la reabsorción del saco vitelino debido a la deficiencia de tiamina.
 
 <a name="glossary-hab" href="#glossary-hab">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -387,88 +387,89 @@ Whitfield, K. C., Bourassa, M. W., Adamolekun, B., Bergeron, G., Bettendorff, L.
 
 ## Recursos
 
-### Videos
+### Videos (en inglés)
 
-* [Canal de YouTube Spinning Salmon](https://www.youtube.com/playlist?list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV)
-  * [Un Problema Complejo: Deficiencia de Tiamina en Salmones del Lago Ontario](https://vimeo.com/246128456)
-  * [Estamos dando a la naturaleza una deficiencia de vitaminas.](https://www.youtube.com/watch?v=cfl7mSG13e0) 
-  * [¿Qué es una cuenca hidrográfica?](https://www.youtube.com/watch?v=933SLmx0QS4)
-  * [Tour en video del Criadero del Río Feather](https://www.youtube.com/watch?v=kU5pW9xT74U)
-  * [TDC en Salmones Chinook del Valle Central](https://www.youtube.com/watch?v=JDc12YbxAqc) con Nate Mantua
-  * [El Agua Más Caliente Mata Huevos de Salmón](https://ca.pbslearningmedia.org/resource/nasa09.sci.life.oate.saleggs/warmer-water-kills-salmon-eggs/)
-  * [Las Pesquerías de EE. UU. Enfrentan Desafíos por el Cambio Climático](https://www.youtube.com/watch?v=-ibT7dkqsfg) (con la investigadora colaboradora Rachel Johnson)
-  * CDFW: [Monitoreo de Biodiversidad y Ciencia Comunitaria](https://drive.google.com/file/d/1a3LmvetOlLeIe-jx93zUUGmohafUbF_g/view?usp=drive_link) (destaca el Programa Spinning Salmon)
-  * [No Volver Atrás](https://www.youtube.com/watch?v=Mmo5eHbQ-fk) - CalTrout (video)
-  * Tending Nature: [Recuperando la Agricultura con la Nación Yocha Dehe Wintun](https://www.pbs.org/video/reclaiming-agriculture-with-the-yocha-dehe-wintun-nation-s8tz9l/)
-  * [Conociendo al equipo de investigación - Voces del Campo con Abbie Ward](https://www.youtube.com/watch?v=7Bl7UKjZU9s&list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV&index=5&t=6s) en el río McCloud con la tribu Winnemem-Wintu.
-  * [Video del Departamento de Recursos Hídricos de CA sobre Inyecciones de Tiamina](https://www.youtube.com/watch?v=iN8EXfexmVo) (con el investigador colaborador: Kevin Kwak)
+* [Spinning Salmon YouTube Channel](https://www.youtube.com/playlist?list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV)
+  * [A Complex Problem: Thiamine Deficiency in Lake Ontario Salmon](https://vimeo.com/246128456)
+  * [We’re giving nature a vitamin deficiency.](https://www.youtube.com/watch?v=cfl7mSG13e0) 
+  * [What is a watershed?](https://www.youtube.com/watch?v=933SLmx0QS4)
+  * [Video tour of the Feather River Hatchery](https://www.youtube.com/watch?v=kU5pW9xT74U)
+  * [TDC In Central Valley Chinook Salmon](https://www.youtube.com/watch?v=JDc12YbxAqc) with Nate Mantua
+  * [Warmer Water Kills Salmon Eggs](https://ca.pbslearningmedia.org/resource/nasa09.sci.life.oate.saleggs/warmer-water-kills-salmon-eggs/)
+  * [US Fisheries Face Climate Change Challenges](https://www.youtube.com/watch?v=-ibT7dkqsfg) (with collaborating researcher Rachel Johnson)
+  * CDFW: [Biodiversity Monitoring and Community Science](https://drive.google.com/file/d/1a3LmvetOlLeIe-jx93zUUGmohafUbF_g/view?usp=drive_link) (highlights the Spinning Salmon Program)
+  * [No Going Back](https://www.youtube.com/watch?v=Mmo5eHbQ-fk) - CalTrout (video)
+  * Tending Nature: [Reclaiming Agriculture with the Yocha Dehe Wintun Nation](https://www.pbs.org/video/reclaiming-agriculture-with-the-yocha-dehe-wintun-nation-s8tz9l/)
+  * [Getting to know the research team- Voices from the Field with Abbie Ward](https://www.youtube.com/watch?v=7Bl7UKjZU9s&list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV&index=5&t=6s) on the McCloud River with the Winnemem-Wintu tribe.
+  * [California Department of Water Resources Video on Thiamine Injections](https://www.youtube.com/watch?v=iN8EXfexmVo) (with collaborating researcher: Kevin Kwak)
 
 ### Enlaces a artículos de noticias y comunicados de prensa
 
-#### Grandes Lagos
+#### Great Lakes
 
-* Boletín de la Comisión Internacional Mixta (IJC) sobre la Deficiencia de Tiamina en los Grandes Lagos: <https://ijc.org/en/vitamin-deficiency-limits-salmon-and-trout-offspring-survival>
+* International Joint Commission (IJC) Newsletter on Thiamine Deficiency in the Great Lakes: <https://ijc.org/en/vitamin-deficiency-limits-salmon-and-trout-offspring-survival>
 
-* Página de Cornell sobre deficiencia de tiamina: <http://thiamine.dnr.cornell.edu/Thiamine_ramifications.html#>
+* Cornell’s page on thiamine deficiency: <http://thiamine.dnr.cornell.edu/Thiamine_ramifications.html#>
 
-* Artículo de noticias local sobre la muerte de truchas arcoíris en los afluentes del lago Ontario: <https://www.wrvo.org/environment/2014-12-22/fish-die-off-on-salmon-river-could-be-caused-by-vitamin-deficiency>
+* Local news article on dead steelhead trout in Lake Ontario tributaries: <https://www.wrvo.org/environment/2014-12-22/fish-die-off-on-salmon-river-could-be-caused-by-vitamin-deficiency>
 
-* Artículo de Great Lakes Echo sobre la alosa amenazando al salmón en los Grandes Lagos: <https://greatlakesecho.org/2009/09/03/alewives-the-trouble-they-cause-and-the-salmon-that-love-them/>
+* Great Lakes Echo article on alewife threatening salmon in the Great Lakes: <https://greatlakesecho.org/2009/09/03/alewives-the-trouble-they-cause-and-the-salmon-that-love-them/>
 
-* Publicación en el blog de FishBio que resume la deficiencia de tiamina a nivel global: <https://fishbio.com/a-deeper-dive-into-thiamine-deficiency/>
-* Video comparando alevines de trucha arcoíris deficientes en tiamina y tratados: [Video de Vimeo](https://vimeo.com/1090178610)
+* FishBio blog post summarizing thiamine deficiency globally: <https://fishbio.com/a-deeper-dive-into-thiamine-deficiency/>
+* Video comparing thiamine deficient and treated steelhead fry: [Video](https://vimeo.com/1090178610)
 
-* Documental sobre la deficiencia de tiamina centrado en el lago Ontario: [Un Problema Complejo: Deficiencia de Tiamina en Salmones del Lago Ontario](https://vimeo.com/246128456)
-Video que describe la actividad de tiaminasa y su asociación con TDC: [Dra. Catherine Richter | Explorando Enzimas en Peces para Acelerar la Conservación - SciTube](https://scitube.io/dr-catherine-richter-exploring-enzymes-in-fish-to-accelerate-conservation/)
 
-#### Mar Báltico
+* Thiamine deficiency documentary focused on Lake Ontario: [A Complex Problem: Thiamine Deficiency in Lake Ontario Salmon](https://vimeo.com/246128456)
+Video describing thiaminase activity and association with TDC: [Dr Catherine Richter | Exploring Enzymes in Fish to Accelerate Conservation - SciTube](https://scitube.io/dr-catherine-richter-exploring-enzymes-in-fish-to-accelerate-conservation/)
 
-* Informe de visión general sobre la deficiencia de tiamina en la región del Mar Báltico: <https://www.havsmiljoinstitutet.se/publikationer/havsmiljoinstitutets-rapportserie/tiaminbrist-i-ostersjoomradet>
+#### El Mar Báltico
 
-* WGBAST - El Grupo de Trabajo de Evaluación sobre Salmón y Trucha del Báltico evalúa el estado y las tendencias de las poblaciones de salmón y trucha de mar en el Mar Báltico y proporciona consejos anuales sobre la captura de salmón: <https://www.ices.dk/community/groups/pages/wgbast.aspx>
+* Overview report on thiamine deficiency in the Baltic Sea region: <https://www.havsmiljoinstitutet.se/publikationer/havsmiljoinstitutets-rapportserie/tiaminbrist-i-ostersjoomradet>
 
-* Agencia sueca de Gestión Marina y de Agua - Página de información sobre tiamina: <https://www.havochvatten.se/arter-och-livsmiljoer/arter-och-naturtyper/lax/faq-lax/2018-10-29-ar-tiaminbrist-orsaken-till-dodlighet-pa-lax.html>
+* WGBAST - The Assessment Working Group on Baltic Salmon and Trout assesses the status and trends of salmon and sea trout stocks in the Baltic Sea and provides annual catch advice on salmon: <https://www.ices.dk/community/groups/pages/wgbast.aspx>
 
-* Modelo para estimar la mortalidad relacionada con la deficiencia de tiamina de la descendencia de salmón atlántico (*Salmo salar*) y la variación en el síndrome M74 del salmón del Báltico: [Artículo completo: Modelo para estimar la mortalidad relacionada con la deficiencia de tiamina de la descendencia de salmón atlántico (*Salmo salar*) y la variación en el síndrome M74 del salmón del Báltico](https://www.tandfonline.com/doi/full/10.1080/10236244.2021.1941942)
+* Swedish agency for Marine and Water Management - Information page thiamine: <https://www.havochvatten.se/arter-och-livsmiljoer/arter-och-naturtyper/lax/faq-lax/2018-10-29-ar-tiaminbrist-orsaken-till-dodlighet-pa-lax.html>
+
+* Model for estimating thiamine deficiency-related mortality of Atlantic salmon (Salmo salar) offspring and variation in the Baltic salmon M74 syndrome: [Full article: Model for estimating thiamine deficiency-related mortality of Atlantic salmon (Salmo salar) offspring and variation in the Baltic salmon M74 syndrome](https://www.tandfonline.com/doi/full/10.1080/10236244.2021.1941942)
 
 #### California
 
-* [Monitoreo de la Deficiencia de Tiamina en Salmones de California](https://www.fisheries.noaa.gov/west-coast/science-data/monitoring-thiamine-deficiency-california-salmon#piecing-together-the-puzzle) (algunos vinculados como lecturas de fondo para maestros, otros editados para lectura de estudiantes, resumidos)
+* [Monitoring Thiamine Deficiency in California Salmon](https://www.fisheries.noaa.gov/west-coast/science-data/monitoring-thiamine-deficiency-california-salmon#piecing-together-the-puzzle) (some linked as background readings for teachers, others edited for student reading, paired down)
 
-  * [Monitoreo de TDC en Salmones de CA](https://docs.google.com/document/d/1JbWE4u1iGKBvsEGh3Z2cc5khyE2weBTNhNgsA0V1KIA/edit)
+  * [Monitoring TDC in CA Salmon](https://docs.google.com/document/d/1JbWE4u1iGKBvsEGh3Z2cc5khyE2weBTNhNgsA0V1KIA/edit) 
 
-    * Juntando las Piezas
+    * Piecing Together The Puzzle
 
-    * Un Misterio Californiano
+    * A Home-Grown California Mystery
 
-    * El Costo Oculto
+    * The Hidden Toll
 
-* La Misteriosa Deficiencia de Vitaminas del Océano ([extracto para estudiantes](https://docs.google.com/document/d/1L2z_MbcYu2YLge1Tcq6SHfL1nmvZ3T0dCEtG1DLhaBg/edit?usp=sharing))
-  * Original- [NOAA Fisheries](https://www.fisheries.noaa.gov/feature-story/oceans-mysterious-vitamin-deficiency) por [Alastair Bland](https://hakaimagazine.com/profiles/alastair-bland/) 28 de enero de 2021 publicado por primera vez por Hakai Magazine y NOAA Fisheries
+* The Ocean’s Mysterious Vitamin Deficiency ([student excerpt](https://docs.google.com/document/d/1L2z_MbcYu2YLge1Tcq6SHfL1nmvZ3T0dCEtG1DLhaBg/edit?usp=sharing))
+  * Original- [NOAA Fisheries](https://www.fisheries.noaa.gov/feature-story/oceans-mysterious-vitamin-deficiency) by  [Alastair Bland](https://hakaimagazine.com/profiles/alastair-bland/) January 28, 2021 first published by Hakai Magazine and NOAA Fisheries
 
-* [Programa Interinstitucional de Ecología de CA: Cuentas de Salmón](https://iep.ca.gov/Science-Synthesis-Service/Directed-Studies-Synthesis/Blog/tag/salmon)
+* [CA Interagency Ecological Program: Salmon Counts](https://iep.ca.gov/Science-Synthesis-Service/Directed-Studies-Synthesis/Blog/tag/salmon)
 
-* [Cómo las presas afectan el agua y el hábitat en la Costa Oeste](https://drive.google.com/file/d/1Hx9oTCy28epU1xBuSSYz29GjoS0FOn0g/view?usp=sharing)
+* [How dams affect water and habitat on the West Coast](https://drive.google.com/file/d/1Hx9oTCy28epU1xBuSSYz29GjoS0FOn0g/view?usp=sharing)
 
-* [Investigadores indagan sobre las muertes de chinook del Valle Central, con posibles vínculos a cambios oceánicos](https://drive.google.com/file/d/12LP7XppoNGO80p4GyaYfuMoQXo8Dh_D1/view?usp=drive_link)
+* [Researchers Probe Deaths of Central Valley Chinook, with Possible Ties to Ocean Changes](https://drive.google.com/file/d/12LP7XppoNGO80p4GyaYfuMoQXo8Dh_D1/view?usp=drive_link)
 
-* Las Malas Decisiones Dietéticas de los Salmones; La Crisis de Salud del Salmón; Los Salmones Oportunivoros por Abigail Ward y Peggy Harte ((NOTA- se publicará pronto, enlace a Frontiers for Young Minds))
+* The Poor Diet Choices of Salmon; The Salmon’s Health Crisis; Opportunivorous Salmon By Abigail Ward and Peggy Harte ((NOTE- should be published soon, link to Frontiers for Young Minds))
 
-* Webstory de NOAA- Estudiantes de Secundaria Ayudan a Biólogos Federales a Desentrañar el Misterio de los Salmones en Giro por los Estudiantes de Estudios Ambientales de la Escuela Secundaria Fairfield ((NOTA- Se publicará y se enlazará en mayo de 2025))
+* NOAA Webstory- High Schoolers Help Federal Biologists Unravel the Mystery of Spinning Salmon By Fairfield High School’s AP Environmental Studies Students ((NOTE- To be published and linked May 2025))
 
-* [Impactos del Cambio Climático en Salmones y Steelhead](https://www.fisheries.noaa.gov/west-coast/sustainable-fisheries/ecosystem-interactions-and-pacific-salmon#climate-change-impacts-on-salmon-and-steelhead)
+* [Climate Change Impacts on Salmon and Steelhead](https://www.fisheries.noaa.gov/west-coast/sustainable-fisheries/ecosystem-interactions-and-pacific-salmon#climate-change-impacts-on-salmon-and-steelhead)
 
-  * [Versión para estudiantes](https://docs.google.com/document/d/1CjDxn4hEvOZtrgdS5oYGhau43NDldJ05Gi3juqz8K5I/edit?usp=sharing)
+  * [Student version](https://docs.google.com/document/d/1CjDxn4hEvOZtrgdS5oYGhau43NDldJ05Gi3juqz8K5I/edit?usp=sharing)
 
-* [Estrategia de Salmones de CA para un Futuro Más Cálido y Seco](https://www.gov.ca.gov/wp-content/uploads/2024/01/Salmon-Strategy-for-a-Hotter-Drier-Future.pdf) (extractos) 
+* [CA Salmon Strategy for a Hotter, Dryer Future](https://www.gov.ca.gov/wp-content/uploads/2024/01/Salmon-Strategy-for-a-Hotter-Drier-Future.pdf) (excerpts) 
 
-* [Proyecto Nigiri: Cultivando Arroz y Salmón en la Llanura de Inundación](https://watershed.ucdavis.edu/project/nigiri-project-growing-rice-and-salmon-floodway)
+* [Nigiri Project: Growing Rice and Salmon on the Floodplain](https://watershed.ucdavis.edu/project/nigiri-project-growing-rice-and-salmon-floodway)
 
-  * [Descripción del Proyecto](https://drive.google.com/file/d/1ZzvgRVO2XFlzqMWlkfehHfkkq5d94MSc/view?usp=sharing)
+  * [Project Description](https://drive.google.com/file/d/1ZzvgRVO2XFlzqMWlkfehHfkkq5d94MSc/view?usp=sharing)
 
-  * [Reimaginando la Llanura de Inundación](https://www.nigiriproject.com/): El Proyecto Nigiri (sitio web)
+  * [Reimagining the Floodplain](https://www.nigiriproject.com/): The Nigiri Project (website)
 
-  * [Transmisión de North State Public Radio](https://www.mynspr.org/agriculture/2016-03-11/nigiri-project-salmon-who-spend-early-life-over-rice-fields-see-an-increase-in-survivability)
+  * [North State Public Radio Broadcast](https://www.mynspr.org/agriculture/2016-03-11/nigiri-project-salmon-who-spend-early-life-over-rice-fields-see-an-increase-in-survivability)
 
 * <http://run4salmon.org/articles/>
 

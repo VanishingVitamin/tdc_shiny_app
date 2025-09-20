@@ -1,191 +1,303 @@
 ---
-title: "Välkommen till Vanishing Vitamin!"
+title: "Tynande tiamin"
 format: 
   html:
     toc: true
     embed-resources: true
     theme: stylesheets/custom.scss
-  markdown_github: default
 ---
 
-Denna applikation syntetiserar data om Tiamindeficienskomplex (TDC) i salmonider och ger värdefulla insikter för forskare, naturvårdare och fiskechefer.
+Denna applikation sammanställer och analyserar data om tiaminbrist (TDC) hosLaxfisk  och bidrar tillvärdefulla insikter för studenter, forskare, naturvårdare, fiskeriförvaltning och alla andra som vill lära sig mer om tiamin.
 
-- **Välkommen!**: fortsätt läsa nedan för att lära dig viktig bakgrundsinformation om Tiamindeficienskomplex i salmonider.
+-   **Välkommen!**: Fortsätt läsa nedan för att lära dig mer om tiaminbrist hoslaxfisk.
 
-- **Data**: utforska detaljerade datamängder och se hur tiaminivåer påverkar salmoniders överlevnad i olika regioner.
+-   **Data**: Utforska insamlad dataoch se hur nivåer av tiamin 
+    Påverkar laxfiskars överlevnad i olika regioner.
 
-- **Visualisera**: analysera sambandet mellan tiamin koncentration och överlevnadsgrader, och få personliga insikter genom att ladda upp dina egna data.
+-   **Visualisera**: Analysera sambandet mellan tiaminkoncentration och
+    överlevnad, och få nya insikter genom att ladda upp
+    egen data.
+
+**𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟**
 
 ## Bakgrund
 
-[**Tiamin**](#glossary-thiamine) ([vitamin](#glossary-vitamin) B1) är essentiell för nästan allt liv på jorden. 
-Tiamin behövs för att celler ska kunna producera energi och fungera normalt. 
-Tiamin har hög efterfrågan bland levande varelser, och de flesta djur får det tiamin de behöver från sin föda. 
-Tiamin är vattenlöslig, vilket betyder att överskott som konsumeras kommer att utsöndras (eliminering i urinen) och kan inte lagras (förutom en liten mängd i levern). 
-Därför behöver djur ett konstant intag av tiamin från sin föda. 
-Faktum är att de flesta spannmålsprodukter vi köper i affären har tiamin tillsatt tillsammans med andra vitaminer och mineraler för att hålla oss friska. 
-Kolla in ingredienserna på en spannmålsprodukt (t.ex. cerealbox eller bröd) som du har hemma, och du kommer sannolikt att se tiamin inkluderad som vitamin B1, tiaminmononitrat eller tiaminmononitrat.
+[**Tiamin**](#glossary-thiamine) ([vitamin](#glossary-vitamin) (vitamin B1) är
+essentiellt för nästan allt liv på jorden. Vitaminet behövs för att celler
+ska kunna producera energi och fungera normalt. De flesta djur får det tiamin de
+behöver från sin föda, och efterfrågan på tiamin är vanligen stor hos olika organismer. Vitaminet är vattenlösligt vilket betyder att
+det överskott som konsumeras kommer att utsöndras (via urinen) och det
+kan inte lagras (förutom en liten mängd i levern). Därför behöver djur
+ett konstant intag av tiamin. Faktum är att de flesta
+spannmålsprodukter vi köper i affären har tiamin tillsatt tillsammans
+med andra vitaminer och mineraler för att vi ska hålla oss friska. Läs innehållsförteckningen 
+på en spannmålsprodukt (t.ex. cornflakeseller bröd) som
+du har hemma, och du kommer sannolikt att se tiamin inkluderad som
+vitamin B1 eller tiaminmononitrat.
 
-::::: {.columns}
+[**Tiaminbrist**](#glossary-tdc) (TDC) är en näringsbrist som orsakar en rad hälsoproblem, inklusive neurologiska problem
+(förlust av balans, förvirring) och till och med dödsfall.
+Tiaminbrist är väl känd som en allvarlig åkomma hos människor och ett
+framväxande globalt hot mot fisk och vilda djur. Tiaminbrist, , även kallad
+'beriberi' hos människor,  beskrevs redan
+mellan 300--2700 f.Kr. i traditionell kinesisk  medicin. Tiaminbrist 
+upptäcktes även inom boskap och jordbruk i början av 1900-talet, och har även
+påträffats i populationer av alligatorer, fiskar, 
+och fåglar.
 
-:::: {.column width="50%"}
+![TDC har dokumenterats i olika taxa över hela världen, inklusive lax, fåglar, alligatorer, musslor och älgar. Antalet unika arter som har upplevt TDC inom varje taxon anges inom parentes. Anpassat från Harder et al. 2024.](www/image5.jpg){.lightbox #fig-fig1 width="100%" fig-align="center"}
 
-[**Tiamindeficienskomplex**](#glossary-tdc) (TDC) är en näringsbrist av tiamin som orsakar en rad hälsoproblem inklusive neurologiska problem (förlust av balans, förvirring) och till och med dödsfall. 
-Tiamindeficiens är intressant nog både en gammal mänsklig åkomma och ett framväxande globalt hot mot fisk och vilda djur. 
-Tiamindeficiens, kallad 'beriberi' hos människor, har en lång historia; den beskrevs först mellan 300–2700 f.Kr. i Den gula kejsarens klassiska medicin. 
-TDC upptäcktes inom boskap och jordbruk i början av 1900-talet, och har även påträffats i vilda populationer av alligatorer, fiskar, blötdjur, älgar och fåglar.
-
-::::
-
-:::: {.column width="49%" style="padding:0px; position:sticky;"}
-
-![TDC har dokumenterats i olika taxa över hela världen, inklusive lax, fåglar, alligatorer, musslor och älgar. Antalet unika arter som har upplevt TDC inom varje taxon anges inom parentes. Anpassat från Harder et al. 2024.](www/fig1.jpg){.lightbox #fig-fig1 width="100%" fig-align="center"}
-
-::::
-
-:::::
-
-
-TDC — även känt som [tidigt döds syndrom](#glossary-ems) (EMS) och [M74](#glossary-m74) inom baltiska laxpopulationer — har brett diagnostiserats och studerats inom lax och trut. 
-Det anses vara ett hot mot beståndets uthållighet och global fiskbeståndsstabilitet. 
-TDC har påverkat salmonidpopulationer inklusive de Laurentiska Storsjöarna, Lake Champlain, New York Finger Lakes, Stilla Havet (Kaliforniens aktuella ekosystem, Oregons kust) och Östersjön. 
-TDC uppstår när en låg mängd tiamin överförs till äggen från en lekande hona. Utan tillräckligt med tiamin kan de embryonala fiskarna eller utvecklande fisklarver (kallade [alevin](#glossary-alevin)) i lax inte producera den energi de behöver för att överleva.
-Detta leder till hälsoproblem och till och med död innan de kan börja äta och få tiamin från sin föda.
+TDC --- även känt som [reproduktionsstörning](#glossary-ems) (EMS) och
+[M74](#glossary-m74) inom laxpopulationer i Östersjön --- har 
+diagnostiserats och studerats hos lax och öring i stor omfattning. Det anses vara ett hot
+mot beståndens livskraftighet och fiskerinäring. TDC har
+påverkat bestånd av laxfisk i de Stora Sjöarna (i Nordmerika),, Lake
+Champlain, New York Finger Lakes, Stilla Havet (Kaliforniens och Oregons kust) och Östersjön. TDC uppstår när en undermålig mängd
+tiamin överförs till äggen från den lekande honan. Utan tillräckligt med
+tiamin kan inte fiskar i embryonala eller tidiga utvecklingsstadier  inte producera den energi de behöver
+för att överleva. Detta leder till hälsoproblem och till och med död
+innan de kan börja äta och tillgodogöra sig tiamin från sin föda.
 
 ## Varför är det här viktigt?
 
-Konsekvenserna av TDC kan vara permanenta eller fatala. Till exempel:
+Konsekvenserna av TDC kan vara mycket allvarliga. Till exempel:
 
-* Det kan minska produktiviteten och överflödandet av drabbade populationer. Till exempel dog avkomman från TDC-drabbad atlantlax i Östersjön och sjööring i de Laurentiska Storsjöarna i ovanligt hög grad. Tiamindeficiens dödade troligtvis så många som hälften av nykläckta yngel av redan utrotningshotad vinterlax (Chinook) i Sacramento River år 2020 och 2021 (Mantua et al. 2025).
+-   Tiaminbrist kan minska produktiviteten och antal individer i  drabbadepopulationer. Till exempel dog avkomman från TDC-drabbad atlantlax i
+    Östersjön och insjööring i de Stora Sjöarna i ovanligt hög
+    grad (Bengtsson et al .1999, Fitzimons et al. 1999). Tiaminbrist kan ha orsakat upp till  hälften av dösfallen hos de nykläckta ynglen i Sacramentoflodens hotade bestånd av vinterlekande Chinooklaxen  under 2020 och 2021 (Mantua et al. 2025).
 
-* I pälsgårdsdjur resulterade TDC i förlamning följt av död. Inget virus eller bakterie var ansvarigt. Istället berodde det på rå fiskdiet som innehöll [tiaminasa](#glossary-thiaminase), ett enzym som bryter ner tiamin i djurs tarmar (Lee 1948).
+-   På pälsdjursanläggningar resulterade tiaminbrist i förlamning följt av död. Det var inte virus eller bakterier,  , istället var orsaken   rå fisk i fodret som innehöll [tiaminas](#glossary-thiaminase) - ett enzym som bryter ner tiamin i djurens mag- och tarmkanal (Lee 1948).
 
-* Hos människor påverkar Beriberi det kardiovaskulära systemet, nervsystemet, eller båda. Även om symptom är reversibla med tiaminsupplementering kan ihållande tiamindeficiens leda till permanent hjärnskada (Whitfield et al. 2018).
+-   Hos människor påverkar beriberi hjärt- och kärlsystemet samt
+    nervsystemet. Även om symptomen är reversibla med
+    tiamintillskott kan ihållande tiaminbrist leda till
+    permanent hjärnskada (Whitfield et al. 2018).
+
 
 ## Vad orsakar TDC?
 
 Det korta svaret? Vi vet inte säkert, men vi har hypoteser.
 
-TDC hos fiskar, vilda djur och människor uppstår genom att inte få tillräckligt med tiamin.
-Detta kan inträffa genom:
+Tiaminbrist hos fiskar, vilda djur och människor uppstår när de inte får
+tillräckligt med tiamin. Detta kan ske genom:
 
-1. att äta mat som inte har tillräckligt med tiamin, eller 
-2. genom att ha tiamin uttömt i kroppen på grund av oxidativ stress eller tiaminasa, ett enzym som bryter ner tiamin. 
+1.  att äta föda som innehåller för lite tiamin, eller
+2.  att tiamin bryts ner i kroppen på grund av en kemisk reaktion kallad oxidativ stress, eller så bryts vitaminet ner av tiaminas. 
+Fettrika dieter kan öka oxidativ stress, vilket skapar ett större behov av antioxidaner såsom tiamin för att motverka denna stress. Tiaminaser förekommer i vissa mikrober, växter, insekter, ryggradslösa djur och till
+och med i vissa  ryggradsdjur, inklusive vissa fiskar. När dieten hos en rovfisk
+domineras av bytesdjur som innehåller mycket tiaminas kan tiamin brytas neri rovfiskens mag- och tarmkanal under matsmältningen, vilket leder till
+brist.
 
-Tiaminaser finns i vissa mikrober, växter, insekter, leddjur och till och med ryggradsarter, inklusive vissa fiskar. 
-När en rovdjurs diet domineras av bytesdjur som innehåller mycket tiaminasa kan det bryta ner tiaminet i rovfiskens tarm under matsmältningen, vilket leder till brist.
+En avgörande faktor är  är att tiaminasaktiviteten är hög hos vissa byten i
+Laxfiskarnas diet, vilket kan leda till att tiamin förstörs i samband med  matsmältningen.
+Sambandet  mellan tiaminasrik diet och tiaminbrist har observerats hos
+människor, boskap, pälsdjur, marina däggdjur
+och fisk. En alternativ väg till tiaminbrist anses vara att rovfisk som livnär sig på en diet av mycket fet fisk vilket resulterar i
+högre nivåer av cellskador genom en process som kallas oxidativ stress.
+Tiamin kan fungera som en antioxidant för att motverka oxidativ stress,
+men denna process kan tömma tillgängligt tiamin i organismen.
 
-Viktigt är att aktiviteten av tiaminasa är hög i vissa bytesdjur som salmonider äter, vilket kan förstöra tiamin när dessa bytesdjur smälts. 
-Kopplingen mellan en tiaminasrik diet och TDC har observerats hos människor, boskap, pälsgårdsdjur, stillahavsnäbbdjur (Phoca vitulina) och fiskar. 
-Alternativt kan fiskar som äter för mycket fett uppleva högre nivåer av cellskador genom en process som kallas oxidativ stress. 
-Tiamin kan fungera som en antioxidant för att motverka oxidativ stress, men denna process kan uttöma tillgängligt tiamin.
+![Orsakerna till TDC utforskas fortfarande, men vi vet att laxar finns i en värld fylld av stressfaktorer. I allmänhet har forskare begränsat det till två möjliga övergripande paradigmer av TDC: Paradigm 1 är att något i laxens byte orsakar tiamindeficiens. Paradigm 2 är att något förändras i ekosystemet som påverkar mängden tiamin som kan nå toppkonsumenter som lax.](www/image4.png){.lightbox #fig-fig2 fig-align="center" width="100%"}
 
-![Orsakerna till TDC utforskas fortfarande, men vi vet att laxar finns i en värld fylld av stressfaktorer. I allmänhet har forskare begränsat det till två möjliga övergripande paradigmer av TDC: Paradigm 1 är att något i laxens byte orsakar tiamindeficiens. Paradigm 2 är att något förändras i ekosystemet som påverkar mängden tiamin som kan nå toppkonsumenter som lax.](www/fig2.png){.lightbox #fig-fig2 fig-align="center" width="100%"}
+Exempel på tiaminbrist hos fisk efter konsumtion av byten med hög
+tiaminasaktivitet eller högt fettinnehåll inkluderar:
 
-Exempel på TDC i fiskar efter konsumtion av bytesdjur med hög aktiviteten av tiaminasa eller fettinnehåll inkluderar:
+1.  Utbredd tiaminbrist hos laxfisk i de Stor Sjöarna har satts i samband med konsumption av en invasiv art (gummsill) som också är rik på tiaminas- och fettsyror (*Alosa pseudoharengus*).
 
-1. Utbredd TDC i salmonider i de Storsjöarna har kopplats till att äta invasiv, tiaminasa- och fettrik alosa (*Alosa pseudoharengus*).
+2.  Utbredd tiaminbrist hos olika laxfiskarr i Kalifornien har kopplats till en diet som domineras av tiaminas- och fettrik anjovis  (*Engraulis mordax*).
 
-2. Utbredd TDC i lax och steelhead i Kalifornien kopplad till havsdieter som domineras av tiaminasa- och fettrika ansjovis (*Engraulis mordax*). 
+3.  Tiaminbrist hos atlantlax (*Salmo salar*) i Östersjön har associerats med diet som domineras av skarpsill (Sprattus sprattus), som har låg tiaminhalt i relation till fettinnehållet.  Den höga fetthalten i dessa dieter kan öka oxidativ stress, vilket ökar behovet av antioxidanter, inklusive tiamin. Skarpsill uppvisar också tiaminasaktivitet. 
 
-3. TDC i baltisk lax (*Salmo salar*) kopplad till sprattdominerade dieter som är låga i tiamin och höga i omättade fetter. Det höga fettinnehållet i dessa dieter kan öka oxidativ stress, och öka efterfrågan på antioxidanter som inkluderar tiamin. Spratt uppvisar också tiaminasaaktivitet.
-
-Laxar står inför många stressfaktorer under hela sin livscykel som kan påverka deras förmåga att få tillräckligt med tiamin. Dessa inkluderar sjukdomar, förändringar i näringsväven, temperaturstress, exponering för föroreningar, migrationsstress och många fler aspekter som kan kombinera för att skapa TDC (Figur 2).
+Laxar möter många stressfaktorer under sin livscykel som kan påverka deras förmåga att få tillräckligt med tiamin. Dessa inkluderar sjukdomar, förändringar i näringsväven, temperaturstress, exponering för föroreningar, långa vandringar och många andra faktorer som tillsammans troligen bidrar till att tiaminbrist uppstår (Figur 2). 
 
 ## Fiskodlingar och TDC
 
-Aktuella förvaltningsalternativ som används för att mildra TDC i fiskpopulationer inkluderar (1) att återställa bytepopulationer för att hjälpa rovdjur att upprätthålla hälsosamma tiamin-koncentrationer och (2) att komplettera tiamindeficienta fiskar med tiamin-behandlingar för att återställa koncentrationerna. 
-Tiaminbehandlingar är den vanligaste metoden som används idag och genomförs ofta i avelsfabriker där miljontals fiskar kan behandlas samtidigt.
+I teorin sett skulle återställande av bytespopulationer kunna vara ett sätt att hjälpa rovdjur att bibehålla hälsosamma tiaminhalter. Till exempel pågår det i de Stora Sjöarna omfattande insatser för att återställa inhemska bytesfisk, och ett av målen med dessa restaureringsinsatser är att öka tiaminhalten hos laxfisk. Ett exempel från Lake Huron visar att ett skifte i dieten ka leda till bättre tiaminhalter i salmonider. Dock har ingen inhemsk bytesart ökat i sådan omfattning att den blivit ett dominerande byte som leder till ökad tiamintillgång. . Istället används tiaminbehandlingarsom en åtgärd för att mildra tiaminbrist i fiskpopulationer. Tiaminbehandling genomförs ofta i fiskodlingar där miljontals fiskar kan behandlas samtidigt. 
+Fiskodlingar  är anläggningar där fiskägg befruktas artificiellt, och ynglen
+föds upp under kontrollerade förhållanden tills de släpps ut i det vilda.
+Fiskar har naturligt mycket låg överlevnad i naturen, medan
+fiskodlingar erbjuder en skyddad och kontrollerad miljö som
+maximerar överlevnaden. Många lax- och öringsodlingar har etablerats för att
+kompensera för de negativa effekterna av dammar och habitatförstöring. Det
+primära målet är att kompensera för förlusten av naturlig
+fiskproduktion som orsakas av mänskligt orsakade miljöstörningar. I vissa
+fall används fiskodlingar för att föda upp och återutsätta arter som är nära
+utrotning, i syfte återställande vilda populationer.
+En annan vanlig tillämpning är produktionen av odlad fisk för att stödja fritids- och kommersiellt fiske.
 
-Avelsfabriker är anläggningar där fiskaägg artificiellt befruktas och de resulterande embryona kläcks (därav namnet avelsfabrik) och juvenilerna uppföds under kontrollerade förhållanden tills de släpps ut i det vilda. 
-Fiskar har naturligt mycket låga överlevnadsgrader i det vilda, medan avelsfabriker erbjuder en skyddad och kontrollerad miljö för att maximera överlevnad. 
-Många lax- och öringavel har etablerats för att mildra de negativa effekterna av dammar och habitatdegradering. 
-Det primära syftet är att kompensera för förlusten av naturlig fiskproduktion orsakad av mänskligt orsakade miljöstörningar. 
-I vissa fall används avelsfabriker för att uppföda och släppa arter som är nära utrotning, med målet att underlätta deras återställande i det vilda. 
-Ännu en vanlig tillämpning är produktionen av avelsfiskar för att stödja stam-, fritids- och kommersiellt fiske.
+Fisk har fötts upp i konstgjorda miljöer i årtusenden, ursprungligen för konsumption. Moderna odlingsmetoder har använts globalt i över ett sekel. De har
+möjliggjort att fiskpopulationer kunnat överleva i områden där naturliga livsmiljöer
+helt har gått förlorade, till exempel när dämmen blockerar vandingsvägar till
+lekområden. Emellertid har vetenskapliga översikter lyft fram
+många problem kopplade till fiskodlingsverksamhet (McMillan et
+al. 2023). Istället för att bevara vilda fiskpopulationer bidrar dessa
+metoder främst till deras nedgång. Till exempel kan fiskodlingar minska
+den genetiska mångfalden och försvaga fiskpopulationers motståndskraft
+mot miljöförändringar och sjukdomar. Utsättning av icke-inhemska
+odlad fisk kan också störa lokala ekosystem och leda till undanträngning
+eller utrotning av inhemska arter.
 
-Avelsfabriksmetoder har använts globalt i cirka ett sekel. 
-De har möjliggjort beståndens uthållighet i områden där naturliga livsmiljöer helt har försvunnit, som när dammar hindrar migrationsvägar till lekområden. 
-Emellertid har senaste vetenskapliga översikter lyft fram många oroande frågor kopplade till avelsfabriksverksamhet (McMillan et al. 2023).
-Istället för att bevara vilda fiskpopulationer bidrar dessa metoder främst till deras nedgång. 
-Till exempel kan avelsprogram minska den genetiska mångfalden och minska fiskpopulationernas motståndskraft mot miljöförändringar och sjukdomar. 
-Introduktionen av icke-inhemska avelsfiskar kan också störa lokala ekosystem och leda till förflyttning eller utrotning av inhemska arter.
+När tiaminbrist upptäcks i fiskodlingar kan förvaltare genomföra
+tiaminbehandling för att förbättra överlevnaden i de tidiga
+livsstadierna. Det finns tre typer av behandlingar som vanligtvis
+tillämpas. 
 
-När tiamindeficiens upptäcks i avelsförråd kan förvaltare genomföra tiaminbehandlingar för att förbättra överlevnadsgraden i tidiga livsstadier. 
-Det finns två typer av behandlingar som vanligtvis tillämpas i avelsfabriker. 
-Där vuxna fiskar kan fångas veckor före sin leksäsong, ges vuxna tiamininjektioner som visat sig vara effektiva för att dramatiskt öka tiaminhalterna i deras ägg. 
-Där vuxna hanteras mycket närmare lektiden, kan äggen befruktas i vatten berikat med tiamin och snabbt absorbera tiaminet från vattnet inom en timme efter nedsänkning och kan behålla det för att förhindra dödlighet kopplad till TDC. 
-Denna metod har visat sig vara mycket effektiv och effektiv, och är en vanlig praxis i avelsfabriker som uppföder lax och öring. 
-Tyvärr är denna behandling för närvarande begränsad till fisk som uppföds i avelsfabriker och hjälper inte tiamindeficienta fiskar som reproducerar naturligt i det vilda. 
-Detta kan göra att framtiden för vissa [salmonid](#glossary-salmonine) populationer blir beroende av avelsfabriker.
+1. Injektion av vuxna fiskar: Om vuxna fiskar kan fångas flera veckor innan lek, ges de tiamininjektioner vilket visat sig kraftigt öka tiaminhalten i deras ägg. I vissa laxpopulationer får honor dessa injektioner under sina lekvandringar, vilket gör att de kan leka naturligt med återställda tiaminhalter.
+
+2. Tiaminberikat vatten vid befruktning: Om vuxna laxindivider hanteras närmare leken, kan äggen befruktas i vatten berikat med tiamin. Äggen kan snabbt, inom en timme efter nedsänkning, absorbera tiamin från vattnet  och behålla det för att förhindra dödlighet kopplad till tiaminbrist. Denna metod har visat sig vara mycket effektiv och är en vanlig praxis i odlingar som föder upp lax och öring.
+
+3. Behandling av sjuka yngel: Ibland behandlas symptomatiskt fiskar (sjuka yngel) med vattenlösligt tiamin.
+Tyvärr är massbehandling av ägg för närvarande begränsad till fisk som föds upp i
+fiskodlingar och hjälper inte naturliga, vildlekande bestånd som drabbas av tiaminbrist På senare tid har vissa vildlekande fiskar injicerats med tiamin under sina vandringar. Oavsett metod så får framtiden utvisa om laxfisk som drabbats av tiaminbrist kommer bli beroende av mänsklig intervention för att säkerställa överlevnad. 
 
 ## Hur mäts tiamin?
 
-Att mäta tiaminhalter i fiskar kan kräva samordning mellan sportfiskare, avelspersonal, fiskeförvaltare och slutligen forskare. 
-Eftersom de flesta lax- och öringpopulationer har omfattande avelsprogram, kommer de flesta prover från fisk som samlats in vid avelsfabriker. 
-Ibland har ytterligare prover tillhandahållits av lokala sportfiskare och fiskeförvaltare. 
-Tiamin lagras i olika vävnader inklusive blod, muskel, lever och gonader (såsom äggstockar och ägg) och kan mätas från någon av dessa. 
-Ägg är den mest vanlig vävnaden som provtas eftersom insamlingen kan vara icke-dödande och symptom på Tiamindeficienskomplex är vanligast i tidiga livsstadier som är beroende av tiaminhalter i äggen.
+Att mäta tiaminhalter i fisk kan kräva samordning mellan sportfiskare,
+personal vid fiskodlingar, fiskevårdsmyndigheter ochforskare. Eftersom mångalax- och öringpopulationer har omfattande odlingsprogram genomförs  de
+flesta prover som görs från fisk som återvänt till fiskodlingar. Ibland tillhandahålls ytterligare prover av lokala sportfiskare och
+fiskeförvaltare. Tiamin lagras i olika vävnader inklusive blod, muskel,
+lever och gonader (såsom äggstockar och ägg) och kan mätas i någon av
+dessa vävnader. Ägg är den vanligaste vävnaden som provtas eftersom insamlingen kan ske utan att döda fisken. Dessutom är tiaminbristsymtom vanligast 
+i tidiga livsstadier som är beroende av tiaminhalten i äggen.
 
-Efter att prover har insamlats måste de frysa snabbt för att förhindra vävnadsnedbrytning och bevara tiaminhalter. 
-Proverna transporteras sedan på torris till en forskningsanläggning där tiaminet kan extraheras och kvantifieras.
-Vissa prover har rest hela vägen 3 000 miles (5 000 km) från Alaska till New York för bearbetning. 
-Det finns flera metoder för att extrahera och mäta tiamin i vävnad som varierar i bearbetningstid och noggrannhet av tiaminmätningar. 
-Idag använder de flesta tiaminmätningar i fisk en teknik som kallas [högeffektiv vätskekromatografi](#glossary-hplc) (HPLC) som maximerar noggrannheten och gör det möjligt för forskare att exakt mäta mycket låga halter. 
+:::: {.columns}
 
-Att extrahera tiamin från ägg börjar med att mäta vikten av ett prov av ägg och mala det i ett kemiskt lösningsmedel (2% triklorättiksyra, TCA) för att extrahera tiamin från cellerna. 
+::: {.column width="48%"}
+![](www/image1.png){.lightbox #fig-fig5 fig-align="center" width="100%"}
+:::
+
+::: {.column width="4%"}
+
+:::
+
+::: {.column width="48%"}
+![](www/image9.png){.lightbox #fig-fig6 fig-align="center" width="100%"}
+:::
+
+::::
+
+Efter att prover har samlats in måste de frysas in snabbt för att förhindra
+vävnadsnedbrytning och för att bevara tiaminhalter. Proverna transporteras sedan
+på torris till en forskningsanläggning där tiaminet kan extraheras och
+kvantifieras. Vissa prover skickas hela vägen 3 000 miles (5 000 km)
+från Alaska till New York för bearbetning. Det finnsflera olika metoder för
+att extrahera och mäta tiamin i vävnad vilka varierar i bearbetningstid
+och noggrannhet. Idag använder de flesta
+tiaminmätningar i fisk en teknik som kallas [HPLC](#glossary-hplc) som maximerar noggrannheten
+och gör det möjligt för forskare att mäta mycket låga halter.
+
+:::: {.columns}
+
+::: {.column width="45%"}
+Processen börjar med att vikten på ett äggprov mäts, och sedan mals provet i ett kemiskt lösningsmedel (2% triklorättiksyra, TCA) för att extrahera tiamin från cellerna. 
+
 Den malda vävnaden kokas sedan för att maximera mängden tiamin som extraheras från cellerna. 
-Denna process skapar ett skumaterial som snurras i höga hastigheter i en centrifug för att separera vävnaden från TCA-lösningsmedlet som innehåller tiamin.
 
-Efter att tiaminet har extraherats och separerats från vävnaden, behöver lösningsmedlet som innehåller tiamin justeras för att korrekt köras genom HPLC-instrumentet. 
-Detta innebär att varje prov sköljs med ett nytt lösningsmedel för att avlägsna TCA och justera lösningens pH. 
-En liten mängd ett fluorescerande kemiskt ämne (kaliumferrocyanid) tillsätts till varje prov för att binda sig till tiaminet så att det kan detekteras och kvantifieras av HPLC-instrumentet. 
-Slutligen passerar varje prov genom ett fint filter för att avlägsna kvarvarande partiklar och den filtrerade lösningen som innehåller tiamin analyseras med HPLC.
+Denna process skapar ett prov som snurras i höga hastigheter i en centrifug för att separera vävnaderna från TCA-lösningsmedlet som nu innehåller tiamin.
 
-HPLC-instrumentet tar en liten mängd av den rena tiaminlösningen och leder den genom en specialiserad kolonn som separerar föreningar i lösningen baserat på deras kemiska struktur. 
-Tiamin kommer i tre olika format (vitaminer) som varierar i struktur och storlek, och därmed separeras från varandra i denna kolonn. 
-Därefter passerar tiaminlösningen genom en detektor som börjar med den minsta vitaminen först, och detektorn mäter koncentrationen av varje vitamin i provet. 
-Koncentrationerna från varje prov standardiseras genom att ta hänsyn till den ursprungliga massan av den provtagna vävnaden och ger tiaminhalter som nanomol (en miljarddel av en mol) tiamin per gram vävnadsprov.
+:::
+
+::: {.column width="3%"}
+
+:::
+
+::: {.column width="47%" style="padding:0px; position:sticky;"}
+![](www/image6.png){.lightbox #fig-fig5 fig-align="center" width="100%"}
+:::
+
+::::
+
+När tiaminet har extraherats och separerats från vävnaden måste
+lösningen justeras för att korrekt kunna köras
+genom HPLC-instrumentet. Detta innebär att varje prov sköljs med ett
+nytt lösningsmedel för att avlägsna TCA och justera pH. En
+liten mängd av ett fluorescerande kemiskt ämne (kaliumferrocyanid)
+tillsätts till varje prov för att binda sig till tiaminet, vilket gör det möjligt att detektera och kvantifiera med HPLC-instrumentet. Slutligen filtreras varje prov för att avlägsna kvarvarande partiklar,
+och den filtrerade lösningen som innehåller tiamin analyseras med HPLC.
+
+:::: {.columns}
+
+::: {.column width="49%"}
+HPLC-instrumentet tar en liten mängd av den rena tiaminlösningen och leder den genom en så kallad kolonn som separerar föreningar i lösningen baserat på deras kemiska struktur. 
+
+Tiamin förekommer  i tre olika former (vitamerer) som varierar i struktur och storlek, och separeras därför från varandra. 
+
+Därefter passerar tiaminlösningen genom en detektor, med det minsta vitaminet först, och detektornmäter koncentrationen därefter varje typ av vitamer i provet. 
+
+Koncentrationerna från varje prov standardiseras genom att ta hänsyn till den ursprungliga massan av den provtagna vävnaden och koncentrationerna anges vanligen i nanomol (en miljarddel av en mol) tiamin per gram vävnadsprov.
+:::
+
+::: {.column width="2%"}
+
+:::
+
+::: {.column width="49%"}
+![](www/image8.png){.lightbox #fig-fig5 fig-align="center" width="100%"}
+:::
+
+::::
 
 ## Hur vet man om en organism har tiaminbrist?
 
-<b>TDC-symtom hos salmonid fria embryon:</b>
+`<b>`{=html}Tiaminbrist  hos gulesäcksyngel:`</b>`{=html}
 
-* Lethargi (slöhet eller minskad aktivitet)
+-   Slöhet eller minskad aktivitet
 
-* Oregelbundet simmande beteende (t.ex. spiral- eller korkskruvsimning)
+-   Oregelbundet simmbeteende (t.ex. spiral- eller
+    korkskruvsimning)
 
-* Ataxi (oordnade rörelser)
+-   Koordinationsstörningar eller brist på muskelkontroll
 
-* Mörk färg eller förändringar i hudpigmentering (som en stressrespons)
+-   Mörk färg eller förändringar i hudpigmentering 
 
-* Förlust av aptit (anorexi) och minskat födointag => Dålig tillväxt
+-   Förlust av aptit (anorexi) och minskat födointag och därmeddålig tillväxt
 
-* Hög dödlighet, särskilt efter gulblåsabsorbering (före första utfodringen)
+-   Hög dödlighet, särskilt efter gulesäckabsorberingen (före första
+    födan)
 
-Dessa symptom kan ofta vara mycket identifierbara i vilda och avelsfiskar. Kolla in fliken Resurser för mer information om tiamidbristiga och behandlade steelhead-yngel.
+Dessa symptom kan ofta vara mycket lätta att känna igen i vilda och odlade fiskar. Kolla in denna film som visar salmonider med och utan symptom på tiaminbrist.
 
 ## Förklaring av LC50
 
-En [LC50](#glossary-lc50) är <b>den letala koncentrationen av en förening för 50% av den testade populationen</b> (Figur 3). 
-LC50 används ofta inom toxikologi för att jämföra potensen av en förorening på olika organismer. I dessa jämförelser är det möjligt att förstå vilken organism som är mer känslig för en kemisk förorening. I fallet med tiamin representerar LC50-värden hur mycket tiamin som krävs för att den aktuella arten ska överleva. Således använder forskare LC50-värden för att hjälpa till att avgöra hur känslig en art är för tiamidbrist och bedöma med äggens tiamin sannolikheten för att en population under ett visst år kan uppvisa TDC. 
+Ett [LC50](#glossary-lc50) är `<b>`{=html} - värde är den koncentration av
+ett ämne där50% av de testade individerna dör`</b>`{=html} (Figur 7).
+LC50 används ofta inom ekotoxikologi för att bedömma hur potent ett
+giftigt ämne är för olika organismer. Genom sådana studier är det möjligt att
+förstå vilken organism som är mest känslig för ett kemiskt ämne. I
+fallet med tiamin representerar LC50-värdet hur mycket tiamin som krävs
+för att en viss art ska överleva. Forskare använder därför
+LC50-värden för att bedöma hur känslig en art är för
+tiaminbrist och, baserat på tiaminhalten i ägg, uppskatta sannolikheten för att en hel
+population under ett visst år kan påverkas negativt av tiaminbrist.
 
-![Ett exempel på en klassisk LC50-kurva. Vi kan passa en linje genom att testa många olika koncentrationer och se hur många djur som överlever. Koncentrationen där 50% av dem överlever kallas LC50.](www/fig3.png){.lightbox #fig-fig3 fig-align="center" width="50%"}
+![Ett exempel på en klassisk LC50-kurva. Vi kan passa en linje genom att testa många olika koncentrationer och se hur många djur som överlever. Koncentrationen där 50% av dem överlever kallas LC50.](www/image7.png){.lightbox #fig-fig3 fig-align="center" width="50%"}
 
-Ett annat sätt att utforska effekterna av en förening är att överväga de effekter den har bortom dödliga konsekvenser. 
-För detta använder forskare en [EC50](#glossary-ec50), <b>eller en effektkoncentration för 50% av populationen</b>. 
-Effekten kan vara död (så en LC50 kan även kallas en EC50), men det kan också vara något som inte orsakar död men som skulle göra det svårare för ett djur att överleva på lång sikt. 
-Effekter kan vara förändringar i simförmåga, förändringar i svängradie, en ändring i förmågan att upptäcka förändringar med ögonen, minskad immunfunktion, eller många andra alternativ.
+Ett annat sätt att undersöka effekterna av ett ämne är att även titta på effekter innan döden inträffar. För detta använder
+forskare istället ett [EC50](#glossary-ec50), `<b>`{=html} - värde, vilket är den koncentration där  50% av populationen`</b>`{=html} uppvisar en specifikeffekt. Effekten kan
+vara dödlighet (så en LC50 kan även kallas en EC50), men det kan också vara
+något som inte orsakar direkt dödlighet,  men som gör det svårare för ett djur
+att överleva på lång sikt. Denna typ av effekter inkluderar förändringar i simförmåga,
+svängradie, en ändring i förmågan att upptäcka
+förändringar med ögonen, minskad immunfunktion mm..
 
-Vid tiamidbrist har organismer inte för mycket av något som är dåligt för dem (som i klassisk toxikologi), utan snarare för lite av något de behöver. Så kurvan vänds upp och ner (Figur 4). Med för lite tiamin (brist), kan ibland alla yngel dö (dvs. 0% överlevnad). Om de har tillräckligt ([replete](#glossary-replete)), kommer alla att leva (100% överlevnad). Forskare är intresserade av punkten i mitten där cirka 50% kommer att överleva. Om testade ägg ligger under LC50-tröskeln för tiamin koncentration i nanomoler per gram ägg (nmol/g), kan förvaltare vilja ingripa och komplettera för att säkerställa överlevnad. Detta kan också vara en ledtråd på att något är fel i ekosystemet (se "Vad orsakar TDC?").
+Vid tiaminbrist handlar det inte om att organismer har för mycket av något skadligt ämne (som i klassisk ekotoxikologi), utan snarare för lite av något de
+behöver. Därför är kurvan omvänd (Figur 8). Vid för lite tiamin
+(brist) kan alla yngel dö (dvs. 0% överlevnad). Om de har
+tillräckligt ([replete](#glossary-replete)), överlever alla (100%
+överlevnad). Forskare är intresserade av punkten i mitten där cirka 50%
+kommer att överleva. Om äggen som ingår i studien ligger under tiamin koncentrationen (nmol/g) för LC50
+,kan förvaltare
+vilja ingripa och komplettera med mer tiamin för att säkerställa överlevnad. Detta kan
+också vara en indikation på att något är fel i ekosystemet (se "Vad orsakar
+tiaminbrist?").
 
-![Ett exempel på en klassisk LC50-kurva. Vi kan passa en linje genom att testa många olika koncentrationer och se hur många djur som överlever. Koncentrationen där 50% av dem överlever kallas LC50.](www/fig4.png){.lightbox #fig-fig4 fig-align="center" width="50%"}
+![Ett exempel på en klassisk LC50-kurva. Vi kan passa en linje genom att testa många olika koncentrationer och se hur många djur som överlever. Koncentrationen där 50% av dem överlever kallas LC50.](www/image2.png){.lightbox #fig-fig4 fig-align="center" width="50%"}
 
-Dessa data är svåra att samla in. 
-Det kräver att hålla ägg från varje hona i ett separat akvarium för att se hur många som överlever till simstadiet. 
-Salmon in the Classroom har hjälpt till att samla in dessa data i Kalifornien sedan 2021.
+Denna typ av data är svår att samla in eftersom man behöver hålla ägg från olika honor i separata akvarium. Man undersöker därefter hur många som överlever till efter
+gulesäckstadiet. Salmon in the Classroom är ett koncept som har hjälpt till att samla in denna typ av 
+data i Kalifornien sedan 2021.
 
-## Ordlista
+## Ordlista - endast på engelska
 
 <a name="glossary-alevin" href="#glossary-alevin">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -193,15 +305,15 @@ Salmon in the Classroom har hjälpt till att samla in dessa data i Kalifornien s
   </span>
 </a>
 
-Ett laxembryo som får nästan all sin näring från gulan, även kallad gulan-blötdjur (inkludera bild?)
+A salmon embryo that gets almost all of its nutrients from the yolk, also called yolk-sac fry
 
 <a name="glossary-deficiency" href="#glossary-deficiency">
   <span style="font-size: 14pt; font-weight: bold;">
-    Brist
+    Deficiency
   </span>
 </a>
 
-Att inte ha tillräckligt. Ett djur som lider av tiamidbrist kommer att få hälsoeffekter.
+Not having enough. An animal that is deficient in thiamine will have health impacts.
 
 <a name="glossary-ec50" href="#glossary-ec50">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -209,7 +321,7 @@ Att inte ha tillräckligt. Ett djur som lider av tiamidbrist kommer att få häl
   </span>
 </a>
 
-Vid denna koncentration kommer 50% av populationen att uppleva negativa effekter
+At this concentration, 50% of the population will experience adverse effects
 
 <a name="glossary-ems" href="#glossary-ems">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -217,7 +329,7 @@ Vid denna koncentration kommer 50% av populationen att uppleva negativa effekter
   </span>
 </a>
 
-Tidigt dödlighetssyndrom. Beskrivet i de Laurentiska Storsjöarna när avelsfabriker märkte att aleviner dog vid återabsorption av gulan på grund av tiamidbrist
+Early mortality syndrome. Described in the Laurentian Great Lakes when hatcheries noticed alevin dying at yolk sac reabsorption from thiamine deficiency
 
 <a name="glossary-hab" href="#glossary-hab">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -225,7 +337,7 @@ Tidigt dödlighetssyndrom. Beskrivet i de Laurentiska Storsjöarna när avelsfab
   </span>
 </a>
 
-Skadlig algblomning; cyanobakterier (blågröna alger) eller eukaryota (mikroorganismer annat än bakterier och arkéer) alger som växer överdrivet och bildar blomningar som påverkar näringsnätet och miljön
+Harmful algal bloom; cyanobacteria (blue green algae) or eukaryotic (microorganisms other than bacteria and archaea) algae that grow excessively and form blooms that impact the food web and environment
 
 <a name="glossary-hplc" href="#glossary-hplc">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -233,7 +345,7 @@ Skadlig algblomning; cyanobakterier (blågröna alger) eller eukaryota (mikroorg
   </span>
 </a>
 
-Högeffektiv vätskekromatografi-instrument
+High-performance liquid chromatography instrument
 
 <a name="glossary-lc50" href="#glossary-lc50">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -241,15 +353,15 @@ Högeffektiv vätskekromatografi-instrument
   </span>
 </a>
 
-Vid denna koncentration förväntas 50% av populationen dö
+At this concentration, 50% of the population is predicted to die
 
 <a name="glossary-microbe" href="#glossary-microbe">
   <span style="font-size: 14pt; font-weight: bold;">
-    Mikrob
+    Microbe
   </span>
 </a>
 
-Mikroskopiska encelliga organismer, även kända som "mikroorganism"
+Microscopic single-celled organisms, also known as “microorganism” 
 
 <a name="glossary-m74" href="#glossary-m74">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -257,15 +369,16 @@ Mikroskopiska encelliga organismer, även kända som "mikroorganism"
   </span>
 </a>
 
-Ett syndrom som beskrivits hos atlantlax (Salmo salar) i Östersjön där gulan-blötdjur dör på grund av tiamidbrist. M står för "miljö", vilket är det svenska ordet för miljö eftersom bristen var kopplad till miljöfaktorer, och 74 indikerar året då problemet först upptäcktes (1974).
+
+A syndrome described in Atlantic salmon (Salmo salar) in the Baltic Sea with yolk-sac fry dying due to thiamine deficiency. M stands for “miljö”, which is the Swedish word meaning environment as the deficiency was associated with environmental factors, and 74 indicates the year the problem was first detected (1974). 
 
 <a name="glossary-oxidative-stress" href="#glossary-oxidative-stress">
   <span style="font-size: 14pt; font-weight: bold;">
-    Oxidativ stress
+    Oxidative stress
   </span>
 </a>
 
-En kemisk reaktion som sker i celler och vävnader där reaktiva ämnen binder till och skadar molekyler i cellen. Kroppen bekämpar denna process med kemikalier som kallas antioxidanter.
+A chemical reaction that takes place in cells and tissues in which reactive substances bind to and damage molecules in the cell. The body fights this process with chemicals known as antioxidants.
 
 <a name="glossary-phytoplankton" href="#glossary-phytoplankton">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -273,15 +386,15 @@ En kemisk reaktion som sker i celler och vävnader där reaktiva ämnen binder t
   </span>
 </a>
 
-Fotosyntetiska (får energi från solljus) mikroorganismer som lever i vattenmiljöer
+Photosynthetic (gain energy from sunlight) microorganisms that live in aquatic environments
 
 <a name="glossary-replete" href="#glossary-replete">
   <span style="font-size: 14pt; font-weight: bold;">
-    Tillräcklig
+    Replete
   </span>
 </a>
 
-Att ha tillräckligt av något, i detta fall tillräckligt med tiamin för normal funktion
+Having enough of something, in this case, enough thiamine for normal functioning
 
 <a name="glossary-salmonine" href="#glossary-salmonine">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -289,7 +402,7 @@ Att ha tillräckligt av något, i detta fall tillräckligt med tiamin för norma
   </span>
 </a>
 
-Den taxonomiska underfamiljen som inkluderar lax, öring och röding
+The taxonomic sub-family that includes salmon, trout, and char
 
 <a name="glossary-tdc" href="#glossary-tdc">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -297,23 +410,23 @@ Den taxonomiska underfamiljen som inkluderar lax, öring och röding
   </span>
 </a>
 
-Tiaminbristkomplex. Beskriver de dödliga och icke-dödliga effekterna (t.ex. snurrande vid simning, nedsatt immunfunktion) av att ha för låga tiaminnivåer för att upprätthålla normala kroppsfunktioner. De övergripande effekterna av tiaminbrist inkluderar tidig mortalitetssyndrom (EMS). Även känt som M74 i Östersjöregionen. Kan förekomma i både juvenil och/eller vuxen livsfas.
+Thiamine Deficiency Complex. Describes the lethal and sublethal effects (e.g., spinning while swimming, impaired immune function) of having thiamine concentrations too low to maintain normal bodily functions. The overall effects associated with thiamine deficiency including early mortality syndrome (EMS). Also known as M74 in the Baltic region. Can occur in juvenile and/or adult life stages.
 
 <a name="glossary-thiaminase" href="#glossary-thiaminase">
   <span style="font-size: 14pt; font-weight: bold;">
-    Tiaminasa
+    Thiaminase
   </span>
 </a>
 
-Ett enzym som spjälkar tiamin till en thiazol- och pyrimidin-del som är otillgänglig för de flesta konsumenter
+An enzyme that splits thiamine into a thiazole and pyrimidine moieties that are  unavailable to most consumers
 
 <a name="glossary-thiamine" href="#glossary-thiamine">
   <span style="font-size: 14pt; font-weight: bold;">
-    Tiamin
+    Thiamin(e)
   </span>
 </a>
 
-Vitamin B1, även stavad som tiamin, ett vitamin nödvändigt för alla levande organismer
+Vitamin B1, also spelled as thiamin, a vitamin necessary for all living organisms
 
 <a name="glossary-vitamin" href="#glossary-vitamin">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -321,104 +434,111 @@ Vitamin B1, även stavad som tiamin, ett vitamin nödvändigt för alla levande 
   </span>
 </a>
 
-Organiska föreningar som krävs i små mängder av levande organismer och är nödvändiga för normal tillväxt och näring
+Organic compounds that are required in small quantities by living organisms and are essential for normal growth and nutrition
 
 ## Referenslista
 
-Harder, A. M., Reed, A. N., & Rowland, F. E. (2024). Evolutionära perspektiv på tiaminsupplementering av förvaltade stillahavslaxpopulationer. Canadian Journal of Fisheries and Aquatic Sciences, 82, 1-10. <https://doi.org/10.1139/cjfas-2024-0109>
 
-Lee, C. F. (1948). Tiaminas i fiskeprodukter: En översikt. Commercial Fisheries Review, 10(4), 7-17.
+Bengtsson, B. E., Hill, C., Bergman, Å., Brandt, I. Johansson, N., Magnhagen, C., Södergren, A., & Thulin, J. (1999). Reproductive disturbances in Baltic fish: A synopsis of the FiRe Project. Ambio, 28(1), 2-8.
 
-Mantua, N. J., Bell, H., Todgham, A. E., Daniels, M. E., Rinchard, J., Ludwig, J. M., ... & Johnson, R. C. (2025). Utbredd tiamidbrist i kalifornisk lax kopplad till en ansjovisdominerad marin bytesbas. Proceedings of the National Academy of Sciences, 122(26), e2426011122. <https://doi.org/10.1073/pnas.242601112>
+Harder, A. M., Reed, A. N., & Rowland, F. E. (2024). Evolutionary perspectives on thiamine supplementation of managed Pacific salmonine populations. Canadian Journal of Fisheries and Aquatic Sciences, 82, 1-10. <https://doi.org/10.1139/cjfas-2024-0109> 
 
-McMillan, J. R., Morrison, B., Chambers, N., Ruggerone, G., Bernatchez, L., Stanford, J., & Neville, H. (2023). En global syntes av peer-reviewed forskning om effekterna av avelslaxar på vilda laxar. <https://doi.org/10.1111/fme.12643>
+Fitzsimons, J. D., Brown, S. B., Honeyfield, D. C., & Hnath, J. G. (1999). A Review of Early Mortality Syndrome (EMS) in Great Lakes Salmonids: Relationship with Thiamine Deficiency. Ambio, 28(1), 9-15.
 
-Whitfield, K. C., Bourassa, M. W., Adamolekun, B., Bergeron, G., Bettendorff, L., Brown, K. H., ... & Combs Jr, G. F. (2018). Tiamindeficiensstörningar: diagnos, prevalens och en färdplan för globala kontrollprogram (Vol. 1430, Nr 1, s. 3-43). <https://doi.org/10.1111/nyas.13919>
+Lee, C. F. (1948). Thiaminase in fishery products: A review. Commercial Fisheries Review, 10(4), 7-17.
 
-## Resurser
+Mantua, N. J., Bell, H., Todgham, A. E., Daniels, M. E., Rinchard, J., Ludwig, J. M., ... & Johnson, R. C. (2025). Widespread thiamine deficiency in California salmon linked to an anchovy-dominated marine prey base. Proceedings of the National Academy of Sciences, 122(26), e2426011122. <https://doi.org/10.1073/pnas.242601112>
 
-### Videor
+McMillan, J. R., Morrison, B., Chambers, N., Ruggerone, G., Bernatchez, L., Stanford, J., & Neville, H. 2023. A global synthesis of peer-reviewed research on the effects of hatchery salmonids on wild salmonids. <https://doi.org/10.1111/fme.12643>
 
-* [Spinning Salmon YouTube-kanal](https://www.youtube.com/playlist?list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV)
-  * [Ett komplext problem: Tiamindeficiens hos laxar i Ontario-sjön](https://vimeo.com/246128456)
-  * [Vi ger naturen en vitaminbrist.](https://www.youtube.com/watch?v=cfl7mSG13e0) 
-  * [Vad är ett avrinningsområde?](https://www.youtube.com/watch?v=933SLmx0QS4)
-  * [Videotur av Feather River Hatchery](https://www.youtube.com/watch?v=kU5pW9xT74U)
-  * [TDC i Central Valley Chinook-lax](https://www.youtube.com/watch?v=JDc12YbxAqc) med Nate Mantua
-  * [Varmare vatten dödar laxägg](https://ca.pbslearningmedia.org/resource/nasa09.sci.life.oate.saleggs/warmer-water-kills-salmon-eggs/)
-  * [USA:s fiskeindustri står inför klimatförändringar](https://www.youtube.com/watch?v=-ibT7dkqsfg) (med samarbetande forskare Rachel Johnson)
-  * CDFW: [Biodiversitetsövervakning och medborgarforskning](https://drive.google.com/file/d/1a3LmvetOlLeIe-jx93zUUGmohafUbF_g/view?usp=drive_link) (lyfter fram Spinning Salmon-programmet)
-  * [Ingen återvändo](https://www.youtube.com/watch?v=Mmo5eHbQ-fk) - CalTrout (video)
-  * Tending Nature: [Återvinna jordbruket med Yocha Dehe Wintun Nation](https://www.pbs.org/video/reclaiming-agriculture-with-the-yocha-dehe-wintun-nation-s8tz9l/)
-  * [Att lära känna forskarteamet - Röster från fältet med Abbie Ward](https://www.youtube.com/watch?v=7Bl7UKjZU9s&list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV&index=5&t=6s) vid McCloud River med Winnemem-Wintu-stammen.
-  * [Kaliforniens vattenmyndighetsvideo om Tiamininjektioner](https://www.youtube.com/watch?v=iN8EXfexmVo) (med samarbetande forskare: Kevin Kwak)
+Whitfield, K. C., Bourassa, M. W., Adamolekun, B., Bergeron, G., Bettendorff, L., Brown, K. H., ... & Combs Jr, G. F. (2018). Thiamine deficiency disorders: diagnosis, prevalence, and a roadmap for global control programs (Vol. 1430, No. 1, pp. 3-43). <https://doi.org/10.1111/nyas.13919>
 
-### Länkar till nyhetsartiklar och pressmeddelanden
+## Resources
 
-#### Stora sjöarna
+### Videos developed and curated by Spinning Salmon (UC-Davis)
 
-* Internationella gemensamma kommissionens (IJC) nyhetsbrev om tiamidbrist i de Stora sjöarna: <https://ijc.org/en/vitamin-deficiency-limits-salmon-and-trout-offspring-survival>
+* [Spinning Salmon YouTube Channel](https://www.youtube.com/playlist?list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV)
+  * [A Complex Problem: Thiamine Deficiency in Lake Ontario Salmon](https://vimeo.com/246128456)
+  * [We’re giving nature a vitamin deficiency.](https://www.youtube.com/watch?v=cfl7mSG13e0) 
+  * [What is a watershed?](https://www.youtube.com/watch?v=933SLmx0QS4)
+  * [Video tour of the Feather River Hatchery](https://www.youtube.com/watch?v=kU5pW9xT74U)
+  * [TDC In Central Valley Chinook Salmon](https://www.youtube.com/watch?v=JDc12YbxAqc) with Nate Mantua
+  * [Warmer Water Kills Salmon Eggs](https://ca.pbslearningmedia.org/resource/nasa09.sci.life.oate.saleggs/warmer-water-kills-salmon-eggs/)
+  * [US Fisheries Face Climate Change Challenges](https://www.youtube.com/watch?v=-ibT7dkqsfg) (with collaborating researcher Rachel Johnson)
+  * CDFW: [Biodiversity Monitoring and Community Science](https://drive.google.com/file/d/1a3LmvetOlLeIe-jx93zUUGmohafUbF_g/view?usp=drive_link) (highlights the Spinning Salmon Program)
+  * [No Going Back](https://www.youtube.com/watch?v=Mmo5eHbQ-fk) - CalTrout (video)
+  * Tending Nature: [Reclaiming Agriculture with the Yocha Dehe Wintun Nation](https://www.pbs.org/video/reclaiming-agriculture-with-the-yocha-dehe-wintun-nation-s8tz9l/)
+  * [Getting to know the research team- Voices from the Field with Abbie Ward](https://www.youtube.com/watch?v=7Bl7UKjZU9s&list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV&index=5&t=6s) on the McCloud River with the Winnemem-Wintu tribe.
+  * [California Department of Water Resources Video on Thiamine Injections](https://www.youtube.com/watch?v=iN8EXfexmVo) (with collaborating researcher: Kevin Kwak)
 
-* Cornells sida om tiamidbrist: <http://thiamine.dnr.cornell.edu/Thiamine_ramifications.html#>
 
-* Lokal nyhetsartikel om döda steelheadöringar i Ontario-sjöns biflöden: <https://www.wrvo.org/environment/2014-12-22/fish-die-off-on-salmon-river-could-be-caused-by-vitamin-deficiency>
+### Länkar och mer information
 
-* Great Lakes Echo-artikel om alewife som hotar laxar i de Stora sjöarna: <https://greatlakesecho.org/2009/09/03/alewives-the-trouble-they-cause-and-the-salmon-that-love-them/>
+#### Great Lakes
 
-* FishBio-blogginlägg som sammanfattar tiamidbrist globalt: <https://fishbio.com/a-deeper-dive-into-thiamine-deficiency/>
-* Video som jämför tiamidbristiga och behandlade steelhead-yngel: [Vimeo-video](https://vimeo.com/1090178610)
+* International Joint Commission (IJC) Newsletter on Thiamine Deficiency in the Great Lakes: <https://ijc.org/en/vitamin-deficiency-limits-salmon-and-trout-offspring-survival>
 
-* Tiamindeficiensdokumentär med fokus på Ontario-sjön: [Ett komplext problem: Tiamindeficiens hos laxar i Ontario-sjön](https://vimeo.com/246128456)
-Video som beskriver tiaminasaktivitet och kopplingen till TDC: [Dr. Catherine Richter | Utforska enzymer i fisk för att påskynda bevarande - SciTube](https://scitube.io/dr-catherine-richter-exploring-enzymes-in-fish-to-accelerate-conservation/)
+* Cornell’s page on thiamine deficiency: <http://thiamine.dnr.cornell.edu/Thiamine_ramifications.html#>
 
-#### Östersjön
+* Local news article on dead steelhead trout in Lake Ontario tributaries: <https://www.wrvo.org/environment/2014-12-22/fish-die-off-on-salmon-river-could-be-caused-by-vitamin-deficiency>
 
-* Översiktsrapport om tiamidbrist i Östersjöregionen: <https://www.havsmiljoinstitutet.se/publikationer/havsmiljoinstitutets-rapportserie/tiaminbrist-i-ostersjoomradet>
+* Great Lakes Echo article on alewife threatening salmon in the Great Lakes: <https://greatlakesecho.org/2009/09/03/alewives-the-trouble-they-cause-and-the-salmon-that-love-them/>
 
-* WGBAST - Bedömningsarbetsgruppen för baltisk lax och öring bedömer status och trender för lax- och havsöringsbestånd i Östersjön och ger årliga fångstförslag för lax: <https://www.ices.dk/community/groups/pages/wgbast.aspx>
+* FishBio blog post summarizing thiamine deficiency globally: <https://fishbio.com/a-deeper-dive-into-thiamine-deficiency/>
+* Video comparing thiamine deficient and treated steelhead fry: [Video](https://vimeo.com/1090178610)
 
-* Svenska myndigheten för havs- och vattenförvaltning - Informationssida om tiamin: <https://www.havochvatten.se/arter-och-livsmiljoer/arter-och-naturtyper/lax/faq-lax/2018-10-29-ar-tiaminbrist-orsaken-till-dodlighet-pa-lax.html>
 
-* Modell för att uppskatta tiamidbristrelaterad dödlighet hos atlantlax (Salmo salar) avkomma och variation i baltiska lax M74-syndromet: [Full artikel: Modell för att uppskatta tiamidbristrelaterad dödlighet hos atlantlax (Salmo salar) avkomma och variation i baltiska lax M74-syndromet](https://www.tandfonline.com/doi/full/10.1080/10236244.2021.1941942)
+* Thiamine deficiency documentary focused on Lake Ontario: [A Complex Problem: Thiamine Deficiency in Lake Ontario Salmon](https://vimeo.com/246128456)
+Video describing thiaminase activity and association with TDC: [Dr Catherine Richter | Exploring Enzymes in Fish to Accelerate Conservation - SciTube](https://scitube.io/dr-catherine-richter-exploring-enzymes-in-fish-to-accelerate-conservation/)
 
-#### Kalifornien
+#### Baltic Sea - Östersjön
 
-* [Övervakning av tiamidbrist i kalifornisk lax](https://www.fisheries.noaa.gov/west-coast/science-data/monitoring-thiamine-deficiency-california-salmon#piecing-together-the-puzzle) (några kopplade som bakgrundsläsningar för lärare, andra redigerade för studenter, nedkortade)
+* Overview report on thiamine deficiency in the Baltic Sea region: <https://www.havsmiljoinstitutet.se/publikationer/havsmiljoinstitutets-rapportserie/tiaminbrist-i-ostersjoomradet>
 
-  * [Övervakning av TDC i kalifornisk lax](https://docs.google.com/document/d/1JbWE4u1iGKBvsEGh3Z2cc5khyE2weBTNhNgsA0V1KIA/edit)
+* WGBAST - The Assessment Working Group on Baltic Salmon and Trout assesses the status and trends of salmon and sea trout stocks in the Baltic Sea and provides annual catch advice on salmon: <https://www.ices.dk/community/groups/pages/wgbast.aspx>
 
-    * Sammanställning av pusslet
+* Swedish agency for Marine and Water Management - Information page thiamine: <https://www.havochvatten.se/arter-och-livsmiljoer/arter-och-naturtyper/lax/faq-lax/2018-10-29-ar-tiaminbrist-orsaken-till-dodlighet-pa-lax.html>
 
-    * Ett hemmagjort mysterium i Kalifornien
+* Model for estimating thiamine deficiency-related mortality of Atlantic salmon (Salmo salar) offspring and variation in the Baltic salmon M74 syndrome: [Full article: Model for estimating thiamine deficiency-related mortality of Atlantic salmon (Salmo salar) offspring and variation in the Baltic salmon M74 syndrome](https://www.tandfonline.com/doi/full/10.1080/10236244.2021.1941942)
 
-    * Den dolda kostnaden
+#### California
 
-* Havets mystiska vitaminbrist ([studentutdrag](https://docs.google.com/document/d/1L2z_MbcYu2YLge1Tcq6SHfL1nmvZ3T0dCEtG1DLhaBg/edit?usp=sharing))
-  * Original - [NOAA Fisheries](https://www.fisheries.noaa.gov/feature-story/oceans-mysterious-vitamin-deficiency) av [Alastair Bland](https://hakaimagazine.com/profiles/alastair-bland/) 28 januari 2021 först publicerad av Hakai Magazine och NOAA Fisheries
+* [Monitoring Thiamine Deficiency in California Salmon](https://www.fisheries.noaa.gov/west-coast/science-data/monitoring-thiamine-deficiency-california-salmon#piecing-together-the-puzzle) (some linked as background readings for teachers, others edited for student reading, paired down)
 
-* [California Interagency Ecological Program: Laxräkningar](https://iep.ca.gov/Science-Synthesis-Service/Directed-Studies-Synthesis/Blog/tag/salmon)
+  * [Monitoring TDC in CA Salmon](https://docs.google.com/document/d/1JbWE4u1iGKBvsEGh3Z2cc5khyE2weBTNhNgsA0V1KIA/edit) 
 
-* [Hur dammar påverkar vatten och habitat på västkusten](https://drive.google.com/file/d/1Hx9oTCy28epU1xBuSSYz29GjoS0FOn0g/view?usp=sharing)
+    * Piecing Together The Puzzle
 
-* [Forskare undersöker dödsfall hos Central Valley Chinook, med möjliga kopplingar till havsförändringar](https://drive.google.com/file/d/12LP7XppoNGO80p4GyaYfuMoQXo8Dh_D1/view?usp=drive_link)
+    * A Home-Grown California Mystery
 
-* Laxs dåliga kostval; Laxens hälsokris; Opportunivorösa laxar av Abigail Ward och Peggy Harte ((ANTECKNING - bör publiceras snart, länk till Frontiers for Young Minds))
+    * The Hidden Toll
 
-* NOAA Webstory - Gymnasieelever hjälper federala biologer att reda ut mysteriet med Spinning Salmon av Fairfield High Schools AP Environmental Studies-studenter ((ANTECKNING - ska publiceras och länkas i maj 2025))
+* The Ocean’s Mysterious Vitamin Deficiency ([student excerpt](https://docs.google.com/document/d/1L2z_MbcYu2YLge1Tcq6SHfL1nmvZ3T0dCEtG1DLhaBg/edit?usp=sharing))
+  * Original- [NOAA Fisheries](https://www.fisheries.noaa.gov/feature-story/oceans-mysterious-vitamin-deficiency) by  [Alastair Bland](https://hakaimagazine.com/profiles/alastair-bland/) January 28, 2021 first published by Hakai Magazine and NOAA Fisheries
 
-* [Klimatförändringars påverkan på lax och steelhead](https://www.fisheries.noaa.gov/west-coast/sustainable-fisheries/ecosystem-interactions-and-pacific-salmon#climate-change-impacts-on-salmon-and-steelhead)
+* [CA Interagency Ecological Program: Salmon Counts](https://iep.ca.gov/Science-Synthesis-Service/Directed-Studies-Synthesis/Blog/tag/salmon)
 
-  * [Studentversion](https://docs.google.com/document/d/1CjDxn4hEvOZtrgdS5oYGhau43NDldJ05Gi3juqz8K5I/edit?usp=sharing)
+* [How dams affect water and habitat on the West Coast](https://drive.google.com/file/d/1Hx9oTCy28epU1xBuSSYz29GjoS0FOn0g/view?usp=sharing)
 
-* [Kalifornien Laxstrategi för en varmare, torrare framtid](https://www.gov.ca.gov/wp-content/uploads/2024/01/Salmon-Strategy-for-a-Hotter-Drier-Future.pdf) (utdrag)
+* [Researchers Probe Deaths of Central Valley Chinook, with Possible Ties to Ocean Changes](https://drive.google.com/file/d/12LP7XppoNGO80p4GyaYfuMoQXo8Dh_D1/view?usp=drive_link)
 
-* [Nigiri-projektet: Att odla ris och lax på översvämningsslätten](https://watershed.ucdavis.edu/project/nigiri-project-growing-rice-and-salmon-floodway)
+* The Poor Diet Choices of Salmon; The Salmon’s Health Crisis; Opportunivorous Salmon By Abigail Ward and Peggy Harte ((NOTE- should be published soon, link to Frontiers for Young Minds))
 
-  * [Projektbeskrivning](https://drive.google.com/file/d/1ZzvgRVO2XFlzqMWlkfehHfkkq5d94MSc/view?usp=sharing)
+* NOAA Webstory- High Schoolers Help Federal Biologists Unravel the Mystery of Spinning Salmon By Fairfield High School’s AP Environmental Studies Students ((NOTE- To be published and linked May 2025))
 
-  * [Återuppfinna översvämningsslätten](https://www.nigiriproject.com/): Nigiri-projektet (webbplats)
+* [Climate Change Impacts on Salmon and Steelhead](https://www.fisheries.noaa.gov/west-coast/sustainable-fisheries/ecosystem-interactions-and-pacific-salmon#climate-change-impacts-on-salmon-and-steelhead)
 
-  * [North State Public Radio-sändning](https://www.mynspr.org/agriculture/2016-03-11/nigiri-project-salmon-who-spend-early-life-over-rice-fields-see-an-increase-in-survivability)
+  * [Student version](https://docs.google.com/document/d/1CjDxn4hEvOZtrgdS5oYGhau43NDldJ05Gi3juqz8K5I/edit?usp=sharing)
+
+* [CA Salmon Strategy for a Hotter, Dryer Future](https://www.gov.ca.gov/wp-content/uploads/2024/01/Salmon-Strategy-for-a-Hotter-Drier-Future.pdf) (excerpts) 
+
+* [Nigiri Project: Growing Rice and Salmon on the Floodplain](https://watershed.ucdavis.edu/project/nigiri-project-growing-rice-and-salmon-floodway)
+
+  * [Project Description](https://drive.google.com/file/d/1ZzvgRVO2XFlzqMWlkfehHfkkq5d94MSc/view?usp=sharing)
+
+  * [Reimagining the Floodplain](https://www.nigiriproject.com/): The Nigiri Project (website)
+
+  * [North State Public Radio Broadcast](https://www.mynspr.org/agriculture/2016-03-11/nigiri-project-salmon-who-spend-early-life-over-rice-fields-see-an-increase-in-survivability)
 
 * <http://run4salmon.org/articles/>
 
@@ -427,4 +547,3 @@ Video som beskriver tiaminasaktivitet och kopplingen till TDC: [Dr. Catherine Ri
 * <https://www.ucdavis.edu/climate/blog/anchovy-dominated-diets-west-coast-pose-new-dangers-salmon>
 
 * <https://www.fisheries.noaa.gov/feature-story/anchovy-dominated-diets-west-coast-pose-new-dangers-salmon>
-

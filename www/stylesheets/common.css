@@ -281,3 +281,12 @@ Content: "\f082";
   border: 0;
 }
 [role="button"]{cursor:pointer}
+
+.vscomp-value-text {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+.vscomp-option-text {
+  word-wrap: break-word;
+  word-break: break-word;
+}

@@ -5,7 +5,6 @@ format:
     toc: true
     embed-resources: true
     theme: stylesheets/custom.scss
-  markdown_github: default
 ---
 
 Tämä sovellus kokoaa tietoa lohikalojen  tiamiinin puutos kompleksista  (TDC) . Sovellus on suunnattu etenkin
@@ -20,6 +19,8 @@ tutkijoille, ja kalakantojen suojelusta ja säätelystä kiinnostuneille päätt
 -   **Visualisoi**: Analysoi tiamiinipitoisuuden ja eloonjäämisen
     välistä suhdetta, ja tee uusia tarkasteluja lataamalla omaa aineistoasi.
 
+**𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟**
+
 ## Tausta
 
 [**Tiamiini**](#glossary-thiamine) ([vitamiini](#glossary-vitamin) B1) on
@@ -30,10 +31,6 @@ vesiliukoista, mikä tarkoittaa, että kaikki ylimääräinen tiamiini
 eritetään ulos elimistöstä (poistetaan virtsassa) eikä sitä voi varastoida (paitsi hieman maksassa). Tämän vuoksi eläinten tarvitsee saada 
 tiamiinia ruoastaan jatkuvasti. Itse asiassa suurimpaan osaan viljatuotteita on lisätty tiamiinia sekä muita vitamiineja ja mineraaleja, jotta pysymme terveinä. Tämän voit nähdä, jos tarkistat minkä
  tahansa viljatuotepakkauksen (esim. muro- tai leipäpakkauksen), . Näet ainesosaluettelossa todennäköisesti tiamiinin joko vitamiini B1:nä tai tiamiinimononitraattina.
-
-::::: {.columns}
-
-:::: {.column width="50%"}
 
 Niin kutsuttu [**tiamiinin puutos  kompleksi**](#glossary-tdc) (sanoista thiamine deficiency complex, TDC) on tiamiinin
 ravitsemuksellinen puute, joka aiheuttaa monenlaisia terveysongelmia,
@@ -46,15 +43,8 @@ keisarin lääketieteen klassikossa. TDC:tä havaittiin kotieläimillä 1900-luv
 villissä alligaattoripopulaatiossa, kaloissa, äyriäisissä, hirvissä ja
 linnuissa.
 
-::::
 
-:::: {.column width="49%" style="padding:0px; position:sticky;"}
-
-![TDC:tä on dokumentoitu eri taksoneissa ympäri maailmaa, mukaan lukien lohi, linnut, alligaattorit, simpukat ja hirvet. Eri taksonien sisällä TDC:hen liittyneiden ainutlaatuisten lajien määrä on sulkujen sisällä. Mukautettu Harder et al. 2024.](www/fig1.jpg){.lightbox #fig-fig1 width="100%" fig-align="center"}
-
-::::
-
-:::::
+![TDC:tä on dokumentoitu eri taksoneissa ympäri maailmaa, mukaan lukien lohi, linnut, alligaattorit, simpukat ja hirvet. Eri taksonien sisällä TDC:hen liittyneiden ainutlaatuisten lajien määrä on sulkujen sisällä. Mukautettu Harder et al. 2024.](www/image5.jpg){.lightbox #fig-fig1 width="100%" fig-align="center"}
 
 TDC --- jota on kutsuttu myös [varhaiseksi
 kuolleisuussyndroomaksi](#glossary-ems) (sanoista early mortality syndrome, EMS) ja [M74](#glossary-m74)
@@ -89,23 +79,31 @@ TDC:n seuraukset voivat olla pysyviä tai kohtalokkaita. Se voi esimerkiksi:
 
 ## Mikä aiheuttaa TDC:tä?
 
-Lyhyt vastaus? Emme tiedä varmasti, mutta meillä on hypoteeseja.
+Lyhyt vastaus on, että emme tiedä varmasti, mutta meillä on hypoteeseja.
 
-TDC kalassa, villieläimissä ja ihmisissä esiintyy, kun tiamiinia ei saada tarpeeksi.
-Tämä voi johtua:
+TDC ilmenee kalassa, villieläimissä ja ihmisissä, kun tiamiinia ei
+saada tarpeeksi. Tämä voi olla seurausta:
 
-1. syömisestä ruoasta, jossa ei ole tarpeeksi tiamiinia tai 
-2. tiamiinin vähenemisestä kehossa oksidatiivisen stressin tai tiaminaseen, entsyymin, joka hajottaa tiamiinia, vuoksi.
+1.  Ravinnosta, jossa ei ole tarpeeksi tiamiinia tai
+2.  tiamiinin vähenemisestä kehossa oksidatiivisen stressin tai tiamiinia hajottavan
+    tiaminaasi-entsyymin vuoksi.
 
-Tiaminaaseja esiintyy tietyissä mikrobeissa, kasveissa, hyönteisissä, niveljalkaisissa ja jopa selkärankaislajeissa, mukaan lukien jotkut kalat. 
-Kun saalistajan ruokavalio koostuu suurelta osin saaliista, joka sisältää paljon tiaminasea, se voi hajottaa tiamiinia saalistajan suolistossa ruoansulatuksen aikana, mikä johtaa puutteeseen.
+Tiaminaaseja esiintyy tietyissä mikrobeissa, kasveissa, hyönteisissä,
+niveljalkaisissa ja jopa selkärankaisissa, muun muassa joissakin kaloissa. Kun saalistajan ruokavalio koostuu suurelta osin saaliista, joka
+sisältää paljon tiaminaasia, se voi hajottaa tiamiinia saalistajan
+suolistossa ruoansulatuksen aikana, mikä johtaa tiamiinin puutteeseen.
 
-Tärkeää on, että tiaminaseaktiivisuus on korkeaa tietyissä saalislajeissa, joita lohit kalat syövät, mikä voi hajottaa tiamiinia, kun nämä saalislajit ruuansulatetaan. 
-Yhteys tiaminasepitoisen ruokavalion ja TDC:n välillä on esiintynyt ihmisillä, kotieläimillä, turkistarhoilla, Tyynenmeren satamaseeleillä (Phoca vitulina) ja kaloilla. 
-Toisaalta kalat, jotka syövät liikaa rasvaa, voivat kokea korkeampia soluvaurioiden haittoja oksidatiivisen stressin vuoksi. 
-Tiamini voi toimia antioksidanttina vastustamaan oksidatiivista stressiä, mutta tämä prosessi voi vähentää saatavilla olevaa tiamiinia.
+N huomioitava, että tiaminaasiaktiivisuus on korkeaa tietyissä lohikalojen
+saalislajeissa, mikä voi hajottaa tiamiinia saalistajan ruoansulatuksen aikana,
+. Yhteys tiaminaasipitoisen
+ruokavalion ja TDC:n välillä on ilmennyt ihmisillä, kotieläimillä,
+turkiseläimillä, merinisäkkäillä ja
+kaloilla. Toisaalta kalat, jotka saavat ravinnossaan liikaa rasvaa, voivat altistua soluvaurioille hapettumisreaktioiden eli oksidatiivisen stressin vuoksi.
+Tiamiini voi toimia antioksidanttina ja vastustaa oksidatiivista
+stressiä, mutta tämä prosessi voi puolestaan vähentää tiamiinin määrää elimistössä.
 
-![TDC:n syitä tutkitaan yhä, mutta tiedämme, että lohet elävät maailmassa, joka on täynnä stressitekijöitä. Yleisesti ottaen tiedemiehet ovat kaventaneet asiantuntevaksi kahteen mahdolliseen TDC:n aladiskurssiin: Paradigma 1 on se, että jokin lohen saalislajissa aiheuttaa tiamidibriä. Paradigma 2 on se, että ekosysteemissä tapahtuu jotain, joka vaikuttaa tiamiinin määrään, joka voi päästä huipputoimijoihin kuten lohiin.](www/fig2.png){.lightbox #fig-fig2 fig-align="center" width="100%"}
+
+![TDC:n syitä tutkitaan yhä, mutta tiedämme, että lohet elävät maailmassa, joka on täynnä stressitekijöitä. Yleisesti ottaen tiedemiehet ovat kaventaneet asiantuntevaksi kahteen mahdolliseen TDC:n aladiskurssiin: Paradigma 1 on se, että jokin lohen saalislajissa aiheuttaa tiamidibriä. Paradigma 2 on se, että ekosysteemissä tapahtuu jotain, joka vaikuttaa tiamiinin määrään, joka voi päästä huipputoimijoihin kuten lohiin.](www/image4.png){.lightbox #fig-fig2 fig-align="center" width="100%"}
 
 Esimerkkejä TDC:stä kaloilla, joiden ruokavaliossa on korkea tiaminaasiaktiivisuus tai liian paljon rasvaa:
 
@@ -123,6 +121,7 @@ Esimerkkejä TDC:stä kaloilla, joiden ruokavaliossa on korkea tiaminaasiaktiivi
 Lohikalat kohtaavat elämänsä aikana monia stressitekijöitä, jotka voivat muuttaa niiden kykyä saada tarpeeksi tiamiinia. Näitä ovat taudit,
 ravintoverkon muutokset, lämpöstressi, saasteille altistuminen, vaelluksiin liittyvä stressi, ja monet muut asiat, jotka voivat yhdessä aiheuttaa 
 TDC:n (Kuva 2).
+
 
 ## Kalankasvattamot ja TDC
 
@@ -164,94 +163,174 @@ ja säilyttämään sen, mikä estää TDC:hen liittyvän kuoleman. Tämä
 menetelmä on osoittautunut erittäin tehokkaaksi ja toimivaksi, ja se on
 yleinen käytäntö kalankasvattamoissa, jotka kasvattavat mm. lohia ja
 taimenia. Valitettavasti tämä hoito soveltuu vain 
-kalankasvattamoihin, eikä se auta luonnossa tiamiinin puutteessa eläviä
+Kalankasvattamoihin, eikä se auta luonnossa tiamiinin puutteessa eläviä
 kaloja. Tämä voi aiheuttaa sen, että joidenkin
 [lohikala](#glossary-salmonine) -populaatioiden tulevaisuus
 riippuu kalankasvattamoista.
 
 ## Miten tiamiinia mitataan?
 
-Tiamiinitasojen mittaaminen kaloissa voi vaatia koordinaatiota kalastajien, kalankasvattamohenkilökunnan, kalastushallintojen ja viimeksi tutkijoiden välillä. 
-Koska suurimmalla osalla lohi- ja taimenpopulaatioista on laajat kalankasvattamoohjelmat, suurin osa näytteistä tulee kalankasvattamoista kerätyistä kaloista. 
-Joskus paikalliset kalastajat ja kalastushallinnat ovat myös toimittaneet lisänäytteitä. 
-Tiamiinia varastoidaan eri kudoksissa, mukaan lukien veri, lihas, maksa ja sukupuolielimet (kuten munasarjat ja munat) ja se voidaan mitata mistä tahansa näistä. 
-Munat ovat yleisin näytteenottokudos, koska näytteiden keruu voi olla ei-tappavaa ja tiamiinin puutteen oireet ovat yleisimpiä varhaisissa elinvaiheissa, jotka ovat riippuvaisia munien tiamiinitasoista.
+Tiamiinitasojen mittaaminen kaloissa vaatii koordinointia
+kalastajien, kalanviljelijöiden, viranomaisten ja
+tutkijoiden välillä. Koska monia lohi- ja
+taimenkantoja viljellään kalaskasvattamoissa, suurin osa
+näytteistä tulee luonnosta kalankasvatusta varten kerätyistä kaloista. Joskus
+paikalliset kalastajat ja viranomaiset ovat toimittaneet
+lisänäytteitä. Tiamiinia varastoidaan eri kudoksissa, kuten
+veressä, lihaksessa, maksassa ja sukupuolielimissä (ja mädissä) ja se
+voidaan mitata mistä tahansa näistä. Mäti on yleisin
+näytteenottokudos, koska kalaa ei tarvitse lopettaa näytteiden keruuta varten, ja koska
+tiamiinin puutoksen oireet ovat yleisimpiä varhaisissa elämänvaiheissa,
+jotka puolestaan ovat riippuvaisia mädin tiamiinitasoista.
 
-Kun näytteet on kerätty, ne on jäätettävä nopeasti estääkseen kudoskannan rappeutumista ja tiamiinitasojen säilyttämistä. 
-Näytteet kuljetetaan sitten kuivajäätä käyttäen tutkimuslaitokseen, jossa tiamiini voidaan eristää ja kvantifioida. 
-Jotkut näytteet ovat matkustaneet jopa 3,000 mailia (5,000 km) Alaskasta New Yorkiin käsittelyä varten. 
-Tiamiinin eristämiseen ja mittaamiseen kudoksesta on useita menetelmiä, jotka vaihtelevat käsittelyajan ja tiamiinimittauksien tarkkuuden mukaan. 
-Nykyään suurin osa tiamiinin mittauksista kaloissa käyttää tekniikkaa nimeltä [korkean suorituskyvyn nestekromatografia](#glossary-hplc) (HPLC), joka maksimoi tarkkuuden ja antaa tutkijoille mahdollisuuden mitata erittäin alhaisia pitoisuuksia tarkasti.
+:::: {.columns}
 
-Tiamiinin eristäminen munista alkaa mittaamalla munanäytteen paino ja jauhamalla se kemiallisessa liuottimessa (2% triklooriavihappo, TCA) tiamiinin eristämiseksi soluista. 
-Jauhettu kudos keitetään maksimoimaan tiamiinin määrä, joka eristetään soluista. 
-Tämä prosessi tuottaa vaahdotettua ainetta, joka pyöritetään suurella nopeudella sentrifugissa erottelemiseksi kudoksesta tiamiinia sisältävästä TCA-liuottimesta.
+::: {.column width="48%"}
+![](www/image1.png){.lightbox #fig-fig5 fig-align="center" width="100%"}
+:::
 
-Kun tiamiini on eristetty ja erotettu kudoksesta, tiamiinia sisältävän liuottimen on oltava säädetty oikeaksi HPLC-laitteen läpiviemiseksi. 
-Tämä tarkoittaa, että jokainen näyte huuhdellaan uuteen liuottimeen TCA:n poistamiseksi ja liuoksen pH:n säätämiseksi. 
-Pieni määrä fluoresoivaa kemiallista yhdistettä (kaliumferritsyanidi) lisätään jokaiseen näytteeseen sitomaan tiamiinia, mikä mahdollistaa sen havaitsemisen ja kvantifioimisen HPLC-laitteella. 
-Lopuksi jokainen näyte kuljetetaan hienon suodattimen läpi poistamaan kaikki jäljellä olevat hiukkaset ja suodatettu liuos, joka sisältää tiamiinia, analysoidaan HPLC:llä.
+::: {.column width="4%"}
 
-HPLC-laite ottaa pienen määrän puhdasta tiamiini-liuosta ja kuljettaa sen erikoissuosituottimella, joka erottaa liuoksen yhdisteitä niiden kemiallisen rakenteen perusteella. 
-Tiamiini esiintyy kolmessa eri muodossa (vitameria), jotka vaihtelevat rakenteeltaan ja kooltaan, ja näin ollen ne erotetaan toisistaan tässä pylväässä. 
-Seuraavaksi tiamiini-liuos kuljetetaan havaitsemion läpi, alkaen pienimmästä vitamereistä ensin, ja havaitsemion mittaa kunkin vitamereidän konsentraatiota näytteessä. 
-Kunkin näytteen tiamiinitasot standardoidaan ottaen huomioon näytteen alkuperäinen kudospaino, jolloin saadaan tiamiinitasot nanomoolina (yksi miljardi moolia) tiamiinia per gramman kudosnäytettä.
+:::
 
-## Miten tiedät, onko organismilla tiamiinin puute?
+::: {.column width="48%"}
+![](www/image9.png){.lightbox #fig-fig6 fig-align="center" width="100%"}
+:::
 
-<b>TDC-oireet lohikannan alkioissa:</b>
+::::
 
-* Lethargia (hitautta tai vähentynyttä aktiivisuutta)
+Kun näytteet on kerätty, ne on jäädytettävä nopeasti  kudoksen hajoamisen estämiseksi ja tiamiinitasojen säilyttämiseksi. Näytteet
+kuljetetaan sitten kylmässä tutkimuslaitokseen, jossa
+tiamiini voidaan eristää ja sen pitoisuus määrittää. Jotkut näytteet ovat
+matkustaneet jopa 3000 mailia (5000 km) Alaskasta New Yorkiin
+käsittelyä varten. Tiamiinin eristämiseen ja mittaamiseen kudoksesta on
+useita menetelmiä, joiden kesto ja
+mittaustarkkuus vaihtelevat. Nykyään suurin osa tiamiinin
+mittauksista kaloissa käyttää tekniikkaa nimeltä [korkean erotuskyvyn nestekromatografia](#glossary-hplc) (HPLC), joka maksimoi mittauksen tarkkuuden ja
+mahdollistaa erittäin alhaisten pitoisuuksen mittaamisen. 
 
-* Epäsäännöllinen uimarutiini (esim. spiraalimaista tai korkkiruuvi uintia)
+:::: {.columns}
 
-* Ataksia (epäkoordinoidut liikkeet)
+::: {.column width="45%"}
+Tiamiinin eristäminen mädistä alkaa mittaamalla näytteen paino ja jauhamalla se kemiallisessa liuottimessa (2% trikloorietikkahappo, TCA) tiamiinin eristämiseksi soluista. 
 
-* Tumma väri tai ihon värimuutokset (stressivasteena)
+Jauhettu kudos keitetään, jotta maksimaalinen määrä tiamiinia saadaan eristettyä soluista.  
 
-* Ruokahaluttomuus (anoreksia) ja vähentynyt ruokailukäyttäytyminen => Heikko kasvu
+Tämä prosessi tuottaa vaahdotettua ainetta, josta tiamiinia sisältävä TCA-liuos erotellaan pyörittämällä sitä suurella nopeudella sentrifugissa.
 
-* Korkea kuolleisuus erityisesti keltuaispussin imeytymisen jälkeen (ennen ensimmäistä ruokintaa)
+:::
 
-Nämä oireet ovat usein hyvin tunnistettavissa luonnon- ja kalankasvattamokaloilla. Tutustu Resurssit-välilehteen saadaksesi lisätietoja tiamiinin puutteessa olevista ja hoidetuista teräsvihreistä.
+::: {.column width="3%"}
+
+:::
+
+::: {.column width="47%" style="padding:0px; position:sticky;"}
+![](www/image6.png){.lightbox #fig-fig5 fig-align="center" width="100%"}
+:::
+
+::::
+
+Kun tiamiini on eristetty ja erotettu kudoksesta, tiamiinia sisältävän
+liuottimen on oltava säädetty oikeaksi HPLC-laitteen läpiviemiseksi.
+Tämä tarkoittaa, että jokainen näyte huuhdellaan uudella liuottimella 
+TCA:n poistamiseksi, ja liuoksen pH:n säädetään. Pieni määrä
+fluoresoivaa kemiallista yhdistettä (kaliumferrisyanidia) lisätään
+näytteeseen sitomaan tiamiinia, mikä mahdollistaa sen
+havaitsemisen ja kvantifioimisen HPLC-laitteella. Lopuksi näyte
+kuljetetaan hienon suodattimen läpi jäljellä olevien
+hiukkasten poistamiseksi,  ja suodatettu liuos, joka sisältää tiamiinia, analysoidaan
+HPLC:llä.
+
+:::: {.columns}
+
+::: {.column width="49%"}
+HPLC-laite ottaa pienen määrän puhdasta tiamiini-liuosta ja kuljettaa sen erityisen pylvässuodattimen läpi. Suodatin erottaa liuoksen yhdisteitä niiden kemiallisen rakenteen perusteella. 
+
+Tiamiini esiintyy kolmessa eri muodossa, jotka vaihtelevat rakenteeltaan ja kooltaan, ja näin ollen ne erotetaan toisistaan tässä pylväässä. 
+
+Seuraavaksi tiamiini-liuos kuljetetaan ilmaisimen läpi, alkaen pienimmästä muodosta, ja ilmaisin mittaa kunkin muodon pitoisuutta näytteessä. 
+
+Kunkin näytteen tiamiinitasot standardoidaan näytteen alkuperäisellä painolla, jolloin saadaan tiamiinitasot nanomoolina (yksi miljardisosa moolia) tiamiinia kudosnäytegrammaa kohti.
+:::
+
+::: {.column width="2%"}
+
+:::
+
+::: {.column width="49%"}
+![](www/image8.png){.lightbox #fig-fig5 fig-align="center" width="100%"}
+:::
+
+::::
+
+
+## Mistä tiedetään, onko eläimellä tiamiinin puute?
+
+<b>TDC-oireet lohikalojen ruskuaispussipoikasilla:</b>
+
+-   Letargia (hitautta tai vähentynyttä aktiivisuutta)
+
+-   Epäsäännöllinen uintityyli (esim. spiraalimaista tai korkkiruuvimaista
+    uintia)
+
+-   Ataksia (epäkoordinoidut liikkeet)
+
+-   Tumma väri tai ihon värimuutokset (stressivasteena)
+
+-   Ruokahaluttomuus (anoreksia) ja vähentynyt syömisaktiivisuus
+    =\> Heikko kasvu
+
+-   Korkea kuolleisuus erityisesti ruskuaispussin imeytymisen jälkeen
+    (ennen ensimmäistä ruokintaa)
+
+Nämä oireet ovat usein hyvin tunnistettavissa luonnonkaloilla ja viljellyillä kaloilla. Tutustu Resurssit-välilehteen ja katso video  tiamiinin puutteesta kärsivistä ja hoidetuista teräspäälohista.
 
 ## Selitys LC50:stä
 
-[**LC50**](#glossary-lc50) on <b>myrkyllisen yhdisteen pitoisuus, joka tappaa 50% testatusta populaatiosta</b> (Kuva 3). 
-LC50:itä käytetään usein toksikologiassa vertailemaan saasteen tehoa eri organismeihin. Näissä vertailuissa on mahdollista ymmärtää, mikä organismi on herkempi kemialliselle saasteelle. Tiamiinin tapauksessa LC50-arvot kuvaavat, kuinka paljon tiamiinia tarvitaan tietyn lajin selviytymiseen. Näin ollen tutkijat käyttävät LC50-arvoja auttaakseen määrittämään, kuinka herkkä laji on tiamidibrille ja arvioimaan munan tiamiinitasolla todennäköisyyksiä, että tiettynä vuonna populaatio voi kokea TDC:tä.
+[**LC50**](#glossary-lc50) on `<b>`{=html}myrkyllisen yhdisteen
+pitoisuus, joka tappaa 50% testatusta populaatiosta`</b>`{=html} (Kuva 7). LC50:tä käytetään usein toksikologiassa vertailemaan myrkyn  vaikutusta eri organismeihin. Näissä vertailuissa on mahdollista ymmärtää, mikä
+organismi on herkin kemikaaleille. Tiamiinin tapauksessa
+LC50-arvot kuvaavat, kuinka paljon tiamiinia tarvitaan tietyn lajin
+selviytymiseen. Näin ollen tutkijat käyttävät LC50-arvojamäärittääkseen, kuinka herkkä laji on TDC:lle ja arvioimaan mädin
+tiamiinitasolla todennäköisyyttä, että tiettynä vuonna populaatio kärsii TDC:stä.
 
-![Esimerkki klassisesta LC50-käyrästä. Voimme sovittaa viivan testaamalla monia erilaisia pitoisuuksia ja näkemällä, kuinka monta eläintä selviytyy. Pitoisuutta, jossa 50 % selviytyy, kutsutaan LC50:ksi.](www/fig3.png){.lightbox #fig-fig3 fig-align="center" width="50%"}
+![Esimerkki klassisesta LC50-käyrästä. Voimme sovittaa viivan testaamalla monia erilaisia pitoisuuksia ja näkemällä, kuinka monta eläintä selviytyy. Pitoisuutta, jossa 50 % selviytyy, kutsutaan LC50:ksi.](www/image7.png){.lightbox #fig-fig3 fig-align="center" width="50%"}
 
-Toinen tapa tutkia yhdisteen vaikutuksia on huomioida vaikutukset, joita sillä on kuoleman lisäksi. 
-Tätä varten tutkijat käyttävät [**EC50**](#glossary-ec50):nta, <b>eli vaikutuspitoisuutta, joka vaikuttaa 50% väestöstä</b>. 
-Vaikutus voi olla kuolema (joten LC50:ta voidaan myös kutsua EC50:ksi), mutta se voi olla myös jotain, joka ei aiheuta kuolemaa, mutta vaikeuttaa eläimen pitkäaikaista selviytymistä. 
-Vaikutuksia voivat olla muutokset uimiskyvyssä, kääntymässä, kyvyssä havaita muutoksia silmillään, heikentynyt immuunijärjestelmätoiminta tai monet muut vaihtoehdot.
+Hdisteiden vaikutuksia tutkitaan myös huomioimalla  muut vaikutukset, joita
+sillä on tappavuuden lisäksi. Tätä varten tutkijat käyttävät
+[**EC50**](#glossary-ec50)-arvoa, `<b>`{=html}eli pitoisuutta,
+joka vaikuttaa 50%:een yksilöistä`</b>`{=html}. Vaikutus voi olla kuolema
+(joten LC50:tä voidaan myös kutsua EC50:ksi), mutta se voi olla myös
+muu vaikutus, joka vaikeuttaa eläimen pitkäaikaista
+selviytymistä. Näitä voivat olla esimerkiksi muutokset uintikyvyssä tai kääntymiskyvyssä
+, heikentynyt näkö tai
+immuunijärjestelmän toiminta tai monet muut.
 
-Tiamiinin puutteen myötä organismeilla ei ole liikaa jotain, joka on niille haitallista (kuten klassisessa toksikologiassa), vaan liian vähän jotain, mitä ne tarvitsevat. Joten käyrä on käännetty ympäri (Kuva 4). Liian vähäinen tiamiini (puutos) voi joskus aiheuttaa sen, että kaikki poikaset kuolevat (ts. 0 % eloonjäänti). Jos niitä on tarpeeksi ([täydelliset](#glossary-replete)), kaikki elävät (100 % eloonjäänti). Tutkijoita kiinnostaa keskipiste, jossa noin 50 % elää. Jos testattujen munien tiamiinitaso on alle LC50-rajan nanomoolina per gramma munia (nmol/g), niin johdattajat saattavat haluta puuttua asiaan ja lisätä tiamiinia varmistaakseen selviytymisen. Tämä voi myös olla vihje siitä, että ekosysteemissä on jotain pielessä (katso "Miksi TDC?").
+Tiamiinin puutteen myötä eliöt eivät ole altistuneet liiaksi jollekin haitalliselle aineelle, (kuten klassisessa toksikologiassa), vaan niillä on elimistössään liian vähän niille välttämätöntä ainetta. Tämän vuoksi EC50/LC50 -käyrä on käännetty ympäri (Kuva 8).
+Liian vähäinen tiamiinipitoisuus (puutos) voi joskus aiheuttaa sen, että kaikki
+poikaset kuolevat (ts. 0 % eloonjäänti). Jos tiamiinia on tarpeeksi
+, kaikki selviävät (100 % eloonjäänti).
+Tutkijoita kiinnostaa piste, jossa noin 50 % poikasista selviää. Jos 
+mädin tiamiinitaso on alle LC50-rajan, nanomoolina per gramma mätiä,
+(nmol/g), niin kalanviljelijät voivatc lisätä niille tiamiinia varmistaakseen poikasten selviytymisen. Alhainen tiamiinipitoisuus voi myös olla vihje siitä,
+että ekosysteemissä on jotain pielessä (katso “Mikä aiheuttaa TDC:tä?”).
 
-![Esimerkki klassisesta LC50-käyrästä. Voimme sovittaa viivan testaamalla monia erilaisia pitoisuuksia ja näkemällä, kuinka monta eläintä selviytyy. Pitoisuutta, jossa 50 % selviytyy, kutsutaan LC50:ksi.](www/fig4.png){.lightbox #fig-fig4 fig-align="center" width="50%"}
+![Esimerkki klassisesta LC50-käyrästä. Voimme sovittaa viivan testaamalla monia erilaisia pitoisuuksia ja näkemällä, kuinka monta eläintä selviytyy. Pitoisuutta, jossa 50 % selviytyy, kutsutaan LC50:ksi.](www/image2.png){.lightbox #fig-fig4 fig-align="center" width="50%"}
 
-Näiden tietojen kerääminen on vaikeaa. 
-Se edellyttää, että jokaiselta naaraskalalta pidetään munia erillisessä akvaariossa nähdäkseen, kuinka moni selviytyy uimiseen. 
-Salmon in the Classroom on auttanut keräämään näitä tietoja Kaliforniassa vuodesta 2021.
+Poikasten eloonjäämisprosentin mittaaminen on vaikeaa. Se edellyttää, että jokaiselta
+naaraskalalta otettua mätiä haudotaan erillisessä akvaariossa, jotta nähdään, kuinka
+moni yksilö selviytyy itsenäisesti uivaksi ja saalistavaksi kalanpoikaseksi. Kaliforniassa “Lohi luokkahuoneessa” (Salmon in the Classroom) -ohjelma on auttanut keräämään
+näitä tietoja vuodesta 2021.
 
 ## Sanasto
 
 <a name="glossary-alevin" href="#glossary-alevin">
   <span style="font-size: 14pt; font-weight: bold;">
-    Alevin
+    Ruskuaispussipoikanen
   </span>
 </a>
 
-Lohekannan alkio, joka saa lähes kaikki ravinteensa keltuaisesta, jota kutsutaan myös keltuaispussiksi (sisällytä kuva?)
-
-<a name="glossary-deficiency" href="#glossary-deficiency">
-  <span style="font-size: 14pt; font-weight: bold;">
-    Puute
-  </span>
-</a>
-
-Riittämättömyyttä. Eläin, jolla on tiamidibri, kärsii terveydellisistä haittavaikutuksista.
+Kalan  kuoriutunut alkio, joka saa lähes kaikki ravinteensa ruskuaispussista.
 
 <a name="glossary-ec50" href="#glossary-ec50">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -267,15 +346,8 @@ Tällä pitoisuudella 50 % populaatiosta kokee haitallisia vaikutuksia.
   </span>
 </a>
 
-Varhaisen kuolleisuuden syndrooma. Kuvattiin Laurentian Suurissa järvissä, kun kalanviljelylaitokset huomasivat alevinien kuolevan keltuaisen imeytymisen vuoksi tiamidibrin vuoksi.
-
-<a name="glossary-hab" href="#glossary-hab">
-  <span style="font-size: 14pt; font-weight: bold;">
-    HAB
-  </span>
-</a>
-
-Vaarallinen sinilevähaitta; sinibakteerit tai eukaryoottiset (bakteereista ja arkeoista poikkeavat mikro-organismit) levät, jotka kasvavat liiallisesti ja muodostavat kukintoja, jotka vaikuttavat ravintoverkkoon ja ympäristöön.
+Varhaisen kuolleisuuden syndrooma. Kuvattiin Suurissa
+Järvissä, kun kalanviljelylaitokset huomasivat ruskuaispussipoikastenkuolevan  TDC:n vuoksi.
 
 <a name="glossary-hplc" href="#glossary-hplc">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -283,7 +355,7 @@ Vaarallinen sinilevähaitta; sinibakteerit tai eukaryoottiset (bakteereista ja a
   </span>
 </a>
 
-Korkean suorituskyvyn nestekromatografialaitteisto.
+Korkean erotuskyvyn nestekromatografialaitteisto.
 
 <a name="glossary-lc50" href="#glossary-lc50">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -307,39 +379,23 @@ Mikroskooppiset yksisoluiset organismit, tunnetaan myös nimellä "mikro-organis
   </span>
 </a>
 
-Syndrooma, joka on kuvattu Itämeren Atlantin lohilla (*Salmo salar*), jossa keltuaispussit kuolevat tiamidibrin vuoksi. M tarkoittaa "miljö", joka on ruotsin kielen sana ympäristö, koska puutos liitettiin ympäristötekijöihin, ja 74 viittaa vuoteen, jolloin ongelma havaittiin ensimmäisen kerran (1974).
-
-<a name="glossary-oxidative-stress" href="#glossary-oxidative-stress">
-  <span style="font-size: 14pt; font-weight: bold;">
-    Oksidatiivinen stressi
-  </span>
-</a>
-
-Kemiallinen reaktio, joka tapahtuu soluissa ja kudoksissa, jossa reaktiiviset aineet sitoutuvat solun molekyyleihin ja vahingoittavat niitä. Elimistö torjuu tätä prosessia kemikaaleilla, joita kutsutaan antioksidanteiksi.
+Syndrooma, joka on kuvattu Itämeren lohilla (*Salmo salar*). Aiheuttaa kuolleisuutta ruskuaispussipoikasilla tiamiinin puutteen vuoksi. M tarkoittaa "miljö", ruotsin kielen sana ympäristö, koska puutos liitettiin ympäristötekijöihin, ja 74 viittaa vuoteen, jolloin ongelma havaittiin ensimmäisen kerran (1974).
 
 <a name="glossary-phytoplankton" href="#glossary-phytoplankton">
   <span style="font-size: 14pt; font-weight: bold;">
-    Fytoplankton
+    Kasviplankton
   </span>
 </a>
 
-Valoa hyödyntävät (saavat energiaa auringosta) mikro-organismit, jotka elävät vesistöissä.
-
-<a name="glossary-replete" href="#glossary-replete">
-  <span style="font-size: 14pt; font-weight: bold;">
-    Täydellinen
-  </span>
-</a>
-
-Riittävän olevan jotakin, tässä tapauksessa riittävästi tiamiinia normaalin toiminnan ylläpitämiseen.
+Yhteyttävät  mikro-organismit, jotka elävät vesistöissä ja tuottavat energiaa auringon valon avulla.
 
 <a name="glossary-salmonine" href="#glossary-salmonine">
   <span style="font-size: 14pt; font-weight: bold;">
-    Loheinen
+    Salmoninae
   </span>
 </a>
 
-Taksonominen alaperhe, joka sisältää lohen, järvilohen ja taimenet.
+Taksonominen alaheimo lohet, joka sisältää mm. lohen ja taimenet.
 
 <a name="glossary-tdc" href="#glossary-tdc">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -347,7 +403,9 @@ Taksonominen alaperhe, joka sisältää lohen, järvilohen ja taimenet.
   </span>
 </a>
 
-Tiamiinivajeoireyhtymä. Kuvaa tiamiinin liian alhaisista pitoisuuksista johtuvia tappavia ja lievempiä vaikutuksia (esim. pyöriminen uinnin aikana, heikentynyt immuunijärjestelmän toiminta), jotka estävät elimistöä ylläpitämästä normaaleja toimintoja. Tiamiinivajeeseen liittyvät yleiset vaikutukset sisältävät varhaiskuolleisuusoireyhtymän (EMS). Tunnetaan myös nimellä M74 Itämeren alueella. Voi esiintyä nuoruus- ja/tai aikuisiässä.
+Tiamiinin puutos kompleksi. Kuvaa tiamiinin puutoksen aiheuttamat  vaikutukset,
+mukaan lukien varhaisen kuolleisuuden syndrooman (EMS). Tunnetaan myös
+nimellä M74 Itämeren alueella.
 
 <a name="glossary-thiaminase" href="#glossary-thiaminase">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -355,7 +413,7 @@ Tiamiinivajeoireyhtymä. Kuvaa tiamiinin liian alhaisista pitoisuuksista johtuvi
   </span>
 </a>
 
-Entsyymi, joka jakaa tiamiinin tietyiksi thiazole- ja pyrimidine-ryhmiksi, jotka eivät ole saatavilla suurimmalle osalle kuluttajista.
+Entsyymi, joka jakaa tiamiinin tietyiksi tiatsoli- ja pyrimidiini-muodoiksi.
 
 <a name="glossary-thiamine" href="#glossary-thiamine">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -363,7 +421,8 @@ Entsyymi, joka jakaa tiamiinin tietyiksi thiazole- ja pyrimidine-ryhmiksi, jotka
   </span>
 </a>
 
-Vitamiini B1, joka myös kirjoitetaan tiamiinina, vitamiini, joka on välttämätön kaikille eläville organismeille.
+Vitamiini B1.tunnetaan Välttämätön kaikille eliöille.
+
 
 <a name="glossary-vitamin" href="#glossary-vitamin">
   <span style="font-size: 14pt; font-weight: bold;">
@@ -371,7 +430,7 @@ Vitamiini B1, joka myös kirjoitetaan tiamiinina, vitamiini, joka on välttämä
   </span>
 </a>
 
-Orgaaniset yhdisteet, joita tarvitaan pieninä määrinä elävien organismien kasvulle ja ravitsemukselle.
+Orgaaninen yhdiste, jota tarvitaan pieninä määrinä eliöiden kasvuun ja ravitsemukseen.
 
 ## Viittaukset
 
@@ -389,86 +448,87 @@ Whitfield, K. C., Bourassa, M. W., Adamolekun, B., Bergeron, G., Bettendorff, L.
 
 ### Videot
 
-* [Spinning Salmon YouTube -kanava](https://www.youtube.com/playlist?list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV)
-  * [Monimutkainen ongelma: Tiamiinin puute Ontarionjärven lohissa](https://vimeo.com/246128456)
-  * [Antamalla luonnolle vitamiinin puutteen.](https://www.youtube.com/watch?v=cfl7mSG13e0)
-  * [Mikä on valuma-alue?](https://www.youtube.com/watch?v=933SLmx0QS4)
-  * [Videoesittely Feather Riverin kalankasvattamosta](https://www.youtube.com/watch?v=kU5pW9xT74U)
-  * [TDC Keskilaakson Chinook-lohessa](https://www.youtube.com/watch?v=JDc12YbxAqc) Nate Mantuan kanssa
-  * [Lämpimämpi vesi tappaa lohen munat](https://ca.pbslearningmedia.org/resource/nasa09.sci.life.oate.saleggs/warmer-water-kills-salmon-eggs/)
-  * [Yhdysvaltain kalastuskohtaloilta vaaditaan ilmastonmuutoksen haasteisiin vastaamista](https://www.youtube.com/watch?v=-ibT7dkqsfg) (yhteistyötutkija Rachel Johnsonin kanssa)
-  * CDFW: [Biodiversiteetin seuranta ja yhteisötiede](https://drive.google.com/file/d/1a3LmvetOlLeIe-jx93zUUGmohafUbF_g/view?usp=drive_link) (korostaa Spinning Salmon -ohjelmaa)
-  * [Ei paluuta](https://www.youtube.com/watch?v=Mmo5eHbQ-fk) - CalTrout (video)
-  * Tending Nature: [Maatalouden palauttaminen Yocha Dehe Wintun kansan avulla](https://www.pbs.org/video/reclaiming-agriculture-with-the-yocha-dehe-wintun-nation-s8tz9l/)
-  * [Tutustu tutkimusryhmään - Ääniä kentältä Abbie Wardin kanssa](https://www.youtube.com/watch?v=7Bl7UKjZU9s&list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV&index=5&t=6s) McCloud-joella Winnemem-Wintu-heimon kanssa.
-  * [Kalifornian vesivarojen ministeriön video tiamiinipistoksista](https://www.youtube.com/watch?v=iN8EXfexmVo) (yhteistyötutkija: Kevin Kwak)
+* [Spinning Salmon YouTube Channel](https://www.youtube.com/playlist?list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV)
+  * [A Complex Problem: Thiamine Deficiency in Lake Ontario Salmon](https://vimeo.com/246128456)
+  * [We’re giving nature a vitamin deficiency.](https://www.youtube.com/watch?v=cfl7mSG13e0) 
+  * [What is a watershed?](https://www.youtube.com/watch?v=933SLmx0QS4)
+  * [Video tour of the Feather River Hatchery](https://www.youtube.com/watch?v=kU5pW9xT74U)
+  * [TDC In Central Valley Chinook Salmon](https://www.youtube.com/watch?v=JDc12YbxAqc) with Nate Mantua
+  * [Warmer Water Kills Salmon Eggs](https://ca.pbslearningmedia.org/resource/nasa09.sci.life.oate.saleggs/warmer-water-kills-salmon-eggs/)
+  * [US Fisheries Face Climate Change Challenges](https://www.youtube.com/watch?v=-ibT7dkqsfg) (with collaborating researcher Rachel Johnson)
+  * CDFW: [Biodiversity Monitoring and Community Science](https://drive.google.com/file/d/1a3LmvetOlLeIe-jx93zUUGmohafUbF_g/view?usp=drive_link) (highlights the Spinning Salmon Program)
+  * [No Going Back](https://www.youtube.com/watch?v=Mmo5eHbQ-fk) - CalTrout (video)
+  * Tending Nature: [Reclaiming Agriculture with the Yocha Dehe Wintun Nation](https://www.pbs.org/video/reclaiming-agriculture-with-the-yocha-dehe-wintun-nation-s8tz9l/)
+  * [Getting to know the research team- Voices from the Field with Abbie Ward](https://www.youtube.com/watch?v=7Bl7UKjZU9s&list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV&index=5&t=6s) on the McCloud River with the Winnemem-Wintu tribe.
+  * [California Department of Water Resources Video on Thiamine Injections](https://www.youtube.com/watch?v=iN8EXfexmVo) (with collaborating researcher: Kevin Kwak)
 
 ### Linkkejä uutisartikkeleihin ja lehdistötiedotteisiin
 
 #### Suuret järvet
 
-* Kansainvälisen yhteisen komission (IJC) uutiskirje tiamidibristä Suurilla järvillä: <https://ijc.org/en/vitamin-deficiency-limits-salmon-and-trout-offspring-survival>
+* International Joint Commission (IJC) Newsletter on Thiamine Deficiency in the Great Lakes: <https://ijc.org/en/vitamin-deficiency-limits-salmon-and-trout-offspring-survival>
 
-* Cornellin sivu tiamidibristä: <http://thiamine.dnr.cornell.edu/Thiamine_ramifications.html#>
+* Cornell’s page on thiamine deficiency: <http://thiamine.dnr.cornell.edu/Thiamine_ramifications.html#>
 
-* Paikallinen uutisartikkeli kuolleista teräsvihreistä Ontarionjärven sivujoissa: <https://www.wrvo.org/environment/2014-12-22/fish-die-off-on-salmon-river-could-be-caused-by-vitamin-deficiency>
+* Local news article on dead steelhead trout in Lake Ontario tributaries: <https://www.wrvo.org/environment/2014-12-22/fish-die-off-on-salmon-river-could-be-caused-by-vitamin-deficiency>
 
-* Great Lakes Echo -artikkeli alewifista, joka uhkaa lohia Suurilla järvillä: <https://greatlakesecho.org/2009/09/03/alewives-the-trouble-they-cause-and-the-salmon-that-love-them/>
+* Great Lakes Echo article on alewife threatening salmon in the Great Lakes: <https://greatlakesecho.org/2009/09/03/alewives-the-trouble-they-cause-and-the-salmon-that-love-them/>
 
-* FishBio-blogikirjoitus tiamidibristä globaalisti: <https://fishbio.com/a-deeper-dive-into-thiamine-deficiency/>
-* Video, jossa verrataan tiamidipuutteisia ja hoidettuja teräsvihreitä: [Vimeo-video](https://vimeo.com/1090178610)
+* FishBio blog post summarizing thiamine deficiency globally: <https://fishbio.com/a-deeper-dive-into-thiamine-deficiency/>
+* Video comparing thiamine deficient and treated steelhead fry: [Video](https://vimeo.com/1090178610)
 
-* Tiamiinin puutteesta kertova dokumentti, joka keskittyy Ontarionjärveen: [Monimutkainen ongelma: Tiamiinin puute Ontarionjärven lohissa](https://vimeo.com/246128456)
-Video, joka kuvaa tiaminaseaktiivisuutta ja sen yhteyttä TDC:hen: [Dr Catherine Richter | Exploring Enzymes in Fish to Accelerate Conservation - SciTube](https://scitube.io/dr-catherine-richter-exploring-enzymes-in-fish-to-accelerate-conservation/)
+
+* Thiamine deficiency documentary focused on Lake Ontario: [A Complex Problem: Thiamine Deficiency in Lake Ontario Salmon](https://vimeo.com/246128456)
+Video describing thiaminase activity and association with TDC: [Dr Catherine Richter | Exploring Enzymes in Fish to Accelerate Conservation - SciTube](https://scitube.io/dr-catherine-richter-exploring-enzymes-in-fish-to-accelerate-conservation/)
 
 #### Itämeri
 
-* Yleiskatsaus tiamidibristä Itämeren alueella: <https://www.havsmiljoinstitutet.se/publikationer/havsmiljoinstitutets-rapportserie/tiaminbrist-i-ostersjoomradet>
+-   Yleiskatsaus TDC:hen Itämeren alueella: <https://www.havsmiljoinstitutet.se/publikationer/havsmiljoinstitutets-rapportserie/tiaminbrist-i-ostersjoomradet>
 
-* WGBAST - Itämeren lohien ja järvilohtien arviointityöryhmä arvioi lohien ja merilohtien kantatilannetta ja trendejä Itämerellä sekä antaa vuosittaisia saalissuosituksia lohille: <https://www.ices.dk/community/groups/pages/wgbast.aspx>
+-   WGBAST - Itämeren lohen ja taimenen arviointityöryhmä arvioi lohien ja meritaimenen kantoja ja  niiden muutoksia Itämerellä sekä antaa vuosittaisia kalastuskiintiösuosituksia: <https://www.ices.dk/community/groups/pages/wgbast.aspx>
 
-* Ruotsin merien ja vesien hallintaan liittyvä virasto - Tiamiini-info sivu: <https://www.havochvatten.se/arter-och-livsmiljoer/arter-och-naturtyper/lax/faq-lax/2018-10-29-ar-tiaminbrist-orsaken-till-dodlighet-pa-lax.html>
+-   Ruotsin merien ja vesien hallintaan liittyvä virasto - Tiamiini-info sivu: <https://www.havochvatten.se/arter-och-livsmiljoer/arter-och-naturtyper/lax/faq-lax/2018-10-29-ar-tiaminbrist-orsaken-till-dodlighet-pa-lax.html>
 
-* Malli Atlantin lohen (Salmo salar) jälkeläisten tiamidibristä johtuvan kuoleman arvioimiseksi ja vaihtelevien M74-syndrooman esiintymisten osalta: [Koko artikkeli: Malli Atlantin lohen (Salmo salar) tiamidibristä johtuvan kuoleman arvioimiseksi ja M74-syndrooman vaihtelun arvioimiseksi](https://www.tandfonline.com/doi/full/10.1080/10236244.2021.1941942)
+-   [Koko artikkeli: Malli Atlantin lohen (Salmo     salar) tiamidibristä johtuvan kuoleman arvioimiseksi ja M74-syndrooman vaihtelun arvioimiseksi](https://www.tandfonline.com/doi/full/10.1080/10236244.2021.1941942)
 
 #### Kalifornia
 
-* [Tiamiinin puutteen seuranta Kalifornian lohissa](https://www.fisheries.noaa.gov/west-coast/science-data/monitoring-thiamine-deficiency-california-salmon#piecing-together-the-puzzle) (osa linkitetty opettajien taustalukuina, osa muokattu opiskelijaluetteloiksi)
+* [Monitoring Thiamine Deficiency in California Salmon](https://www.fisheries.noaa.gov/west-coast/science-data/monitoring-thiamine-deficiency-california-salmon#piecing-together-the-puzzle) (some linked as background readings for teachers, others edited for student reading, paired down)
 
-  * [TDC:n seuranta Kalifornian lohissa](https://docs.google.com/document/d/1JbWE4u1iGKBvsEGh3Z2cc5khyE2weBTNhNgsA0V1KIA/edit)
+  * [Monitoring TDC in CA Salmon](https://docs.google.com/document/d/1JbWE4u1iGKBvsEGh3Z2cc5khyE2weBTNhNgsA0V1KIA/edit) 
 
-    * Palapelin kokoaminen
+    * Piecing Together The Puzzle
 
-    * Kaliforniassa syntynyt mysteeri
+    * A Home-Grown California Mystery
 
-    * Kätketty hinta
+    * The Hidden Toll
 
-* Oseanin salaperäinen vitamiininpuute ([opiskelijapätkä](https://docs.google.com/document/d/1L2z_MbcYu2YLge1Tcq6SHfL1nmvZ3T0dCEtG1DLhaBg/edit?usp=sharing))
-  * Alkuperäinen - [NOAA Fisheries](https://www.fisheries.noaa.gov/feature-story/oceans-mysterious-vitamin-deficiency) kirjoittanut [Alastair Bland](https://hakaimagazine.com/profiles/alastair-bland/) 28. tammikuuta 2021 ensimmäinen julkaisu Hakai Magazinessa ja NOAA Fisheriesissä
+* The Ocean’s Mysterious Vitamin Deficiency ([student excerpt](https://docs.google.com/document/d/1L2z_MbcYu2YLge1Tcq6SHfL1nmvZ3T0dCEtG1DLhaBg/edit?usp=sharing))
+  * Original- [NOAA Fisheries](https://www.fisheries.noaa.gov/feature-story/oceans-mysterious-vitamin-deficiency) by  [Alastair Bland](https://hakaimagazine.com/profiles/alastair-bland/) January 28, 2021 first published by Hakai Magazine and NOAA Fisheries
 
-* [CA Interagency Ecological Program: Lohikannat](https://iep.ca.gov/Science-Synthesis-Service/Directed-Studies-Synthesis/Blog/tag/salmon)
+* [CA Interagency Ecological Program: Salmon Counts](https://iep.ca.gov/Science-Synthesis-Service/Directed-Studies-Synthesis/Blog/tag/salmon)
 
-* [Kuinka padot vaikuttavat veteen ja elinympäristöön länsirannikolla](https://drive.google.com/file/d/1Hx9oTCy28epU1xBuSSYz29GjoS0FOn0g/view?usp=sharing)
+* [How dams affect water and habitat on the West Coast](https://drive.google.com/file/d/1Hx9oTCy28epU1xBuSSYz29GjoS0FOn0g/view?usp=sharing)
 
-* [Tutkijat selvittävät Keskilaakson Chinook-lohien kuolemia, mahdolliset yhteydet merimuutoksiin](https://drive.google.com/file/d/12LP7XppoNGO80p4GyaYfuMoQXo8Dh_D1/view?usp=drive_link)
+* [Researchers Probe Deaths of Central Valley Chinook, with Possible Ties to Ocean Changes](https://drive.google.com/file/d/12LP7XppoNGO80p4GyaYfuMoQXo8Dh_D1/view?usp=drive_link)
 
-* Lohien huonot ruokavalintavat: Lohien terveyskriisi; Opportunivorous lohet Abigail Wardilta ja Peggy Hartelta ((HUOM: julkaistaan pian, linkki Frontiers for Young Minds))
+* The Poor Diet Choices of Salmon; The Salmon’s Health Crisis; Opportunivorous Salmon By Abigail Ward and Peggy Harte ((NOTE- should be published soon, link to Frontiers for Young Minds))
 
-* NOAA Webstory - Lukiolaiset auttavat liittovaltion biologi selvittämään Spinning Salmonin mysteeriä Fairfieldin lukion AP ympäristötutkimuksen opiskelijoiden toimesta ((HUOM: Julkaistaan ja linkitetään toukokuussa 2025))
+* NOAA Webstory- High Schoolers Help Federal Biologists Unravel the Mystery of Spinning Salmon By Fairfield High School’s AP Environmental Studies Students ((NOTE- To be published and linked May 2025))
 
-* [Ilmastonmuutoksen vaikutukset lohiin ja teräsvihreisiin](https://www.fisheries.noaa.gov/west-coast/sustainable-fisheries/ecosystem-interactions-and-pacific-salmon#climate-change-impacts-on-salmon-and-steelhead)
+* [Climate Change Impacts on Salmon and Steelhead](https://www.fisheries.noaa.gov/west-coast/sustainable-fisheries/ecosystem-interactions-and-pacific-salmon#climate-change-impacts-on-salmon-and-steelhead)
 
-  * [Opiskelijaversio](https://docs.google.com/document/d/1CjDxn4hEvOZtrgdS5oYGhau43NDldJ05Gi3juqz8K5I/edit?usp=sharing)
+  * [Student version](https://docs.google.com/document/d/1CjDxn4hEvOZtrgdS5oYGhau43NDldJ05Gi3juqz8K5I/edit?usp=sharing)
 
-* [Kalifornian lohistrategia kuumemmassa, kuivemmassa tulevaisuudessa](https://www.gov.ca.gov/wp-content/uploads/2024/01/Salmon-Strategy-for-a-Hotter-Drier-Future.pdf) (otteita)
+* [CA Salmon Strategy for a Hotter, Dryer Future](https://www.gov.ca.gov/wp-content/uploads/2024/01/Salmon-Strategy-for-a-Hotter-Drier-Future.pdf) (excerpts) 
 
-* [Nigiri-projekti: Riisin ja lohen kasvattaminen tulvatasangolla](https://watershed.ucdavis.edu/project/nigiri-project-growing-rice-and-salmon-floodway)
+* [Nigiri Project: Growing Rice and Salmon on the Floodplain](https://watershed.ucdavis.edu/project/nigiri-project-growing-rice-and-salmon-floodway)
 
-  * [Projektikuvaus](https://drive.google.com/file/d/1ZzvgRVO2XFlzqMWlkfehHfkkq5d94MSc/view?usp=sharing)
+  * [Project Description](https://drive.google.com/file/d/1ZzvgRVO2XFlzqMWlkfehHfkkq5d94MSc/view?usp=sharing)
 
-  * [Tulvatasangon uusi muoto](https://www.nigiriproject.com/): Nigiri-projekti (verkkosivusto)
+  * [Reimagining the Floodplain](https://www.nigiriproject.com/): The Nigiri Project (website)
 
-  * [North State Public Radio lähetys](https://www.mynspr.org/agriculture/2016-03-11/nigiri-project-salmon-who-spend-early-life-over-rice-fields-see-an-increase-in-survivability)
+  * [North State Public Radio Broadcast](https://www.mynspr.org/agriculture/2016-03-11/nigiri-project-salmon-who-spend-early-life-over-rice-fields-see-an-increase-in-survivability)
 
 * <http://run4salmon.org/articles/>
 

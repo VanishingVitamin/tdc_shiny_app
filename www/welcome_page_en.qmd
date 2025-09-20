@@ -164,7 +164,7 @@ See the Resources tab for more information.
 
 ## Explanation of LC50
 
-An [LC50](#glossary-lc50) is <b> the lethal concentration of a compound for 50% of the tested population</b> (Figure 3). 
+An [LC50](#glossary-lc50) is <b> the lethal concentration of a compound for 50% of the tested population</b> (Figure 7). 
 LC50s are used often in toxicology to compare the potency of a contaminant on different organisms.  In those comparisons, it is possible to understand which organism is more sensitive to a chemical contaminant.  In the case of thiamine, LC50 values represent how much thiamine is required for that particular species to survive.  Thus, scientists use the LC50 values to help determine how sensitive a species is to thiamine deficiency and assess with egg thiamine the likelihood that a population in a given year may show TDC.
 
 ![An example of a classic LC50 curve. We can fit a line by testing many different concentrations and seeing how many animals survive. The concentration where 50% of them survive is called the LC50.](www/image7.png){.lightbox #fig-fig3 fig-align="center" width="80%"}
@@ -174,7 +174,7 @@ For this, scientists use an [EC50](#glossary-ec50), <b>or an effect concentratio
 The effect can be death (so an LC50 can also be called an EC50), but it can also be something that doesn’t cause death but would make it harder for an animal to survive long-term. 
 Effects can be changes in ability to swim, changes in turning radius, a change in the ability to detect changes with their eyes, decreased immune system function, or many other options.
 
-With thiamine deficiency, organisms don’t have too much of something that is bad for them (like in classic toxicology), but rather too little of something they need. So the curve is flipped (Figure 4). With too little thiamine (deficiency), sometimes all of the fry will die (i.e., 0% survival). If they have enough ([replete](#glossary-replete)), all will live (100% survival). Scientists are interested in the point in the middle where about 50% will live. If tested eggs are below the LC50 threshold for thiamine concentration in nanomoles per gram eggs (nmol/g), then managers might want to intervene and supplement to ensure survival. This also could be a hint that something is amiss in the ecosystem (see "What Causes TDC?").
+With thiamine deficiency, organisms don’t have too much of something that is bad for them (like in classic toxicology), but rather too little of something they need. So the curve is flipped (Figure 8). With too little thiamine (deficiency), sometimes all of the fry will die (i.e., 0% survival). If they have enough ([replete](#glossary-replete)), all will live (100% survival). Scientists are interested in the point in the middle where about 50% will live. If tested eggs are below the LC50 threshold for thiamine concentration in nanomoles per gram eggs (nmol/g), then managers might want to intervene and supplement to ensure survival. This also could be a hint that something is amiss in the ecosystem (see "What Causes TDC?").
 
 ![An example of a classic LC50 curve. We can fit a line by testing many different concentrations and seeing how many animals survive. The concentration where 50% of them survive is called the LC50.](www/image2.png){.lightbox #fig-fig4 fig-align="center" width="80%"}
 
