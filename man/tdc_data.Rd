@@ -3,19 +3,20 @@
 \docType{data}
 \name{tdc_data}
 \alias{tdc_data}
-\title{Thiamin concentration vs. Survivability data}
+\title{Thiamine concentration vs. Survivability data}
 \format{
 \subsection{\code{tdc_data}}{
 
 A tibble object with 1,088 rows and 31 columns:
 \describe{
 \item{Study_Date}{date, year, or range of years when observation was collected.}
+\item{Study_Year}{num, year of data collection}
 \item{Location}{human-readable description of location where data were collected.}
 \item{Species}{species of fish from which observations originated.}
 \item{Run}{run/season of data collection.}
 \item{Tissue}{tissue that was used to estimate concentration.}
-\item{Thiamin_conc}{concentration of the tissue used to estimate mortality or survival.}
-\item{Thiamin_units}{units of the concentration.}
+\item{Thiamine_conc}{concentration of the tissue used to estimate mortality or survival.}
+\item{Thiamine_units}{units of the concentration.}
 \item{N}{sample size of collected data.}
 \item{N_survive}{number of survivors.}
 \item{N_mortality}{number of mortalities.}
@@ -40,6 +41,8 @@ A tibble object with 1,088 rows and 31 columns:
 \item{Study_Date_start_label}{processed version of the first date/year listed Study Date column for display in the app.}
 \item{Study_Date_end_label}{processed version of the last date/year listed in the Study Date column for display in the app.}
 \item{marker_label}{a text string containing HTML code. Used for text pop-ups in the Data Collection Location map in the app's Data tab.}
+\item{collection_locations}{chr, text string containing the data collection Region and Location (when available)}
+\item{table_details}{chr, processed string containing metadata about the observation. Shown in the table dropdown "details" in the app's Data tab.}
 }
 }
 }
@@ -50,6 +53,6 @@ A tibble object with 1,088 rows and 31 columns:
 tdc_data
 }
 \description{
-Thiamin concentration vs. Survivability data
+Each row represents a single observation of thiamine concentration and survival/mortality percentage.
 }
 \keyword{datasets}
