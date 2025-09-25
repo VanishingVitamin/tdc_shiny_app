@@ -1,0 +1,30 @@
+---
+title: ""
+title-block: none
+format: 
+  html:
+    toc: false
+    embed-resources: true
+---
+
+Tämä välilehti näyttää interaktiivisen hajontakuvion datasta.
+
+* Jokainen piste edustaa yksittäistä havaintoa selviytymisasteesta (prosentteina) suhteessa tiamiinikonsentraatioon (nmol/g).
+* Käyrät ja varjostetut alueet näyttävät sovitetut mallit ja niiden epävarmuuden. Jokaiselle lajille on oma malli.
+* Pisteet ja käyrät on väritetty lajin mukaan.
+* Kuvio on interaktiivinen. Napsauta ja vedä zoomataksesi. Vie hiiri pisteen päälle nähdäksesi lisätietoja.
+* Kuvion yläpuolella oleva työkalupalkki mahdollistaa zoomauksen, siirtämisen, näkymän palauttamisen ja kuvan viennin.
+
+Voit myös lisätä omia tietojasi hajontakuvioon:
+
+* Valitse laji datapisteellesi.
+* Syötä tiamiinikonsentraatio (pakollinen) ja havaittu selviytymisaste (valinnainen).
+* Jos syötät havaitun selviytymisasteen, se näytetään mustana pisteenä kuviossa.
+* Sovellus laskee myös ennustetun selviytymisasteen valitun lajin mallin perusteella. Ennustettu arvo näytetään mustana pisteenä, jossa on katkoviivareunus.
+* Kun lisäät tietoja, kuvion alle ilmestyy yhteenvetotaulukko.
+
+Voit viedä taulukon CSV-tiedostona napsauttamalla "Vie taulukko CSV-muodossa" -painiketta.
+
+Sivupalkin suodattimet vaikuttavat myös tähän välilehteen.
+
+Esimerkiksi, kun valitset lajin, näkyvät vain kyseisen lajin pisteet ja käyrät.

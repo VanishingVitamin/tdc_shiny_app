@@ -1,0 +1,30 @@
+---
+title: ""
+title-block: none
+format: 
+  html:
+    toc: false
+    embed-resources: true
+---
+
+Esta pestaña muestra un diagrama de dispersión interactivo de los datos.
+
+* Cada punto representa una observación individual de la Tasa de Supervivencia (como porcentaje) frente a la Concentración de Tiamina (en nmol/g).
+* Las curvas y las áreas sombreadas muestran modelos ajustados y su incertidumbre. Hay un modelo para cada especie.
+* Los puntos y las curvas están coloreados según la especie.
+* El gráfico es interactivo. Haz clic y arrastra para acercar el gráfico. Pasa el cursor sobre los puntos para ver más información sobre esa observación.
+* La barra de herramientas sobre el gráfico te permite acercar o mover el gráfico, restablecer la vista y exportar el gráfico como una imagen.
+
+También puedes agregar tus propios datos al diagrama de dispersión:
+
+* Selecciona una especie para tu punto de datos.
+* Ingresa una Concentración de Tiamina (obligatoria) y una Tasa de Supervivencia Observada (opcional).
+* Si ingresas una Tasa de Supervivencia Observada, se mostrará como un punto negro sólido en el gráfico.
+* La aplicación también calculará una Tasa de Supervivencia predicha usando el modelo de la especie seleccionada. El valor predicho se mostrará en el gráfico como un punto negro con borde punteado.
+* Cuando agregas datos, aparece una tabla resumen debajo del gráfico.
+
+Puedes exportar esta tabla a un archivo CSV haciendo clic en el botón "Exportar tabla a CSV".
+
+Los filtros de la barra lateral también afectan esta pestaña.
+
+Por ejemplo, al seleccionar una especie, solo se mostrarán los puntos y curvas de esa especie.

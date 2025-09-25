@@ -1,0 +1,20 @@
+---
+title: ""
+title-block: none
+format: 
+  html:
+    toc: false
+    embed-resources: true
+---
+
+Esta pestaña muestra una tabla de citas publicadas y un mapa con marcadores.
+
+* El mapa muestra dónde se recolectaron los datos. Cada marcador representa una ubicación.
+* Puedes mover o acercar el mapa usando el ratón. La tabla se actualizará para mostrar solo las citas dentro del área visible del mapa.
+* Haz clic en un marcador para ver una ventana emergente con información sobre esa ubicación.
+  * Al hacer clic en un marcador, la cita relacionada también se mueve al principio de la tabla y se resalta.
+* Haz clic en una fila de la tabla para ver más detalles sobre la cita, incluyendo otras ubicaciones de recolección.
+* Para descargar datos, haz clic en el botón "Descargar datos". Puedes elegir qué citas deseas descargar.
+* Puedes usar la barra lateral para filtrar el mapa y la tabla por ubicación de recolección.
+  * Las ubicaciones de recolección están agrupadas en regiones más grandes. Puedes seleccionar ubicaciones individuales o regiones completas.
+  * Solo las citas que coincidan con las ubicaciones o regiones seleccionadas aparecerán en el mapa y la tabla.
