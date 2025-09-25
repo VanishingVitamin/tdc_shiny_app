@@ -16,17 +16,17 @@ steelhead <- readRDS(
 
 
 dose_response_params <-
-  bind_rows(
+  dplyr::bind_rows(
     atlantic$samples |>
-      rename(
+      dplyr::rename(
         overall = ec50_mu,
         baltic = "c50_region[1]",
         greatLakes = "c50_region[2]",
         species = Species
       ) |>
-      group_by(species) |>
-      summarize(across(
-        where(is.numeric),
+      dplyr::group_by(species) |>
+      dplyr::summarize(dplyr::across(
+        dplyr::where(is.numeric),
         list(
           median = median,
           CI_2.5 = ~ quantile(., 0.025),
@@ -35,33 +35,35 @@ dose_response_params <-
         .names = "{.col}__{.fn}"
       )) |>
       tidyr::pivot_longer(
-        starts_with("overall") |
+        dplyr::starts_with("overall") |
           starts_with("baltic") |
           starts_with("greatLakes"),
         names_to = c("region", ".value"),
         names_sep = "__"
       ) |>
-      rename(
+      dplyr::rename(
         ec50_mu__median = median,
         ec50_mu__CI_2.5 = CI_2.5,
         ec50_mu__CI_97.5 = CI_97.5
       ) |>
-      select(species, region, starts_with("ec50_mu"), everything()) |>
+      dplyr::select(species, region,
+                    dplyr::starts_with("ec50_mu"),
+                    dplyr::everything()) |>
       tidyr::pivot_longer(
         -c(species, region),
         names_to = c("parameter", "statistic"),
         names_sep = "__"
       ),
     chinook$samples |>
-      rename(
+      dplyr::rename(
         overall = ec50_mu,
         greatLakes = "c50_region[1]",
         pacific = "c50_region[2]",
         species = Species
       ) |>
-      group_by(species) |>
-      summarize(across(
-        where(is.numeric),
+      dplyr::group_by(species) |>
+      dplyr::summarize(dplyr::across(
+        dplyr::where(is.numeric),
         list(
           median = median,
           CI_2.5 = ~ quantile(., 0.025),
@@ -76,23 +78,25 @@ dose_response_params <-
         names_to = c("region", ".value"),
         names_sep = "__"
       ) |>
-      rename(
+      dplyr::rename(
         ec50_mu__median = median,
         ec50_mu__CI_2.5 = CI_2.5,
         ec50_mu__CI_97.5 = CI_97.5
       ) |>
-      select(species, region, starts_with("ec50_mu"), everything()) |>
+      dplyr::select(species, region,
+                    dplyr::starts_with("ec50_mu"),
+                    dplyr::everything()) |>
       tidyr::pivot_longer(
         -c(species, region),
         names_to = c("parameter", "statistic"),
         names_sep = "__"
       ),
     coho$samples |>
-      rename(species = Species) |>
-      mutate(region = "greatLakes") |>
-      group_by(species, region) |>
-      summarize(across(
-        where(is.numeric),
+      dplyr::rename(species = Species) |>
+      dplyr::mutate(region = "greatLakes") |>
+      dplyr::group_by(species, region) |>
+      dplyr::summarize(dplyr::across(
+        dplyr::where(is.numeric),
         list(
           median = median,
           CI_2.5 = ~ quantile(., 0.025),
@@ -100,18 +104,20 @@ dose_response_params <-
         ),
         .names = "{.col}__{.fn}"
       )) |>
-      select(species, region, starts_with("ec50_mu"), everything()) |>
+      dplyr::select(species, region,
+                    dplyr::starts_with("ec50_mu"),
+                    dplyr::everything()) |>
       tidyr::pivot_longer(
         -c(species, region),
         names_to = c("parameter", "statistic"),
         names_sep = "__"
       ),
     laketrout$samples |>
-      rename(species = Species) |>
-      mutate(region = "greatLakes") |>
-      group_by(species, region) |>
-      summarize(across(
-        where(is.numeric),
+      dplyr::rename(species = Species) |>
+      dplyr::mutate(region = "greatLakes") |>
+      dplyr::group_by(species, region) |>
+      dplyr::summarize(dplyr::across(
+        dplyr::where(is.numeric),
         list(
           median = median,
           CI_2.5 = ~ quantile(., 0.025),
@@ -119,18 +125,20 @@ dose_response_params <-
         ),
         .names = "{.col}__{.fn}"
       )) |>
-      select(species, region, starts_with("ec50_mu"), everything()) |>
+      dplyr::select(species, region,
+                    dplyr::starts_with("ec50_mu"),
+                    dplyr::everything()) |>
       tidyr::pivot_longer(
         -c(species, region),
         names_to = c("parameter", "statistic"),
         names_sep = "__"
       ),
     steelhead$samples |>
-      rename(species = Species) |>
-      mutate(region = "greatLakes") |>
-      group_by(species, region) |>
-      summarize(across(
-        where(is.numeric),
+      dplyr::rename(species = Species) |>
+      dplyr::mutate(region = "greatLakes") |>
+      dplyr::group_by(species, region) |>
+      dplyr::summarize(dplyr::across(
+        dplyr::where(is.numeric),
         list(
           median = median,
           CI_2.5 = ~ quantile(., 0.025),
@@ -138,12 +146,23 @@ dose_response_params <-
         ),
         .names = "{.col}__{.fn}"
       )) |>
-      select(species, region, starts_with("ec50_mu"), everything()) |>
+      dplyr::select(species, region,
+                    dplyr::starts_with("ec50_mu"),
+                    dplyr::everything()) |>
       tidyr::pivot_longer(
         -c(species, region),
         names_to = c("parameter", "statistic"),
         names_sep = "__"
       )
+  ) |>
+
+  tidyr::pivot_wider(names_from = "statistic", values_from = "value") |>
+  dplyr::mutate(
+    species = dplyr::case_when(species == "Atlantic" ~ "ATLANTIC SALMON",
+                               species == "Chinook" ~ "CHINOOK SALMON",
+                               species == "Coho" ~ "COHO SALMON",
+                               species == "LakeTrout" ~ "LAKE TROUT",
+                               species == "Steelhead" ~ "STEELHEAD TROUT")
   )
 
 saveRDS(dose_response_params, "inst/misc_data/dose_response_params.rds")

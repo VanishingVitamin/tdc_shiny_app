@@ -12,9 +12,10 @@ A tibble object with 108 rows and 5 columns:
 \describe{
 \item{species}{chr, species associated with parameter value. One of: Atlantic, Chinook, Coho, Lake Trout, Steelhead}
 \item{region}{chr, region associated with parameter value. One of: Great Lakes, Pacific, Baltic}
-\item{parmater}{chr, name of parameter in dose response model. One of: ec50_mu, ec50_sigma, slope_p, upper_p}
-\item{statistic}{chr, quantile associated with parameter value. One of: median, CI_2.5, CI_97.5}
-\item{value}{num, fitted parameter value}
+\item{parameter}{chr, name of parameter in dose response model. One of: ec50_mu, ec50_sigma, slope_p, upper_p}
+\item{median}{num, estimated posterior median (50th percentile) value of associated parameter}
+\item{CI_2.5}{num, estimated posterior 2.5th percentile value of associated parameter}
+\item{CI_97.5}{num, estimated posterior 97.5th percentile value of associated parameter}
 }
 }
 }
