@@ -17,10 +17,10 @@ This Shiny application provides a publicly accessible, interactive database of t
 ### App Features
 * **Welcome tab** – Background and usage info.
 * **Data tab** – Table and map of published thiamine data, filterable via sidebar controls.  
-  ![](./data_tab_screenshot.png){width="55%"}
+  ![](./data_tab_screenshot.png)
 * **Visualize tab** – Interactive scatterplot of thiamine concentration vs. mortality.  
   You can also upload and plot your own data.  
-  ![](./visualize_tab_screenshot.png){width="55%"}
+  ![](./visualize_tab_screenshot.png)
 
 ---
 
@@ -122,6 +122,7 @@ Update workflow:
 usethis::use_data(tdc_data, overwrite = TRUE)
 ```
 (repeat for the other datasets)
+
 5. Reload (`devtools::load_all()`) and launch to confirm.
 6. Update documentation in `R/datasets.R` if needed.
 
