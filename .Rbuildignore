@@ -8,3 +8,6 @@ rsconnect
 ^LICENSE\.md$
 _\.new\.png$
 inst
+^\.vscode$
+^[.]?air[.]toml$
+^www/\.quarto$

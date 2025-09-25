@@ -1,8 +1,8 @@
 [
   {
-    "name": "VanishingVitamin Thiamin Deficiency Complex app",
+    "name": "VanishingVitamin Thiamine Deficiency Complex app",
     "organization": "U.S. Geological Survey",
-    "description": "Shiny app for exploring data on Thiamin Deficiency Complex in salmonids",
+    "description": "Shiny app for exploring data on Thiamine Deficiency Complex in salmonines",
     "version": "0.1.0",
     "status": "Development",
 

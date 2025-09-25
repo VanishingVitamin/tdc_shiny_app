@@ -7,6 +7,9 @@
 launch_app(default_language = "en", options = list(launch.browser = TRUE))
 }
 \arguments{
+\item{default_language}{char; default language to launch the app with.
+Defaults to English ("en"). Other options are "es", "fi", and "sv"}
+
 \item{options}{list; app launch options passed to the \code{options} argument
 of shiny::shinyApp()}
 }

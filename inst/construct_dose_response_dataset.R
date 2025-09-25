@@ -28,7 +28,7 @@ dose_response_params <-
       dplyr::summarize(dplyr::across(
         dplyr::where(is.numeric),
         list(
-          median = median,
+          median = stats::median,
           CI_2.5 = ~ quantile(., 0.025),
           CI_97.5 = ~ quantile(., 0.975)
         ),
@@ -42,7 +42,7 @@ dose_response_params <-
         names_sep = "__"
       ) |>
       dplyr::rename(
-        ec50_mu__median = median,
+        ec50_mu__median = stats::median,
         ec50_mu__CI_2.5 = CI_2.5,
         ec50_mu__CI_97.5 = CI_97.5
       ) |>
@@ -65,7 +65,7 @@ dose_response_params <-
       dplyr::summarize(dplyr::across(
         dplyr::where(is.numeric),
         list(
-          median = median,
+          median = stats::median,
           CI_2.5 = ~ quantile(., 0.025),
           CI_97.5 = ~ quantile(., 0.975)
         ),
@@ -98,7 +98,7 @@ dose_response_params <-
       dplyr::summarize(dplyr::across(
         dplyr::where(is.numeric),
         list(
-          median = median,
+          median = stats::median,
           CI_2.5 = ~ quantile(., 0.025),
           CI_97.5 = ~ quantile(., 0.975)
         ),
@@ -119,7 +119,7 @@ dose_response_params <-
       dplyr::summarize(dplyr::across(
         dplyr::where(is.numeric),
         list(
-          median = median,
+          median = stats::median,
           CI_2.5 = ~ quantile(., 0.025),
           CI_97.5 = ~ quantile(., 0.975)
         ),
@@ -140,7 +140,7 @@ dose_response_params <-
       dplyr::summarize(dplyr::across(
         dplyr::where(is.numeric),
         list(
-          median = median,
+          median = stats::median,
           CI_2.5 = ~ quantile(., 0.025),
           CI_97.5 = ~ quantile(., 0.975)
         ),
