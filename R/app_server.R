@@ -123,7 +123,8 @@ app_server <- function(tdc_data, citations, dose_response_params, translator) {
     visualize_tab_server(input = input,
                          output = output,
                          session = session,
-                         filtered_data = filtered_data)
+                         filtered_data = filtered_data,
+                         dose_response_params = dose_response_params)
   }
 }
 

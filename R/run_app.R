@@ -1,5 +1,7 @@
 #' Launch Vanishing Vitamin app
 #'
+#' @param default_language char; default language to launch the app with.
+#'   Defaults to English ("en"). Other options are "es", "fi", and "sv"
 #' @param options list; app launch options passed to the \code{options} argument
 #'   of shiny::shinyApp()
 #'

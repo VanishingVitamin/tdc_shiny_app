@@ -18,5 +18,15 @@ utils::globalVariables(c(
   "ind",
   "Observation Number",
   "Percent_survive",
-  "marker_label"
+  "marker_label",
+  "published",
+  "unique_id",
+  "table_details",
+  "survival_median",
+  "formatted_metadata",
+  "dist_to_click",
+  "River_label",
+  "parameter",
+  "median",
+  "region"
 ))

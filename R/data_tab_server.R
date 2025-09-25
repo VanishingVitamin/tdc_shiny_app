@@ -54,7 +54,7 @@ data_tab_server <- function(input, output, session, filtered_data){
         # drop-down menu element (excludes unpublished data)
         shinyWidgets::virtualSelectInput(
           inputId = "data_download_select",
-          choices = setNames(
+          choices = shiny::setNames(
             filtered_data$citations$formatted_metadata[
               !startsWith(
                 filtered_data$citations$formatted_metadata,

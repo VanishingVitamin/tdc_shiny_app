@@ -1,4 +1,4 @@
-visualize_tab_server <- function(input, output, session, filtered_data){
+visualize_tab_server <- function(input, output, session, filtered_data, dose_response_params){
 
   ### Visualize tab code
 
@@ -55,21 +55,21 @@ visualize_tab_server <- function(input, output, session, filtered_data){
             dose_response,
             c(
               list(Thiamine_conc = thiamine_conc_seq),
-              as.list(setNames(params$median, params$parameter))
+              as.list(stats::setNames(params$median, params$parameter))
             )
           ),
           survival_ci_2.5 = do.call(
             dose_response,
             c(
               list(Thiamine_conc = thiamine_conc_seq),
-              as.list(setNames(params$CI_2.5, params$parameter))
+              as.list(stats::setNames(params$CI_2.5, params$parameter))
             )
           ),
           survival_ci_97.5 = do.call(
             dose_response,
             c(
               list(Thiamine_conc = thiamine_conc_seq),
-              as.list(setNames(params$CI_97.5, params$parameter))
+              as.list(stats::setNames(params$CI_97.5, params$parameter))
             )
           )
         ) |>
@@ -91,7 +91,7 @@ visualize_tab_server <- function(input, output, session, filtered_data){
   # Render interactive scatterplot
   output$ec50_curve <-
     plotly::renderPlotly({
-      req(filtered_data$dose_response_curve)
+      shiny::req(filtered_data$dose_response_curve)
 
       # Prepare the TDC data for plotting. This includes creating a label for
       # each point that will appear when hovering over the point.
@@ -344,7 +344,7 @@ visualize_tab_server <- function(input, output, session, filtered_data){
   ## which columns in the data set contain the Thiamine Concentration and
   ## (optionally) the % Survived data.
 
-  # observe({
+  # shiny::observe({
   #   ext <- tools::file_ext(input$visualize_add_data_file$datapath)
   #
   #   if (ext == "csv") {
@@ -378,7 +378,7 @@ visualize_tab_server <- function(input, output, session, filtered_data){
   #
   # # Once the user indicates which columns in the uploaded data set correspond to
   # # Thiamine Concentration and (optionally) % Survived,
-  # observe({
+  # shiny::observe({
   #   req(input$visualize_add_data_file_thiamine_col)
   #
   #   plot_data <-
@@ -706,8 +706,8 @@ visualize_tab_server <- function(input, output, session, filtered_data){
     })
 
   # show Download button once the user has uploaded data
-  observe({
-    req(nrow(filtered_data$user_data) > 0)
+  shiny::observe({
+    shiny::req(nrow(filtered_data$user_data) > 0)
 
     shinyjs::show("visualize_data_download")
   })
