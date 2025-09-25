@@ -22,7 +22,7 @@ Denna applikation sammanställer och analyserar data om tiaminbrist (TDC) hosLax
 
 ## Bakgrund
 
-[**Tiamin**](#glossary-thiamine) ([vitamin](#glossary-vitamin) (vitamin B1) är
+[**Tiamin**](#glossary-thiamine) ([vitamin](#glossary-vitamin) B1) är
 essentiellt för nästan allt liv på jorden. Vitaminet behövs för att celler
 ska kunna producera energi och fungera normalt. De flesta djur får det tiamin de
 behöver från sin föda, och efterfrågan på tiamin är vanligen stor hos olika organismer. Vitaminet är vattenlösligt vilket betyder att
