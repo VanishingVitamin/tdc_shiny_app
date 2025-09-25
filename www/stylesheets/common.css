@@ -290,3 +290,29 @@ Content: "\f082";
   word-wrap: break-word;
   word-break: break-word;
 }
+
+/* Removes the border and box-shadow from the tab card container */
+.nav-tabs-custom {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Removes the border from the tab panes (content area) */
+.tab-content {
+  border: none !important;
+}
+
+/* Adjusts the active tab appearance to remove its border */
+.nav-tabs-custom .nav-tabs li.active a {
+  border-bottom-color: transparent !important;
+  background-color: #eeeeee;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #eeeeee;
+}
+
+.card{
+  border: none;
+  box-shadow: none !important;
+}
