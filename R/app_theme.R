@@ -7,7 +7,7 @@
 #' @keywords internal
 #' @noRd
 
-app_theme <- function(){
+app_theme <- function() {
   fresh::create_theme(
     theme = "spacelab",
     fresh::bs4dash_status(
