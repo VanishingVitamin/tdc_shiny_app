@@ -7,6 +7,11 @@ format:
     embed-resources: true
 ---
 
+```{r}
+#| include: false
+source("plotly_icon_svgs.R")
+```
+
 Esta pestaña muestra un diagrama de dispersión interactivo de los datos.
 
 * Cada punto representa una observación individual de la Tasa de Supervivencia (como porcentaje) frente a la Concentración de Tiamina (en nmol/g).
@@ -14,6 +19,14 @@ Esta pestaña muestra un diagrama de dispersión interactivo de los datos.
 * Los puntos y las curvas están coloreados según la especie.
 * El gráfico es interactivo. Haz clic y arrastra para acercar el gráfico. Pasa el cursor sobre los puntos para ver más información sobre esa observación.
 * La barra de herramientas sobre el gráfico te permite acercar o mover el gráfico, restablecer la vista y exportar el gráfico como una imagen.
+  - `r icons$camera` Guardar la vista actual como .png
+  - `r icons$zoom_box` Haz clic y arrastra para acercar una zona específica del gráfico.
+  - `r icons$pan` Haz clic y arrastra para mover el gráfico sin hacer zoom.
+  - `r icons$zoom_plus` Acercar al centro del gráfico.
+  - `r icons$zoom_minus` Alejar desde el centro del gráfico.
+  - `r icons$home` Restablecer el gráfico a su vista original.
+  - `r icons$tooltip_basic` Mostrar información del punto de datos más cercano al cursor.
+  - `r icons$tooltip_compare` Mostrar valores de todas las series al mismo nivel de tiamina al pasar el cursor.
 
 También puedes agregar tus propios datos al diagrama de dispersión:
 

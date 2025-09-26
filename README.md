@@ -189,14 +189,14 @@ Reference: [Happy Git with R](https://happygitwithr.com/).
 ### Publishing the app
 
 The app is publicly hosted on a platform called [Posit Connect](https://docs.posit.co/connect/user/) (ran by the same company that develops RStudio and the `tidyverse` packages).
-The following sections outlines an automated method for publishing updated to the app.
+The following section outlines an automated method for publishing updated to the app.
 If this fails, feel free to reach out to Joe (jzemmels@usgs.gov), who can publish the app using other means.
 
 #### Automated app publishing via GitHub Actions 
 
 The VanishingVitamin app is automatically deployed to Posit Connect when changes are merged into the `main` branch.
 
-* A GitHub Actions workflow (`.github/workflows/deploy.yml`) runs on every push to `main`.
+* A [GitHub Actions](https://docs.github.com/en/actions/get-started/understand-github-actions) workflow (`.github/workflows/deploy.yml`) runs on every push to `main`.
 * It installs dependencies, builds the package, and calls `R/publish_app.R` to deploy the app.
 * Deployment credentials (server URL, account name, API key) are stored securely as **GitHub repository secrets**, so personal credentials are never exposed in the repository.
 

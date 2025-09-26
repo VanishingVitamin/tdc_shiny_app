@@ -7,6 +7,11 @@ format:
     embed-resources: true
 ---
 
+```{r}
+#| include: false
+source("plotly_icon_svgs.R")
+```
+
 Tämä välilehti näyttää interaktiivisen hajontakuvion datasta.
 
 * Jokainen piste edustaa yksittäistä havaintoa selviytymisasteesta (prosentteina) suhteessa tiamiinikonsentraatioon (nmol/g).
@@ -14,6 +19,14 @@ Tämä välilehti näyttää interaktiivisen hajontakuvion datasta.
 * Pisteet ja käyrät on väritetty lajin mukaan.
 * Kuvio on interaktiivinen. Napsauta ja vedä zoomataksesi. Vie hiiri pisteen päälle nähdäksesi lisätietoja.
 * Kuvion yläpuolella oleva työkalupalkki mahdollistaa zoomauksen, siirtämisen, näkymän palauttamisen ja kuvan viennin.
+  - `r icons$camera` Tallenna nykyinen näkymä .png-tiedostona
+  - `r icons$zoom_box` Napsauta ja vedä zoomataksesi tiettyyn alueeseen kaaviossa.
+  - `r icons$pan` Napsauta ja vedä siirtääksesi kaaviota ilman zoomausta.
+  - `r icons$zoom_plus` Zoomaa kaavion keskelle.
+  - `r icons$zoom_minus` Loitonna kaavion keskeltä.
+  - `r icons$home` Palauta kaavio alkuperäiseen näkymään.
+  - `r icons$tooltip_basic` Näytä lähimmän tietopisteen tiedot.
+  - `r icons$tooltip_compare` Näytä kaikkien sarjojen arvot samalla tiamiinitasolla osoittamalla.
 
 Voit myös lisätä omia tietojasi hajontakuvioon:
 

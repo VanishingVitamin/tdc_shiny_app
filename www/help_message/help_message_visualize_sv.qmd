@@ -7,6 +7,11 @@ format:
     embed-resources: true
 ---
 
+```{r}
+#| include: false
+source("plotly_icon_svgs.R")
+```
+
 Den här fliken visar ett interaktivt spridningsdiagram över data.
 
 * Varje punkt representerar en enskild observation av överlevnadsgrad (i procent) mot tiaminkoncentration (i nmol/g).
@@ -14,6 +19,14 @@ Den här fliken visar ett interaktivt spridningsdiagram över data.
 * Punkter och kurvor är färgade efter art.
 * Diagrammet är interaktivt. Klicka och dra för att zooma in. Håll muspekaren över en punkt för att se mer information.
 * Verktygsfältet ovanför diagrammet låter dig zooma, panorera, återställa vyn och exportera diagrammet som en bild.
+  - `r icons$camera` Spara aktuell vy som .png
+  - `r icons$zoom_box` Klicka och dra för att zooma in på ett specifikt område i diagrammet.
+  - `r icons$pan` Klicka och dra för att flytta diagrammet utan att zooma.
+  - `r icons$zoom_plus` Zooma in mot mitten av diagrammet.
+  - `r icons$zoom_minus` Zooma ut från mitten av diagrammet.
+  - `r icons$home` Återställ diagrammet till ursprunglig vy.
+  - `r icons$tooltip_basic` Visa information för den datapunkt som är närmast markören.
+  - `r icons$tooltip_compare` Visa värden för alla spår vid samma tiaminvärde vid hovring.
 
 Du kan också lägga till egna data i spridningsdiagrammet:
 
