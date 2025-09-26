@@ -38,10 +38,6 @@ See [Happy Git with R](https://happygitwithr.com/) for an R-centric introduction
 
 The following sections cover instructions for accessing the app and interacting with the repository as a [User](https://github.com/VanishingVitamin/tdc_shiny_app?tab=readme-ov-file#im-a-user-accessing-the-app), [Reviewer](https://github.com/VanishingVitamin/tdc_shiny_app?tab=readme-ov-file#im-a-reviewer-providing-feedback), and [Developer](https://github.com/VanishingVitamin/tdc_shiny_app?tab=readme-ov-file#im-a-developer-making-changes).
 
-## I'm a user (accessing the app)
-
----
-
 ## Overview
 
 Thiamine Deficiency Complex (TDC) threatens the stability and persistence of wildlife populations.
