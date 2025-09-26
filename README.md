@@ -16,20 +16,6 @@
 **Statement of Need**: Thiamin Deficiency Complex (TDC) is a global threat to the stability and persistence of wildlife populations. 
 The purpose of this application is to assemble a publicly accessible and interactive database on Thiamin Deficiency Complex in salmonids.
 
-### Functionality 
-
-The app summarizes available published data of thiamin concentration and mortality for various species, locations, and runs.
-
-* The "Welcome" tab provides background and usage information for the application.
-
-* The "Data" tab summarizes published thiamin data in a table and map. The map shows the collection location of data sets. You can use the inputs in the sidebar to filter which data sets are shown in this tab.
-
-![](./data_tab_screenshot.png)
-
-* The "Visualize" tab shows an interactive scatterplot of thiamin concentration and mortality rate. You can use the inputs in the sidebar to filter data displayed in the scatterplot. You can also add your own data to the scatterplot using the "Visualize your own data" tab.
-
-![](./visualize_tab_screenshot.png)
-
 ------------------------------------------------------------------------
 
 The code in this repository was mostly written in the [R](https://cloud.r-project.org/) programming language within the [RStudio](https://posit.co/download/rstudio-desktop/) integrated development environment (IDE).
