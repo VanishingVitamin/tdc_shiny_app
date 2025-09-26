@@ -1,0 +1,20 @@
+---
+title: ""
+title-block: none
+format: 
+  html:
+    toc: false
+    embed-resources: true
+---
+
+Tämä välilehti näyttää taulukon julkaistuista viitteistä ja kartan, jossa on merkkejä.
+
+* Kartta näyttää, mistä tiedot on kerätty. Jokainen merkki edustaa sijaintia.
+* Voit siirtää tai zoomata karttaa hiirellä. Taulukko päivittyy näyttämään vain ne viitteet, jotka ovat näkyvissä kartalla.
+* Napsauta merkkiä nähdäksesi ponnahdusikkunan, jossa on tietoa sijainnista.
+  * Kun napsautat merkkiä, siihen liittyvä viite siirtyy taulukon yläosaan ja korostetaan.
+* Napsauta taulukon riviä nähdäksesi lisätietoja viitteestä, mukaan lukien muut keräyspaikat.
+* Voit ladata tietoja napsauttamalla "Lataa tiedot" -painiketta. Voit valita, mitkä viitteet haluat ladata.
+* Voit käyttää sivupalkin suodattimia suodattaaksesi karttaa ja taulukkoa keräyspaikan mukaan.
+  * Keräyspaikat on ryhmitelty suurempiin alueisiin. Voit valita yksittäisiä paikkoja tai kokonaisia alueita.
+  * Vain valittuihin paikkoihin tai alueisiin liittyvät viitteet näkyvät kartalla ja taulukossa.

@@ -1,13 +1,26 @@
 Package: vanishingVitamin
-Title: An R Shiny app for exploring thiamin deficiency data in salmonidae
+Title: An R Shiny app for exploring thiamine deficiency data in salmonines
 Version: 0.0.0.9000
-Authors@R: 
-    person("Joseph", "Zemmels", , "jzemmels@usgs.gov", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: c(
+    person("Joseph", "Zemmels", email = "jzemmels@usgs.gov", role = c("aut", "cph", "cre")),
+    person("Freya", "Rowland", role = c("aut", "fnd", "cph"), email = "frowland@usgs.gov"),
+    person("Matthew", "Futia", role = "aut"),
+    person("Miles", "Daniels", role = c("aut", "dtc")),
+    person("Samuel", "Hylander", role = c("aut", "trl")),
+    person("Rebecca", "VanArnam", role = c("aut", "trl")),
+    person("Jenni", "Prokkola", role = c("aut", "trl")),
+    person("Vittoria Todisco", role = "ctb"),
+    person("Marc", "Hauber", role = c("ctb", "rev")),
+    person("Jacques", "Rinchard", role = c("fnd", "ctb")),
+    person("Christopher", "Suffridge", role = "fnd"),
+    person("Rachel", "Johnson", role = "ctb"),
+    person("Nathaniel", "Mantua", role = "ctb")
+  )
+Description: Summarizes data of thiamine concentration vs. survival rate for salmonines.
 License: CC0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Imports: 
     bs4Dash,
     dplyr,
@@ -20,7 +33,18 @@ Imports:
     shinyjs,
     htmltools,
     purrr,
-    shinyWidgets
+    bsicons,
+    readxl,
+    readr,
+    utils,
+    shinyWidgets,
+    shiny.i18n,
+    rsconnect,
+    forcats,
+    htmlwidgets,
+    shinybusy,
+    tibble,
+    quarto
 Depends: 
     R (>= 3.5)
 LazyData: true
@@ -31,4 +55,5 @@ Suggests:
     rjags,
     usethis,
     tidygeocoder,
-    readr
+    shinytest2,
+    openxlsx

@@ -4,11 +4,14 @@
 \alias{launch_app}
 \title{Launch Vanishing Vitamin app}
 \usage{
-launch_app(options = list())
+launch_app(options = list(launch.browser = TRUE))
 }
 \arguments{
-\item{options}{list; app launch options passed to \code{options} argument of
-shiny::shinyApp()}
+\item{default_language}{char; default language to launch the app with.
+Defaults to English ("en"). Other options are "es", "fi", and "sv"}
+
+\item{options}{list; app launch options passed to the \code{options} argument
+of shiny::shinyApp()}
 }
 \description{
 Launch Vanishing Vitamin app

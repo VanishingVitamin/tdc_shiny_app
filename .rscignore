@@ -11,3 +11,5 @@ renv
 .github
 *LC50_EC50_salmong.xlsx
 product_name_template*
+inst/shiny-overview-slides
+inst/misc_data

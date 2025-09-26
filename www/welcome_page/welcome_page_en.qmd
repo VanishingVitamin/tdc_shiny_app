@@ -1,0 +1,434 @@
+---
+title: "Welcome to Vanishing Vitamin!"
+# subtitle: "𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟"
+format: 
+  html:
+    toc: true
+    embed-resources: true
+    theme: stylesheets/custom.scss
+---
+
+This application synthesizes data on Thiamine Deficiency Complex (TDC) in [salmonines](#glossary-salmonine), providing valuable insights for students, researchers, conservationists, fisheries managers, and anyone wanting to learn more about thiamine.
+
+* **Welcome!:** continue reading below to learn essential background information on Thiamine Deficiency Complex in salmonines.
+* **Data:** explore detailed data sets and see how thiamine levels affect salmonines survival in different regions.
+* **Visualize:** analyze the relationship between thiamine concentration and survival rates, and get personalized insights by uploading your own data.
+
+**𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟 𓆞 𓆝 𓆟 𓆝 𓆟**
+
+## Background
+
+[**Thiamine**](#glossary-thiamine) (vitamin B1, or thiamin) is essential to almost all life on Earth. As such, thiamine is needed for cells to make energy and to function normally. Thiamine is in high demand by living creatures, and most animals get the thiamine they need in their food. Thiamine is water-soluble, meaning that any extra consumed will be excreted (eliminated in urine) and cannot be stored (except for a small store in the liver). As such, animals need a constant input of thiamine from their food. In fact, most of the grain products we purchase in the store have thiamine added along with other vitamins and minerals to keep us healthy. Check out the ingredients listed on any grain product (e.g. cereal box or bread) you have at home and you'll likely see thiamine included as vitamin B1, thiamine mononitrate, or thiamin mononitrate.
+
+[**Thiamine Deficiency Complex**](#glossary-tdc) (TDC) is a nutritional deficiency of thiamine that causes a range of health issues including neurological problems (loss of balance, confusion) and even death. Thiamine deficiency is interestingly both an ancient human malady and an emerging global threat to fish and wildlife. Thiamine deficiency, called ‘beriberi’ in humans, has a long history; it was first described between 300–2700 BCE in The Yellow Emperor’s Classic of Medicine. TDC was found in livestock and farming operations in the early 20th century, and has also been found in wild populations of alligators, fish, and birds. 
+
+
+![TDC has been documented in taxa across the world including salmon, birds, alligators, mussels, and moose. The number of unique species that have experienced TDC within each taxon is included in parenthesis. Adapted from Harder et al. 2024.](www/image5.jpg){.lightbox #fig-fig1 width="100%" fig-align="center"}
+
+TDC — also known as [early mortality syndrome](#glossary-ems) (EMS) and [M74](#glossary-m74) in Baltic salmon populations — has been widely diagnosed and studied within salmon and trout. It is considered a threat to stock persistence and global fishery stability. TDC has affected salmonine populations including the Laurentian Great Lakes, Lake Champlain, the New York Finger Lakes, the Pacific Ocean (California Current Ecosystem, Oregon coast), and the Baltic Sea. TDC occurs when a low amount of thiamine is transferred into eggs from a spawning female. Without sufficient thiamine, the embryonic fish (called alevin in salmon), can’t produce the energy they need to survive.This leads to health issues and even death before they are able to start eating and get thiamine from their food.
+
+## Why does it matter?
+
+The consequences of TDC can be permanent or fatal. For example:
+
+* It can decrease the productivity and abundance of affected populations. For instance, offspring from TDC-affected Atlantic salmon in the Baltic Sea and lake trout in the Laurentian Great Lakes died at unusually high rates (Bengtsson et al. 1999; Fitzsimons et al. 1999). Thiamine deficiency likely killed as many as half of newly hatched fry of already endangered winter-run Chinook salmon in the Sacramento River in 2020 and 2021 (Mantua et al. 2025).
+
+* In fur farm animals, TDC resulted in paralysis followed by death. No virus or bacteria was responsible. Instead it was because of raw fish diets containing [thiaminase](#glossary-thiaminase), an enzyme that degrades thiamine in animal guts (Lee 1948).
+
+* In humans, Beriberi affects the cardiovascular system, nervous system, or both. Although symptoms are reversible with thiamine supplementation, persistent thiamine deficiency can result in permanent brain damage (Whitfield et al. 2018).
+
+## What causes TDC?
+
+The short answer? We don’t know for sure, but we have hypotheses.
+
+TDC in fish, wildlife, and humans occurs by not getting enough thiamine.
+This can occur by:
+
+1. eating food that doesn’t have enough thiamine, or 
+2. by having thiamine depleted in the body due to oxidative stress or thiaminase, an enzyme that degrades thiamine. 
+
+Diets rich in fats can increase oxidative stress, creating greater demand for antioxidants such as thiamine to counter that stress. Thiaminases are present in certain microbes, plants, insects, invertebrates, and even vertebrate species, including some fishes. When a predator’s diet is dominated by prey that contains a lot of thiaminase, it can break down the thiamine in the predator’s gut during digestion, leading to deficiency. 
+
+Importantly, thiaminase activity is high in some prey consumed by salmonines which can cause thiamine to be destroyed as these prey species are digested. The link between a thiaminase-rich diet and TDC has occurred in humans, livestock, fur farm animals, marine mammals, and fish. Alternatively, fish that eat too much fat may experience higher rates of cell damage through a process known as oxidative stress. Thiamine can function as an antioxidant to counter oxidative stress, but this process can deplete available thiamine.
+
+![The causes of TDC are still being explored, but we know that salmon exist in a world full of stressors. In general, scientists have narrowed it down to two possible overarching paradigms of TDC: Paradigm 1 is that something in the salmon prey is causing thiamine deficiency. Paradigm 2 is that something is changing in the ecosystem that affects the amount of thiamine that can make it to top consumers like salmon.](www/image4.png){.lightbox #fig-fig2 fig-align="center" width="100%"}
+
+Examples of TDC in fish following consumption of prey with high thiaminase activity or fat content include:
+
+1. Widespread TDC in Great Lakes salmonines has been linked to eating invasive, thiaminase- and fat rich alewife (*Alosa pseudoharengus*)
+
+2. Widespread TDC in California salmon and steelhead linked to ocean diets dominated by thiaminase- and fat rich anchovy (*Engraulis mordax*). 
+
+3. TDC in Baltic Sea Atlantic salmon (*Salmo salar*) associated with sprat (*Sprattus sprattus*) dominated diets that are low in thiamine and high in unsaturated fat. The high fat content of these diets can increase oxidative stress, increasing the demand for antioxidants which includes thiamine. Sprat also exhibits thiaminase activity.
+
+Salmon face many stressors throughout their life cycle that may change their ability to get enough thiamine. These include diseases, food web changes, temperature stress, contaminant exposure, migration stress, and many more aspects that may combine to create TDC (Figure 2).
+
+## Hatcheries and TDC
+
+Theoretically, restoring prey populations to help predators maintain healthy thiamine concentrations could also be an option. For example, in the Great Lakes there are some substantial efforts to restore native prey and increased salmonine thiamine is a goal associated with those restoration efforts, but no native prey have increased in abundance to the point that they are a primary prey leading to increased thiamine. That said, the collapse of alewife in Lake Huron does show that a diet shift can increase salmonine thiamine concentrations. Instead, supplementing thiamine-deficient fish with thiamine treatments to replenish concentrations is used to mitigate TDC in fish populations. Thiamine treatments are frequently conducted in fish hatcheries where millions of fish can be treated simultaneously.
+
+Hatcheries are facilities where fish eggs are artificially fertilized and the resulting embryos are hatched (hence the name hatchery) and the juveniles are reared under controlled conditions until they are released into the wild. Fish naturally have very low survival rates in the wild while hatcheries provide a protected and controlled environment to maximize survival. Many salmon and trout hatcheries have been established to mitigate the negative impacts of dams and habitat degradation. The primary objective is to compensate for the loss of natural fish production caused by human-induced environmental disturbances. In some cases, hatcheries are used to rear and release species that are near extinction, with the aim of facilitating their reestablishment in the wild. Yet another common application is the production of hatchery-reared fish to support tribal, recreational, and commercial fisheries.
+
+Fish have been raised in artificial environments for millenia, initially serving as a source of food. Modern hatchery practices have been employed globally for more than a century. They have enabled the persistence of fish populations in areas where natural habitats have been entirely lost, such as when dams obstruct migratory routes to spawning grounds. However, recent scientific reviews have highlighted numerous concerns associated with hatchery operations (McMillan et al. 2023). Rather than conserving wild fish populations, these practices mainly contribute to their decline. For example, hatchery programs can reduce genetic diversity and diminish the resilience of fish populations to environmental changes and disease. The introduction of non-native hatchery-reared fish can also disrupt local ecosystems and lead to the displacement or extinction of indigenous species.
+
+When thiamine deficiency is detected in hatchery stocks, managers can implement thiamine treatments to enhance early-life survival rates. There are three types of treatments typically applied in hatcheries. Where adult fish can be captured weeks prior to their spawn date, adults are given thiamine booster shots that have proven effective at dramatically increasing thiamine levels in their eggs. In some salmonine populations, females receive these injections during their spawning migrations allowing them to spawn naturally with repleted thiamine concentrations. Where adults are handled much closer to their spawn time, eggs can be fertilized in water enriched with thiamine and are able to quickly absorb the thiamine from the water within an hour of submersion and can retain it to prevent mortality associated with TDC. This method has been proven to be highly effective and efficient, and is a common practice in hatcheries that rear salmon and trout. Unfortunately, most mass treatment of eggs is currently limited to fish reared in hatcheries and does not help thiamine deficient fish that are reproducing naturally in the wild. Recently, some wild-spawning fish have been injected with thiamine during migrations. In any case, the future of some salmonine populations that experience TDC may become dependent on human intervention. Additionally, hatcheries sometimes treat symptomatic fish (sick fry) with aqueous thiamine.
+
+## How is thiamine measured?
+
+Measuring thiamine concentrations in fishes can require coordination among anglers, hatchery staff, fisheries managers, and lastly researchers. Because many salmon and trout populations have extensive hatchery programs, most samples come from fish returning to hatcheries. Occasionally, additional samples have been provided by local anglers and fishery managers. Thiamine is stored in various tissues including blood, muscle, liver, and gonads (such as ovaries and eggs) and can be measured from any of these. Eggs are the most common tissue sampled because collection can be non-lethal and symptoms of TDC are most common at early life stages that are dependent on thiamine concentrations in the eggs.
+
+:::: {.columns}
+
+::: {.column width="48%"}
+![Collecting egg samples](www/image1.png){.lightbox #fig-fig5 fig-align="center" width="100%"}
+:::
+
+::: {.column width="4%"}
+
+:::
+
+::: {.column width="48%"}
+![Example of sample package](www/image9.png){.lightbox #fig-fig6 fig-align="center" width="100%"}
+:::
+
+::::
+
+After samples are collected, they must be frozen quickly to prevent tissue degradation and preserve thiamine concentrations. Samples are then transported on dry ice to a research facility where the thiamine can be extracted and quantified. Some samples have traveled as far as 3,000 miles (5,000 km) from Alaska to New York for processing. There are multiple methods for extracting and measuring thiamine in tissue that vary in the processing time and precision of thiamine measurements. Today, most thiamine  measurements in fish use a technique called [high-performance liquid chromatography](#glossary-hplc) (HPLC) that maximizes precision and allows researchers to accurately measure very low concentrations. 
+
+:::: {.columns}
+
+::: {.column width="45%"}
+Extracting thiamine from eggs starts by measuring the weight of a sample of eggs and grinding it in a chemical solvent (2% trichloroacetic acid, TCA) to extract thiamine from the cells. 
+
+The ground tissue is then boiled to maximize the amount of thiamine that is extracted from the cells. 
+
+This process creates a foam material that is spun at high speeds in a centrifuge to separate the tissue from the TCA solvent containing the thiamine.
+
+:::
+
+::: {.column width="3%"}
+
+:::
+
+::: {.column width="47%" style="padding:0px; position:sticky;"}
+![Grinding egg samples in a chemical solvent](www/image6.png){.lightbox #fig-fig5 fig-align="center" width="100%"}
+:::
+
+::::
+
+
+
+After the thiamine has been extracted and separated from the tissue, the solvent containing the thiamine needs to be adjusted to properly run through the HPLC instrumentation. This involves rinsing each sample with a new solvent to remove the TCA and adjust the pH of the solution. A small amount of a fluorescent chemical compound (potassium ferricyanide) is added to each sample to bind to the thiamine allowing it to be detected and quantified by the HPLC instrument. Finally, each sample is passed through a fine filter to remove any remaining particulates and the filtered solution containing the thiamine is analyzed using HPLC.
+
+:::: {.columns}
+
+::: {.column width="49%"}
+The HPLC instrument takes a small amount of the clean thiamine solution and carries it through a specialized column that separates compounds in the solution based on their chemical structure. 
+
+Thiamine comes in three different formats (vitamers) that vary in their structure and size, and therefore get separated from each other in this column. 
+
+Next, the thiamine solution gets passed through a detector starting with the smallest vitamer first, and the detector measures the concentration of each vitamer in the sample. 
+
+The concentrations from each sample are standardized by accounting for the initial mass of tissue sampled providing thiamine concentrations as the nanomole (one-billionth of a mole) of thiamine per gram of tissue sample.
+:::
+
+::: {.column width="2%"}
+
+:::
+
+::: {.column width="49%"}
+![HPLC instrument ](www/image8.png){.lightbox #fig-fig5 fig-align="center" width="100%"}
+:::
+
+::::
+
+## How do you know if an organism has thiamine deficiency?
+
+<b>TDC symptoms in salmonine free embryos:</b>
+
+* Lethargy (sluggish or reduced activity)
+
+* Erratic swimming behavior (e.g., spiral or corkscrew swimming)
+
+* Ataxia (uncoordinated movements)
+
+* Dark coloration or changes in skin pigmentation (as a stress response)
+
+* Loss of appetite (anorexia) and reduced feeding behavior =>Poor growth
+
+* High mortality particularly after yolk sac absorption (prior to first feeding)
+
+These symptoms are often very identifiable in wild and hatchery fish. 
+Check out this video of thiamine deficient and treated steelhead fry: [Video](https://vimeo.com/1090178610).
+See the Resources tab for more information.
+
+## Explanation of LC50
+
+An [LC50](#glossary-lc50) is <b> the lethal concentration of a compound for 50% of the tested population</b> (Figure 7). 
+LC50s are used often in toxicology to compare the potency of a contaminant on different organisms.  In those comparisons, it is possible to understand which organism is more sensitive to a chemical contaminant.  In the case of thiamine, LC50 values represent how much thiamine is required for that particular species to survive.  Thus, scientists use the LC50 values to help determine how sensitive a species is to thiamine deficiency and assess with egg thiamine the likelihood that a population in a given year may show TDC.
+
+![An example of a classic LC50 curve. We can fit a line by testing many different concentrations and seeing how many animals survive. The concentration where 50% of them survive is called the LC50.](www/image7.png){.lightbox #fig-fig3 fig-align="center" width="80%"}
+
+Another way to explore the effects of a compound is to consider the effects it has beyond mortality. 
+For this, scientists use an [EC50](#glossary-ec50), <b>or an effect concentration for 50% of the population</b>. 
+The effect can be death (so an LC50 can also be called an EC50), but it can also be something that doesn’t cause death but would make it harder for an animal to survive long-term. 
+Effects can be changes in ability to swim, changes in turning radius, a change in the ability to detect changes with their eyes, decreased immune system function, or many other options.
+
+With thiamine deficiency, organisms don’t have too much of something that is bad for them (like in classic toxicology), but rather too little of something they need. So the curve is flipped (Figure 8). With too little thiamine (deficiency), sometimes all of the fry will die (i.e., 0% survival). If they have enough ([replete](#glossary-replete)), all will live (100% survival). Scientists are interested in the point in the middle where about 50% will live. If tested eggs are below the LC50 threshold for thiamine concentration in nanomoles per gram eggs (nmol/g), then managers might want to intervene and supplement to ensure survival. This also could be a hint that something is amiss in the ecosystem (see "What Causes TDC?").
+
+![An example of a classic LC50 curve. We can fit a line by testing many different concentrations and seeing how many animals survive. The concentration where 50% of them survive is called the LC50.](www/image2.png){.lightbox #fig-fig4 fig-align="center" width="80%"}
+
+These data are hard to collect. 
+It requires keeping eggs from each female in a separate aquarium to see how many survive to swim-up. 
+Salmon in the Classroom has been helping collect these data in California since 2021.
+
+## Glossary
+
+<a name="glossary-alevin" href="#glossary-alevin">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Alevin
+  </span>
+</a>
+
+A salmon embryo that gets almost all of its nutrients from the yolk, also called yolk-sac fry (include picture?)
+
+<a name="glossary-deficiency" href="#glossary-deficiency">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Deficiency
+  </span>
+</a>
+
+Not having enough. An animal that is deficient in thiamine will have health impacts.
+
+<a name="glossary-ec50" href="#glossary-ec50">
+  <span style="font-size: 14pt; font-weight: bold;">
+    EC50
+  </span>
+</a>
+
+At this concentration, 50% of the population will experience adverse effects
+
+<a name="glossary-ems" href="#glossary-ems">
+  <span style="font-size: 14pt; font-weight: bold;">
+    EMS
+  </span>
+</a>
+
+Early mortality syndrome. Described in the Laurentian Great Lakes when hatcheries noticed alevin dying at yolk sac reabsorption from thiamine deficiency
+
+<a name="glossary-hab" href="#glossary-hab">
+  <span style="font-size: 14pt; font-weight: bold;">
+    HAB
+  </span>
+</a>
+
+Harmful algal bloom; cyanobacteria (blue green algae) or eukaryotic (microorganisms other than bacteria and archaea) algae that grow excessively and form blooms that impact the food web and environment
+
+<a name="glossary-hplc" href="#glossary-hplc">
+  <span style="font-size: 14pt; font-weight: bold;">
+    HPLC
+  </span>
+</a>
+
+High-performance liquid chromatography instrument
+
+<a name="glossary-lc50" href="#glossary-lc50">
+  <span style="font-size: 14pt; font-weight: bold;">
+    LC50
+  </span>
+</a>
+
+At this concentration, 50% of the population is predicted to die
+
+<a name="glossary-microbe" href="#glossary-microbe">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Microbe
+  </span>
+</a>
+
+Microscopic single-celled organisms, also known as “microorganism” 
+
+<a name="glossary-m74" href="#glossary-m74">
+  <span style="font-size: 14pt; font-weight: bold;">
+    M74
+  </span>
+</a>
+
+
+A syndrome described in Atlantic salmon (Salmo salar) in the Baltic Sea with yolk-sac fry dying due to thiamine deficiency. M stands for “miljö”, which is the Swedish word meaning environment as the deficiency was associated with environmental factors, and 74 indicates the year the problem was first detected (1974). 
+
+<a name="glossary-oxidative-stress" href="#glossary-oxidative-stress">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Oxidative stress
+  </span>
+</a>
+
+A chemical reaction that takes place in cells and tissues in which reactive substances bind to and damage molecules in the cell. The body fights this process with chemicals known as antioxidants.
+
+<a name="glossary-phytoplankton" href="#glossary-phytoplankton">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Phytoplankton
+  </span>
+</a>
+
+Photosynthetic (gain energy from sunlight) microorganisms that live in aquatic environments
+
+<a name="glossary-replete" href="#glossary-replete">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Replete
+  </span>
+</a>
+
+Having enough of something, in this case, enough thiamine for normal functioning
+
+<a name="glossary-salmonine" href="#glossary-salmonine">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Salmonine
+  </span>
+</a>
+
+The taxonomic sub-family that includes salmon, trout, and char
+
+<a name="glossary-tdc" href="#glossary-tdc">
+  <span style="font-size: 14pt; font-weight: bold;">
+    TDC
+  </span>
+</a>
+
+Thiamine Deficiency Complex. Describes the lethal and sublethal effects (e.g., spinning while swimming, impaired immune function) of having thiamine concentrations too low to maintain normal bodily functions. The overall effects associated with thiamine deficiency including early mortality syndrome (EMS). Also known as M74 in the Baltic region. Can occur in juvenile and/or adult life stages.
+
+<a name="glossary-thiaminase" href="#glossary-thiaminase">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Thiaminase
+  </span>
+</a>
+
+An enzyme that splits thiamine into a thiazole and pyrimidine moieties that are  unavailable to most consumers
+
+<a name="glossary-thiamine" href="#glossary-thiamine">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Thiamin(e)
+  </span>
+</a>
+
+Vitamin B1, also spelled as thiamin, a vitamin necessary for all living organisms
+
+<a name="glossary-vitamin" href="#glossary-vitamin">
+  <span style="font-size: 14pt; font-weight: bold;">
+    Vitamin
+  </span>
+</a>
+
+Organic compounds that are required in small quantities by living organisms and are essential for normal growth and nutrition
+
+## References
+
+Bengtsson, B. E., Hill, C., Bergman, Å., Brandt, I. Johansson, N., Magnhagen, C., Södergren, A., & Thulin, J. (1999). Reproductive disturbances in Baltic fish: A synopsis of the FiRe Project. Ambio, 28(1), 2-8.
+
+Harder, A. M., Reed, A. N., & Rowland, F. E. (2024). Evolutionary perspectives on thiamine supplementation of managed Pacific salmonine populations. Canadian Journal of Fisheries and Aquatic Sciences, 82, 1-10. <https://doi.org/10.1139/cjfas-2024-0109> 
+
+Fitzsimons, J. D., Brown, S. B., Honeyfield, D. C., & Hnath, J. G. (1999). A Review of Early Mortality Syndrome (EMS) in Great Lakes Salmonids: Relationship with Thiamine Deficiency. Ambio, 28(1), 9-15.
+
+Lee, C. F. (1948). Thiaminase in fishery products: A review. Commercial Fisheries Review, 10(4), 7-17.
+
+Mantua, N. J., Bell, H., Todgham, A. E., Daniels, M. E., Rinchard, J., Ludwig, J. M., ... & Johnson, R. C. (2025). Widespread thiamine deficiency in California salmon linked to an anchovy-dominated marine prey base. Proceedings of the National Academy of Sciences, 122(26), e2426011122. <https://doi.org/10.1073/pnas.242601112>
+
+McMillan, J. R., Morrison, B., Chambers, N., Ruggerone, G., Bernatchez, L., Stanford, J., & Neville, H. 2023. A global synthesis of peer-reviewed research on the effects of hatchery salmonids on wild salmonids. <https://doi.org/10.1111/fme.12643>
+
+Whitfield, K. C., Bourassa, M. W., Adamolekun, B., Bergeron, G., Bettendorff, L., Brown, K. H., ... & Combs Jr, G. F. (2018). Thiamine deficiency disorders: diagnosis, prevalence, and a roadmap for global control programs (Vol. 1430, No. 1, pp. 3-43). <https://doi.org/10.1111/nyas.13919>
+
+## Resources
+
+### Videos
+
+* [Spinning Salmon YouTube Channel](https://www.youtube.com/playlist?list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV)
+  * [A Complex Problem: Thiamine Deficiency in Lake Ontario Salmon](https://vimeo.com/246128456)
+  * [We’re giving nature a vitamin deficiency.](https://www.youtube.com/watch?v=cfl7mSG13e0) 
+  * [What is a watershed?](https://www.youtube.com/watch?v=933SLmx0QS4)
+  * [Video tour of the Feather River Hatchery](https://www.youtube.com/watch?v=kU5pW9xT74U)
+  * [TDC In Central Valley Chinook Salmon](https://www.youtube.com/watch?v=JDc12YbxAqc) with Nate Mantua
+  * [Warmer Water Kills Salmon Eggs](https://ca.pbslearningmedia.org/resource/nasa09.sci.life.oate.saleggs/warmer-water-kills-salmon-eggs/)
+  * [US Fisheries Face Climate Change Challenges](https://www.youtube.com/watch?v=-ibT7dkqsfg) (with collaborating researcher Rachel Johnson)
+  * CDFW: [Biodiversity Monitoring and Community Science](https://drive.google.com/file/d/1a3LmvetOlLeIe-jx93zUUGmohafUbF_g/view?usp=drive_link) (highlights the Spinning Salmon Program)
+  * [No Going Back](https://www.youtube.com/watch?v=Mmo5eHbQ-fk) - CalTrout (video)
+  * Tending Nature: [Reclaiming Agriculture with the Yocha Dehe Wintun Nation](https://www.pbs.org/video/reclaiming-agriculture-with-the-yocha-dehe-wintun-nation-s8tz9l/)
+  * [Getting to know the research team- Voices from the Field with Abbie Ward](https://www.youtube.com/watch?v=7Bl7UKjZU9s&list=PLGnmScsFDX-VZXbnMAxMq8htUJtyPB4LV&index=5&t=6s) on the McCloud River with the Winnemem-Wintu tribe.
+  * [California Department of Water Resources Video on Thiamine Injections](https://www.youtube.com/watch?v=iN8EXfexmVo) (with collaborating researcher: Kevin Kwak)
+
+
+### Links to news articles and press releases
+
+#### Great Lakes
+
+* International Joint Commission (IJC) Newsletter on Thiamine Deficiency in the Great Lakes: <https://ijc.org/en/vitamin-deficiency-limits-salmon-and-trout-offspring-survival>
+
+* Cornell’s page on thiamine deficiency: <http://thiamine.dnr.cornell.edu/Thiamine_ramifications.html#>
+
+* Local news article on dead steelhead trout in Lake Ontario tributaries: <https://www.wrvo.org/environment/2014-12-22/fish-die-off-on-salmon-river-could-be-caused-by-vitamin-deficiency>
+
+* Great Lakes Echo article on alewife threatening salmon in the Great Lakes: <https://greatlakesecho.org/2009/09/03/alewives-the-trouble-they-cause-and-the-salmon-that-love-them/>
+
+* FishBio blog post summarizing thiamine deficiency globally: <https://fishbio.com/a-deeper-dive-into-thiamine-deficiency/>
+* Video comparing thiamine deficient and treated steelhead fry: [Video](https://vimeo.com/1090178610)
+
+
+* Thiamine deficiency documentary focused on Lake Ontario: [A Complex Problem: Thiamine Deficiency in Lake Ontario Salmon](https://vimeo.com/246128456)
+Video describing thiaminase activity and association with TDC: [Dr Catherine Richter | Exploring Enzymes in Fish to Accelerate Conservation - SciTube](https://scitube.io/dr-catherine-richter-exploring-enzymes-in-fish-to-accelerate-conservation/)
+
+#### Baltic Sea
+
+* Overview report on thiamine deficiency in the Baltic Sea region: <https://www.havsmiljoinstitutet.se/publikationer/havsmiljoinstitutets-rapportserie/tiaminbrist-i-ostersjoomradet>
+
+* WGBAST - The Assessment Working Group on Baltic Salmon and Trout assesses the status and trends of salmon and sea trout stocks in the Baltic Sea and provides annual catch advice on salmon: <https://www.ices.dk/community/groups/pages/wgbast.aspx>
+
+* Swedish agency for Marine and Water Management - Information page thiamine: <https://www.havochvatten.se/arter-och-livsmiljoer/arter-och-naturtyper/lax/faq-lax/2018-10-29-ar-tiaminbrist-orsaken-till-dodlighet-pa-lax.html>
+
+* Model for estimating thiamine deficiency-related mortality of Atlantic salmon (Salmo salar) offspring and variation in the Baltic salmon M74 syndrome: [Full article: Model for estimating thiamine deficiency-related mortality of Atlantic salmon (Salmo salar) offspring and variation in the Baltic salmon M74 syndrome](https://www.tandfonline.com/doi/full/10.1080/10236244.2021.1941942)
+
+#### California
+
+* [Monitoring Thiamine Deficiency in California Salmon](https://www.fisheries.noaa.gov/west-coast/science-data/monitoring-thiamine-deficiency-california-salmon#piecing-together-the-puzzle) (some linked as background readings for teachers, others edited for student reading, paired down)
+
+  * [Monitoring TDC in CA Salmon](https://docs.google.com/document/d/1JbWE4u1iGKBvsEGh3Z2cc5khyE2weBTNhNgsA0V1KIA/edit) 
+
+    * Piecing Together The Puzzle
+
+    * A Home-Grown California Mystery
+
+    * The Hidden Toll
+
+* The Ocean’s Mysterious Vitamin Deficiency ([student excerpt](https://docs.google.com/document/d/1L2z_MbcYu2YLge1Tcq6SHfL1nmvZ3T0dCEtG1DLhaBg/edit?usp=sharing))
+  * Original- [NOAA Fisheries](https://www.fisheries.noaa.gov/feature-story/oceans-mysterious-vitamin-deficiency) by  [Alastair Bland](https://hakaimagazine.com/profiles/alastair-bland/) January 28, 2021 first published by Hakai Magazine and NOAA Fisheries
+
+* [CA Interagency Ecological Program: Salmon Counts](https://iep.ca.gov/Science-Synthesis-Service/Directed-Studies-Synthesis/Blog/tag/salmon)
+
+* [How dams affect water and habitat on the West Coast](https://drive.google.com/file/d/1Hx9oTCy28epU1xBuSSYz29GjoS0FOn0g/view?usp=sharing)
+
+* [Researchers Probe Deaths of Central Valley Chinook, with Possible Ties to Ocean Changes](https://drive.google.com/file/d/12LP7XppoNGO80p4GyaYfuMoQXo8Dh_D1/view?usp=drive_link)
+
+* The Poor Diet Choices of Salmon; The Salmon’s Health Crisis; Opportunivorous Salmon By Abigail Ward and Peggy Harte ((NOTE- should be published soon, link to Frontiers for Young Minds))
+
+* NOAA Webstory- High Schoolers Help Federal Biologists Unravel the Mystery of Spinning Salmon By Fairfield High School’s AP Environmental Studies Students ((NOTE- To be published and linked May 2025))
+
+* [Climate Change Impacts on Salmon and Steelhead](https://www.fisheries.noaa.gov/west-coast/sustainable-fisheries/ecosystem-interactions-and-pacific-salmon#climate-change-impacts-on-salmon-and-steelhead)
+
+  * [Student version](https://docs.google.com/document/d/1CjDxn4hEvOZtrgdS5oYGhau43NDldJ05Gi3juqz8K5I/edit?usp=sharing)
+
+* [CA Salmon Strategy for a Hotter, Dryer Future](https://www.gov.ca.gov/wp-content/uploads/2024/01/Salmon-Strategy-for-a-Hotter-Drier-Future.pdf) (excerpts) 
+
+* [Nigiri Project: Growing Rice and Salmon on the Floodplain](https://watershed.ucdavis.edu/project/nigiri-project-growing-rice-and-salmon-floodway)
+
+  * [Project Description](https://drive.google.com/file/d/1ZzvgRVO2XFlzqMWlkfehHfkkq5d94MSc/view?usp=sharing)
+
+  * [Reimagining the Floodplain](https://www.nigiriproject.com/): The Nigiri Project (website)
+
+  * [North State Public Radio Broadcast](https://www.mynspr.org/agriculture/2016-03-11/nigiri-project-salmon-who-spend-early-life-over-rice-fields-see-an-increase-in-survivability)
+
+* <http://run4salmon.org/articles/>
+
+* <https://savecaliforniasalmonteachersre.godaddysites.com/educator-guides>
+
+* <https://www.ucdavis.edu/climate/blog/anchovy-dominated-diets-west-coast-pose-new-dangers-salmon>
+
+* <https://www.fisheries.noaa.gov/feature-story/anchovy-dominated-diets-west-coast-pose-new-dangers-salmon>
+

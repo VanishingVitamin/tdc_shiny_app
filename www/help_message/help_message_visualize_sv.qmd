@@ -1,0 +1,43 @@
+---
+title: ""
+title-block: none
+format: 
+  html:
+    toc: false
+    embed-resources: true
+---
+
+```{r}
+#| include: false
+source("plotly_icon_svgs.R")
+```
+
+Den här fliken visar ett interaktivt spridningsdiagram över data.
+
+* Varje punkt representerar en enskild observation av överlevnadsgrad (i procent) mot tiaminkoncentration (i nmol/g).
+* Kurvor och skuggade områden visar anpassade modeller och deras osäkerhet. Det finns en modell för varje art.
+* Punkter och kurvor är färgade efter art.
+* Diagrammet är interaktivt. Klicka och dra för att zooma in. Håll muspekaren över en punkt för att se mer information.
+* Verktygsfältet ovanför diagrammet låter dig zooma, panorera, återställa vyn och exportera diagrammet som en bild.
+  - `r icons$camera` Spara aktuell vy som .png
+  - `r icons$zoom_box` Klicka och dra för att zooma in på ett specifikt område i diagrammet.
+  - `r icons$pan` Klicka och dra för att flytta diagrammet utan att zooma.
+  - `r icons$zoom_plus` Zooma in mot mitten av diagrammet.
+  - `r icons$zoom_minus` Zooma ut från mitten av diagrammet.
+  - `r icons$home` Återställ diagrammet till ursprunglig vy.
+  - `r icons$tooltip_basic` Visa information för den datapunkt som är närmast markören.
+  - `r icons$tooltip_compare` Visa värden för alla spår vid samma tiaminvärde vid hovring.
+
+Du kan också lägga till egna data i spridningsdiagrammet:
+
+* Välj en art för din datapunkt.
+* Ange en tiaminkoncentration (obligatoriskt) och en observerad överlevnadsgrad (valfritt).
+* Om du anger en observerad överlevnadsgrad visas den som en svart, solid punkt i diagrammet.
+* Appen beräknar också en förväntad överlevnadsgrad med hjälp av den valda artens modell. Det förväntade värdet visas som en svart punkt med prickad kant.
+* När du lägger till data visas en sammanfattningstabell under diagrammet.
+
+Du kan exportera tabellen till en CSV-fil genom att klicka på knappen "Exportera tabell till CSV".
+
+Sidopanelens filter påverkar också den här fliken.
+
+Till exempel, om du väljer en art, visas endast punkter och kurvor för den arten.

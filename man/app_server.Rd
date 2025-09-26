@@ -4,7 +4,16 @@
 \alias{app_server}
 \title{Defines the Server function for the Vanishing Vitamin Shiny app}
 \usage{
-app_server()
+app_server(tdc_data, citations, lc50_curve, translator)
+}
+\arguments{
+\item{tdc_data}{data set containing Thiamin by Survivability data. Should be
+the data set exported by the vanishingVitamin package,
+vanishingVitamin::tdc_data}
+
+\item{citations}{data set containing citations for data in the tdc_data data
+set. Should be the data set exported by the vanishingVitamin package,
+vanishingVitamin::citations}
 }
 \description{
 This is an internal function that is used within the exported launch_app()
