@@ -7,7 +7,9 @@
 #'   the data set exported by the vanishingVitamin package,
 #'   vanishingVitamin::tdc_data
 #'
-#' @value \code{bs4Dash::dashboardPage} object containing UI elements
+#' @return \code{bs4Dash::dashboardPage} object containing UI elements
+#' @keywords internal
+#' @noRd
 
 app_ui <- function(tdc_data, translator) {
   location_info <- tdc_data |>
@@ -501,6 +503,7 @@ resulting from the authorized or unauthorized use of the software.
       )
     )
   )
+
 }
 
 #' Creates a download button for Reactable table

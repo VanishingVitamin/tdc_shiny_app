@@ -8,8 +8,9 @@
 #' @seealso [shiny::shinyApp()]
 #'
 #' @examples
-#' launch_app()
-#'
+#' \dontrun{
+#'   launch_app()
+#' }
 #'
 #' @export
 

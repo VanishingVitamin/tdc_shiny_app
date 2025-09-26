@@ -1,7 +1,7 @@
-#' Defines the Server function for the Vanishing Vitamin Shiny app
+#'Defines the Server function for the Vanishing Vitamin Shiny app
 #'
-#' This is an internal function that is used within the exported launch_app()
-#' function.
+#'This is an internal function that is used within the exported launch_app()
+#'function.
 #'
 #'@param tdc_data data set containing Thiamine by Survivability data. Should be
 #'  the data set exported by the vanishingVitamin package,
@@ -46,15 +46,11 @@ app_server <- function(tdc_data, citations, dose_response_params, translator) {
 
     tab_automatically_opened <- shiny::reactiveVal(value = FALSE)
 
-    # The first time the user clicks on the Data or Visualize tab, if the filter
-    # sidebar isn't open, then open it.
     shiny::observe({
-      if (
-        !shiny::isolate(input$filter_sidebar) &
-        input$navmenu %in% c("data", "visualize") &
-        !tab_automatically_opened()
-      ) {
+
+      if(!shiny::isolate(input$filter_sidebar) & input$navmenu %in% c("data", "visualize") & !tab_automatically_opened()){
         bs4Dash::updateSidebar(id = "filter_sidebar")
+        tab_automatically_opened(TRUE)
       }
     })
 
@@ -125,6 +121,7 @@ app_server <- function(tdc_data, citations, dose_response_params, translator) {
                          filtered_data = filtered_data,
                          dose_response_params = dose_response_params)
   }
+
 }
 
 #' Non-exported helper function for computing dose response

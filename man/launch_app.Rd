@@ -17,8 +17,9 @@ of shiny::shinyApp()}
 Launch Vanishing Vitamin app
 }
 \examples{
-launch_app()
-
+\dontrun{
+  launch_app()
+}
 
 }
 \seealso{
