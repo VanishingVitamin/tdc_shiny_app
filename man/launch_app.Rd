@@ -4,18 +4,19 @@
 \alias{launch_app}
 \title{Launch Vanishing Vitamin app}
 \usage{
-launch_app(options = list())
+launch_app(options = list(launch.browser = TRUE))
 }
 \arguments{
-\item{options}{list; app launch options passed to \code{options} argument of
-shiny::shinyApp()}
+\item{options}{list; app launch options passed to the \code{options} argument
+of shiny::shinyApp()}
 }
 \description{
 Launch Vanishing Vitamin app
 }
 \examples{
-launch_app()
-
+\dontrun{
+  launch_app()
+}
 
 }
 \seealso{
