@@ -26,11 +26,7 @@ launch_app <- function(
   citations <- vanishingVitamin::citations
   tdc_data <- vanishingVitamin::tdc_data |>
     dplyr::mutate(
-      DOI_join = tolower(DOI),
-      Location_label = paste0(
-        Location_label,
-        ifelse(River_label == "MISSING", "", paste0(" (", River_label, ")"))
-      )
+      DOI_join = tolower(DOI)
     )
 
   dose_response_params <- vanishingVitamin::dose_response_params

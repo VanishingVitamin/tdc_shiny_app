@@ -11,8 +11,8 @@
 
 app_ui <- function(tdc_data, translator) {
   location_info <- tdc_data |>
-    dplyr::distinct(region, Location_label) |>
-    dplyr::arrange(region, Location_label)
+    dplyr::distinct(region, collection_locations) |>
+    dplyr::arrange(region, collection_locations)
 
   location_select_list <-
     location_info |>
@@ -20,7 +20,7 @@ app_ui <- function(tdc_data, translator) {
     dplyr::group_split() |>
     purrr::map(
       ~ {
-        .x$Location_label
+        .x$collection_locations
       }
     ) |>
     purrr::set_names(unique(location_info$region))
