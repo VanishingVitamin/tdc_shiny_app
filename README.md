@@ -37,9 +37,7 @@ This Shiny application provides a publicly accessible, interactive database of t
   You can also upload and plot your own data.  
   ![](./visualize_tab_screenshot.png)
 
----
-
-## Tech Stack
+### Tech Stack
 
 * **Language:** [R](https://cloud.r-project.org/)  
 * **IDE:** [RStudio](https://posit.co/download/rstudio-desktop/)  
@@ -189,7 +187,7 @@ git pull
 ```bash
 git push -u origin my-feature
 ```
-5. Open a [Pull Request](https://docs.github.com/en/pull-requests).
+5. Open a [Pull Request](https://docs.github.com/en/pull-requests). Fill out the provided template.
 6. Request review, address feedback, and merge to `main`.
 7. Update local main:
 ```bash
@@ -203,7 +201,7 @@ Reference: [Happy Git with R](https://happygitwithr.com/).
 
 ### Publishing the app
 
-The app is publicly hosted on a platform called [Posit Connect](https://docs.posit.co/connect/user/) (ran by the same company that develops RStudio and the `tidyverse` packages).
+The app is publicly hosted on a cloud platform called [Posit Connect](https://docs.posit.co/connect/user/).
 The following section outlines an automated method for publishing updated to the app.
 If this fails, feel free to reach out to Joe (jzemmels@usgs.gov), who can publish the app using other means.
 
