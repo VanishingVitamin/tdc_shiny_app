@@ -221,7 +221,8 @@ app_ui <- function(tdc_data, translator) {
           });
         });
         "
-        )
+        ),
+        shiny::includeHTML("www/google-analytics-header.html")
       ),
       # Start of per-tab content
       bs4Dash::tabItems(
