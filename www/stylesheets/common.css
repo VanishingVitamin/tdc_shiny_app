@@ -99,6 +99,11 @@ input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit
 input,button{font-family:inherit;font-size:inherit;line-height:inherit}
 
 
+.navbar {
+  background-color: #FFF;
+  color: #000;
+}
+
 /* Always float the navbar header */
 .navbar-header {
   float: left;
@@ -276,3 +281,38 @@ Content: "\f082";
   border: 0;
 }
 [role="button"]{cursor:pointer}
+
+.vscomp-value-text {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+.vscomp-option-text {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Removes the border and box-shadow from the tab card container */
+.nav-tabs-custom {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Removes the border from the tab panes (content area) */
+.tab-content {
+  border: none !important;
+}
+
+/* Adjusts the active tab appearance to remove its border */
+.nav-tabs-custom .nav-tabs li.active a {
+  border-bottom-color: transparent !important;
+  background-color: #eeeeee;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #eeeeee;
+}
+
+.card{
+  border: none;
+  box-shadow: none !important;
+}

@@ -1,0 +1,21 @@
+---
+title: ""
+title-block: none
+format: 
+  html:
+    toc: false
+    embed-resources: true
+---
+
+This tab shows a table of published citations and a map with markers.
+
+* The map shows where data were collected. Each marker represents a location.
+* You can move or zoom the map using your mouse. The table will update to show only citations within the visible map area.
+* Click a marker to see a pop-up with information about that location.
+  * Clicking a marker also moves the related citation to the top of the table and highlights it.
+* Click a row in the table to see more details about the citation, including other collection locations.
+* To download data, click the "Download Data" button. You can choose which citations to download.
+* You can use the sidebar to filter the map and table by collection location. 
+  * Collection locations are grouped into larger regions. You can select individual locations or entire regions.
+  * Only citations that match the selected locations or regions will appear in the map and table.
+  

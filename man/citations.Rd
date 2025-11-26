@@ -9,8 +9,7 @@
 
 A tibble object with 15 rows and 4 columns
 \describe{
-\item{DOI}{URL associated with the published data. May be a URL or "unpublished" for unpublished data.}
-\item{DOI_num}{DOI associated with the published data. May be a URL or "unpublished" for unpublished data.}
+\item{unique_id}{chr, string representing the source of the data. If the data are published, this wil be the DOI of the associated article. If the data are not published, this will be a string representing the collection location.}
 \item{metadata}{A nested column. Each element contains metadata about the associated publication. Has value "NA" for unpublished data.}
 \item{formatted_metadata}{A formatted character string containing information stored in the metadata column. Used for display in the app.}
 }

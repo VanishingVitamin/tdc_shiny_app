@@ -13,3 +13,10 @@ inst/misc_data/jags_*RData
 inst/misc_data
 inst/RJAGS_TDFM_Fit_12_27_24.R
 all_branches_all_history.sh
+inst/fitted_models_2025-09-11
+.vscode/extensions.json
+.vscode/settings.json
+air.toml
+all_branches_all_history.txt
+google_docs_exports
+inst/doc

@@ -1,0 +1,198 @@
+---
+title: "Technical notes on the VanishingVitamin app"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{How to develop this app}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, echo=FALSE}
+library(vanishingVitamin)
+```
+
+This vignette summarizes technical details of the `vanishingVitamin` R package and Shiny app structure.
+See also the README file for a more general overview of the app.
+
+## **Background**
+
+To understand the VanishingVitamin app, you should be familiar with **R packages** and **Shiny apps**.  
+
+### **What is an R package?**
+
+At its essence, an R package is made up of two components:
+
+- **`R/` folder** – Contains `.R` scripts defining functions, e.g., `vanishingVitamin::launch_app()` to start the app.  
+- **`DESCRIPTION` file** – Lists dependencies, authors, and metadata.  
+
+All the other files and folders in this repository are "add-ons" that extend the basic functionality of an R package.
+For example, the `data/` folder contains pre-built data sets that the `.R` scripts can use.
+
+The primary benefit of housing VanishingVitamin in an R package is standardization -- an effort to avoid the "well, it works on my computer" issue that befalls many collaborative coding efforts.
+For example, installing the VanishingVitamin R package simultaneously installs any dependencies a user may be missing.
+R packages also provide a nice structure for documentation and file organization.
+
+**Recommended readings**
+
+* [R Packages (2e)](https://r-pkgs.org/) (at least Chapters 1-3)
+* [Mastering Shiny: Packages](https://mastering-shiny.org/scaling-packaging.html)
+
+### **What is a Shiny app?**
+
+A Shiny app consists of:
+
+- **`ui` object** – Defines the user interface (text, buttons, tables, plots, etc.).  
+- **`server` function** – Defines how the app responds to user interactions.  
+
+Shiny handles HTML, CSS, and JavaScript under the hood, allowing interactive web apps to be built entirely in R.  
+
+VanishingVitamin splits `ui` and `server` into separate `.R` scripts to avoid a single very long `app.R` file, improving readability and maintainability.
+
+**Recommended readings**
+
+* [Mastering Shiny](https://mastering-shiny.org/index.html) (at least Chapters 1-3)
+* [`bs4Dash` How to start?](https://bs4dash.rinterface.com/articles/step-by-step) for basic overview of `bs4Dash` page layout
+
+## **App File Structure**
+
+- `R/`  
+  - `run_app.R`: `launch_app()` function to start the app.  
+  - `app_ui.R`: Defines the app UI.  
+  - `app_server.R`: Main server function, calls tab-specific server scripts:  
+    - `translation_server.R` – Handles UI translations.  
+    - `data_tab_server.R` – Server logic for the Data tab.  
+    - `visualize_tab_server.R` – Server logic for Visualize tab.  
+  - `app_theme.R`: Custom themes via [`fresh`](https://dreamrs.github.io/fresh/).  
+  - `publish_app.R`: Publishes the app to Posit Connect.  
+  - `datasets.R`: Documentation for included datasets.  
+  - `globals.R`: Helper script to suppress R CMD check warnings.  
+- `data/` – Application datasets.  
+- `www/` – Static files: logos, images, pre-rendered HTML.  
+- `vignettes/` – Package vignettes.  
+- `DESCRIPTION` / `NAMESPACE` – Metadata and exported functions.  
+- `app.R` – Used for Posit Connect deployment; usually not edited.
+
+**Other important files:** `.gitignore`, `.rscignore`, `.github/`, `README.md`, and USGS release files.
+
+
+## **App Layout & UI**
+
+The UI is wrapped in a `bs4Dash::dashboardPage()`:
+
+- Provides a dashboard layout (header, sidebar, body) with Bootstrap 4 styling.  
+- Sidebar contains filters used by **both Data and Visualize tabs**.  
+- Custom widgets include [`shinyWidgets::virtualSelectInput`](https://dreamrs.github.io/shinyWidgets/reference/virtualSelectInput.html) for multi-select dropdowns.
+
+**Key packages:**
+
+- `bs4Dash` – dashboard layout  
+- `shiny` – core interactivity  
+- `shinyWidgets` – enhanced UI controls  
+- `shinyjs` – dynamic hiding/showing of elements  
+
+## **Per-tab Details**
+
+### **1. Welcome Tab**
+
+- **UI elements:** `tabItem(tabName = "welcome")`, `uiOutput("welcome_page_content")`  
+- **Server:** `translation_server.R` swaps pre-rendered HTML based on selected language.  
+- **Concepts:**  
+  - Pre-rendered Quarto documents for multi-language content (`www/welcome_page/`).  
+  - Internationalization via [`shiny.i18n`](https://appsilon.github.io/shiny.i18n/).  
+  - `uiOutput` + `renderUI()` dynamically replace text with translations.  
+
+**Recommended readings:**
+
+- [Quarto Authoring](https://quarto.org/docs/authoring/markdown-basics.html)  
+- [Quarto HTML Output](https://quarto.org/docs/output-formats/html-basics.html)  
+
+#### UI translation with `shiny.i18n` package
+
+The [`shiny.i18n`](https://appsilon.github.io/shiny.i18n/) package is used to dynamically update UI elements (input labels, etc.) based on the user's selected language. 
+Translation files (`.csv`) in `www/translations/` map English labels to Spanish, Finnish, and Swedish. 
+Elements in `app_ui.R` are rendered with `uiOutput()`, and `renderUI()` in `translation_server.R` swaps in the translated text. 
+Note that translations are not validated automatically, meaning any changes must be verified manually. 
+To add a new language, create a `translation_[lang].csv` file and add it to the language selector in `app_ui.R`.
+
+### **2. Data Tab**
+
+- **UI elements:**  
+  - `reactable::reactableOutput("tdc_data_table")` – Interactive table.  
+  - `leaflet::leafletOutput("tdc_data_map")` – Map of collection locations.  
+  - Sidebar filters: species, location, run, tissue (`virtualSelectInput`) + `checkboxInput` for unpublished data.  
+  - Download buttons: `actionButton`, custom `csvDownloadButton()`.  
+
+- **Server logic:** `data_tab_server.R` handles:  
+  - Reactivity between table, map, and sidebar filters (`input$tdc_table_filter_*`, `input$tdc_data_map_bounds`).  
+  - Updating table when map zooms or markers are selected.  
+
+- **Concepts:**  
+  - Reactive filtering and map-table synchronization.  
+  - Enhanced tables (`reactable`) and maps (`leaflet`).  
+
+**Recommended readings:**
+
+- [reactable](https://glin.github.io/reactable/)  
+- [Leaflet for R](https://rstudio.github.io/leaflet/) & [Shiny integration](https://rstudio.github.io/leaflet/articles/shiny.html)  
+- [Shiny download buttons](https://shiny.posit.co/r/reference/shiny/latest/downloadbutton.html)
+
+### **3. Visualize Tab**
+
+- **UI elements:**  
+  - Sidebar: `bs4Dash::accordion()` with conditional panels for manual entry, copy/paste, or file upload.
+  - Inputs: `numericInput`, `textAreaInput`, `fileInput`, `virtualSelectInput`.  
+  - Outputs: `plotly::plotlyOutput("ec50_curve")`, `reactable::reactableOutput("visualize_add_data")`, CSV download button.  
+
+- **Server logic:** `visualize_tab_server.R` handles:  
+  - Reactive processing of user-added data.  
+  - Updating Plotly scatterplots and tables based on user input.  
+
+- **Concepts:**  
+  - Interactive plots with Plotly (`hover`, `click`, `drag`).  
+  - Conditional rendering via `shiny::conditionalPanel` and `shinyjs::hidden()`.  
+  - Reactive tables with download support.  
+
+**Recommended readings:**
+
+- [Plotly R Fundamentals](https://plotly.com/r/plotly-fundamentals/)  
+- [Plotly + Shiny integration](https://plotly-r.com/)  
+
+### **4. About Tab**
+
+- **UI elements:** `wellPanel`, `fluidRow`, `column`, `shiny::img()`, `shiny::a()`  
+- **Content:** Logos, funding info, contact, disclaimers.  
+- **Concepts:** Responsive layout with `fluidRow`/`column`, static content display.  
+
+**Recommended readings:**
+
+- [Shiny Layout Guide](https://shiny.rstudio.com/articles/layout-guide.html)  
+- [Shiny Tags](https://shiny.rstudio.com/reference/shiny/latest/tags.html)  
+
+### **Additional Notes**
+
+- **Custom styling:** `includeCSS()` and `tags$script` for layout tweaks and JS behavior (e.g., resizing maps when boxes maximize).  
+- **Loading indicators:** `shinybusy::add_busy_spinner()` for user feedback.  
+- **Internationalization:** Add new language by creating a CSV in `www/translations/` and adding it to the language selector in `app_ui.R`.  
+
+<!-- ## Publishing to Posit Connect -->
+
+<!-- The VanishingVitamin app is published to a USGS-hosted version of Posit Connect at the (public) URL <https://rconnect.usgs.gov/vanishing-vitamin-app/>. -->
+<!-- There's also an identical, USGS-internal version of the app available at <https://rconnect.chs.usgs.gov/vanishing-vitamin-app/> (note the additional `.chs`), which can only be accessed while on the USGS network (or VPN). -->
+<!-- The following instructions only apply to users who can access that internal version of the app. -->
+
+<!-- To publish a new version of the app, you must  -->
+
+<!-- 1. Gain "Publisher" permissions for <https://rconnect.chs.usgs.gov/> by opening a [Cloud Hosting Solutions ticket](https://taskmgr.chs.usgs.gov/plugins/servlet/desk/portal/10/create/445). -->
+<!-- 2. Alert Joe Zemmels that you've gained Publisher permissions, so that he can grant you access to the app back-end on Posit Connect. -->
+<!-- 3. Clone the `tdc_shiny_app` repo and open `tdc_shiny_app.Rproj` to launch RStudio. -->
+<!-- 4. Connect to your Posit Connect account -- see [Publishing from RStudio](https://docs.posit.co/connect/user/publishing-rstudio/)). -->
+<!-- 5. Load the `vanishingVitamin` functions by pressing `CTRL/CMD + SHIFT + L`. -->
+<!-- 6. Run `vanishingVitamin::publish_app()`. -->
+<!-- 7. Wait for publishing to complete, the newly published app should open in a window in your browser. If not, navigate to <https://rconnect.chs.usgs.gov/connect/#/apps/38a66d86-5329-46bd-96e8-644e1eac078b/access> and check that the new version is available. -->

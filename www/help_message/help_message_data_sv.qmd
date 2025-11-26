@@ -1,0 +1,20 @@
+---
+title: ""
+title-block: none
+format: 
+  html:
+    toc: false
+    embed-resources: true
+---
+
+Den här fliken visar en tabell med publicerade referenser och en karta med markörer.
+
+* Kartan visar var data har samlats in. Varje markör representerar en plats.
+* Du kan flytta eller zooma in på kartan med musen. Tabellen uppdateras för att bara visa referenser inom det synliga kartområdet.
+* Klicka på en markör för att se en popup med information om platsen.
+  * När du klickar på en markör flyttas den relaterade referensen högst upp i tabellen och markeras.
+* Klicka på en rad i tabellen för att se mer information om referensen, inklusive andra insamlingsplatser.
+* För att ladda ner data, klicka på knappen "Ladda ner data". Du kan välja vilka referenser du vill ladda ner.
+* Du kan använda sidopanelen för att filtrera kartan och tabellen efter insamlingsplats.
+  * Insamlingsplatserna är grupperade i större regioner. Du kan välja enskilda platser eller hela regioner.
+  * Endast referenser som matchar de valda platserna eller regionerna visas i kartan och tabellen.

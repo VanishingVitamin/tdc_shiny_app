@@ -1,0 +1,43 @@
+---
+title: ""
+title-block: none
+format: 
+  html:
+    toc: false
+    embed-resources: true
+---
+
+```{r}
+#| include: false
+source("plotly_icon_svgs.R")
+```
+
+This tab shows an interactive scatterplot of the data.
+
+* Each point represents an individual observation of Survival Rate (as a percent) against Thiamine Concentration (in nmol/g).
+* Curves and shaded areas show fitted models and their uncertainty. There is one model for each species.
+* Points and curves are colored based on species.
+* The plot is interactive. Click and drag to zoom into the plot. Hover over points to see more information about that observation.
+* The toolbar above the plot lets you zoom or pan the plot, reset the view, and export the plot as an image.
+  - `r icons$camera` Save the current view as a .png
+  - `r icons$zoom_box` Click and drag to zoom into a specific area of the plot.
+  - `r icons$pan` Click and drag to move the plot without zooming.
+  - `r icons$zoom_plus` Zoom in to the center of the plot.
+  - `r icons$zoom_minus` Zoom out from the center of the plot.
+  - `r icons$home` Reset the plot to its original view.
+  - `r icons$tooltip_basic` Show info for the data point closest to your cursor.
+  - `r icons$tooltip_compare` Show values for all traces at the same thiamine level when hovering.
+
+You can also add your own data to the scatterplot:
+
+* Select a Species for your data point.
+* Enter a Thiamine Concentration (required) and an Observed Survival Rate (optional).
+* If you enter an Observed Survival Rate, it will be shown as a solid, black point on the plot.
+* The app will also calculate a predicted Survival Rate using the selected Species’ model. The predicted value is shown on the plot as a dotted circle, black point.
+* When you add data, a summary table appears below the plot.
+
+You can export this table to a CSV file by clicking the "Export table to CSV" button.
+The sidebar filters also affect this tab.
+
+For example, selecting a Species will only show points and curves of that species.
+
