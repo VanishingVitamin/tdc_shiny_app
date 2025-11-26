@@ -248,6 +248,7 @@ app_ui <- function(tdc_data, translator) {
                 title = shiny::tagList(shiny::uiOutput("data_datasets_translation", inline = TRUE)),
                 # Button dropdown lets user download *published* data sets
                 dropdownMenu = bs4Dash::boxDropdown(
+                  icon = shiny::icon("download"),
                   bs4Dash::boxDropdownItem(
                     shiny::actionButton(
                       "dataset_download_popup",
