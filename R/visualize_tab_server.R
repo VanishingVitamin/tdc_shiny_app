@@ -88,7 +88,9 @@ visualize_tab_server <- function(input, output, session, filtered_data, dose_res
       })
   })
 
-  # Render interactive scatterplot
+  # Render interactive scatterplot with plotly. Note: plotly works by stacking
+  # "layers" of data on top of each other in a plot. So the order in which we
+  # add these layers matters.
   output$ec50_curve <-
     plotly::renderPlotly({
       shiny::req(filtered_data$dose_response_curve)
@@ -158,17 +160,15 @@ visualize_tab_server <- function(input, output, session, filtered_data, dose_res
           showlegend = TRUE
         )
 
-      # Next add the points ("markers"). We want the user to hover over a
-      # particular Thiamine Concentration "x" value and see (1) all observed %
-      # Survived "y" values for each x.
+      # Next add the points ("markers").
 
       # Note that there are some observations that share a common Thiamine
-      # Concentration value but have different Survival % values. These would
-      # appear as points that a share a common x-value in the plot. A quirk of plotly in this
-      # situation is that it will only show *one* of the hoverable labels for each
-      # Thiamine Conc value *unless* they are plotted as separate "layers". The for
-      # loop creates multiple layers of points to ensure that all point labels
-      # will show when hovering.
+      # Concentration value but have different Survival % values. These appear
+      # as points that a share a common x-value in the plot. A quirk of plotly
+      # in this situation is that it will only show *one* of the hoverable
+      # labels for each Thiamine Conc value *unless* they are plotted as
+      # separate "layers". This for loop creates multiple layers of points to
+      # ensure that all point labels will show when hovering.
       for (trace_ind in unique(plt_data$ind)) {
         plt <- plt |>
           plotly::add_markers(
@@ -206,11 +206,16 @@ visualize_tab_server <- function(input, output, session, filtered_data, dose_res
 
         if (!is.null(user_dat)) {
           if (nrow(user_dat) > 0) {
+            # Another weird quick of plotly is that it doesn't like plotting
+            # only one data point at a time. So if the user has only entered one
+            # data point, plotly won't display it by default. To get around
+            # this, we technically plot a single point *twice*, perfectly
+            # overlaid with itself so it's not noticeable.
             if (nrow(user_dat) == 1) {
               user_dat_plt <- user_dat |>
-                dplyr::slice(1, 1)
+                dplyr::slice(1, 1) # select a single observation twice for plotting quirk
             } else {
-              user_dat_plt <- user_dat
+              user_dat_plt <- user_dat # not an issue if nrow(user_dat) != 1
             }
 
             user_dat_plt <-
@@ -253,7 +258,6 @@ visualize_tab_server <- function(input, output, session, filtered_data, dose_res
                 y = ~Estimated_survive,
                 text = ~plt_label_estimated,
                 hoverinfo = "skip",
-                # hoverlabel = list(bgcolor = "black"),
                 marker = list(
                   color = "black",
                   size = 8,
@@ -303,30 +307,6 @@ visualize_tab_server <- function(input, output, session, filtered_data, dose_res
           hoverdistance = 10,
           showlegend = TRUE
         ) |>
-        # plotly::style(
-        #   hoverinfo = "skip",
-        #   traces = c(0,1,2)
-        # ) |>
-        ## The following commented-out code would add the ability to switch
-        ## between a linear vs. log scale x-axis. This looks a bit awkward
-        ## since there are a non-trivial number of thiamine concentrations
-        ## between 0 and 1. I'll leave this here in case we think of another
-        ## solution.
-        # plotly::layout(
-        #   updatemenus = list(
-        #     list(y = .5,x = .5,
-        #          buttons = list(
-        #            list(method = "relayout",
-        #                 label = "Linear x-axis",
-        #                 args = list(list(xaxis = list(type =  "linear")))
-        #            ),
-        #            list(method = "relayout",
-        #                 label = "Log x-axis",
-        #                 args = list(list(xaxis = list(type =  "log")))
-        #            )
-        #          ))
-        #   )
-        #   ) |>
         htmlwidgets::onRender(remove_trace_js) |>
         plotly::config(
           displaylogo = FALSE,
@@ -335,9 +315,10 @@ visualize_tab_server <- function(input, output, session, filtered_data, dose_res
     })
 
   ## NOTE 2025-09-24: I'm commenting the following bit of code out as I'm not
-  ## sure we'll need anything other than the manual entry option (the
-  ## default). Also, I didn't want to take the time to add the logic for
-  ## checking the Species of the user-uploaded data.
+  ## sure we'll need anything other than the manual entry option (the default).
+  ## Also, I didn't want to take the time to add the logic for checking the
+  ## Species of the user-uploaded data. Scroll down a couple hundred lines to
+  ## continue.
 
   ## This code controls how data are uploaded to the app. The use can upload a
   ## csv or xlsx file to the app. If they choose this option, they must indicate
@@ -557,6 +538,7 @@ visualize_tab_server <- function(input, output, session, filtered_data, dose_res
       shiny::req(FALSE)
     }
 
+    # compute estimate and credible interval for user-entered data point:
     selected_ec50_mu <- dose_response_params |>
       dplyr::filter(
         parameter == "ec50_mu" &
@@ -683,6 +665,7 @@ visualize_tab_server <- function(input, output, session, filtered_data, dose_res
   #                                    type = "scatter", mode = "markers"))
   # })
 
+  # Render the user-entered data + estimates in a table
   output$visualize_add_data <-
     reactable::renderReactable({
       shiny::req(filtered_data$user_data)

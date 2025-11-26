@@ -12,6 +12,8 @@
 #' @noRd
 
 app_ui <- function(tdc_data, translator) {
+
+  # initial data processing
   location_info <- tdc_data |>
     dplyr::distinct(region, collection_locations) |>
     dplyr::arrange(region, collection_locations)
@@ -27,6 +29,7 @@ app_ui <- function(tdc_data, translator) {
     ) |>
     purrr::set_names(unique(location_info$region))
 
+  # definition of app UI:
   bs4Dash::dashboardPage(
     scrollToTop = TRUE,
     freshTheme = app_theme(),
@@ -35,7 +38,7 @@ app_ui <- function(tdc_data, translator) {
     footer = bs4Dash::dashboardFooter(
       right = shiny::includeHTML("www/footer.html")
     ),
-    # controlbar = dashboardControlbar(disable = TRUE,width = 0, overlay = TRUE),
+    # header: bar at top of page
     header = bs4Dash::dashboardHeader(fixed = TRUE,
       title = shiny::h5("VanishingVitamin", style = "padding-left:10px;"),
       sidebarIcon = shiny::icon(
@@ -43,6 +46,7 @@ app_ui <- function(tdc_data, translator) {
         style = "font-size:22px;",
         id = "header_toggle"
       ),
+      # elements in top-right corner of screen:
       rightUi = shiny::tags$li(
         class = "dropdown",
         shiny::div(
@@ -71,6 +75,7 @@ app_ui <- function(tdc_data, translator) {
           )
         )
       ),
+      # USGS logo in top-left of screen
       shiny::a(
         href = "https://www.usgs.gov",
         target = "_blank",
@@ -79,6 +84,7 @@ app_ui <- function(tdc_data, translator) {
           height = "50"
         )
       ),
+      # Menu elements
       bs4Dash::navbarMenu(
         id = "navmenu",
         skin = "light",
@@ -105,6 +111,7 @@ app_ui <- function(tdc_data, translator) {
         )
       )
     ),
+    # Sidebar elements (app filters)
     sidebar = bs4Dash::dashboardSidebar(
       disable = FALSE,
       elevation = 2,
@@ -189,10 +196,14 @@ app_ui <- function(tdc_data, translator) {
         value = TRUE
       )
     ),
+    # The main screen of the app
     body = bs4Dash::dashboardBody(
+      # adds a spinner animation if app is loading:
       shinybusy::add_busy_spinner(position = "bottom-right",
                                   color = "#00000066"),
+      # needed to translate app content:
       shiny.i18n::usei18n(translator),
+      # controls size of map in Data tab:
       shiny::tags$style(
         type = "text/css",
         "#tdc_data_map {height: calc(80vh) !important;
@@ -200,6 +211,8 @@ app_ui <- function(tdc_data, translator) {
                     overflow-x: hidden;
                     overflow-y: hidden;}"
       ),
+      # Resizes Data tab map if the "fullscreen" button is clicked (can't
+      # remember where I found this JavaScript code):
       shiny::tags$head(
         shiny::tags$script(
           "$(function() {
@@ -210,24 +223,29 @@ app_ui <- function(tdc_data, translator) {
         "
         )
       ),
+      # Start of per-tab content
       bs4Dash::tabItems(
         bs4Dash::tabItem(
-          tabName = "welcome",
-          # shiny::h3(translator$translate("Welcome to Vanishing Vitamin!")),
+          tabName = "welcome", #NOTE: tabName must match name given in navbarMenu above
+
+          # The Welcome page content is entirely rendered on the server side,
+          # since the user can pick different languages. See
+          # translation_server.R
           shiny::uiOutput(outputId = "welcome_page_content")
         ),
+        # Start of "Data" tab UI content:
         bs4Dash::tabItem(
           tabName = "data",
           shiny::fluidRow(
+            # Left side of page is table (reactable) summarizing avaiable data
+            # sets by publication:
             shiny::column(
               width = 6,
               bs4Dash::box(
                 reactable::reactableOutput(outputId = "tdc_data_table"),
                 width = 12,
                 title = shiny::tagList(shiny::uiOutput("data_datasets_translation", inline = TRUE)),
-                # header = shiny::div(
-                #   shiny::downloadLink("dataset_download_popup", label = 'Download Data', icon = shiny::icon("download")),
-                # ),
+                # Button dropdown lets user download *published* data sets
                 dropdownMenu = bs4Dash::boxDropdown(
                   bs4Dash::boxDropdownItem(
                     shiny::actionButton(
@@ -245,6 +263,7 @@ app_ui <- function(tdc_data, translator) {
                 style = 'height: calc(84.5vh); overflow-y:scroll'
               )
             ),
+            # Right side of page is leaflet map showing collection locations:
             shiny::column(
               width = 6,
               bs4Dash::box(
@@ -261,9 +280,11 @@ app_ui <- function(tdc_data, translator) {
             )
           )
         ),
+        # Beginning of "Visualize" tab UI content:
         bs4Dash::tabItem(
           tabName = "visualize",
           shiny::fluidRow(
+            # First column contains "add your own data" UI elements:
             shiny::column(
               width = 3,
               bs4Dash::accordion(
@@ -274,8 +295,10 @@ app_ui <- function(tdc_data, translator) {
                   title = shiny::uiOutput("visualize_your_own_data_translation", inline = TRUE),
                   style = "height: calc(80vh); overflow-y:scroll",
                   icon = bsicons::bs_icon("plus"),
-                  # hide the ability to change data upload option for now. They
-                  # need some server logic updates to select specific Species
+                  # hide the ability to change data upload option (for
+                  # foreseeable future). The copy + paste and file upload
+                  # options need some updated server logic updates to select
+                  # specific Species
                   shinyjs::hidden(
                     shiny::selectInput(
                       inputId = "visualize_add_data_choice",
@@ -324,88 +347,93 @@ app_ui <- function(tdc_data, translator) {
                       icon = shiny::icon("plus")
                     )
                   ),
-                  shiny::conditionalPanel(
-                    condition = "input.visualize_add_data_choice == 'Copy + paste'",
-                    shiny::textAreaInput(
-                      inputId = "visualize_add_data_clipboard",
-                      label = "Copy + paste data below (separated by space)",
-                      placeholder = "Thiamine_conc\tPercent_survive\n1.234\t56.78",
-                      resize = "vertical"
-                    ),
-                    # hide the ability to change data upload option for now. They
-                    # need some server logic updates to select specific Species
-                    shinyjs::hidden(
-                      shiny::wellPanel(
-                        id = "visualize_add_data_clipboard_panel",
-                        width = 12,
-                        shiny::selectInput(
-                          inputId = "visualize_add_data_clipboard_thiamine_col",
-                          label = "Thiamine Concentration column",
-                          choices = ""
-                        ),
-                        shiny::selectInput(
-                          inputId = "visualize_add_data_clipboard_survive_col",
-                          label = "(Optional) % Survived column",
-                          choices = ""
-                        ),
-                        shiny::br(),
-                        shiny::actionButton(
-                          inputId = "visualize_add_data_clipboard_button",
-                          label = "Add data",
-                          icon = shiny::icon("plus")
-                        )
-                      )
-                    )
-                  ),
-                  shiny::conditionalPanel(
-                    condition = "input.visualize_add_data_choice == 'Upload data file'",
-                    shiny::tags$style(
-                      type = "text/css",
-                      "#visualize_add_data_template {color: black; text-decoration: underline;}"
-                    ),
-                    shiny::tags$style(
-                      type = "text/css",
-                      "#visualize_add_data_template:hover {font-weight: bold;}"
-                    ),
-                    shiny::downloadLink(
-                      outputId = "visualize_add_data_template",
-                      label = "Download template data file"
-                    ),
-                    shiny::br(),
-                    shiny::br(),
-                    shiny::fileInput(
-                      inputId = "visualize_add_data_file",
-                      label = "Select a file",
-                      accept = c(".csv", ".xlsx"),
-                      placeholder = "Upload a csv or xlsx file",
-                      multiple = FALSE
-                    ),
-                    shinyjs::hidden(
-                      shiny::wellPanel(
-                        id = "visualize_add_data_file_panel",
-                        width = 12,
-                        shiny::selectInput(
-                          inputId = "visualize_add_data_file_thiamine_col",
-                          label = "Thiamine Concentration column",
-                          choices = ""
-                        ),
-                        shiny::selectInput(
-                          inputId = "visualize_add_data_file_survive_col",
-                          label = "(Optional) % Survived column",
-                          choices = ""
-                        ),
-                        shiny::br(),
-                        shiny::actionButton(
-                          inputId = "visualize_add_data_upload",
-                          label = "Add data",
-                          icon = shiny::icon("plus")
-                        )
-                      )
-                    )
-                  )
+                  ## NOTE: no longer relevant now that "Manual entry" is the
+                  ## only available option:
+
+                  # shiny::conditionalPanel(
+                  #   condition = "input.visualize_add_data_choice == 'Copy + paste'",
+                  #   shiny::textAreaInput(
+                  #     inputId = "visualize_add_data_clipboard",
+                  #     label = "Copy + paste data below (separated by space)",
+                  #     placeholder = "Thiamine_conc\tPercent_survive\n1.234\t56.78",
+                  #     resize = "vertical"
+                  #   ),
+                  #   # hide the ability to change data upload option for now. They
+                  #   # need some server logic updates to select specific Species
+                  #   shinyjs::hidden(
+                  #     shiny::wellPanel(
+                  #       id = "visualize_add_data_clipboard_panel",
+                  #       width = 12,
+                  #       shiny::selectInput(
+                  #         inputId = "visualize_add_data_clipboard_thiamine_col",
+                  #         label = "Thiamine Concentration column",
+                  #         choices = ""
+                  #       ),
+                  #       shiny::selectInput(
+                  #         inputId = "visualize_add_data_clipboard_survive_col",
+                  #         label = "(Optional) % Survived column",
+                  #         choices = ""
+                  #       ),
+                  #       shiny::br(),
+                  #       shiny::actionButton(
+                  #         inputId = "visualize_add_data_clipboard_button",
+                  #         label = "Add data",
+                  #         icon = shiny::icon("plus")
+                  #       )
+                  #     )
+                  #   )
+                  # ),
+                  # shiny::conditionalPanel(
+                  #   condition = "input.visualize_add_data_choice == 'Upload data file'",
+                  #   shiny::tags$style(
+                  #     type = "text/css",
+                  #     "#visualize_add_data_template {color: black; text-decoration: underline;}"
+                  #   ),
+                  #   shiny::tags$style(
+                  #     type = "text/css",
+                  #     "#visualize_add_data_template:hover {font-weight: bold;}"
+                  #   ),
+                  #   shiny::downloadLink(
+                  #     outputId = "visualize_add_data_template",
+                  #     label = "Download template data file"
+                  #   ),
+                  #   shiny::br(),
+                  #   shiny::br(),
+                  #   shiny::fileInput(
+                  #     inputId = "visualize_add_data_file",
+                  #     label = "Select a file",
+                  #     accept = c(".csv", ".xlsx"),
+                  #     placeholder = "Upload a csv or xlsx file",
+                  #     multiple = FALSE
+                  #   ),
+                  #   shinyjs::hidden(
+                  #     shiny::wellPanel(
+                  #       id = "visualize_add_data_file_panel",
+                  #       width = 12,
+                  #       shiny::selectInput(
+                  #         inputId = "visualize_add_data_file_thiamine_col",
+                  #         label = "Thiamine Concentration column",
+                  #         choices = ""
+                  #       ),
+                  #       shiny::selectInput(
+                  #         inputId = "visualize_add_data_file_survive_col",
+                  #         label = "(Optional) % Survived column",
+                  #         choices = ""
+                  #       ),
+                  #       shiny::br(),
+                  #       shiny::actionButton(
+                  #         inputId = "visualize_add_data_upload",
+                  #         label = "Add data",
+                  #         icon = shiny::icon("plus")
+                  #       )
+                  #     )
+                  #   )
+                  # )
                 )
               )
             ),
+            # To the right of "add your own data" are thiamine vs. survival %
+            # scatterplot and table:
             bs4Dash::box(
               collapsible = FALSE,
               maximizable = TRUE,
@@ -418,8 +446,12 @@ app_ui <- function(tdc_data, translator) {
               ),
               shiny::br(),
               shiny::tagList(
+                # User-entered thiamin vs. survival % table summary:
                 reactable::reactableOutput("visualize_add_data"),
                 shiny::br(),
+                # user can download table content, but we'll keep the button
+                # hidden at first. Only show once the table renders (see
+                # visualize_tab_server.R)
                 shinyjs::hidden(
                   shiny::tagList(
                     csvDownloadButton(button_id = "visualize_data_download",
@@ -432,6 +464,7 @@ app_ui <- function(tdc_data, translator) {
             )
           )
         ),
+        # Beginning of "About" tab content
         bs4Dash::tabItem(
           tabName = "about",
           shiny::wellPanel(

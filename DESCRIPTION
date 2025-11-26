@@ -55,4 +55,7 @@ Suggests:
     rjags,
     usethis,
     tidygeocoder,
-    shinytest2
+    shinytest2,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

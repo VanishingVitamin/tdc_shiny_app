@@ -19,6 +19,9 @@
 
 app_server <- function(tdc_data, citations, dose_response_params, translator) {
   function(input, output, session) {
+
+    # tells shiny that the www/ has content needed in the app and where to find
+    # it on user's computer (installed in vanishingVitamin files)
     shiny::addResourcePath(
       "www",
       system.file("www", package = "vanishingVitamin")
@@ -48,17 +51,22 @@ app_server <- function(tdc_data, citations, dose_response_params, translator) {
 
     shiny::observe({
 
+      # if the user clicks the data or visualize tab AND the sidebar hasn't been
+      # opened yet in the app, then open the sidebar
       if(!shiny::isolate(input$filter_sidebar) & input$navmenu %in% c("data", "visualize") & !tab_automatically_opened()){
         bs4Dash::updateSidebar(id = "filter_sidebar")
         tab_automatically_opened(TRUE)
       }
     })
 
+    # set some reactive data sets that change based on sidebar filters
     filtered_data <- shiny::reactiveValues(
       tdc_data = tdc_data,
       citations = citations
     )
 
+    # filter the tdc_data and citations data sets based on user-selected sidebar
+    # filters:
     shiny::observe({
       if (is.null(input$tdc_table_filter_location)) {
         selected_location <- ""
@@ -104,6 +112,8 @@ app_server <- function(tdc_data, citations, dose_response_params, translator) {
         dplyr::arrange(unique_id)
     })
 
+
+    # see corresponding server scripts for definitions of these functions:
     translation_server(input, output, session, translator)
 
     help_message_server(input = input,

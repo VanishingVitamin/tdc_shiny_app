@@ -1,5 +1,5 @@
 data_tab_server <- function(input, output, session, filtered_data){
-  # Create a table summarizes data sets by their associated reference
+  # Create a table summarizing data sets by their associated reference
   # (assuming the reference exists)
   output$tdc_data_table <-
     reactable::renderReactable({
@@ -132,7 +132,6 @@ data_tab_server <- function(input, output, session, filtered_data){
       unique()
 
     # if the user has selected a marker, highlight in the table.
-
     selected_marker_id <- ""
     if (!is.null(input$tdc_data_map_marker_click$id)) {
       selected_marker_id <-
@@ -146,6 +145,7 @@ data_tab_server <- function(input, output, session, filtered_data){
           marker_label
         ) |>
         dplyr::filter(!is.na(Latitude_DD)) |>
+        # find marker closest to user's click (minimum Euclidean distance)
         dplyr::mutate(
           dist_to_click = purrr::map2_dbl(
             Latitude_DD,
@@ -157,11 +157,9 @@ data_tab_server <- function(input, output, session, filtered_data){
           )
         ) |>
         dplyr::filter(dist_to_click == min(dist_to_click)) |>
-        # dplyr::slice(1) |>
         dplyr::pull(unique_id) |>
         unique()
 
-      # selected_citation_index <- as.integer(which(filtered_citations_zoomed$unique_id == selected_marker_id))
       selected_citation_index <- 1:length(selected_marker_id)
     } else {
       selected_citation_index <- -1L
@@ -171,7 +169,7 @@ data_tab_server <- function(input, output, session, filtered_data){
       selected_citation_index <- -1L
     }
 
-    # pull the table details for the rearranged rows
+    # Rearrange table to show user's selected data set at the top.
     table_details_zoomed <- tdc_data |>
       dplyr::distinct(unique_id, table_details) |>
       dplyr::filter(unique_id %in% map_zoom_ids) |>
@@ -211,7 +209,7 @@ data_tab_server <- function(input, output, session, filtered_data){
           defaultPageSize = 30,
           rowStyle = function(index) {
             if (index %in% selected_citation_index) {
-              return(list(background = "#EFEFEF"))
+              return(list(background = "#EFEFEF")) # darken background of selected data set slightly (white -> light gray)
             }
           }
         )
@@ -248,13 +246,14 @@ data_tab_server <- function(input, output, session, filtered_data){
         )
       )
 
-    # if the user hasn't applied any filters, set the view manually to fit Pacific to Baltic in the view window
+    # if the user hasn't applied any filters, set the view manually to fit
+    # Pacific to Baltic in the view window
     if (nrow(filtered_data$tdc_data) == nrow(tdc_data)) {
       tdc_map <- tdc_map |>
         leaflet::setView(
           lng = mean(long_bounds),
           lat = mean(lat_bounds),
-          zoom = 2
+          zoom = 2 # this level worked well in tests
         )
     }
 
@@ -273,19 +272,8 @@ data_tab_server <- function(input, output, session, filtered_data){
       ) |>
       dplyr::filter(!is.na(Latitude_DD))
 
-    # selected <- getReactableState("tdc_data_table", "selected")
-    #
-    # if(is.null(selected)){
-    #   icons <-
-    #     awesomeIcons(icon = "map-pin",
-    #                  markerColor = "blue")
-    # } else{
-    #   icons <-
-    #     awesomeIcons(icon = "map-pin",
-    #                  markerColor = c("blue", "black")[(plt_data$unique_id == {filtered_data$citations |> slice(selected) |> pull(unique_id)}) + 1])
-    # }
-
-    # leafletProxy lets you update the currently rendered leaflet map (rather than re-rendering a *new* map)
+    # leafletProxy lets you update the currently rendered leaflet map (rather
+    # than re-rendering a *new* map)
     leaflet::leafletProxy(
       "tdc_data_map",
       session = session,

@@ -9,6 +9,7 @@ publish_app <- function() {
   data_content <- list.files("data/", full.names = TRUE)
 
   rsconnect::deployApp(
+    appId = "38a66d86-5329-46bd-96e8-644e1eac078b",
     appDir = getwd(),
     appFiles = c(
       "app.R",
